@@ -56,8 +56,8 @@ header {
 }
 
 .zona-horaria__info{
-  margin: 0 200px;
-  width: 1200px;
+  width: 100%;
+  margin: 0 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -82,14 +82,30 @@ header {
   }
 }
 
+.header__menu-mobile{
+  width: 56px;
+  height: 56px;
+  border-radius: 25px;
+  border: solid 2px white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & a{
+    & img{
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
 .header__icon--social-media{
   width: 20px;
   height: 20px;
 }
 
 .header__navigation{
-  max-width: 1200px;
-  margin: 0 200px;
+  margin: 0 16px;
   height: 92px;
   display: flex;
   justify-content: space-between;
@@ -149,8 +165,42 @@ header {
 
 /* Queries */
 
-@media (min-width: 1440px) {
+@media ( 599px < width < 1240px ) {
   .header__navigation, .zona-horaria__info{
+    max-width: 904px;
+    padding: 0 32px;
+    margin: 0 auto;
+  }
+}
+
+@media (width < 1240px) {
+  header{
+    background-color: crimson;
+  }
+
+  .logo{
+    display: none;
+  }
+
+  .header__navbar{
+    display: none;
+  }
+
+  .user__link {
+    color: white;
+  }
+
+  .zona-horaria__contact > p {
+    display: none;
+  }
+}
+
+@media (width >= 1240px) {
+  .header__menu-mobile{
+    display: none;
+  }
+  .header__navigation, .zona-horaria__info{
+    padding: 0 200px;
     margin: 0 auto;
   }
 }
