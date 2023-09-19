@@ -4,10 +4,60 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Navbar</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div id="app"></div>
+    <header>
+      <div class="header__zona-horaria">
+
+      </div>
+
+      <section class="header__navigation">
+        <div class="navigation__elements">
+          <div class="icon logo logo--header">
+            <a href="#">
+              <img src="./assets/logo.svg" alt="Logo" />
+            </a>
+          </div>
+          <nav class="header__navbar">
+            <ul class="navbar__container-links">
+              <li>
+                <a class="navbar__link" href="#">Home</a>
+              </li>
+              <li>
+                <a class="navbar__link navbar__link--red" href="#">Categories</a>
+              </li>
+              <li>
+                <a class="navbar__link" href="#">Blog</a>
+              </li>
+              <li>
+                <a class="navbar__link" href="#">About</a>
+              </li>
+              <li>
+                <a class="navbar__link" href="#">Pages</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="header__user">
+          <div class="icon user__icon user__icon--unregister">
+            <a href="">
+              <img src="./assets/profile.svg" alt="">
+            </a>
+          </div>
+          <ul class="user__options">
+            <li><a class="user__link" href="">Login</a></li>
+            <li class="user__link">/</li>
+            <li><a class="user__link" href="">Register</a></li>
+          </ul>
+        </div>
+      </section>
+    </header>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
