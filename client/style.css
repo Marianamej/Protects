@@ -49,8 +49,42 @@ header {
 }
 
 .header__zona-horaria {
-  height: 30px;
-  background-color: gray;
+  height: 45px;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+}
+
+.zona-horaria__info{
+  margin: 0 200px;
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-family: var(--main-font);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.zona-horaria__contact{
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.zona-horaria__hour{
+  display: flex;
+  gap: 4px;
+
+  & span{
+    color: #A2A6B0;
+  }
+}
+
+.header__icon--social-media{
+  width: 20px;
+  height: 20px;
 }
 
 .header__navigation{
@@ -116,7 +150,7 @@ header {
 /* Queries */
 
 @media (min-width: 1440px) {
-  .header__navigation{
+  .header__navigation, .zona-horaria__info{
     margin: 0 auto;
   }
 }
