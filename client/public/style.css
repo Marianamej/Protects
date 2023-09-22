@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
 :root {
   /* Fonts */
   --main-font: "Poppins", sans-serif;
@@ -23,6 +22,69 @@
   --bk-desktop: 1240px;
 }
 
+html, body, p,
+ol, ul, li,
+dl, dt, dd,
+blockquote,
+figure, fieldset,
+legend, textarea,
+pre, iframe, hr,
+h1, h2, h3, h4, h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
 a {
   text-decoration: none;
 }
@@ -38,6 +100,74 @@ li {
 
 html {
   font-size: 62.5%;
+}
+
+/* Header */
+header {
+  width: 100%;
+  border-bottom: 1px solid var(--shark-skin);
+}
+
+a {
+  color: var(--black);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__zona-horaria {
+  height: 45px;
+  background-color: var(--black);
+  display: flex;
+  justify-content: center;
+}
+
+.icon a {
+  display: block;
+  width: auto;
+  height: auto;
+}
+.icon a img {
+  width: 100%;
+  height: 100%;
+}
+
+.user__icon {
+  height: 16px;
+  width: 16px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
+.zona-horaria__info {
+  width: 100%;
+  margin: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white-cloud);
+  font-family: var(--main-font);
+  font-size: 1.2rem;
+}
+
+.zona-horaria__contact {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.zona-horaria__hour {
+  display: flex;
+  gap: 4px;
+}
+.zona-horaria__hour span {
+  color: var(--grey-mouse);
 }
 
 /* Dropdown Menu */
@@ -77,79 +207,6 @@ html {
   display: block;
 }
 
-.font-regular {
-  font-weight: 400;
-}
-
-.font-bold {
-  font-weight: 700;
-}
-
-/* Reset */
-/* Utilities */
-.icon a {
-  display: block;
-  width: auto;
-  height: auto;
-}
-.icon a img {
-  width: 100%;
-  height: 100%;
-}
-
-/* Header */
-header {
-  width: 100%;
-  border-bottom: 1px solid var(--shark-skin);
-}
-
-.header__zona-horaria {
-  height: 45px;
-  background-color: var(--black);
-  display: flex;
-  justify-content: center;
-}
-
-.zona-horaria__info {
-  width: 100%;
-  margin: 0 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: var(--white-cloud);
-  font-family: var(--main-font);
-  font-size: 1.2rem;
-  font-weight: 500;
-}
-
-.zona-horaria__contact {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-}
-
-.zona-horaria__hour {
-  display: flex;
-  gap: 4px;
-}
-.zona-horaria__hour span {
-  color: var(--grey-mouse);
-}
-
-.header__menu-mobile {
-  width: 56px;
-  height: 56px;
-  border-radius: 25px;
-  border: solid 2px var(--white-cloud);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.header__menu-mobile a img {
-  width: 30px;
-  height: 30px;
-}
-
 .header__icon--social-media {
   width: 20px;
   height: 20px;
@@ -173,17 +230,10 @@ header {
   gap: 24px;
 }
 
-.logo {
-  width: 50px;
-  height: 50px;
-}
-
 .navbar__link {
   padding-bottom: 8px;
   font-family: var(--main-font);
   font-size: 1.4rem;
-  font-weight: bold;
-  color: var(--black);
 }
 
 .header__user {
@@ -193,25 +243,61 @@ header {
   gap: 4px;
 }
 
-.user__icon {
-  height: 16px;
-  width: 16px;
-}
-
 .user__options {
   display: flex;
   gap: 4px;
 }
 
-.navbar__link--red {
-  color: var(--red-fire);
-}
-
 .user__link {
   font-family: var(--secondary-font);
   font-size: 1.4rem;
-  font-weight: bold;
-  color: #000;
+}
+
+.header__menu-mobile {
+  width: 56px;
+  height: 56px;
+  border-radius: 25px;
+  border: solid 2px var(--white-cloud);
+}
+.header__menu-mobile a img {
+  width: 30px;
+  height: 30px;
+}
+
+.ft-regular {
+  font-weight: 400;
+}
+
+.ft-medium {
+  font-weight: 500;
+}
+
+.ft-bold {
+  font-weight: 700;
+}
+
+.fs-xs {
+  font-size: 0.75rem;
+}
+
+.fs-sm {
+  font-size: 0.875rem;
+}
+
+.fs-md {
+  font-size: 1rem;
+}
+
+.fs-lg {
+  font-size: 1.125rem;
+}
+
+.fs-xl {
+  font-size: 1.25rem;
+}
+
+.navbar__link--red {
+  color: var(--red-fire);
 }
 
 /* Queries */

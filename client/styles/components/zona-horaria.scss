@@ -1,0 +1,25 @@
+.zona-horaria__info {
+  width: 100%;
+  margin: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white-cloud);
+  font-family: var(--main-font);
+  font-size: 1.2rem;
+}
+
+.zona-horaria__contact {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.zona-horaria__hour {
+  display: flex;
+  gap: 4px;
+
+  & span {
+    color: var(--grey-mouse);
+  }
+}

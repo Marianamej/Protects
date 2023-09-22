@@ -1,4 +1,10 @@
 
+### Inicializar SASS
+Ejecutar el siguiente comando en la terminal para inicializar SASS :
+```bash
+sass --watch ./styles/main.scss:./public/style.css
+```
+
 # Tabla de Contenido
 * [Construccion CSS](#manejo-del-CSS)
   * [Convenciones](#convenciones)
