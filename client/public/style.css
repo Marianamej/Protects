@@ -1,3 +1,254 @@
+@charset "UTF-8";
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+:root {
+  /* Fonts */
+  --main-font: "Poppins", sans-serif;
+  --secondary-font: "Montserrat", sans-serif;
+  /* Colors */
+  --cherry-pick: #f5778f;
+  --watermelon: #ff0062;
+  --red-fire: #ca234f;
+  --black: #000;
+  --night-sky: #1b2838;
+  --blue-berry: #252b42;
+  --white-cloud: #ffffff;
+  --grey-paper: #e6e6e6;
+  --shark-skin: #c7c7c7 --snowman: #a2a6b0;
+  --grey-mouse: #8b949e;
+  --gold-apple: #ffb800;
+  --blue-perl: #139ad6;
+  --orange: #e77c40;
+  /* Units */
+  --bk-tablet: 599px;
+  --bk-desktop: 1240px;
+}
 
+a {
+  text-decoration: none;
+}
+
+input, button {
+  border: 1px solid transparent;
+}
+
+/* Global */
+li {
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Estilos del contenido del menú desplegable */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--white-cloud);
+  padding: 34px 0 0;
+  min-width: 232px;
+  box-shadow: 0px 8px 16px 0px var(--night-sky);
+  z-index: 1;
+}
+
+/* Estilos de los enlaces en el menú desplegable */
+.dropdown-content a {
+  color: var(--black);
+  padding: 12px 16px;
+  font-family: var(--main-font);
+  font-size: 1.4rem;
+  font-weight: 500;
+  display: block;
+}
+
+/* Cambiar el color de fondo cuando el cursor está sobre un enlace */
+.dropdown-content a:hover {
+  background-color: var(--grey-paper);
+}
+
+/* Mostrar el menú desplegable cuando el botón se hace hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+/* Reset */
+/* Utilities */
+.icon a {
+  display: block;
+  width: auto;
+  height: auto;
+}
+.icon a img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Header */
+header {
+  width: 100%;
+  border-bottom: 1px solid var(--shark-skin);
+}
+
+.header__zona-horaria {
+  height: 45px;
+  background-color: var(--black);
+  display: flex;
+  justify-content: center;
+}
+
+.zona-horaria__info {
+  width: 100%;
+  margin: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white-cloud);
+  font-family: var(--main-font);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.zona-horaria__contact {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.zona-horaria__hour {
+  display: flex;
+  gap: 4px;
+}
+.zona-horaria__hour span {
+  color: var(--grey-mouse);
+}
+
+.header__menu-mobile {
+  width: 56px;
+  height: 56px;
+  border-radius: 25px;
+  border: solid 2px var(--white-cloud);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header__menu-mobile a img {
+  width: 30px;
+  height: 30px;
+}
+
+.header__icon--social-media {
+  width: 20px;
+  height: 20px;
+}
+
+.header__navigation {
+  margin: 0 16px;
+  height: 92px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation__elements {
+  display: flex;
+  align-items: center;
+  gap: 75px;
+}
+
+.navbar__container-links {
+  display: flex;
+  gap: 24px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
+.navbar__link {
+  padding-bottom: 8px;
+  font-family: var(--main-font);
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--black);
+}
+
+.header__user {
+  display: flex;
+  align-items: center;
+  height: auto;
+  gap: 4px;
+}
+
+.user__icon {
+  height: 16px;
+  width: 16px;
+}
+
+.user__options {
+  display: flex;
+  gap: 4px;
+}
+
+.navbar__link--red {
+  color: var(--red-fire);
+}
+
+.user__link {
+  font-family: var(--secondary-font);
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #000;
+}
+
+/* Queries */
+@media (599px < width < 1240px) {
+  .header__navigation,
+.zona-horaria__info {
+    max-width: 904px;
+    padding: 0 32px;
+    margin: 0 auto;
+  }
+}
+@media (width < 1240px) {
+  header {
+    background-color: var(--red-fire);
+  }
+  .logo {
+    display: none;
+  }
+  .header__navbar {
+    display: none;
+  }
+  .user__link {
+    color: var(--white-cloud);
+  }
+  .zona-horaria__contact > p {
+    display: none;
+  }
+}
+@media (width >= 1240px) {
+  .header__menu-mobile {
+    display: none;
+  }
+  .header__navigation,
+.zona-horaria__info {
+    padding: 0 200px;
+    margin: 0 auto;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

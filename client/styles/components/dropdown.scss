@@ -1,0 +1,40 @@
+/* Dropdown Menu */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Estilos del contenido del menú desplegable */
+  
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white-cloud);
+    padding: 34px 0 0;
+    min-width: 232px;
+    box-shadow: 0px 8px 16px 0px var(--night-sky);
+    z-index: 1;
+  }
+  
+  /* Estilos de los enlaces en el menú desplegable */
+  
+  .dropdown-content a {
+    color: var(--black);
+    padding: 12px 16px;
+    font-family: var(--main-font);
+    font-size: 1.4rem;
+    font-weight: 500;
+    display: block;
+  }
+  
+  /* Cambiar el color de fondo cuando el cursor está sobre un enlace */
+  .dropdown-content a:hover {
+    background-color: var(--grey-paper);
+  }
+  
+  /* Mostrar el menú desplegable cuando el botón se hace hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }

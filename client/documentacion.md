@@ -250,6 +250,31 @@ En la capa de objetos, puede definir estilos para elementos como cuadrículas, o
 
 En general, la capa de objetos es una parte importante de la arquitectura ITCSS porque le permite definir patrones de diseño reutilizables que se pueden usar en todo su sitio, al mismo tiempo que garantiza coherencia y mantenibilidad.
 
+```SCSS
+.o-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 1rem;
+}
+``` 
+
+```SCSS
+.o-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+``` 
+
+```SCSS
+.o-media__image {
+  flex: 0 0 50%;
+}
+``` 
+
+```SCSS
+```
+
 ### Generic
 
 La carpeta genérica en la arquitectura CSS de ITCSS es donde almacenaría estilos para restablecer y normalizar estilos. Estos son estilos que se aplican a elementos HTML para garantizar que tengan estilos consistentes en diferentes navegadores y dispositivos.

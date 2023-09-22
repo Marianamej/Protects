@@ -1,16 +1,9 @@
 @use 'tools' as *;
 
-body{
-    font-family: 'Inter', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    background-color: var(--color-back-pearl-50);
+//Estilo de las etiquetas del HTML en si, de los selectores de tipo etiqueta
+
+html {
+    font-size: 62.5%;
 }
 
-main{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
+

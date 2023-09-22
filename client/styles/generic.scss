@@ -1,6 +1,16 @@
+// Reset CSS y de las propiedades de las etiquetas
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+
 a{
     text-decoration: none;
 }
 input,button{
     border: 1px solid transparent;
 }
+
+/* Global */
+li {
+    list-style: none;
+  }
+  
+  
