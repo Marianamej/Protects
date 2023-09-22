@@ -303,7 +303,7 @@ a {
 /* Queries */
 @media (599px < width < 1240px) {
   .header__navigation,
-.zona-horaria__info {
+  .zona-horaria__info {
     max-width: 904px;
     padding: 0 32px;
     margin: 0 auto;
@@ -331,7 +331,7 @@ a {
     display: none;
   }
   .header__navigation,
-.zona-horaria__info {
+  .zona-horaria__info {
     padding: 0 200px;
     margin: 0 auto;
   }
