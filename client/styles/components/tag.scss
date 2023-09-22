@@ -1,0 +1,18 @@
+.tag{
+    padding: 8px;
+    border-radius: 2px;
+    font-size: 13px;
+    line-height: 19px;
+}
+
+.tag a{
+    color: var(--color-aquarius-900);    
+}
+
+.tag-primary{
+    background-color: var(--color-aquarius-100);
+}
+
+.tag-secondary{
+    background-color: var(--color-morrocan-blue-100);
+}

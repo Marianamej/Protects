@@ -1,0 +1,76 @@
+@use '../tools';
+
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 16px ;
+    padding: 16px 16px 32px;
+    box-shadow: 0px 6px 16px rgba(27, 91, 100, 0.25);
+    background-color: var(--color-back-pearl-0);
+}
+
+.card-content{
+    display: flex;
+    flex-direction: column;
+    gap: 8px 0;
+    padding: 8px 0 0;
+}
+
+.card >img{
+    aspect-ratio: 2/1;
+    object-fit: cover;
+
+    @include tools.desktop {
+        height: 260px;
+    }
+}
+
+.card section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    gap: 8px 0;
+}
+
+.card header{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px 0; 
+}
+
+.card footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+//! FIXME : card-extended, review how can we implement this with container queries
+.card:nth-child(4n){
+    gap: 8px 48px;
+    background-color: var(--color-aquarius-100);
+    
+    @include tools.desktop {
+        grid-column: 1/4;
+        flex-direction: row;
+        padding: 48px;
+
+        & > img{
+            width: 60%;
+            height: 100%;
+        }
+
+
+    
+        &:nth-child(8n) {
+            flex-direction: row-reverse;
+        }
+    }
+}
+
+.card-content > p{
+    height: 112px;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+}
