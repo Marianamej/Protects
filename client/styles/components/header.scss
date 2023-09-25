@@ -1,4 +1,4 @@
-@import '../tools.scss';
+@use '../tools.scss' as mixins;
 
 .header__icon--social-media {
     width: 20px;
@@ -10,8 +10,8 @@
     height: 92px;
     display: flex;
     justify-content: space-between;
-    @include tablet (0, 32px, 0);
-    @include desktop (0, 200px, 0);
+    @include mixins.tablet (0, 32px, 0);
+    @include mixins.desktop (0, 200px, 0);
   }
   
   .navigation__elements {
