@@ -1,0 +1,63 @@
+@import '../tools.scss';
+
+.footer__header{
+    padding: 0 4px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+
+    &:first-child{
+        font-size: 2.4rem;
+        font-family: var(--secondary-font);
+    }
+}
+
+.footer__navigation-links{
+    font-size: 1.4rem;
+    font-family: var(--secondary-font);
+    gap: 10px;
+
+    & :first-child{
+        padding: 0 0 10px 0;
+    }
+}
+
+.footer__newsletter{
+    gap: 8px;
+    justify-content: flex-start;
+}
+
+.footer__copyright{
+    background-color: var(--red-fire);
+    height: 74px;
+    color: var(--white-cloud);
+}
+
+.footer__container-navigation{
+    width: 100%;
+    margin: 0 16px;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 200px 24px;
+    gap: 24px;
+    // Mixin breakpoint
+    @include tablet (32px, 32px, 24px);
+    @include desktop (32px, 200px, 24px);
+}
+
+
+@media (599px < width < 1240px) {
+    .footer__container-navigation {
+        & nav{
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
+            gap: 24px;
+
+            & div:first-of-type{
+                grid-column: 2 / 4;
+                grid-row: 2;
+            }
+        }
+    }
+  }

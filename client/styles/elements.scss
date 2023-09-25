@@ -5,6 +5,39 @@
 // Documento
 html {
     font-size: 62.5%;
+    font-family: var(--main-font);
+}
+
+// Etiquetas
+a{
+    color: var(--black);
+}
+
+hr{
+    background: var(--grey-paper);
+    height: 1px;
+}
+
+button{
+    border: 1px solid transparent;
+    display: flex;
+    padding: 16px 32px;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-family: var(--secondary-font);
+}
+
+input{
+    padding: 16px;
+    border: 1px solid var(--grey-mouse);
+    border-radius: 4px;
+    outline: none;
+    font-size: 1.4rem;
+    font-family: var(--main-font);
+}
+
+ion-icon{
+    cursor: pointer;
 }
 
 /* Header */
@@ -14,10 +47,11 @@ header {
     border-bottom: 1px solid var(--shark-skin);
 }
 
-// Etiquetas
+/* Main */
 
-a{
-    color: var(--black);
-}
+// Footer
+
+
+
 
 

@@ -1,13 +1,22 @@
 @use 'settings';
 //Aqui van las funciones y los mixins que se van a usar en el proyecto
 
-@mixin container-width{
-    width: 100%;
-    max-width: var(--container-max-width);
+// Mixin para tablet, donde se le pasan como parametros el padding correspondiente, este mixin esta diseñado para usarlo en los contenedores principales de cada seccion
+
+@mixin tablet ($pd-top, $pd-side, $pd-bot){
+    @media screen and (min-width:settings.$breakpoint-tablet) and (max-width:settings.$breakpoint-desktop){
+        max-width: 904px;
+        padding: $pd-top $pd-side $pd-bot;
+        margin: 0 auto;
+    }
 }
 
-@mixin desktop {
-    @media screen and (min-width:settings.$breakpoint-large){
-        @content
+// Mixin para desktop, donde se le pasan como parametros el padding correspondiente, este mixin esta diseñado para usarlo en los contenedores principales de cada seccion
+
+@mixin desktop ($pd-top, $pd-side, $pd-bot){
+    @media screen and (width >= settings.$breakpoint-desktop){
+        max-width: 1600px;
+        padding: $pd-top $pd-side $pd-bot;
+        margin: 0 auto;
     }
 }
