@@ -16,6 +16,7 @@ Camila Gomez
 4. Instalar las dependencias con 'npm install'
 5. Cambiarse a la rama de desarrollo con 'git checkout develop'
 6. Crear una rama nueva dependiendo la funcionalidad 'git checkout -b nombre-de-la-rama'
+7. Inicializar SASS con 'npm run sass'
 7. Hacer los cambios necesarios
 8. Agregar los cambios con 'git add .'
 9. Hacer commit con 'git commit -m "mensaje del commit"
