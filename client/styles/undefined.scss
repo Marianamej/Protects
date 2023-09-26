@@ -5,7 +5,11 @@
 @media (599px < width < 1240px) {
 
     .header__navigation,
-    .zona-horaria__info {
+    .zona-horaria__info
+    .Containercard--secondary
+  .Containercard
+  
+    {
       max-width: 904px;
       padding: 0 32px;
       margin: 0 auto;
@@ -32,6 +36,7 @@
     .zona-horaria__contact>p {
       display: none;
     }
+
   }
   
   @media (width >=1240px) {
@@ -43,5 +48,37 @@
     .zona-horaria__info {
       padding: 0 200px;
       margin: 0 auto;
+    }
+  }
+
+  @media  (width < 1240px) {
+    .Containercard
+    
+    {
+      flex-direction: column ; 
+      gap: 2px;
+      
+    }
+    .Containercard img{
+      width: 200px;
+      height: 200px;
+  
+    }
+    .Containercard h2{
+      font-size: 30px;
+      align-items: center;
+  
+    }
+    .Containercard--secondary h2{
+      font-size: 30px;
+      align-items: center;
+  
+    }
+  }
+  @media  (width < 1240px) {
+    .Containercard--secondary
+    
+    {
+      flex-direction: column ; 
     }
   }

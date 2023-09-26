@@ -1,0 +1,27 @@
+.conatinerProduct{
+  background-color: #E6E6E6;
+   width: 1123px;
+   height: 275px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 30px;
+   gap: 20px;
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card h5{
+    font-family: var(--secondary-font);
+    font-weight: bolder;
+    font-size: 16px;
+}
+.card p {
+    font-family: var(--secondary-font);
+    font-size: 16px;
+}
