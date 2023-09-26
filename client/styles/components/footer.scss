@@ -1,0 +1,83 @@
+@use '../tools.scss' as mixins;
+
+.footer__header{
+    padding: 0 4px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+
+    &:first-child{
+        font-size: 2.4rem;
+        font-family: var(--secondary-font);
+    }
+}
+
+.footer__navigation-links{
+    font-size: 1.4rem;
+    font-family: var(--secondary-font);
+    gap: 10px;
+
+    & :first-child{
+        padding: 0 0 10px 0;
+    }
+}
+
+.footer__newsletter{
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.newsletter__input{
+    width: 60%;
+}
+.newsletter__button{
+    width: 40%;
+}
+
+.footer__copyright{
+    background-color: var(--red-fire);
+    height: 74px;
+    color: var(--white-cloud);
+}
+
+.footer__container-navigation{
+    width: 100%;
+    padding: 40px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    // Mixin breakpoint
+    @include mixins.tablet (32px, 32px, 24px);
+    @include mixins.desktop (32px, 200px, 24px);
+}
+
+
+@media (599px < width < 1240px) {
+    .footer__container-links{
+        grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
+            gap: 24px;
+
+            & div:first-of-type{
+                grid-column: 2 / 4;
+                grid-row: 2;
+            }
+    }
+  }
+
+@media screen and (max-width : 600px){
+    .footer__container-links{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 30px;
+
+        & div:first-of-type{
+            grid-column: 1 / 3;
+            grid-row: 3;
+            width: 100%;
+        }
+
+    }
+}
+
