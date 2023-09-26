@@ -46,6 +46,9 @@ ion-icon{
 header {
     width: 100%;
     border-bottom: 1px solid var(--shark-skin);
+    position: sticky;
+    top: 0;
+    background-color: var(--white-cloud);
 }
 
 /* Main */
