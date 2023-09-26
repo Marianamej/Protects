@@ -1,0 +1,95 @@
+//container del titulo
+.ContainerTitle p{
+    font-family: var(--secondary-font);
+    font-size: 12px;
+
+}
+.ContainerTitle h1{
+    font-family: var(--main-font);
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    
+}
+.ContainerTitle{
+    display: flex;
+    margin-left:200px;
+    flex-direction: column;
+
+   
+    
+}
+//container grande de card
+.Containercard p{
+    font-family: var(--secondary-font);
+    font-size: 16px;
+    color: white;
+    margin-top: 40px;
+}
+
+.Containercard{
+     background-color: var( --cherry-pick);
+     display: flex;
+     flex-direction: row;
+     justify-content: space-evenly;
+     align-items: center;
+     
+}
+.Containercard img{
+    width: 400px;
+    height: 488.54px;
+}
+
+//container text
+
+.Containercard_text{
+    width: 564px;
+  height: auto;
+}
+.Containercard_text h2{
+    font-family: var(--secondary-font);
+    font-size: 48px;
+  font-weight: 600;
+  color: white;
+  
+}
+
+//cadar secondary
+
+.Containercard--secondary p{
+    font-family: var(--secondary-font);
+    font-size: 16px;
+    color:var(--black);
+    margin-top: 40px
+}
+.Containercard--secondary_mission{
+    width: 10px;
+    height: 10px;
+}
+.Containercard--secondary{
+   
+     display: flex;
+     flex-direction: row;
+     justify-content: space-evenly;
+     align-items: center;
+     
+}
+.Containercard--secondary img{
+    width: 400px;
+    height: 488.54px;
+}
+
+//container text
+
+.Containercard_text--secondary{
+    width: 564px;
+  height: auto;
+}
+.Containercard_text--secondary h2{
+    font-family: var(--secondary-font);
+    font-size: 48px;
+  font-weight: 600;
+  color:var(--black)
+  
+}
