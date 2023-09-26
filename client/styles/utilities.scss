@@ -54,3 +54,20 @@
         border: 2px solid var(--red-fire);
     }
 }
+
+.button--white {
+  background-color: var(--white-cloud);
+  color: var(--red-fire);
+  border: solid 2px var(--red-fire);
+
+  &:hover {
+      background-color: var(--red-fire);
+      color: var(--white-cloud);
+  }
+}
+
+//Hide elements
+
+.hide {
+    display: none;
+}
