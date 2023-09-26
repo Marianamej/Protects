@@ -1,12 +1,29 @@
+@use './tools.scss' as mixins;
 // Cosas muy muy generales y estructurales del sitio. En la capa de objetos, puede definir estilos para elementos como cuadrículas, objetos multimedia y ayudas de diseño. Estos estilos deberían ser más específicos que los estilos de la capa de elementos, pero aún así ser reutilizables en varias páginas y componentes.
-
-@use 'tools';
-
 // Center an element horizontally and vertically
 .center {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+// Grids
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) auto;
+    grid-gap: 30px;
 }
 
 // Container headers
@@ -16,4 +33,10 @@
     background-color: var(--black);
     display: flex;
     justify-content: center;
+}
+
+.main__container{
+    margin: 0 16px;
+    @include mixins.tablet (32px, 32px, 24px);
+    @include mixins.desktop (32px, 200px, 24px);
 }

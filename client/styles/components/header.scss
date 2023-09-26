@@ -1,4 +1,34 @@
-.header__icon--social-media {
+@use '../tools.scss' as mixins;
+
+  .zona-horaria__info {
+    width: 100%;
+    margin: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white-cloud);
+    font-family: var(--main-font);
+    font-size: 1.2rem;
+    @include mixins.tablet (0, 32px, 0);
+    @include mixins.desktop (0, 200px, 0);
+  }
+
+  .zona-horaria__contact {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .zona-horaria__hour {
+    display: flex;
+    gap: 4px;
+
+    & span {
+      color: var(--grey-mouse);
+    }
+  }
+
+  .header__icon--social-media {
     width: 20px;
     height: 20px;
   }
@@ -8,6 +38,8 @@
     height: 92px;
     display: flex;
     justify-content: space-between;
+    @include mixins.tablet (0, 32px, 0);
+    @include mixins.desktop (0, 200px, 0);
   }
   
   .navigation__elements {
@@ -55,5 +87,33 @@
         width: 30px;
         height: 30px;
       }
+    }
+  }
+  
+  @media (width < 1240px) {
+    header {
+      background-color: var(--red-fire);
+    }
+  
+    .logo {
+      display: none;
+    }
+  
+    .header__navbar {
+      display: none;
+    }
+  
+    .user__link {
+      color: var(--white-cloud);
+    }
+  
+    .zona-horaria__contact>p {
+      display: none;
+    } 
+  }
+  
+  @media (width >= 1240px) {
+    .header__menu-mobile {
+      display: none;
     }
   }

@@ -3,9 +3,14 @@
 @use 'components/logo';
 
 // info Molecules
-@use 'components/zona-horaria';
-
 
 // info Organisms
 @use 'components/dropdown';
+@use 'components/mobile-menu';
 @use 'components/header';
+
+@use 'components/carsdAbout';
+@use 'components/contendProduct';
+@use 'components/footer';
+
+

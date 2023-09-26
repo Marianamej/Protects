@@ -1,0 +1,29 @@
+.info__contact-page{
+    margin-block: 56px;
+    background-color: var(--grey-paper);
+    padding-block: 72px;
+    gap: 24px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.info__card-page{
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    width: 100%;
+    min-width: 225px;
+    text-align: center;
+
+    & img {
+        mix-blend-mode: multiply;
+    }
+}
+
+.info__card-page h3{
+    font-size: 1.6rem;
+}
+
+.info__card-page p {
+    font-size: 1.6rem;
+}
