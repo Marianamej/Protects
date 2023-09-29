@@ -170,13 +170,14 @@
   </section>
 
   <main class="main__container">
-    <section class="contact-us">
-      <form class="left formulario-contacto" action="https://formspree.io/f/xdorpkld" method="POST">
-        <div class="left formulario-contacto__descripcion">
-          <h1 class="ft-medium formulario-contacto__title">Contact Us</h1>
-          <p >We love hearing from you, our Shop customers.
-            Please contact us and we will make sure to get back to you as soon as we possibly can.</p>
-        </div>
+    <form class="left formulario-contacto" action="https://formspree.io/f/xdorpkld" method="POST">
+      <div class="left formulario-contacto__descripcion">
+        <h1 class="ft-medium formulario-contacto__title">Contact Us</h1>
+        <p >We love hearing from you, our Shop customers.
+          Please contact us and we will make sure to get back to you as soon as we possibly can.</p>
+      </div>
+
+      <section class="contact-us">
         
         <div class="left formulario-contacto__inputs">
           <div class="formulario-contacto__campos-principales">
@@ -199,56 +200,60 @@
             <label class="label__input" for="mensaje">Mensaje: *</label>
             <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
           </div>
+
+          <button class="button--red" type="submit">Enviar</button>
+
         </div>
+
+        <article class="left formulario__informacion">
+
+          <div class="informacion">
+            <span>
+              <img src="../assets/svg-location.svg" alt="">
+            </span>
+            <div class="informacion__descripcion left">
+              <p class="ft-bold">Address:</p>
+              <p>1234 Street Adress, City Address, 1234</p>
+            </div>
+          </div>
+  
+          <div class="informacion">
+            <span>
+              <img src="../assets/svg-phone.svg" alt="">
+            </span>
+            <div class="informacion__descripcion left">
+              <p class="ft-bold">Phone:</p>
+              <p>(00)1234 5678</p>
+            </div>
+          </div>
+  
+          <div class="informacion">
+            <span>
+              <img src="../assets/svg-clock.svg" alt="">
+            </span>
+            <div class="informacion__descripcion left">
+              <p class="ft-bold">We are open:</p>
+              <p>Monday - Friday: 9:00 AM - 5:30 PM <br>
+                Saturday: 11:00 AM - 5:00 PM</p>
+            </div>
+          </div>
+  
+          <div class="informacion">
+            <span>
+              <img src="../assets/svg-email.svg" alt="">
+            </span>
+            <div class="informacion__descripcion left">
+              <p class="ft-bold">Email:</p>
+              <p>shop@email.com</p>
+            </div>
+          </div>
+  
+        </article>
+      </section>
       
-        <button class="button--red" type="submit">Enviar</button>
       </form>
 
-      <article class="left formulario__informacion">
-
-        <div class="informacion">
-          <span>
-            <img src="../assets/svg-location.svg" alt="">
-          </span>
-          <div class="informacion__descripcion left">
-            <p class="ft-bold">Address:</p>
-            <p>1234 Street Adress, City Address, 1234</p>
-          </div>
-        </div>
-
-        <div class="informacion">
-          <span>
-            <img src="../assets/svg-phone.svg" alt="">
-          </span>
-          <div class="informacion__descripcion left">
-            <p class="ft-bold">Phone:</p>
-            <p>(00)1234 5678</p>
-          </div>
-        </div>
-
-        <div class="informacion">
-          <span>
-            <img src="../assets/svg-clock.svg" alt="">
-          </span>
-          <div class="informacion__descripcion left">
-            <p class="ft-bold">We are open:</p>
-            <p>Monday - Friday: 9:00 AM - 5:30 PM <br>
-              Saturday: 11:00 AM - 5:00 PM</p>
-          </div>
-        </div>
-
-        <div class="informacion">
-          <span>
-            <img src="../assets/svg-email.svg" alt="">
-          </span>
-          <div class="informacion__descripcion left">
-            <p class="ft-bold">Email:</p>
-            <p>shop@email.com</p>
-          </div>
-        </div>
-
-      </article>
-    </section>
+    
   
     <div id="success-modal" class="modal">
         <div class="modal-content">

@@ -3,14 +3,14 @@
 @use 'components/logo';
 
 // info Molecules
-
-// info Organisms
 @use 'components/dropdown';
 @use 'components/mobile-menu';
 @use 'components/header';
 
+// info Organisms
 @use 'components/carsdAbout';
 @use 'components/contendProduct';
 @use 'components/footer';
+@use 'components/formContact';
 
 
