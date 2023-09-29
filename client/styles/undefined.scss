@@ -1,3 +1,122 @@
 //Aqui va todo el codigo del CSS que no sepas donde poner
+.contact-us{
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+}
 
+.formulario-contacto {
+    width: 100%;
+    max-width: 800px;
+    gap: 40px;
 
+    & input{
+        width: 100%;
+        min-width: 340px;
+    }
+}
+
+.formulario-contacto__title{
+    font-size: 3.2rem;
+}
+
+.formulario-contacto__descripcion{
+    gap: 16px;
+
+    & p {
+        font-size: 1.6rem;
+    }
+}
+
+.formulario-contacto__inputs{
+    gap: 32px;
+    width: 100%;
+}
+
+.formulario__input{
+    width: 100%;
+    max-width: 360px;
+    min-width: 320px;
+    gap: 12px;
+}
+
+.label__input {
+    font-size: 1.2rem;
+}
+
+.formulario-contacto__campos-principales{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.formulario__textarea{
+    width: 100%;
+    height: 156px;
+
+    & textarea{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// Informacion de horarios / Direccion Etc...
+
+.formulario__informacion{
+    gap: 16px;
+    min-width: 220px;
+}
+
+.informacion span{
+    height: 50%;
+}
+
+.informacion{
+    display: flex;
+    gap: 16px;
+    & span img{
+        display: inline;
+        vertical-align: middle;
+    }
+}
+
+.informacion__descripcion{
+    & p{
+        font-size: 1.4rem;
+    };
+}
+
+//Modal
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+#close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #555;
+}

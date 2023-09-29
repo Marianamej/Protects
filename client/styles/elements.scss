@@ -28,7 +28,7 @@ button{
     font-family: var(--secondary-font);
 }
 
-input{
+input,textarea{
     padding: 16px;
     border: 1px solid var(--grey-mouse);
     border-radius: 4px;
