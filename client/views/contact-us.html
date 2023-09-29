@@ -170,7 +170,7 @@
   </section>
 
   <main class="main__container">
-    <form class="left formulario-contacto" action="https://formspree.io/f/xdorpkld" method="POST">
+    <form id="contact-form" class="left formulario-contacto" action="https://formspree.io/f/xdorpkld" method="POST">
       <div class="left formulario-contacto__descripcion">
         <h1 class="ft-medium formulario-contacto__title">Contact Us</h1>
         <p >We love hearing from you, our Shop customers.
@@ -183,12 +183,12 @@
           <div class="formulario-contacto__campos-principales">
             <div class="formulario__input left">
               <label class="label__input" for="nombre">Nombre: *</label>
-              <input type="text" id="nombre" name="nombre" required>
+              <input type="text" id="inputContactNombre" name="nombre" required>
             </div>
       
             <div class="formulario__input left">
               <label class="label__input" for="email">Email:*</label>
-              <input type="email" id="email" name="email" required>
+              <input type="email" id="inputContactEmail" name="email" required>
             </div>
           </div>
       
@@ -198,7 +198,7 @@
           </div>
           <div class="formulario__textarea left">
             <label class="label__input" for="mensaje">Mensaje: *</label>
-            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+            <textarea id="inputContacMensaje" name="mensaje" rows="4" required></textarea>
           </div>
 
           <button class="button--red" type="submit">Enviar</button>
