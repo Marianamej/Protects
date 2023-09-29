@@ -3,9 +3,10 @@
 @use 'components/logo';
 
 // info Molecules
+@use 'components/dropdown';
+@use 'components/hero-banner';
 
 // info Organisms
-@use 'components/dropdown';
 @use 'components/mobile-menu';
 @use 'components/header';
 

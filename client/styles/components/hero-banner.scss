@@ -1,0 +1,78 @@
+.hero-banner{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), url('../assets/image 3.svg'), lightgray 50%;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    gap: 32px;
+    color: var(--white-cloud);
+    padding: 40px 24px;
+}
+.hero-banner__info{
+    gap: 24px;
+    max-width: 490px;
+    width: 100%;
+}
+.hero-baner__title{
+    font-size: 6.2rem;
+}
+.hero-banner__img{
+    width: 65%;
+    max-width: 600px;
+    min-width: 247px;
+    & img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+@media (599px < width < 1240px){
+
+    .hero-banner{
+        gap: 24px;
+        padding: 32px 16px;
+    }
+
+    .hero-banner__info{
+        max-width: 360px;
+
+        .hero-baner__title{
+            font-size: 3rem;
+        }
+        .hero-baner__descripcion{
+            font-size: 1.6rem;
+        }
+    }
+}
+
+@media screen and (max-width : 600px){
+    .hero-banner{
+        gap: 16px;
+    }
+    .hero-banner__info{
+        gap: 16px;
+    }
+    .promociones .hero-baner__descripcion{
+        display: none;
+    }
+    .hero-baner__title{
+        font-size: 2.4rem;
+    }
+    .hero-banner__temporada{
+        font-size: 1.4rem;
+    }
+    .hero-banner__img{
+        min-width: 154px;
+    }
+}
+
+//Clase recursiva para el slider
+.active {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .hero-banner:not(.active) {
+    display: none;
+  }
