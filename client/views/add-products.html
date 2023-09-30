@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/assets/icons/icon-logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us</title>
+  <title>Add Product</title>
   <link rel="stylesheet" href="../public/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -171,75 +171,79 @@
     </div>
   </section>
 
-  <main class=" ">
-    <div class="about__container-title main__container">
-      <p>Home > About us</p>
-      <h1>About Us</h1>
-    </div>
+  <main class="main__container">
+    <form id="contact-form" class="left formulario-contacto">
+      <div class="left formulario-contacto__descripcion">
+        <h1 class="ft-medium formulario-contacto__title">Add Product</h1>
+        <p >We love hearing from you, our Shop customers.
+            Please contact us and we will make sure to get back to you as soon as we possibly can.</p>
+      </div>
 
-    <article class="example1">
-      <div class="about__container-card main__container">
-        <div class="about__text-card">
-          <h2 class="ft-medium about__card-title about__card-title--white">A Family That Keeps On Growing</h2>
-          <p class="about__information about__information--white">We always aim to please the home market, supplying great computers and hardware at great prices to
-            non-corporate customers, through our large Melbourne CBD showroom and our online store.
-            Shop management approach fosters a strong customer service focus in our staff. We prefer to cultivate
-            long-term client relationships rather than achieve quick sales, demonstrated in the measure of our long-term
-            success.</p>
+      <section class="contact-us">
+        
+        <div class="left formulario-contacto__inputs">
+          <div class="formulario-contacto__campos-principales">
+            <div class="formulario__input left">
+              <label class="label__input" for="nombre">Nombre: *</label>
+              <input type="text" name="nombre" required>
+            </div>
+      
+            <div class="formulario__input left">
+              <label class="label__input" for="email">Unidades:*</label>
+              <input type="number" name="email" required>
+            </div>
+          </div>
+
+          <div class="formulario-contacto__campos-principales">
+            <div class="formulario__input left">
+                <label class="label__input" for="nombre">Tipo: *</label>
+                <select name="nombre" required>
+                  <option value="" disabled selected>Seleecione Uno</option>
+                  <option value="Laptop">Laptop</option>
+                  <option value="Desktop-PC">Desktop PC</option>
+                  <option value="Monitors">Monitors</option>
+                  <option value="Complements">Complements</option>
+                  <option value="Parts-of-PC">Parts of PC</option>
+                </select>
+            </div>
+            <div class="formulario__input left">
+              <label class="label__input" for="email">Precio:*</label>
+              <input type="number" name="email" required>
+            </div>
+          </div>
+
+          <div class="formulario-contacto__campos-principales">
+            <div class="formulario__input left">
+              <label class="label__input" for="imagen">Imagen: *</label>
+              <input type="text" name="imagen" required>
+            </div>
+      
+            <div class="formulario__input left">
+              <label class="label__input" for="descuento">Descuento: </label>
+              <input type="number" name="decuento" required>
+            </div>
+
+            <div class="formulario__input left">
+                <label class="label__input" for="validez">Dias activo: </label>
+                <input type="number" name="validez" required>
+            </div>
+          </div>
+      
+          <div class="formulario__textarea left">
+            <label class="label__input" for="mensaje">Descripcion: *</label>
+            <textarea id="inputContacMensaje" name="mensaje" rows="4" required></textarea>
+          </div>
+
+          <button class="button--red" type="submit">Agregar</button>
+
         </div>
-        <img class="about__image-main" src="../assets/img-aboutUs.svg" alt="family">
-      </div>
-    </article>
 
-    <div class="about__container-card main__container">
-      <img src="../assets/img-aboutUs-1.svg" alt="keyboard">
-      <div class="about__text-card">
+      </section>
+      
+    </form>
 
-        <h2 class="ft-medium about__card-title">Mission</h2>
-        <p class="about__information">Shop.com is a proudly Australian owned, Melbourne based supplier of I.T. goods and services, operating since
-          1991. Our client base encompasses individuals, small business, corporate and government organisations. We
-          provide complete business IT solutions, centred on high quality hardware and exceptional customer service.
-        </p>
-      </div>
-    </div>
 
-    <article class="example1">
-      <div class="about__container-card main__container">
-        <div class="about__text-card">
-          <h2 class="ft-medium about__card-title about__card-title--white">Vision</h2>
-          <p class="about__information about__information--white">Experience a 40% boost in computing from last generation. MSI Desktop equips the 10th Gen. Intel® Core™ i7
-            processor with the upmost computing power to bring you an unparalleled gaming experience.
-            *Performance compared to i7-9700. Specs varies by model..</p>
-        </div>
-        <img src="../assets/img-aboutUs-2.svg" alt="family">
-      </div>
-    </article>
-
-    <div class="about__container-card main__container">
-      <img src="../assets/img-aboutUs-3.svg" alt="keyboard" class="Containercard--secondary_mission">
-      <div class="about__text-card">
-
-        <h2 class="ft-medium about__card-title">The Highest Quality of Products</h2>
-        <p class="about__information">We guarantee the highest quality of the products we sell. Several decades of successful operation and
-          millions of happy customers let us feel certain about that. Besides, all items we sell pass thorough quality
-          control, so no characteristics mismatch can escape the eye of our professionals
-        </p>
-      </div>
-    </div>
-
-    <article class="example1">
-      <div class="about__container-card main__container">
-        <div class="about__text-card">
-          <h2 class="ft-medium about__card-title about__card-title--white">We Deliver to Any Regions</h2>
-          <p class="about__information about__information--white">We deliver our goods all across Australia. No matter where you live, your order will be shipped in time and
-            delivered right to your door or to any other location you have stated. The packages are handled with utmost
-            care, so the ordered products will be handed to you safe and sound, just like you expect them to be.</p>
-        </div>
-        <img src="../assets/img-aboutUs-4.svg" alt="family">
-      </div>
-    </article>
-
-    <div class="info__contact-page main__container center">
+    <div class="info__contact-page center">
 
       <div class="info__card-page center">
         <img src="../assets/img-info-support.jpg" alt="">
@@ -312,6 +316,7 @@
   </footer>
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
   <script type="module" src="../public/main.js"></script>
 </body>
 
