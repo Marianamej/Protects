@@ -144,6 +144,7 @@ ion-icon {
 
 /* Header */
 header {
+  position: relative;
   width: 100%;
   border-bottom: 1px solid var(--shark-skin);
   position: sticky;
