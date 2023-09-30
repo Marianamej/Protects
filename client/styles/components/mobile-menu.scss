@@ -9,6 +9,10 @@
     background-color: var(--white-cloud);
 }
 
+#mobile-menu-close{
+    cursor: pointer;
+}
+
 .mobile-menu__container{
     display: flex;
     flex-direction: column;

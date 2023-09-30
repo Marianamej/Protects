@@ -354,6 +354,10 @@ header {
   background-color: var(--white-cloud);
 }
 
+#mobile-menu-close {
+  cursor: pointer;
+}
+
 .mobile-menu__container {
   display: flex;
   flex-direction: column;
@@ -458,6 +462,7 @@ header {
   display: flex;
   align-items: center;
   gap: 75px;
+  cursor: pointer;
 }
 
 .navbar__container-links {
