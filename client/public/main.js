@@ -1,7 +1,7 @@
 
 import { enviarFormulario } from "../scripts/envioFormulario.js"
-import { renderBanner } from '../renderBanner.js';
-import { getBanners,fondos } from '../apiBanner.js';
+import { renderBanner } from '../scripts/renderBanner.js';
+import { getBanners,fondos } from '../scripts/apiBanner.js';
 
 
 const hamburguerMenu = document.getElementById('hamburguer-menu');

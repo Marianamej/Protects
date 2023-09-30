@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/assets/icons/icon-logo.svg" />
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/icon-logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Add Product</title>
   <link rel="stylesheet" href="../public/style.css">
@@ -152,13 +152,13 @@
       <div class="mobile-menu__navigation">
         <div class="mobile-menu__pages">
           <span>
-            <img src="/assets/icons/icon-gift.svg" alt="">
+            <img src="../assets/icons/icon-gift.svg" alt="">
           </span>
           <a class="fs-xs" href="">Blog</a>
         </div>
         <div class="mobile-menu__pages">
           <span>
-            <img src="/assets/icons/icon-like.svg" alt="">
+            <img src="../assets/icons/icon-like.svg" alt="">
           </span>
           <a class="fs-xs" href="">Blog</a>
         </div>
@@ -172,7 +172,8 @@
   </section>
 
   <main class="main__container">
-    <form id="contact-form" class="left formulario-contacto">
+
+    <form id="formulario" class="left formulario-contacto">
       <div class="left formulario-contacto__descripcion">
         <h1 class="ft-medium formulario-contacto__title">Add Product</h1>
         <p >We love hearing from you, our Shop customers.
@@ -196,8 +197,8 @@
 
           <div class="formulario-contacto__campos-principales">
             <div class="formulario__input left">
-                <label class="label__input" for="nombre">Tipo: *</label>
-                <select name="nombre" required>
+                <label class="label__input" for="categoria">Tipo: *</label>
+                <select name="categoria" required>
                   <option value="" disabled selected>Seleecione Uno</option>
                   <option value="Laptop">Laptop</option>
                   <option value="Desktop-PC">Desktop PC</option>
@@ -220,12 +221,12 @@
       
             <div class="formulario__input left">
               <label class="label__input" for="descuento">Descuento: </label>
-              <input type="number" name="decuento" required>
+              <input type="number" name="decuento">
             </div>
 
             <div class="formulario__input left">
                 <label class="label__input" for="validez">Dias activo: </label>
-                <input type="number" name="validez" required>
+                <input type="number" name="validez">
             </div>
           </div>
       
@@ -234,12 +235,9 @@
             <textarea id="inputContacMensaje" name="mensaje" rows="4" required></textarea>
           </div>
 
-          <button class="button--red" type="submit">Agregar</button>
-
+          <button id="but" type="submit" class="button--red">Agregar</button>
         </div>
-
       </section>
-      
     </form>
 
 
@@ -317,7 +315,8 @@
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
-  <script type="module" src="../public/main.js"></script>
+  <!-- <script type="module" src="../public/main.js"></script> -->
+  <script type="module" src="../scripts/addProduct.js"></script>
 </body>
 
 </html>
