@@ -715,7 +715,6 @@ header {
     width: 100%;
   }
 }
-
 .contact-us {
   display: flex;
   justify-content: space-between;
@@ -859,7 +858,6 @@ header {
     max-width: 360px;
   }
 }
-
 .ff-secondary {
   font-family: var(--secondary-font);
 }
