@@ -1,5 +1,9 @@
 //Son los modificadores las clases de utilidades para espaciado, texto y otros estilos comunes. Estos son estilos que no son específicos de ningún componente o diseño en particular, pero que se utilizan en todo el sitio para aplicar estilos comunes no mas de una linea.
 
+//Tipo de fuente
+.ff-secondary {
+    font-family: var(--secondary-font);
+}
 
 //Peso de las fuentes
 .ft-regular{
@@ -21,11 +25,11 @@
   }
   
   .fs-sm {
-    font-size: 0.875rem;
+    font-size: 1.6rem;
   }
   
   .fs-md {
-    font-size: 1rem;
+    font-size: 2.4rem;
   }
   
   .fs-lg {
