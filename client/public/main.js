@@ -1,5 +1,8 @@
+
+import { enviarFormulario } from "../scripts/envioFormulario.js"
 import { renderBanner } from '../renderBanner.js';
 import { getBanners,fondos } from '../apiBanner.js';
+
 
 const hamburguerMenu = document.getElementById('hamburguer-menu');
 const menuMobile = document.getElementById('menu-mobile');
@@ -13,6 +16,8 @@ closeMobileMenu.addEventListener('click', () => {
     menuMobile.classList.toggle('hide');
 });
 
+
+document.addEventListener("DOMContentLoaded", enviarFormulario);
 
 renderBanner(getBanners)
 

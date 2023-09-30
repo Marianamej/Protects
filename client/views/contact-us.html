@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <link rel="stylesheet" href="../public/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="header__zona-horaria">
+      <div class="zona-horaria__info ft-medium">
+        <p class="zona-horaria__hour"><span>Mon-Thu : </span>9:00 AM - 5:30 PM</p>
+        <div class="zona-horaria__contact">
+          <p>Call Us: (00) 1234 5678</p>
+          <div class="icon header__icon--social-media">
+            <a href="">
+              <img src="../assets/logo.svg" alt="">
+            </a>
+          </div>
+          <div class="icon header__icon--social-media">
+            <a href="">
+              <img src="../assets/facebook.svg" alt="">
+            </a>
+          </div>
+          <div class="icon header__icon--social-media">
+            <a href="">
+              <img src="../assets/instagram.svg" alt="">
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <section class="header__navigation">
+      <div class="navigation__elements">
+        <div class="icon logo logo--header">
+          <a href="#">
+            <img src="../assets/logo.svg" alt="Logo" />
+          </a>
+        </div>
+
+        <div id="hamburguer-menu" class=" header__menu-mobile center">
+          <img src="../assets/mobile-menu.svg" alt="Logo" />
+        </div>
+
+        <nav class="header__navbar">
+          <ul class="navbar__container-links">
+            <li>
+              <a class="navbar__link ft-bold" href="#">Home</a>
+            </li>
+            <!-- Dropdown Menu -->
+            <li class="dropdown">
+              <a class="navbar__link ft-bold navbar__link--red" href="#">Categories</a>
+              <div class="dropdown-content">
+                <a href="#">Opción 1</a>
+                <a href="#">Opción 2</a>
+                <a href="#">Opción 3</a>
+              </div>
+
+            </li>
+            <li>
+              <a class="navbar__link ft-bold" href="#">Blog</a>
+            </li>
+            <li>
+              <a class="navbar__link ft-bold" href="#">About</a>
+            </li>
+            <li>
+              <a class="navbar__link ft-bold" href="#">Pages</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header__user">
+        <div class="icon user__icon user__icon--unregister">
+          <a href="">
+            <img src="../assets/profile.svg" alt="">
+          </a>
+        </div>
+        <ul class="user__options">
+          <li><a class="user__link ft-bold" href="">Login</a></li>
+          <li class="user__link ft-bold">/</li>
+          <li><a class="user__link ft-bold" href="">Register</a></li>
+        </ul>
+      </div>
+    </section>
+  </header>
+
+  <!-- Menu mobile -->
+  <section id="menu-mobile" class="mobile-menu hide">
+    <div class="mobile-menu__container">
+      <div class="mobile-menu__brand space-between">
+        <div class="icon header__icon--social-media">
+          <a href="">
+            <img src="../assets/logo.svg" alt="">
+          </a>
+        </div>
+        <div class="icon header__icon--social-media">
+          <div id="mobile-menu-close">
+            <img src="../assets/icon-close.svg" alt="">
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="mobile-menu__categories">
+        <div class="mobile-menu__link-categories space-between">
+          <a class="fs-xs" href="">Laptops</a>
+          <a href="">
+            <img src="../assets/icon-arrow.svg" alt="">
+          </a>
+        </div>
+        <div class="mobile-menu__link-categories space-between">
+          <a class="fs-xs" href="">Laptops</a>
+          <a href="">
+            <img src="../assets/icon-arrow.svg" alt="">
+          </a>
+        </div>
+        <div class="mobile-menu__link-categories space-between">
+          <a class="fs-xs" href="">Laptops</a>
+          <a href="">
+            <img src="../assets/icon-arrow.svg" alt="">
+          </a>
+        </div>
+        <div class="mobile-menu__link-categories space-between">
+          <a class="fs-xs" href="">Laptops</a>
+          <a href="">
+            <img src="../assets/icon-arrow.svg" alt="">
+          </a>
+        </div>
+        <div class="mobile-menu__link-categories space-between">
+          <a class="fs-xs" href="">Laptops</a>
+          <a href="">
+            <img src="../assets/icon-arrow.svg" alt="">
+          </a>
+        </div>
+      </div>
+      
+      <hr>
+
+      <div class="mobile-menu__navigation">
+        <div class="mobile-menu__pages">
+          <span>
+            <img src="/assets/icon-gift.svg" alt="">
+          </span>
+          <a class="fs-xs" href="">Blog</a>
+        </div>
+        <div class="mobile-menu__pages">
+          <span>
+            <img src="/assets/icon-like.svg" alt="">
+          </span>
+          <a class="fs-xs" href="">Blog</a>
+        </div>
+
+        <div class="mobile-menu__buttons space-between">
+          <button class="button--white">Ayuda</button>
+          <button class="button--red">Iniciar sesion</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="main__container">
+    <form id="contact-form" class="left formulario-contacto" action="https://formspree.io/f/xdorpkld" method="POST">
+      <div class="left formulario-contacto__descripcion">
+        <h1 class="ft-medium formulario-contacto__title">Contact Us</h1>
+        <p >We love hearing from you, our Shop customers.
+          Please contact us and we will make sure to get back to you as soon as we possibly can.</p>
+      </div>
+
+      <section class="contact-us">
+        
+        <div class="left formulario-contacto__inputs">
+          <div class="formulario-contacto__campos-principales">
+            <div class="formulario__input left">
+              <label class="label__input" for="nombre">Nombre: *</label>
+              <input type="text" id="inputContactNombre" name="nombre" required>
+            </div>
+      
+            <div class="formulario__input left">
+              <label class="label__input" for="email">Email:*</label>
+              <input type="email" id="inputContactEmail" name="email" required>
+            </div>
+          </div>
+      
+          <div class="formulario__input left">
+            <label class="label__input" for="telefono">Telefono: *</label>
+            <input type="text" id="telefono" name="telefono" required>
+          </div>
+          <div class="formulario__textarea left">
+            <label class="label__input" for="mensaje">Mensaje: *</label>
+            <textarea id="inputContacMensaje" name="mensaje" rows="4" required></textarea>
+          </div>
+
+          <button class="button--red" type="submit">Enviar</button>
+
+        </div>
+
+        <article class="left formulario__informacion">
+
+          <div class="informacion">
+            <span>
+              <img src="../assets/svg-location.svg" alt="">
+            </span>
+            <div class="informacion__descripcion left">
+              <p class="ft-bold">Address:</p>
+              <p>1234 Street Adress, City Address, 1234</p>
+            </div>
+          </div>
+  
+          <div class="informacion">
+            <span>
+              <img src="../assets/svg-phone.svg" alt="">
+            </span>
+            <div class="informacion__descripcion left">
+              <p class="ft-bold">Phone:</p>
+              <p>(00)1234 5678</p>
+            </div>
+          </div>
+  
+          <div class="informacion">
+            <span>
+              <img src="../assets/svg-clock.svg" alt="">
+            </span>
+            <div class="informacion__descripcion left">
+              <p class="ft-bold">We are open:</p>
+              <p>Monday - Friday: 9:00 AM - 5:30 PM <br>
+                Saturday: 11:00 AM - 5:00 PM</p>
+            </div>
+          </div>
+  
+          <div class="informacion">
+            <span>
+              <img src="../assets/svg-email.svg" alt="">
+            </span>
+            <div class="informacion__descripcion left">
+              <p class="ft-bold">Email:</p>
+              <p>shop@email.com</p>
+            </div>
+          </div>
+  
+        </article>
+      </section>
+      
+      </form>
+
+    
+  
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <h2>Envío Exitoso</h2>
+            <p>Tu mensaje se ha enviado correctamente.</p>
+            <button id="close-modal">Cerrar</button>
+        </div>
+    </div>
+
+
+    <div class="info__contact-page center">
+
+      <div class="info__card-page center">
+        <img src="../assets/product-support.jpg" alt="">
+         <h3 class="ft-bold">Product Support</h3>
+         <p>Up to 3 years on-site warranty available for your peace of mind</p>
+      </div>
+
+      <div class="info__card-page center">
+        <img src="../assets/personal-help.jpg" alt="">
+        <h3 class="ft-bold">Personal Account</h3>
+        <p>With big discounts, free delivery and a dedicated support specialist.</p>
+      </div>
+
+      <div class="info__card-page center">
+        <img src="../assets/amazing-savings.jpg" alt="">
+        <h3 class="ft-bold">Amazing Savings</h3>
+        <p>Up to 70% off new Products, you can be sure of the best price.</p>
+      </div>
+
+    </div>
+  </main>
+  
+  <footer>
+    <div class="footer__container-navigation">
+      <div class="footer__header ft-14">
+        <h3 class="ft-bold">Gamer Tx</h3>
+        <div>
+          <ion-icon name="logo-facebook"></ion-icon>
+          <ion-icon name="logo-instagram"></ion-icon>
+          <ion-icon name="logo-twitter"></ion-icon>
+        </div>
+      </div>
+      <hr>
+      <nav class="footer__container-links grid">
+        <ul class="left footer__navigation-links">
+          <li class="ft-bold">Company Info</li>
+          <li><a href="">About Us</a></li>
+          <li><a href="">We are hiring</a></li>
+          <li><a href="">Blog</a></li>
+        </ul>
+        <ul class="left footer__navigation-links">
+          <li class="ft-bold">Legal</li>
+          <li><a href="">Terminos y condiciones</a></li>
+        </ul>
+        <ul class="left footer__navigation-links">
+          <li class="ft-bold">Features</li>
+          <li><a href="">Roadmap</a></li>
+          <li><a href="">Foros</a></li>
+        </ul>
+        <ul class="left footer__navigation-links">
+          <li class="ft-bold">Resources</li>
+          <li><a href="">Customers</a></li>
+        </ul>
+        <div>
+          <ul class="left footer__navigation-links">
+            <li class="ft-bold">Get in touch</li>
+          </ul>
+          <div class="center footer__newsletter">
+            <input class="newsletter__input" type="text" placeholder="Your Email">
+            <button class="button--red newsletter__button">Subscribe</button>
+          </div>
+        </div>
+  
+      </nav>
+    </div>
+
+    <div class="footer__copyright center">
+      <p class="ft-medium fs-xs">Made With Love By Dynamite Code All Right Reserved </p>
+    </div>
+  </footer>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+  <script type="module" src="../public/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+.contact-us{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 32px;
+}
+
+.formulario-contacto {
+    width: 100%;
+    gap: 40px;
+
+    & input{
+        width: 100%;
+    }
+}
+
+.formulario-contacto__title{
+    font-size: 3.2rem;
+}
+
+.formulario-contacto__descripcion{
+    gap: 16px;
+    max-width: 840px;
+    & p {
+        font-size: 1.6rem;
+    }
+}
+
+.formulario-contacto__inputs{
+    gap: 16px;
+    width: 100%;
+    max-width: 840px;
+}
+
+.formulario__input{
+    width: 100%;
+    max-width: 320px;
+    gap: 12px;
+}
+
+.label__input {
+    font-size: 1.2rem;
+}
+
+.formulario-contacto__campos-principales{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    min-width: 654px;
+    gap: 12px;
+}
+
+.formulario__textarea{
+    width: 100%;
+    height: 156px;
+
+    & textarea{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// Informacion de horarios / Direccion Etc...
+
+.formulario__informacion{
+    gap: 16px;
+    min-width: 220px;
+}
+
+.informacion span{
+    height: 50%;
+}
+
+.informacion{
+    display: flex;
+    gap: 16px;
+    & span img{
+        display: inline;
+        vertical-align: middle;
+    }
+}
+
+.informacion__descripcion{
+    & p{
+        font-size: 1.4rem;
+    };
+}
+
+//Modal
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+#close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #555;
+}
+
+@media screen and (width < 651px){
+    .contact-us{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .formulario-contacto__inputs{
+        align-items: center;
+    }
+
+    .formulario__input{
+        max-width: none;
+    }
+
+    .formulario-contacto input {
+        min-width: 200px;
+    }
+}
+
+@media screen and (width < 1200px){
+    .formulario-contacto__campos-principales{
+        min-width: auto;
+    }
+
+    .formulario__informacion{
+        min-width: 250px;
+    }
+
+}
+
+@media screen and (width > 1400px){
+    .formulario__input{
+        max-width: 360px;
+    }
+}
+

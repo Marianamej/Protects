@@ -28,13 +28,14 @@ button{
     font-family: var(--secondary-font);
 }
 
-input{
+input,textarea{
     padding: 16px;
     border: 1px solid var(--grey-mouse);
     border-radius: 4px;
     outline: none;
     font-size: 1.4rem;
     font-family: var(--main-font);
+    cursor: text;
 }
 
 ion-icon{
