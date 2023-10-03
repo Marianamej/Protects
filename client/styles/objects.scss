@@ -40,4 +40,14 @@
     margin: 0 16px;
     @include mixins.tablet (32px, 32px, 24px);
     @include mixins.desktop (32px, 200px, 24px);
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
 }
+
+@media screen and (max-width: 600px){
+    .main__container{
+        gap: 40px;
+    }
+}
+    

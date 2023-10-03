@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/assets/icons/icon-logo.svg" />
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/icon-logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home</title>
   <link rel="stylesheet" href="../public/style.css">
@@ -43,7 +43,7 @@
     <section class="header__navigation">
       <div class="navigation__elements">
         <div class="icon logo logo--header">
-          <a href="#">
+          <a href="./home.html">
             <img src="../assets/icons/icon-logo.svg" alt="Logo" />
           </a>
         </div>
@@ -55,51 +55,53 @@
         <nav class="header__navbar">
           <ul class="navbar__container-links">
             <li>
-              <a class="navbar__link ft-bold" href="#">Home</a>
+              <a class="navbar__link ft-bold" href="./home.html">Home</a>
             </li>
             <!-- Dropdown Menu -->
             <li class="dropdown">
               <a class="navbar__link ft-bold navbar__link--red" href="#">Categories</a>
               <div class="dropdown-content">
-                <a href="#">Opción 1</a>
-                <a href="#">Opción 2</a>
-                <a href="#">Opción 3</a>
+                <a href="./products.html">Laptops</a>
+                <a href="./products.html">Desktops Pc</a>
+                <a href="./products.html">Monitors</a>
+                <a href="./products.html">Complements</a>
+                <a href="./products.html">Parts of pc</a>
               </div>
 
             </li>
             <li>
-              <a class="navbar__link ft-bold" href="#">Blog</a>
+              <a class="navbar__link ft-bold" href="./blog.html">Blog</a>
             </li>
             <li>
-              <a class="navbar__link ft-bold" href="#">About</a>
+              <a class="navbar__link ft-bold" href="./about-us.html">About</a>
             </li>
             <li>
-              <a class="navbar__link ft-bold" href="#">Pages</a>
+              <a class="navbar__link ft-bold" href="./contact-us.html">Contact Us</a>
             </li>
           </ul>
         </nav>
       </div>
       <div class="header__user">
         <div class="icon user__icon user__icon--unregister">
-          <a href="">
+          <a href="./login.html">
             <img src="../assets/icons/icon-profile.svg" alt="">
           </a>
         </div>
         <ul class="user__options">
-          <li><a class="user__link ft-bold" href="">Login</a></li>
+          <li><a class="user__link ft-bold" href="./login.html">Login</a></li>
           <li class="user__link ft-bold">/</li>
-          <li><a class="user__link ft-bold" href="">Register</a></li>
+          <li><a class="user__link ft-bold" href="./register.html">Register</a></li>
         </ul>
       </div>
     </section>
-  </header>
 
-  <!-- Menu mobile -->
+
+    <!-- Menu mobile -->
   <section id="menu-mobile" class="mobile-menu hide">
     <div class="mobile-menu__container">
       <div class="mobile-menu__brand space-between">
         <div class="icon header__icon--social-media">
-          <a href="">
+          <a href="./home.html">
             <img src="../assets/icons/icon-logo.svg" alt="">
           </a>
         </div>
@@ -114,31 +116,31 @@
 
       <div class="mobile-menu__categories">
         <div class="mobile-menu__link-categories space-between">
-          <a class="fs-xs" href="">Laptops</a>
+          <a class="fs-xs" href="./products.html">Laptops</a>
           <a href="">
             <img src="../assets/icons/icon-arrow.svg" alt="">
           </a>
         </div>
         <div class="mobile-menu__link-categories space-between">
-          <a class="fs-xs" href="">Laptops</a>
+          <a class="fs-xs" href="./products.html">Desktop PC</a>
           <a href="">
             <img src="../assets/icons/icon-arrow.svg" alt="">
           </a>
         </div>
         <div class="mobile-menu__link-categories space-between">
-          <a class="fs-xs" href="">Laptops</a>
+          <a class="fs-xs" href="./products.html">Monitors</a>
           <a href="">
             <img src="../assets/icons/icon-arrow.svg" alt="">
           </a>
         </div>
         <div class="mobile-menu__link-categories space-between">
-          <a class="fs-xs" href="">Laptops</a>
+          <a class="fs-xs" href="./products.html">Complements</a>
           <a href="">
             <img src="../assets/icons/icon-arrow.svg" alt="">
           </a>
         </div>
         <div class="mobile-menu__link-categories space-between">
-          <a class="fs-xs" href="">Laptops</a>
+          <a class="fs-xs" href="./products.html">Parts of Pc</a>
           <a href="">
             <img src="../assets/icons/icon-arrow.svg" alt="">
           </a>
@@ -150,16 +152,22 @@
       <div class="mobile-menu__navigation">
         <div class="mobile-menu__pages">
           <span>
-            <img src="/assets/icons/icon-gift.svg" alt="">
+            <img src="../assets/icons/icon-gift.svg" alt="">
           </span>
-          <a class="fs-xs" href="">Blog</a>
+          <a class="fs-xs" href="./about-us.html">About Us</a>
         </div>
         <div class="mobile-menu__pages">
           <span>
-            <img src="/assets/icons/icon-like.svg" alt="">
+            <img src="../assets/icons/icon-like.svg" alt="">
           </span>
-          <a class="fs-xs" href="">Blog</a>
+          <a class="fs-xs" href="./blog.html">Blog</a>
         </div>
+        <div class="mobile-menu__pages">
+            <span>
+              <img src="../assets/icons/icon-contactUs.svg" alt="">
+            </span>
+            <a class="fs-xs" href="./contact-us.html">Contact Us</a>
+          </div>
 
         <div class="mobile-menu__buttons space-between">
           <button class="button--white">Ayuda</button>
@@ -168,8 +176,10 @@
       </div>
     </div>
   </section>
+</header>
 
   <main class="main__container">
+
     <section class="promociones">
 
       <div class="promociones__contenedor-banners" id="bannerContainer">
@@ -189,6 +199,199 @@
 
       <article class="trending"></article>
     </section>
+
+    <section class="productos">
+      <div class="contenedor__ultimas-unidades center">
+        <article class="ultimas-unidades">
+
+          <div class="producto left">
+            <img src="../assets/products/imagen-producto-1.jpg" alt="">
+            <div class="producto__actions">
+              <div class="center"><img  src="../assets/icons/icon-corazon.svg" alt=""></div>
+              <div class="center"><img  src="../assets/icons/icon-stats.svg" alt=""></div>
+            </div>
+            
+            <div class="producto__calificacion center">
+              <div class="stars">
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star" name="star-outline"></ion-icon>
+              </div>
+              <p class="reviews">reviews (5)</p>
+            </div>
+            <h3 class="fs-xs">EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...</h3>
+            <p class="tx-through fs-xs producto__descuento">$499.00</p>
+            <p class="ft-bold producto__precio">$499.00</p>
+            <button class="boton__añadir-carrito button--white">Add al carrito</button>
+          </div>
+
+          <div class="producto left">
+            <img src="../assets/products/imagen-producto-1.jpg" alt="">
+            <div class="producto__actions">
+              <div class="center"><img  src="../assets/icons/icon-corazon.svg" alt=""></div>
+              <div class="center"><img  src="../assets/icons/icon-stats.svg" alt=""></div>
+            </div>
+            
+            <div class="producto__calificacion center">
+              <div class="stars">
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star" name="star-outline"></ion-icon>
+              </div>
+              <p class="reviews">reviews (5)</p>
+            </div>
+            <h3 class="fs-xs">EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...</h3>
+            <p class="tx-through fs-xs producto__descuento">$499.00</p>
+            <p class="ft-bold producto__precio">$499.00</p>
+            <button class="boton__añadir-carrito button--white">Add al carrito</button>
+          </div>
+
+          <div class="producto left">
+            <img src="../assets/products/imagen-producto-1.jpg" alt="">
+            <div class="producto__actions">
+              <div class="center"><img  src="../assets/icons/icon-corazon.svg" alt=""></div>
+              <div class="center"><img  src="../assets/icons/icon-stats.svg" alt=""></div>
+            </div>
+            
+            <div class="producto__calificacion center">
+              <div class="stars">
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star" name="star-outline"></ion-icon>
+              </div>
+              <p class="reviews">reviews (5)</p>
+            </div>
+            <h3 class="fs-xs">EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...</h3>
+            <p class="tx-through fs-xs producto__descuento">$499.00</p>
+            <p class="ft-bold producto__precio">$499.00</p>
+            <button class="boton__añadir-carrito button--white">Add al carrito</button>
+          </div>
+
+          <div class="producto left">
+            <img src="../assets/products/imagen-producto-1.jpg" alt="">
+            <div class="producto__actions">
+              <div class="center"><img  src="../assets/icons/icon-corazon.svg" alt=""></div>
+              <div class="center"><img  src="../assets/icons/icon-stats.svg" alt=""></div>
+            </div>
+            
+            <div class="producto__calificacion center">
+              <div class="stars">
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star" name="star-outline"></ion-icon>
+              </div>
+              <p class="reviews">reviews (5)</p>
+            </div>
+            <h3 class="fs-xs">EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...</h3>
+            <p class="tx-through fs-xs producto__descuento">$499.00</p>
+            <p class="ft-bold producto__precio">$499.00</p>
+            <button class="boton__añadir-carrito button--white">Add al carrito</button>
+          </div>
+
+          <div class="producto left">
+            <img src="../assets/products/imagen-producto-1.jpg" alt="">
+            <div class="producto__actions">
+              <div class="center"><img  src="../assets/icons/icon-corazon.svg" alt=""></div>
+              <div class="center"><img  src="../assets/icons/icon-stats.svg" alt=""></div>
+            </div>
+            
+            <div class="producto__calificacion center">
+              <div class="stars">
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star" name="star-outline"></ion-icon>
+              </div>
+              <p class="reviews">reviews (5)</p>
+            </div>
+            <h3 class="fs-xs">EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...</h3>
+            <p class="tx-through fs-xs producto__descuento">$499.00</p>
+            <p class="ft-bold producto__precio">$499.00</p>
+            <button class="boton__añadir-carrito button--white">Add al carrito</button>
+          </div>
+
+          <div class="producto left">
+            <img src="../assets/products/imagen-producto-1.jpg" alt="">
+            <div class="producto__actions">
+              <div class="center"><img  src="../assets/icons/icon-corazon.svg" alt=""></div>
+              <div class="center"><img  src="../assets/icons/icon-stats.svg" alt=""></div>
+            </div>
+            
+            <div class="producto__calificacion center">
+              <div class="stars">
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star" name="star-outline"></ion-icon>
+              </div>
+              <p class="reviews">reviews (5)</p>
+            </div>
+            <h3 class="fs-xs">EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...</h3>
+            <p class="tx-through fs-xs producto__descuento">$499.00</p>
+            <p class="ft-bold producto__precio">$499.00</p>
+            <button class="boton__añadir-carrito button--white">Add al carrito</button>
+          </div>
+
+          <div class="producto left">
+            <img src="../assets/products/imagen-producto-1.jpg" alt="">
+            <div class="producto__actions">
+              <div class="center"><img  src="../assets/icons/icon-corazon.svg" alt=""></div>
+              <div class="center"><img  src="../assets/icons/icon-stats.svg" alt=""></div>
+            </div>
+            
+            <div class="producto__calificacion center">
+              <div class="stars">
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star" name="star-outline"></ion-icon>
+              </div>
+              <p class="reviews">reviews (5)</p>
+            </div>
+            <h3 class="fs-xs">EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...</h3>
+            <p class="tx-through fs-xs producto__descuento">$499.00</p>
+            <p class="ft-bold producto__precio">$499.00</p>
+            <button class="boton__añadir-carrito button--white">Add al carrito</button>
+          </div>
+
+          <div class="producto left">
+            <img src="../assets/products/imagen-producto-1.jpg" alt="">
+            <div class="producto__actions">
+              <div class="center"><img  src="../assets/icons/icon-corazon.svg" alt=""></div>
+              <div class="center"><img  src="../assets/icons/icon-stats.svg" alt=""></div>
+            </div>
+            
+            <div class="producto__calificacion center">
+              <div class="stars">
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star-active" name="star"></ion-icon>
+                <ion-icon class="fs-xs star" name="star-outline"></ion-icon>
+              </div>
+              <p class="reviews">reviews (5)</p>
+            </div>
+            <h3 class="fs-xs">EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...</h3>
+            <p class="tx-through fs-xs producto__descuento">$499.00</p>
+            <p class="ft-bold producto__precio">$499.00</p>
+            <button class="boton__añadir-carrito button--white">Add al carrito</button>
+          </div>
+        </article>
+        <button class="ft-medium button--white">Ver mas productos</button>
+      </div>
+    </section>
+
   </main>
   
   <footer>
@@ -242,6 +445,7 @@
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script type="module" src="../public/main.js"></script>
+  <script type="module" src="../scripts/home.js"></script>
 </body>
 
 </html>

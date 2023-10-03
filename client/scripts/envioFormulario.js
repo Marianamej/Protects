@@ -5,7 +5,6 @@ export function enviarFormulario(){
     contactForm.addEventListener("submit", function(event) {
         event.preventDefault();
 
-
         const nombre = document.getElementById("inputContactNombre").value;
         const email = document.getElementById("inputContactEmail").value;
         const mensaje = document.getElementById("inputContacMensaje").value;
@@ -16,7 +15,7 @@ export function enviarFormulario(){
         }
 
         const formData = new FormData(contactForm);
-        fetch("https://formspree.io/f/xdorpkld", {
+        fetch("https://formspree.io/f/xdorplqg", {
             method: "POST",
             body: formData,
             headers: {
@@ -28,6 +27,7 @@ export function enviarFormulario(){
             if (data.success) {
                 contactForm.style.display = "none";
                 successMessage.style.display = "block";
+
             }
         })
         .catch(error => console.error(error));
