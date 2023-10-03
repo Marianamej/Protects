@@ -12,7 +12,8 @@
   --blue-berry: #252b42;
   --white-cloud: #ffffff;
   --grey-paper: #e6e6e6;
-  --shark-skin: #c7c7c7 --snowman: #a2a6b0;
+  --shark-skin: #c7c7c7;
+  --snowman: #a2a6b0;
   --grey-mouse: #8b949e;
   --gold-apple: #ffb800;
   --blue-perl: #139ad6;
@@ -117,6 +118,7 @@ button {
   border: 1px solid transparent;
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 16px 32px;
   border-radius: 5px;
   font-size: 1.4rem;
@@ -187,6 +189,9 @@ header {
 
 .main__container {
   margin: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
 }
 @media screen and (min-width: 599px) and (max-width: 1240px) {
   .main__container {
@@ -203,6 +208,11 @@ header {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .main__container {
+    gap: 40px;
+  }
+}
 .icon a {
   display: block;
   width: auto;
@@ -261,7 +271,7 @@ header {
 }
 
 .hero-banner {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), url("../../assets/fondo-banner-1.jpg") no-repeat center/cover, lightgray 50%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), no-repeat center/cover, lightgray 50%;
   gap: 32px;
   color: var(--white-cloud);
   padding: 40px 24px;
@@ -310,24 +320,34 @@ header {
     font-size: 1.6rem;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (width < 600px) {
   .hero-banner {
-    gap: 16px;
+    gap: 8px;
+    padding: 16px;
+  }
+  .hero-banner__img {
+    width: 50%;
   }
   .hero-banner__info {
     gap: 16px;
+    width: 50%;
   }
-  .promociones .hero-baner__descripcion {
+  .hero-banner__info .hero-baner__descripcion {
     display: none;
   }
-  .hero-baner__title {
-    font-size: 2.4rem;
+  .hero-banner__info .hero-baner__title {
+    font-size: 1.6rem;
   }
-  .hero-banner__temporada {
+  .hero-banner__info .hero-banner__temporada {
     font-size: 1.4rem;
   }
+  .hero-banner__info button {
+    width: 100%;
+    max-width: 100px;
+    height: 30px;
+  }
   .hero-banner__img {
-    min-width: 154px;
+    min-width: 135px;
   }
 }
 .active {
@@ -524,6 +544,133 @@ header {
 @media (width >= 1240px) {
   .header__menu-mobile {
     display: none;
+  }
+}
+.contenedor__ultimas-unidades {
+  flex-direction: column;
+  gap: 54px;
+}
+
+.ultimas-unidades {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 50px;
+  column-gap: 24px;
+}
+
+.producto {
+  position: relative;
+  gap: 10px;
+  flex-direction: column;
+  width: 100%;
+  max-width: 234px;
+  max-height: 330px;
+  padding: 0 24px 8px;
+  border: 1px solid #c7c7c7;
+}
+.producto img {
+  max-height: 150px;
+  width: 100%;
+  object-fit: contain;
+  background-color: var(--gray);
+}
+
+.producto__actions {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.producto__actions div {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: solid 1px var(--red-fire);
+}
+.producto__actions div img {
+  width: 50%;
+  height: 50%;
+}
+.producto__actions div:hover {
+  background-color: var(--red-fire);
+}
+
+.producto__calificacion {
+  gap: 8px;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.star-active {
+  color: var(--gold-apple);
+}
+
+.star {
+  color: var(--snowman);
+}
+
+.reviews {
+  color: var(--snowman);
+}
+
+.producto__descuento {
+  color: var(--grey-mouse);
+}
+
+.producto__precio {
+  font-size: 1.8rem;
+}
+
+.boton__añadir-carrito {
+  display: none;
+  width: 100%;
+  border-radius: 50px;
+}
+
+.producto:hover {
+  cursor: pointer;
+}
+.producto:hover .producto__descuento, .producto:hover .producto__precio {
+  display: none;
+}
+.producto:hover .boton__añadir-carrito {
+  display: flex;
+}
+.producto:hover .producto__actions {
+  display: flex;
+}
+
+@media screen and (max-width: 600px) {
+  .producto {
+    gap: 0px;
+    height: 320px;
+    width: 200px;
+    scroll-snap-align: center;
+    flex: 0 0 100%;
+  }
+  .producto img {
+    max-height: 140px;
+  }
+  .ultimas-unidades {
+    scroll-snap-type: x mandatory;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow-x: scroll;
+  }
+  .contenedor__ultimas-unidades {
+    gap: 32px;
   }
 }
 .about__container-title {
@@ -931,6 +1078,10 @@ header {
 
 .hide {
   display: none;
+}
+
+.tx-through {
+  text-decoration: line-through;
 }
 
 /*# sourceMappingURL=style.css.map */

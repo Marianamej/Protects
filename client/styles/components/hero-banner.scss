@@ -1,5 +1,5 @@
 .hero-banner{
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), url('../../assets/fondo-banner-1.jpg') no-repeat center/cover, lightgray 50%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), no-repeat center/cover, lightgray 50%;
     gap: 32px;
     color: var(--white-cloud);
     padding: 40px 24px;
@@ -52,24 +52,37 @@
     }
 }
 
-@media screen and (max-width : 600px){
+@media screen and (width < 600px){
     .hero-banner{
-        gap: 16px;
+        gap: 8px;
+        padding: 16px;
+
+        &__img{
+            width: 50%;
+        }
     }
     .hero-banner__info{
         gap: 16px;
-    }
-    .promociones .hero-baner__descripcion{
-        display: none;
-    }
-    .hero-baner__title{
-        font-size: 2.4rem;
-    }
-    .hero-banner__temporada{
-        font-size: 1.4rem;
+        width: 50%;
+
+        .hero-baner__descripcion{
+            display: none;
+        }
+        .hero-baner__title{
+            font-size: 1.6rem;
+        }
+        .hero-banner__temporada{
+            font-size: 1.4rem;
+        }
+
+        button{
+            width: 100%;
+            max-width: 100px;
+            height: 30px;
+        }
     }
     .hero-banner__img{
-        min-width: 154px;
+        min-width: 135px;
     }
 }
 

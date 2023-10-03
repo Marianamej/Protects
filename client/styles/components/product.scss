@@ -1,0 +1,147 @@
+.contenedor__ultimas-unidades{
+    flex-direction: column;
+    gap: 54px;
+}
+
+.ultimas-unidades{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;          
+    justify-content: space-between;
+    row-gap: 50px;
+    column-gap: 24px;
+}
+
+.producto{
+    position: relative;
+    gap: 10px;
+    flex-direction: column;
+    width: 100%;
+    max-width: 234px;
+    max-height: 330px;
+    padding: 0 24px 8px;
+    border: 1px solid #c7c7c7;
+    & img{
+        max-height: 150px;
+        width: 100%;
+        object-fit: contain;
+        background-color: var(--gray);
+    }
+}
+
+.producto__actions{
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    & div{
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        border: solid 1px var(--red-fire);
+
+        & img{
+            width: 50%;
+            height: 50%;
+        }
+    }
+    & div:hover{
+        background-color: var(--red-fire);
+    }
+}
+
+.producto__calificacion{
+    gap: 8px;
+}
+
+.stars{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.star-active{
+    color: var(--gold-apple);
+}
+
+.star{
+    color: var(--snowman);
+}
+
+.reviews{
+    color: var(--snowman);
+}
+
+.producto__descuento{
+    color: var(--grey-mouse);
+}
+
+.producto__precio{
+    font-size: 1.8rem;
+}
+
+.boton__añadir-carrito{
+    display: none;
+    width: 100%;
+    border-radius: 50px;
+}
+
+.producto:hover{
+    cursor: pointer;
+    .producto__descuento,.producto__precio{
+        display: none;
+    }
+
+    .boton__añadir-carrito{
+        display: flex;
+    }
+
+    .producto__actions{
+        display: flex;
+    }
+}
+
+@media screen and (max-width : 600px){
+
+    .producto{
+        gap: 0px;
+        height: 320px;
+        width: 200px;
+        scroll-snap-align: center;
+        flex: 0 0 100%;
+
+        & img{
+            max-height: 140px;
+        }
+    }
+
+    // !Este es un plan B por si no funciona el scroll-snap
+
+    // .ultimas-unidades{
+    //     scroll-snap-type: x mandatory;
+    //     display: flex;
+    //     flex-direction: column;
+    //     width: 100%;
+    //     height: 330px;
+    //     overflow-x: scroll;
+    // }
+
+    .ultimas-unidades{
+        scroll-snap-type: x mandatory;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 100%;
+        overflow-x: scroll;
+    }
+
+    .contenedor__ultimas-unidades{
+        gap: 32px;
+    }
+
+
+}
