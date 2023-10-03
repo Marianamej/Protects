@@ -12,6 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="../styles/undefined.scss">
 </head>
 
 <body>
@@ -170,7 +171,7 @@
   </section>
 
   <main class="main__container">
-    <form id="contact-form" class="left formulario-contacto" action="https://formspree.io/f/xdorpkld" method="POST">
+    <form id="contact-form" class="left formulario-contacto" action="" method="POST">
       <div class="left formulario-contacto__descripcion">
         <h1 class="ft-medium formulario-contacto__title">Contact Us</h1>
         <p >We love hearing from you, our Shop customers.
@@ -203,6 +204,15 @@
           </div>
 
           <button class="button--red" type="submit">Enviar</button>
+        </form>
+        <div id="success-modal" class="modal" style="display: none;">
+          <div class="modal-content">
+              <span class="close" id="close-modal">&times;</span>
+              <p>El formulario se ha enviado correctamente.</p>
+              <button id="back-to-form">Volver al formulario</button>
+          </div>
+      </div>
+ 
 
         </div>
 

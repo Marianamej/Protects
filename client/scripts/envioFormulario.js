@@ -1,18 +1,15 @@
 export function enviarFormulario(){
     const contactForm = document.getElementById("contact-form");//
     const successModal = document.getElementById("success-modal");
-    const closeModalButton = document.getElementById("close-modal");
 
     contactForm.addEventListener("submit", function(event) {
         event.preventDefault();
 
-        console.log("Hola");
 
         const nombre = document.getElementById("inputContactNombre").value;
         const email = document.getElementById("inputContactEmail").value;
         const mensaje = document.getElementById("inputContacMensaje").value;
 
-        // Comprobacion de que los campos se han llenado
         if (!nombre || !email || !mensaje) {
             alert("Por favor, completa todos los campos.");
             return;
@@ -29,7 +26,8 @@ export function enviarFormulario(){
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                successModal.style.display = "block";
+                contactForm.style.display = "none";
+                successMessage.style.display = "block";
             }
         })
         .catch(error => console.error(error));
@@ -38,4 +36,14 @@ export function enviarFormulario(){
     closeModalButton.addEventListener("click", function() {
         successModal.style.display = "none";
     });
+
+    backToFormButton.addEventListener("click", function() {
+        successModal.style.display = "none";
+        contactForm.style.display = "block";
+    });
 }
+
+
+
+
+
