@@ -38,10 +38,7 @@ h6 {
 
 h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
+h3 {
   font-size: 100%;
   font-weight: normal;
 }
@@ -673,6 +670,78 @@ header {
     gap: 32px;
   }
 }
+.trending {
+  width: 86%;
+  min-width: 530px;
+  max-height: 330px;
+  margin: 64px auto 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+@media screen and (width < 600px) {
+  .trending {
+    width: 100%;
+    min-width: none;
+  }
+}
+@media screen and (600px < width < 904px) {
+  .trending {
+    gap: 16px;
+  }
+}
+@media screen and (width > 1240px) {
+  .trending {
+    max-height: 400px;
+  }
+}
+
+.super-promocion {
+  padding: 48px 24px;
+  aspect-ratio: 3/4;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 6px;
+}
+
+.super-promocion__info {
+  gap: 10px;
+  font-family: var(--secondary-font);
+  font-weight: bold;
+  color: var(--white-cloud);
+}
+
+.super-promocion__destacado {
+  font-size: 3rem;
+}
+@media screen and (width < 770px) {
+  .super-promocion__destacado {
+    font-size: 2rem;
+  }
+}
+
+.super-promocion__producto {
+  color: var(--orange);
+}
+
+.trending > div:nth-child(1) {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), rgba(33, 33, 33, 0.5) url("/client/assets/img-super-promocion-4.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.trending > div:nth-child(2) {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), rgba(33, 33, 33, 0.5) url("/client/assets/img-super-promocion-2.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.trending > div:nth-child(3) {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), rgba(33, 33, 33, 0.5) url("/client/assets/img-super-promocion-3.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
 .about__container-title {
   display: flex;
   flex-direction: column;
@@ -1082,6 +1151,42 @@ header {
 
 .tx-through {
   text-decoration: line-through;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 20% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.close {
+  float: right;
+  cursor: pointer;
+}
+
+#back-to-form {
+  background-color: #f44336;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

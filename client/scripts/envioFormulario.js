@@ -5,6 +5,8 @@ export function enviarFormulario(){
     contactForm.addEventListener("submit", function(event) {
         event.preventDefault();
 
+        console.log("Aqui Toy");
+
         const nombre = document.getElementById("inputContactNombre").value;
         const email = document.getElementById("inputContactEmail").value;
         const mensaje = document.getElementById("inputContacMensaje").value;
@@ -22,9 +24,10 @@ export function enviarFormulario(){
                 "Accept": "application/json"
             }
         })
-        .then(response => response.json())
+        .then(response => console.log(response.json()))
         .then(data => {
             if (data.success) {
+                console.log("respuesta")
                 contactForm.style.display = "none";
                 successMessage.style.display = "block";
 
