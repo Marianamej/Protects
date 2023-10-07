@@ -763,6 +763,7 @@ header {
 
 .about__container-card {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
@@ -1187,6 +1188,20 @@ header {
   border: none;
   cursor: pointer;
   margin-top: 10px;
+}
+
+.products__options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.productos__lista {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 50px;
+  column-gap: 24px;
 }
 
 /*# sourceMappingURL=style.css.map */
