@@ -1195,6 +1195,10 @@ header {
   justify-content: space-between;
 }
 
+.options {
+  display: flex;
+}
+
 .productos__lista {
   width: 100%;
   display: flex;
@@ -1202,6 +1206,8 @@ header {
   justify-content: space-between;
   row-gap: 50px;
   column-gap: 24px;
+  max-width: 1048px;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=style.css.map */
