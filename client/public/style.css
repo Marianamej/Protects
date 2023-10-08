@@ -1190,16 +1190,7 @@ header {
   margin-top: 10px;
 }
 
-.products__options {
-  display: flex;
-  justify-content: space-between;
-}
-
-.options {
-  display: flex;
-}
-
-.productos__lista {
+.lista__productos {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -1208,6 +1199,25 @@ header {
   column-gap: 24px;
   max-width: 1048px;
   margin: 0 auto;
+}
+
+@media (599px < width < 1240px) {
+  .producto {
+    position: relative;
+    gap: 10px;
+    flex-direction: column;
+    width: 100%;
+    max-width: 234px;
+    max-height: 330px;
+    padding: 0 24px 8px;
+    border: 1px solid #c7c7c7;
+  }
+  .producto img {
+    max-height: 150px;
+    width: 100%;
+    object-fit: contain;
+    background-color: var(--gray);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
