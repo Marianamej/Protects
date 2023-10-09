@@ -1,5 +1,4 @@
- const lista1=
-[
+export let productos = [
     {
       "imagen": "https://ejemplo.com/imagen1.jpg",
       "nombre": "Portátil Premium",

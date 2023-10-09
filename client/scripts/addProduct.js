@@ -1,6 +1,5 @@
+import {productos} from './products.js';
 const formulario = document.querySelector('#formulario');
-
-const productos = [];
 
 const procesarDatos = (e) => {
     e.preventDefault();
@@ -20,6 +19,7 @@ const procesarDatos = (e) => {
     
     // Reseteo del formulario
     e.target.reset();
+    console.log(productos);
 }
 
 formulario.addEventListener('submit', procesarDatos);
