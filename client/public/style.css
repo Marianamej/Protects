@@ -153,6 +153,11 @@ header {
 }
 
 /* Main */
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
 .center {
   display: flex;
   justify-content: center;
@@ -223,11 +228,6 @@ header {
 .user__icon {
   height: 16px;
   width: 16px;
-}
-
-.logo {
-  width: 50px;
-  height: 50px;
 }
 
 /* Dropdown Menu */
@@ -725,19 +725,19 @@ header {
 }
 
 .trending > div:nth-child(1) {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), rgba(33, 33, 33, 0.5) url("/client/assets/img-super-promocion-4.jpeg");
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), rgba(33, 33, 33, 0.5) url("../../assets/img-super-promocion-4.jpeg");
   background-size: cover;
   background-position: center;
 }
 
 .trending > div:nth-child(2) {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), rgba(33, 33, 33, 0.5) url("/client/assets/img-super-promocion-2.jpeg");
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), rgba(33, 33, 33, 0.5) url("../../assets/img-super-promocion-2.jpeg");
   background-size: cover;
   background-position: center;
 }
 
 .trending > div:nth-child(3) {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), rgba(33, 33, 33, 0.5) url("/client/assets/img-super-promocion-3.jpeg");
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), rgba(33, 33, 33, 0.5) url("../../assets/img-super-promocion-3.jpeg");
   background-size: cover;
   background-position: center;
 }
@@ -763,6 +763,7 @@ header {
 
 .about__container-card {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
@@ -1085,90 +1086,6 @@ header {
     max-width: 360px;
   }
 }
-.login__container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.login__logo {
-  height: 60px;
-  width: 100%;
-  background-color: red;
-}
-
-.login__contenido {
-  display: flex;
-  justify-content: space-between;
-}
-
-.login__imagen {
-  background-color: aqua;
-  width: 654px;
-  height: 760px;
-}
-
-.login-formulario {
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
-  padding-top: 24px;
-}
-
-.bienvenida {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  align-items: center;
-}
-
-.contenido__login {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.login__formulario {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  padding: 12px;
-}
-
-.login__recuperar-contraseña {
-  display: flex;
-  justify-content: space-between;
-  padding: 12px;
-}
-
-.login__button {
-  width: 326px;
-  margin: 0 auto;
-}
-
-.inicio-rapido {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  align-items: center;
-}
-
-.login__metodos {
-  display: flex;
-  gap: 20px;
-}
-
-.borrar {
-  height: 20px;
-  width: 20px;
-  background-color: blueviolet;
-}
-
-.login__input {
-  display: flex;
-  flex-direction: column;
-}
-
 .ff-secondary {
   font-family: var(--secondary-font);
 }
@@ -1312,8 +1229,8 @@ header {
   width: 40px;
   height: 40px;
   background-color: transparent;
-  color: #ff0000; 
-  font-size: 20px; 
+  color: #ff0000;
+  font-size: 20px;
   line-height: 40px;
   margin-right: 10px;
   cursor: pointer;
@@ -1322,26 +1239,7 @@ header {
 }
 
 .page-number:hover {
-  background-color: #e6e6e6 ; 
+  background-color: #e6e6e6;
 }
-
-@media (599px < width < 1240px) {
-  .producto{
-      position: relative;
-      gap: 10px;
-      flex-direction: column;
-      width: 100%;
-      max-width: 234px;
-      max-height: 330px;
-      padding: 0 24px 8px;
-      border: 1px solid #c7c7c7;
-      & img{
-          max-height: 150px;
-          width: 100%;
-          object-fit: contain;
-          background-color: var(--gray);
-      }
-  }
-  }
 
 /*# sourceMappingURL=style.css.map */
