@@ -1,3 +1,4 @@
+ const lista1=
 [
     {
       "imagen": "https://ejemplo.com/imagen1.jpg",
@@ -298,3 +299,5 @@
       }
   ]
 ]
+
+export default lista1
