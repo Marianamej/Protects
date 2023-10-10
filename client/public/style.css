@@ -1086,6 +1086,22 @@ header {
     max-width: 360px;
   }
 }
+.buttons-category {
+  display: flex;
+  justify-content: space-around;
+}
+
+.buttons-category-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+.buton-category-back {
+  width: 278px;
+}
+
 .ff-secondary {
   font-family: var(--secondary-font);
 }
