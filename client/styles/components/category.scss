@@ -14,3 +14,32 @@
   width: 278px;
 
 }
+.cards {
+  margin: 0 16px;
+  display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(5, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+
+}
+@media screen and (min-width: 599px) and (max-width: 1240px) {
+  .cards{
+    max-width: 904px;
+    padding: 32px 32px 24px;
+    margin: 0 auto;
+  }
+}
+@media screen and (width >= 1240px) {
+  .cards{
+    max-width: 1600px;
+    padding: 32px 200px 24px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cards{
+    gap: 40px;
+  }
+}

@@ -11,7 +11,7 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet">
-      <script src="../scripts/category.js"></script>
+      
   </head>
 </head>
 <body>
@@ -178,7 +178,7 @@
     </section>
   </header>
   
-    <main class=" ">
+    <main >
       <div class="about__container-title main__container">
         <p>Home > Laptops</p>
         <h1>Laptops</h1>
@@ -187,36 +187,20 @@
       <div class="buttons-category">
         <div class="buttons-category-text">
           <button class="buton-category-back"> ‹Back</button>
-        <p>Items 1-35 of 61</p>
+        <p id="text-buttons_category"></p>
         </div>
         <button class="buton-category-menu">Sort By: Position </button>
       </div>
    
-      <div class="cards">
-        
-        <div class="producto left">
-          <img src="../assets/products/imagen-producto-1.jpg" alt="">
-          <div class="producto__actions">
-            <div class="center"><img  src="../assets/icons/icon-corazon.svg" alt=""></div>
-            <div class="center"><img  src="../assets/icons/icon-stats.svg" alt=""></div>
-          </div>
+     
+        <div class="cards main__container"></div>
+        <div class="pagination">
+          <span class="page-number " id="retroceder" > < </span>
           
-          <div class="producto__calificacion center">
-            <div class="stars">
-              <ion-icon class="fs-xs star-active" name="star"></ion-icon>
-              <ion-icon class="fs-xs star-active" name="star"></ion-icon>
-              <ion-icon class="fs-xs star-active" name="star"></ion-icon>
-              <ion-icon class="fs-xs star-active" name="star"></ion-icon>
-              <ion-icon class="fs-xs star" name="star-outline"></ion-icon>
-            </div>
-            <p class="reviews">reviews (5)</p>
-          </div>
-          <h3 class="fs-xs">EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...</h3>
-          <p class="tx-through fs-xs producto__descuento">$499.00</p>
-          <p class="ft-bold producto__precio">$499.00</p>
-          <button class="boton__añadir-carrito button--white">Add al carrito</button>
+          <span class="page-number " id="avanzar" > > </span>
+          
         </div>
-      </div>
+      
 
       <div class="info__contact-page main__container center">
   
@@ -292,5 +276,6 @@
   
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script type="module" src="../public/main.js"></script>
+    <script type="module" src="../scripts/category.js"></script>
   </body>
 </html>
