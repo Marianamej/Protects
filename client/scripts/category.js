@@ -2,18 +2,18 @@ import { productos } from './products.js';
 
 //renderizado 
 document.addEventListener("DOMContentLoaded", function () {
-  const cards = document.querySelector(".cards");
+  const cards = document.querySelector(".lista__productos");
   const texto=document.getElementById("text-buttons_category")
 texto.innerText=`total products found ${productos.length}`
   const avanzar = document.getElementById("avanzar");
   const retroceder = document.getElementById("retroceder");
-  const itemsPerPage = 10;
+  const itemsPerPage = 16;
   let currentPage = 1;
  
 //logica de paginado 
   function renderPage() {
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const indexOfLastItem = productos.length - (currentPage - 1) * itemsPerPage;
+    const indexOfFirstItem = productos.length - currentPage * itemsPerPage;
     const currentItems = productos.slice(indexOfFirstItem, indexOfLastItem);
 
     cards.innerHTML = "";
@@ -23,7 +23,7 @@ texto.innerText=`total products found ${productos.length}`
       nuevoDiv.className = "producto left";
 
       const img = document.createElement("img");
-      img.className = "card-img-top";
+      //img.className = "card-img-top";
       img.src = producto.imagen;
       img.alt = "imagen";
 
@@ -78,33 +78,27 @@ texto.innerText=`total products found ${productos.length}`
       button.innerText = "Add al carrito";
 
       cards.appendChild(nuevoDiv);
-      nuevoDiv.appendChild(img);
-      nuevoDiv.appendChild(producto__actions);
-      producto__actions.appendChild(center1);
+      nuevoDiv.append(img,producto__actions);
       center1.appendChild(imagencenter1);
-      producto__actions.appendChild(center2);
       center2.appendChild(imagencenter2);
+      producto__actions.append(center1,center2);
       nuevoDiv.appendChild(producto__calificacion);
-      producto__calificacion.appendChild(stars);
-      producto__calificacion.appendChild(reviews);
-      nuevoDiv.appendChild(h3);
-      nuevoDiv.appendChild(p);
-      nuevoDiv.appendChild(p2);
-      nuevoDiv.appendChild(button);
+      producto__calificacion.appendChild(stars,reviews);
+      nuevoDiv.append(h3,p,p2,button);
     });
 
-    avanzar.disabled = currentPage === 1;
-    retroceder.disabled = indexOfLastItem >= productos.length;
+    avanzar.disabled = indexOfLastItem >= productos.length;
+    retroceder.disabled = currentPage === 1;
   }
 //funcion para avanzar 
-  avanzar.addEventListener("click", () => {
+  retroceder.addEventListener("click", () => {
     if (currentPage > 1) {
       currentPage--;
       renderPage();
     }
   });
 //funcion para retroceder 
-  retroceder.addEventListener("click", () => {
+  avanzar.addEventListener("click", () => {
     const indexOfLastItem = currentPage * itemsPerPage;
     if (indexOfLastItem < productos.length) {
       currentPage++;

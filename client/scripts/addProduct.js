@@ -5,8 +5,9 @@ const procesarDatos = (e) => {
     e.preventDefault();
 
     const datos = new FormData(e.target);
-    const datosCompletos = JSON.stringify(Object.fromEntries(datos.entries()));
+    const datosCompletos = Object.fromEntries(datos.entries());
 
+    //ALERTA
     if(productos.push(datosCompletos)){
         Swal.fire({
             position: 'center',
