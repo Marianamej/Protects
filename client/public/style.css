@@ -725,19 +725,19 @@ header {
 }
 
 .trending > div:nth-child(1) {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), rgba(33, 33, 33, 0.5) url("../../assets/img-super-promocion-4.jpeg");
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), rgba(33, 33, 33, 0.5) url("/client/assets/img-super-promocion-2.jpeg");
   background-size: cover;
   background-position: center;
 }
 
 .trending > div:nth-child(2) {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), rgba(33, 33, 33, 0.5) url("../../assets/img-super-promocion-2.jpeg");
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), rgba(33, 33, 33, 0.5) url("/client/assets/img-super-promocion-3.jpeg");
   background-size: cover;
   background-position: center;
 }
 
 .trending > div:nth-child(3) {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), rgba(33, 33, 33, 0.5) url("../../assets/img-super-promocion-3.jpeg");
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), rgba(33, 33, 33, 0.5) url("/client/assets/img-super-promocion-4.jpeg");
   background-size: cover;
   background-position: center;
 }
@@ -1102,6 +1102,34 @@ header {
   width: 278px;
 }
 
+.cards {
+  margin: 0 16px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+@media screen and (min-width: 599px) and (max-width: 1240px) {
+  .cards {
+    max-width: 904px;
+    padding: 32px 32px 24px;
+    margin: 0 auto;
+  }
+}
+@media screen and (width >= 1240px) {
+  .cards {
+    max-width: 1600px;
+    padding: 32px 200px 24px;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  .cards {
+    gap: 40px;
+  }
+}
 .ff-secondary {
   font-family: var(--secondary-font);
 }
