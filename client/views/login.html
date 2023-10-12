@@ -1,11 +1,10 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="../assets/icons/icon-logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us</title>
+    <title>Login</title>
     <link rel="stylesheet" href="../public/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,8 +14,54 @@
 </head>
 <body>
     <main class="main__container">
-        
+        <div class="login__container">
+            <div class="login__logo">
+                <img src="../assets/icons/icon-logo.svg" alt="">
+            </div>
+            <div class="login__contenido">
+                <div class="login__imagen">
+                    <img src="../assets/img-login.png" alt="">
+                </div>
+                <div class="login-formulario">
+                    <div class="bienvenida">
+                        <p>Welcome to <span>GamerTx</span></p>
+                        <div class="switch">
+                            <a href="login.html" class="form__login">Login</a>
+                            <a href="register.html" class="form__register">Register</a>
+                        </div>
+                    </div>
+                    <div class="contenido__login">
+                        <div class="login__formulario">
+                            <p>El lugar donde comienza la magia, al alcance de un click. Libera todo tu potencial</p>
+                            <div class="form__input">
+                                <label for="">User name</label>
+                                <input type="text" placeholder="Enter your Username">
+                            </div>
+                            <div  class="form__input">
+                                <label for="">Password</label>
+                                <input type="text" placeholder="Enter your Password">
+                            </div>
+                        </div>
+                        <div class="login__recuperar-contraseña">
+                            <div>
+                                <input type="checkbox" name="" id="checkbox">
+                                <label for="checkbox">Remember me</label>
+                            </div>
+                            <p>Forgot Password ?</p>
+                        </div>
+                        <button class="enter__button">Login</button>
+                    </div>
+                    <div class="inicio-rapido">
+                        <p>or continue with</p>
+                        <div class="login__metodos">
+                            <div class="borrar">1</div>
+                            <div class="borrar">2</div>
+                            <div class="borrar">3</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
-    
 </body>
 </html>
