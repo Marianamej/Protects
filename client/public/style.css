@@ -1086,48 +1086,252 @@ header {
     max-width: 360px;
   }
 }
-.buttons-category {
+.login__container {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
 }
 
-.buttons-category-text {
+.login__logo {
+  text-align: right;
+}
+
+.login__contenido {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login__imagen {
+  width: 95%;
+}
+
+.login-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 24px;
+  padding-left: 20px;
+}
+
+.bienvenida {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.bienvenida span {
+  color: var(--watermelon);
+}
+
+.form__login {
+  background-color: #ffffff;
+  color: var(--watermelon);
+  padding: 5px 50px;
+  border-radius: 50px;
+}
+
+.form__register {
+  padding: 5px 50px;
+  color: #ffffff;
+}
+
+.contenido__login {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.login__formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 12px;
+}
+
+.login__recuperar-contraseña {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+.enter__button {
+  width: 326px;
+  margin: 0 auto;
+}
+
+.inicio-rapido {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+
+.login__metodos {
+  display: flex;
+  gap: 20px;
+}
+
+.borrar {
+  height: 20px;
+  width: 20px;
+  background-color: blueviolet;
+}
+
+.login__input {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 900px) {
+  .login__container {
+    display: flex;
+    flex-direction: column;
+  }
+  .login__imagen {
+    display: none;
+  }
+  .login__formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 20px;
+  }
+}
+@media (max-width: 899px) {
+  .login__container {
+    display: flex;
+    flex-direction: column;
+  }
+  .login__imagen {
+    display: none;
+  }
+  .login__contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 599px) {
+  .login__logo {
+    display: none;
+  }
+  .login__contenido {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    align-items: center;
+  }
+}
+* {
+  font-size: 13px;
+}
+
+.register__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.register__logo {
+  text-align: right;
+}
+
+.register__content {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+}
+
+.register__image {
+  width: 50%;
+}
+
+.register__form {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  width: 450px;
+}
+
+.form__welcome {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   align-items: center;
-  gap: 30px;
+  padding-top: 10px;
 }
 
-.buton-category-back {
-  width: 278px;
+.form__welcome span {
+  color: var(--watermelon);
 }
 
-.cards {
-  margin: 0 16px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+.switch {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--watermelon);
+  padding: 10px;
+  border-radius: 50px;
+  align-items: center;
 }
 
-@media screen and (min-width: 599px) and (max-width: 1240px) {
-  .cards {
-    max-width: 904px;
-    padding: 32px 32px 24px;
-    margin: 0 auto;
+.switch__hoverLogin {
+  padding: 5px 50px;
+  color: #ffffff;
+}
+
+.switch__hoverRegister {
+  background-color: #ffffff;
+  color: var(--watermelon);
+  padding: 5px 50px;
+  border-radius: 50px;
+}
+
+.form__inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  padding-left: 30px;
+}
+
+.form__input input {
+  height: 65%;
+  width: 95%;
+  border-radius: 50px;
+}
+
+.enter__button {
+  padding: 12px;
+  width: 70%;
+  background-color: var(--watermelon);
+  border-radius: 50px;
+  color: #ffffff;
+  margin: auto;
+}
+
+@media (max-width: 900px) {
+  .register__container {
+    display: flex;
+    flex-direction: column;
+  }
+  .register__image {
+    display: none;
+  }
+  .register__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .form__inputs {
+    gap: 24px;
   }
 }
-@media screen and (width >= 1240px) {
-  .cards {
-    max-width: 1600px;
-    padding: 32px 200px 24px;
-    margin: 0 auto;
+@media (max-width: 599px) {
+  .register__content {
+    padding-top: 48px;
   }
-}
-@media screen and (max-width: 600px) {
-  .cards {
-    gap: 40px;
+  .register__logo {
+    display: none;
   }
 }
 .ff-secondary {

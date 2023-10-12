@@ -5,9 +5,7 @@
 }
 
 .login__logo{
-    height: 60px;
-    width: 100%;
-    background-color: red;
+    text-align: right;
 }
 
 .login__contenido{
@@ -16,24 +14,38 @@
 }
 
 .login__imagen{
-    background-color: aqua;
-    width: 654px;
+    width: 95%;
 }
 
 .login-formulario{
     display: flex;
     flex-direction: column;
-    gap: 48px;
+    gap: 24px;
     padding-top: 24px;
+    padding-left: 20px;
 }
 
 .bienvenida{
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 12px;
     align-items: center;
 }
 
+.bienvenida span{
+    color: var(--watermelon);
+}
+
+.form__login{
+    background-color: #ffffff;
+    color: var(--watermelon);
+    padding: 5px  50px;
+    border-radius: 50px;
+}
+.form__register{
+    padding: 5px  50px;
+    color: #ffffff;
+}
 .contenido__login{
     display: flex;
     flex-direction: column;
@@ -53,7 +65,7 @@
     padding: 12px;
 }
 
-.login__button{
+.enter__button{
     width: 326px;
     margin: 0 auto;
 }
@@ -79,4 +91,51 @@
 .login__input{
     display: flex;
     flex-direction: column;
+}
+
+
+@media (max-width: 900px){
+    .login__container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .login__imagen{
+        display: none;
+    }
+    .login__formulario{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 899px){
+    .login__container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .login__imagen{
+        display: none;
+    }
+    .login__contenido{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media (max-width: 599px){
+    .login__logo{
+        display: none;
+    }
+    .login__contenido{
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+        align-items: center;
+    }
 }
