@@ -1190,6 +1190,15 @@ header {
   margin-top: 10px;
 }
 
+.products__options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.options {
+  display: flex;
+}
+
 .lista__productos {
   width: 100%;
   display: flex;
@@ -1229,8 +1238,8 @@ header {
   width: 40px;
   height: 40px;
   background-color: transparent;
-  color: #ff0000; 
-  font-size: 20px; 
+  color: #ff0000;
+  font-size: 20px;
   line-height: 40px;
   margin-right: 10px;
   cursor: pointer;
@@ -1239,26 +1248,7 @@ header {
 }
 
 .page-number:hover {
-  background-color: #e6e6e6 ; 
+  background-color: #e6e6e6;
 }
-
-@media (599px < width < 1240px) {
-  .producto{
-      position: relative;
-      gap: 10px;
-      flex-direction: column;
-      width: 100%;
-      max-width: 234px;
-      max-height: 330px;
-      padding: 0 24px 8px;
-      border: 1px solid #c7c7c7;
-      & img{
-          max-height: 150px;
-          width: 100%;
-          object-fit: contain;
-          background-color: var(--gray);
-      }
-  }
-  }
 
 /*# sourceMappingURL=style.css.map */
