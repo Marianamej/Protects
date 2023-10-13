@@ -1,6 +1,5 @@
 //info Atoms
 @use 'components/icon';
-@use 'components/logo';
 
 // info Molecules
 @use 'components/dropdown';
@@ -9,11 +8,14 @@
 @use 'components/header';
 @use 'components/product';
 @use 'components/cardPromocion';
+@use 'components/blog';
 
 // info Organisms
 @use 'components/carsdAbout';
 @use 'components/contendProduct';
 @use 'components/footer';
 @use 'components/formContact';
+@use 'components/login';
+@use 'components/register';
 
 

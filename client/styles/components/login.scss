@@ -1,0 +1,141 @@
+.login__container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.login__logo{
+    text-align: right;
+}
+
+.login__contenido{
+    display: flex;
+    justify-content: space-between;
+}
+
+.login__imagen{
+    width: 95%;
+}
+
+.login-formulario{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 24px;
+    padding-left: 20px;
+}
+
+.bienvenida{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+.bienvenida span{
+    color: var(--watermelon);
+}
+
+.form__login{
+    background-color: #ffffff;
+    color: var(--watermelon);
+    padding: 5px  50px;
+    border-radius: 50px;
+}
+.form__register{
+    padding: 5px  50px;
+    color: #ffffff;
+}
+.contenido__login{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.login__formulario{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 12px;
+}
+
+.login__recuperar-contraseña{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+}
+
+.enter__button{
+    width: 326px;
+    margin: 0 auto;
+}
+
+.inicio-rapido{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+}
+
+.login__metodos{
+    display: flex;
+    gap: 20px;
+}
+
+.borrar{
+    height: 20px;
+    width: 20px;
+    background-color: blueviolet;
+}
+
+.login__input{
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media (max-width: 900px){
+    .login__container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .login__imagen{
+        display: none;
+    }
+    .login__formulario{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 899px){
+    .login__container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .login__imagen{
+        display: none;
+    }
+    .login__contenido{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media (max-width: 599px){
+    .login__logo{
+        display: none;
+    }
+    .login__contenido{
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+        align-items: center;
+    }
+}

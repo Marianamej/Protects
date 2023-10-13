@@ -1,13 +1,13 @@
+import {productos} from './products.js';
 const formulario = document.querySelector('#formulario');
-
-const productos = [];
 
 const procesarDatos = (e) => {
     e.preventDefault();
 
     const datos = new FormData(e.target);
-    const datosCompletos = JSON.stringify(Object.fromEntries(datos.entries()));
+    const datosCompletos = Object.fromEntries(datos.entries());
 
+    //ALERTA
     if(productos.push(datosCompletos)){
         Swal.fire({
             position: 'center',
@@ -20,6 +20,7 @@ const procesarDatos = (e) => {
     
     // Reseteo del formulario
     e.target.reset();
+    console.log(productos);
 }
 
 formulario.addEventListener('submit', procesarDatos);
