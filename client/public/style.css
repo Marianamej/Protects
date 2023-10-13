@@ -742,6 +742,15 @@ header {
   background-position: center;
 }
 
+.home-blogs {
+  display: flex;
+  width: 100%;
+}
+
+.blog {
+  aspect-ratio: 3/4;
+}
+
 .about__container-title {
   display: flex;
   flex-direction: column;
