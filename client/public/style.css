@@ -1334,6 +1334,178 @@ header {
     display: none;
   }
 }
+.main__container h1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+@media (min-width: 600px) {
+  .shoppingCard__mobile {
+    display: none;
+  }
+  .main__container {
+    gap: 60px;
+  }
+  .shoppingCard__pc {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  td img {
+    width: auto;
+    height: auto;
+  }
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  th {
+    font-weight: bold;
+  }
+  tbody tr {
+    border-top: 1px solid gray;
+  }
+  .qty {
+    width: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .qty__button {
+    padding: 0;
+    background-color: transparent;
+  }
+  .edit__button {
+    width: 100px;
+    border-radius: 50px;
+    background-color: transparent;
+  }
+  .option__buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .continue__button {
+    border: 1px solid var(--watermelon);
+  }
+  .clear__button {
+    border: 1px solid black;
+  }
+  .continue__button a {
+    color: var(--watermelon);
+  }
+  .continue__button, .clear__button {
+    background-color: transparent;
+    padding: 10px 30px;
+    border-radius: 50px;
+  }
+  .advice__container {
+    display: flex;
+    flex-direction: row;
+  }
+  .advice__container img {
+    padding: 10px;
+    background-color: var(--watermelon);
+    border-radius: 50px;
+  }
+  .advice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+  }
+}
+@media (max-width: 600px) {
+  .shoppingCard__pc {
+    display: none;
+  }
+  .item {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid black;
+    gap: 10px;
+  }
+  .item__description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  td img {
+    width: auto;
+    height: auto;
+  }
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  .qty {
+    width: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .qty__button {
+    padding: 0;
+    background-color: transparent;
+  }
+  .edit__button {
+    padding: 0;
+    border-radius: 50px;
+    background-color: transparent;
+  }
+  .advice__container {
+    display: flex;
+    flex-direction: column;
+  }
+  .advice__container img {
+    padding: 10px;
+    background-color: var(--watermelon);
+    border-radius: 50px;
+  }
+  .advice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+  }
+  .option__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .continue__button {
+    border: 1px solid var(--watermelon);
+  }
+  .clear__button {
+    border: 1px solid black;
+  }
+  .continue__button a {
+    color: var(--watermelon);
+  }
+  .continue__button, .clear__button {
+    width: 50%;
+    background-color: transparent;
+    padding: 10px 30px;
+    border-radius: 50px;
+  }
+}
 .ff-secondary {
   font-family: var(--secondary-font);
 }
