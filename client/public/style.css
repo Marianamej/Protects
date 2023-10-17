@@ -705,6 +705,7 @@ header {
     min-width: unset;
     flex-direction: column;
     align-items: center;
+    max-height: none;
   }
 }
 @media screen and (600px < width < 904px) {
@@ -725,12 +726,25 @@ header {
   max-width: 300px;
   border-radius: 6px;
 }
+@media screen and (width < 600px) {
+  .super-promocion {
+    max-width: none;
+    width: 85%;
+    align-self: center;
+    height: 176px;
+  }
+}
 
 .super-promocion__info {
   gap: 10px;
   font-family: var(--secondary-font);
   font-weight: bold;
   color: var(--white-cloud);
+}
+@media screen and (width < 600px) {
+  .super-promocion__info {
+    align-items: center;
+  }
 }
 
 .super-promocion__destacado {
