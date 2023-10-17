@@ -781,10 +781,55 @@ header {
 .home-blogs {
   display: flex;
   width: 100%;
+  gap: 24px;
+  justify-content: space-between;
+}
+@media screen and (width < 600px) {
+  .home-blogs {
+    flex-direction: column;
+  }
 }
 
 .blog {
   aspect-ratio: 3/4;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+@media screen and (width < 600px) {
+  .blog {
+    aspect-ratio: unset;
+    max-width: 490px;
+    margin: 0 auto;
+  }
+}
+
+.blog__info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.blog__titulo {
+  font-size: 2.4rem;
+  color: var(--night-sky);
+}
+
+.blog__descripcion {
+  color: var(--grey-mouse);
+  font-size: 1.6rem;
+}
+
+.blog__tags {
+  display: flex;
+  gap: 8px;
+  font-size: 1.4rem;
+}
+.blog__tags p {
+  padding: 4px;
+  color: var(--watermelon);
+  background-color: #FDF2FA;
+  border-radius: 40px;
 }
 
 .about__container-title {
