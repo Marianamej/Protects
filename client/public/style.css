@@ -742,6 +742,15 @@ header {
   background-position: center;
 }
 
+.home-blogs {
+  display: flex;
+  width: 100%;
+}
+
+.blog {
+  aspect-ratio: 3/4;
+}
+
 .about__container-title {
   display: flex;
   flex-direction: column;
@@ -1183,6 +1192,19 @@ header {
   flex-direction: column;
 }
 
+.error {
+  color: red; 
+  font-size: 12px;
+  text-align: right; 
+  display: block;
+}
+.success-message {
+  font-size: 18px;
+  color: green; 
+  text-align: center;
+  margin-top: -10px;
+}
+
 @media (max-width: 900px) {
   .login__container {
     display: flex;
@@ -1610,6 +1632,15 @@ header {
   margin-top: 10px;
 }
 
+.products__options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.options {
+  display: flex;
+}
+
 .lista__productos {
   width: 100%;
   display: flex;
@@ -1661,5 +1692,4 @@ header {
 .page-number:hover {
   background-color: #e6e6e6;
 }
-
 /*# sourceMappingURL=style.css.map */
