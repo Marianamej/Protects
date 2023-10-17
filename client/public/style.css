@@ -500,6 +500,10 @@ header {
   gap: 4px;
 }
 
+.header__user--register {
+  gap: 35px;
+}
+
 .user__options {
   display: flex;
   gap: 4px;
@@ -519,6 +523,22 @@ header {
 .header__menu-mobile a img {
   width: 30px;
   height: 30px;
+}
+
+.user__icon-register {
+  height: auto;
+}
+
+.user_avatar {
+  width: 36px;
+  border-radius: 50%;
+}
+.user_avatar a img {
+  border-radius: 100%;
+}
+
+.shopping-car {
+  width: 25px;
 }
 
 @media (width < 1240px) {
@@ -682,7 +702,9 @@ header {
 @media screen and (width < 600px) {
   .trending {
     width: 100%;
-    min-width: none;
+    min-width: unset;
+    flex-direction: column;
+    align-items: center;
   }
 }
 @media screen and (600px < width < 904px) {
@@ -1192,19 +1214,6 @@ header {
   flex-direction: column;
 }
 
-.error {
-  color: red; 
-  font-size: 12px;
-  text-align: right; 
-  display: block;
-}
-.success-message {
-  font-size: 18px;
-  color: green; 
-  text-align: center;
-  margin-top: -10px;
-}
-
 @media (max-width: 900px) {
   .login__container {
     display: flex;
@@ -1245,10 +1254,6 @@ header {
     align-items: center;
   }
 }
-* {
-  font-size: 13px;
-}
-
 .register__container {
   display: flex;
   flex-direction: column;
@@ -1692,4 +1697,5 @@ header {
 .page-number:hover {
   background-color: #e6e6e6;
 }
+
 /*# sourceMappingURL=style.css.map */

@@ -17,5 +17,5 @@ loginButton.addEventListener('click', (e)=>{
 
     alert(`Bienvenido ${validUser.name}`)
     localStorage.setItem('login_success', JSON.stringify(validUser))
-    window.location.href = 'home.html'   
+    window.location.href = 'home-auth.html'   
 })
