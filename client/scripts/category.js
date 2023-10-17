@@ -107,4 +107,18 @@ texto.innerText=`total products found ${productos.length}`
   });
 
   renderPage(); 
+
+  //logica del menu 
+
+
+const botonmenu=document.querySelector(".ejemplo")
+botonmenu.addEventListener("click", () => {
+  var menu = document.getElementById("menu");
+  if (menu.style.display === "block") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "block";
+  }
+  })
+
 });
