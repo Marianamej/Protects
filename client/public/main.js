@@ -16,4 +16,4 @@ closeMobileMenu.addEventListener('click', () => {
 });
 
 
-document.addEventListener("DOMContentLoaded", enviarFormulario);
+// document.addEventListener("DOMContentLoaded", enviarFormulario);
