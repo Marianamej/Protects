@@ -1,5 +1,6 @@
 import { productos } from './products.js';
 
+
 //renderizado 
 document.addEventListener("DOMContentLoaded", function () {
   const cards = document.querySelector(".lista__productos");
@@ -15,9 +16,21 @@ texto.innerText=`total products found ${productos.length}`
     const indexOfLastItem = productos.length - (currentPage - 1) * itemsPerPage;
     const indexOfFirstItem = productos.length - currentPage * itemsPerPage;
     const currentItems = productos.slice(indexOfFirstItem, indexOfLastItem);
+ 
+   const page_number= document.querySelector("#number")
+   page_number.innerHTML=currentPage;
+   
 
-    cards.innerHTML = "";
-    //creacion de las cartas 
+    if(currentItems.length == 0 ){
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'No hay mas productos por mostrar',
+        footer: '<a href="">Regresar</a>'
+      })
+    }
+    else{
+          //creacion de las cartas 
     currentItems.forEach((producto) => {
       const nuevoDiv = document.createElement("div");
       nuevoDiv.className = "producto left";
@@ -64,10 +77,19 @@ texto.innerText=`total products found ${productos.length}`
       const h3 = document.createElement("h3");
       h3.className = "fs-xs";
       h3.innerText = producto.nombre;
+      
+      
 
       const p = document.createElement("p");
       p.className = "tx-through fs-xs producto__descuento";
-      p.innerText = producto.precioDescuento;
+      
+
+      if (producto.precioDescuento !== undefined) {
+        p.innerText = producto.precioDescuento;
+      } else {
+        p.innerText = ".. ";
+        p.style.color = "white";
+      }
 
       const p2 = document.createElement("p");
       p2.className = "ft-bold producto__precio";
@@ -86,6 +108,9 @@ texto.innerText=`total products found ${productos.length}`
       producto__calificacion.appendChild(stars,reviews);
       nuevoDiv.append(h3,p,p2,button);
     });
+    }
+    
+
 
     avanzar.disabled = indexOfLastItem >= productos.length;
     retroceder.disabled = currentPage === 1;
@@ -95,6 +120,7 @@ texto.innerText=`total products found ${productos.length}`
     if (currentPage > 1) {
       currentPage--;
       renderPage();
+      window.scrollTo(0, 0);
     }
   });
 //funcion para retroceder 
@@ -103,8 +129,25 @@ texto.innerText=`total products found ${productos.length}`
     if (indexOfLastItem < productos.length) {
       currentPage++;
       renderPage();
+      window.scrollTo(0, 0);
     }
   });
 
   renderPage(); 
+
+  //logica del menu 
+
+
+  const botonmenu = document.querySelector(".ejemplo");
+  const menu = document.getElementById("menu");
+  
+  botonmenu.addEventListener("click", () => {
+    if (menu.style.display === "block") {
+      menu.style.display = "none";
+    } else {
+      menu.style.display = "block";
+    }
+  });
+  menu.style.display = "none";
+
 });
