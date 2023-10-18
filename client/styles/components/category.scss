@@ -34,13 +34,21 @@
     padding: 32px 32px 24px;
     margin: 0 auto;
     flex-direction: column;
-    gap: 20px;
+     gap: 20px;
     margin-top: -90px;
+    ;
   }
   .ejemplo{
     width: 278px;
+    height: 50px;
+    
   }
+
+
 }
+
+
+
 .menu {
   
   position: absolute;
@@ -73,4 +81,25 @@
 }
 .buton-category-menu{
   font-size: 13px;
+}
+@media screen and (min-width: 300px) and (max-width: 500px) {
+  .buttons-category {
+    max-width: 904px;
+    padding: 32px 32px 24px;
+    margin: 0 auto;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: -70px;
+  }
+  .ejemplo{
+    width: 278px;
+    height: 50px;
+    
+  }
+  .menu{
+    top: 370px;
+    right: 10rem;
+    width: 150px;
+
+  }
 }
