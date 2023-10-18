@@ -35,6 +35,16 @@
     cursor: pointer;
     margin-top: 10px;
 }
+
+.products__options{
+    display: flex;
+    justify-content: space-between;
+}
+
+.options{
+    display: flex;
+}
+
 .lista__productos{
     width: 100%;
     display: flex;

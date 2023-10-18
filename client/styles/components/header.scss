@@ -67,6 +67,10 @@
     gap: 4px;
   }
 
+  .header__user--register{
+    gap:35px
+  }
+
   .user__options {
     display: flex;
     gap: 4px;
@@ -89,6 +93,25 @@
         height: 30px;
       }
     }
+  }
+
+  .user__icon-register{
+    height: auto;
+  }
+
+  .user_avatar{
+    width: 36px;
+    border-radius: 50%;
+
+    & a{
+      & img {
+        border-radius: 100%;
+      }
+    }
+  }
+
+  .shopping-car{
+    width: 25px;
   }
   
   @media (width < 1240px) {
