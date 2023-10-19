@@ -51,10 +51,12 @@ productosUltimasUnidades.forEach(producto => {
     productoCardElement.innerHTML = 
         `
         <div class="producto__main-content left">
-            <img src=${producto.imagen} alt="Esta en una imagen">
+            <img class="producto__imagen" src=${producto.imagen} alt="Esta en una imagen">
+            <div class="overlay overlayA"></div>
+            <div class="overlay overlayB"></div>
             <div class="producto__actions">
-                <div class="center"><img  src="../assets/icons/icon-corazon.svg" alt=""></div>
-                <div class="center"><img  src="../assets/icons/icon-stats.svg" alt=""></div>
+                <div class="center producto__iconos-interactivos"><img class="iconos-interactivos__iconos" src="../assets/icons/icon-corazon.svg" alt=""></div>
+                <div class="center producto__iconos-interactivos"><img class="iconos-interactivos__iconos"  src="../assets/icons/icon-stats.svg" alt=""></div>
             </div>
             
             <div class="producto__calificacion center">

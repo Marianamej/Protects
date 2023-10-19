@@ -24,7 +24,6 @@
     justify-content: space-between;
     row-gap: 50px;
     column-gap: 24px;
-
     @media (width < 820px){
         max-width: 550px;
     }
@@ -40,12 +39,13 @@
     height: 330px;
     padding: 16px 24px;
     border: 1px solid #c7c7c7;
-    & img{
-        height: 150px;
-        width: 100%;
-        object-fit: contain;
-        background-color: var(--gray);
-    }
+    overflow: hidden;
+}
+
+.producto__imagen{
+    height: 150px;
+    width: 100%;
+    object-fit: contain;
 }
 
 .producto__main-content{
@@ -56,27 +56,48 @@
 
 .producto__actions{
     position: absolute;
-    top: 16px;
-    left: 16px;
-    display: none;
+    display: flex;
+    top: 40px;
+    left: 20px;
+    // -webkit-transform: translate(-50%, -50%);
+    // -moz-transform: translate(-50%, -50%);
+    // -ms-transform: translate(-50%, -50%);
+    // -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     flex-direction: column;
     align-items: center;
-    gap: 4px;
-    & div{
-        width: 30px;
-        height: 30px;
-        border-radius: 100%;
-        border: solid 1px var(--red-fire);
+    gap: 12px;
+}
 
-        & img{
-            width: 50%;
-            height: 50%;
-        }
-    }
-    & div:hover{
-        background-color: var(--red-fire);
+.producto__iconos-interactivos{
+    background: rgb(256, 256, 256);
+    // -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    // -moz-border-radius: 50%;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    // -moz-transition: all 0.2s 0.3s;
+    // -o-transition: all 0.2s 0.3s;
+    transition: all 0.15s 0.15s;
+    border: solid 1px var(--red-fire);
+
+    & img{
+        width: 50%;
+        height: 50%;
     }
 }
+
+//!Efecto Hover para los iconos interactivos
+// .producto__iconos-interactivos:hover{
+//     background-color: var(--red-fire);
+
+//     .iconos-interactivos__iconos{
+//         transition: all 0.1s;
+//         filter: brightness(0) invert(1);
+//     }
+// }
 
 .producto__calificacion{
     gap: 8px;
@@ -110,7 +131,8 @@
 }
 
 .boton__añadir-carrito{
-    display: none;
+    opacity: 0;
+    position: absolute;
     width: 100%;
     border-radius: 50px;
 }
@@ -120,13 +142,14 @@
     .producto__descuento,.producto__precio{
         display: none;
     }
-
     .boton__añadir-carrito{
         display: flex;
+        position: relative;
+        opacity: 1;
+        transition: all 0.2s 0.2s;
     }
-
-    .producto__actions{
-        display: flex;
+    .producto__iconos-interactivos{
+        opacity: 1;
     }
 }
 
@@ -169,24 +192,9 @@
     }
 }
 
-
-
-.ovrly01 {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    -webkit-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
-    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
-}
-.ovrly01 img {
-    position: relative;
-    width: 100%;
-    top: 0;
-    left: 0;
-}
-.ovrly01 .ovrlyT {
-    background: rgba(0, 0, 0, 0.25);
+// ! Animacion de hover con los productos efecto cristal
+.overlayA {
+    background: rgba(105, 178, 204, 0.195);
     height: 100%;
     left: 0;
     position: absolute;
@@ -197,8 +205,8 @@
     -o-transition: all 0.3s;
     transition: all 0.3s;
 }
-.ovrly01 .ovrlyB {
-    background: rgba(0, 0, 0, 0.25);
+.overlayB {
+    background: rgba(212, 204, 204, 0.195);
     height: 100%;
     left: 0;
     position: absolute;
@@ -209,45 +217,10 @@
     -o-transition: all 0.3s;
     transition: all 0.3s;
 }
-.ovrly01 .buttons {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
-.ovrly01 .buttons .fa {
-    background: rgb(256, 256, 256);
-    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    color: rgba(50, 50, 50, 0.9);
-    display: inline-block;
-    margin: 0 1px;
-    line-height: 40px;
-    font-size: 16px;
-    text-align: center;
-    text-decoration: none;
-    width: 40px;
-    height: 40px;
-    -webkit-transition: all 0.2s 0.3s;
-    -moz-transition: all 0.2s 0.3s;
-    -o-transition: all 0.2s 0.3s;
-    transition: all 0.2s 0.3s;
-    opacity: 0;
-}
-.ovrly01:hover .ovrlyT {
+
+.producto:hover .overlayA {
     top: 0;
 }
-.ovrly01:hover .ovrlyB {
+.producto:hover .overlayB {
     top: 0;
-}
-.ovrly01:hover .buttons .fa {
-    opacity: 1;
 }

@@ -605,12 +605,13 @@ header {
   height: 330px;
   padding: 16px 24px;
   border: 1px solid #c7c7c7;
+  overflow: hidden;
 }
-.producto img {
+
+.producto__imagen {
   height: 150px;
   width: 100%;
   object-fit: contain;
-  background-color: var(--gray);
 }
 
 .producto__main-content {
@@ -621,25 +622,28 @@ header {
 
 .producto__actions {
   position: absolute;
-  top: 16px;
-  left: 16px;
-  display: none;
+  display: flex;
+  top: 40px;
+  left: 20px;
+  transform: translate(-50%, -50%);
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 12px;
 }
-.producto__actions div {
+
+.producto__iconos-interactivos {
+  background: rgb(255, 255, 255);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
   width: 30px;
   height: 30px;
-  border-radius: 100%;
+  opacity: 0;
+  transition: all 0.15s 0.15s;
   border: solid 1px var(--red-fire);
 }
-.producto__actions div img {
+.producto__iconos-interactivos img {
   width: 50%;
   height: 50%;
-}
-.producto__actions div:hover {
-  background-color: var(--red-fire);
 }
 
 .producto__calificacion {
@@ -674,7 +678,8 @@ header {
 }
 
 .boton__añadir-carrito {
-  display: none;
+  opacity: 0;
+  position: absolute;
   width: 100%;
   border-radius: 50px;
 }
@@ -687,9 +692,12 @@ header {
 }
 .producto:hover .boton__añadir-carrito {
   display: flex;
+  position: relative;
+  opacity: 1;
+  transition: all 0.2s 0.2s;
 }
-.producto:hover .producto__actions {
-  display: flex;
+.producto:hover .producto__iconos-interactivos {
+  opacity: 1;
 }
 
 @media screen and (max-width: 600px) {
@@ -715,24 +723,8 @@ header {
     gap: 32px;
   }
 }
-.ovrly01 {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  -webkit-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
-  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
-}
-
-.ovrly01 img {
-  position: relative;
-  width: 100%;
-  top: 0;
-  left: 0;
-}
-
-.ovrly01 .ovrlyT {
-  background: rgba(0, 0, 0, 0.25);
+.overlayA {
+  background: rgba(105, 178, 204, 0.195);
   height: 100%;
   left: 0;
   position: absolute;
@@ -744,8 +736,8 @@ header {
   transition: all 0.3s;
 }
 
-.ovrly01 .ovrlyB {
-  background: rgba(0, 0, 0, 0.25);
+.overlayB {
+  background: rgba(212, 204, 204, 0.195);
   height: 100%;
   left: 0;
   position: absolute;
@@ -757,51 +749,12 @@ header {
   transition: all 0.3s;
 }
 
-.ovrly01 .buttons {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-.ovrly01 .buttons .fa {
-  background: rgb(255, 255, 255);
-  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  color: rgba(50, 50, 50, 0.9);
-  display: inline-block;
-  margin: 0 1px;
-  line-height: 40px;
-  font-size: 16px;
-  text-align: center;
-  text-decoration: none;
-  width: 40px;
-  height: 40px;
-  -webkit-transition: all 0.2s 0.3s;
-  -moz-transition: all 0.2s 0.3s;
-  -o-transition: all 0.2s 0.3s;
-  transition: all 0.2s 0.3s;
-  opacity: 0;
-}
-
-.ovrly01:hover .ovrlyT {
+.producto:hover .overlayA {
   top: 0;
 }
 
-.ovrly01:hover .ovrlyB {
+.producto:hover .overlayB {
   top: 0;
-}
-
-.ovrly01:hover .buttons .fa {
-  opacity: 1;
 }
 
 .trending {
