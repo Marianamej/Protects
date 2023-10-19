@@ -2,6 +2,7 @@ import { productos } from "./Json/products.js";
 
 //Se crea un fragmento para evitar el reflow al renderizar los productos
 const fragmentoProductos = new DocumentFragment();
+let productosRenderizados = '';
 
 function hayEstrellas(numeroEstrellas) {
     let totalEstrellas = 5;
