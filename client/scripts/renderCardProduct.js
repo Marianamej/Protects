@@ -2,7 +2,6 @@ import { productos } from "./Json/products.js";
 
 //Se crea un fragmento para evitar el reflow al renderizar los productos
 const fragmentoProductos = new DocumentFragment();
-let productosRenderizados;
 
 function hayEstrellas(numeroEstrellas) {
     let totalEstrellas = 5;
@@ -55,12 +54,12 @@ export function renderizadoProductos(arregloProductos) {
         productoCardElement.innerHTML = 
             `
             <div class="producto__main-content left">
-                <img class="producto__imagen" src=${producto.imagen} alt="Esta en una imagen">
+                <img class="producto__imagen" src=${producto.imagen} alt="${producto.nombre}">
                 <div class="overlay overlayA"></div>
                 <div class="overlay overlayB"></div>
                 <div class="producto__actions">
-                    <div class="center producto__iconos-interactivos"><img class="iconos-interactivos__iconos" src="../assets/icons/icon-corazon.svg" alt=""></div>
-                    <div class="center producto__iconos-interactivos"><img class="iconos-interactivos__iconos"  src="../assets/icons/icon-stats.svg" alt=""></div>
+                    <div class="center producto__iconos-interactivos"><img class="iconos-interactivos__iconos" src="../assets/icons/icon-corazon.svg" alt="Icono de corazon para generar una interaccion de deseo a ese producto"></div>
+                    <div class="center producto__iconos-interactivos"><img class="iconos-interactivos__iconos"  src="../assets/icons/icon-stats.svg" alt="Icono de estadistica para mostrar descripcion mas avanzada del producto"></div>
                 </div>
                 
                 <div class="producto__calificacion center">
