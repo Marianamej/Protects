@@ -563,9 +563,22 @@ header {
     display: none;
   }
 }
-.contenedor__ultimas-unidades {
+.home__productos {
   flex-direction: column;
-  gap: 54px;
+  gap: 40px;
+}
+
+.titulo__seccion {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.titulo__seccion h3 {
+  font-size: 3.2rem;
+}
+.titulo__seccion p {
+  color: var(--red-fire);
 }
 
 .ultimas-unidades {
@@ -576,45 +589,61 @@ header {
   row-gap: 50px;
   column-gap: 24px;
 }
+@media (width < 820px) {
+  .ultimas-unidades {
+    max-width: 550px;
+  }
+}
 
 .producto {
   position: relative;
-  gap: 10px;
+  display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   max-width: 234px;
-  max-height: 330px;
-  padding: 0 24px 8px;
+  height: 330px;
+  padding: 16px 24px;
   border: 1px solid #c7c7c7;
+  overflow: hidden;
 }
-.producto img {
-  max-height: 150px;
+
+.producto__imagen {
+  height: 150px;
   width: 100%;
   object-fit: contain;
-  background-color: var(--gray);
+}
+
+.producto__main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .producto__actions {
   position: absolute;
-  top: 16px;
-  left: 16px;
-  display: none;
+  display: flex;
+  top: 40px;
+  left: 20px;
+  transform: translate(-50%, -50%);
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 12px;
 }
-.producto__actions div {
+
+.producto__iconos-interactivos {
+  background: rgb(255, 255, 255);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
   width: 30px;
   height: 30px;
-  border-radius: 100%;
+  opacity: 0;
+  transition: all 0.15s 0.15s;
   border: solid 1px var(--red-fire);
 }
-.producto__actions div img {
+.producto__iconos-interactivos img {
   width: 50%;
   height: 50%;
-}
-.producto__actions div:hover {
-  background-color: var(--red-fire);
 }
 
 .producto__calificacion {
@@ -649,7 +678,8 @@ header {
 }
 
 .boton__añadir-carrito {
-  display: none;
+  opacity: 0;
+  position: absolute;
   width: 100%;
   border-radius: 50px;
 }
@@ -662,9 +692,12 @@ header {
 }
 .producto:hover .boton__añadir-carrito {
   display: flex;
+  position: relative;
+  opacity: 1;
+  transition: all 0.2s 0.2s;
 }
-.producto:hover .producto__actions {
-  display: flex;
+.producto:hover .producto__iconos-interactivos {
+  opacity: 1;
 }
 
 @media screen and (max-width: 600px) {
@@ -686,10 +719,44 @@ header {
     width: 100%;
     overflow-x: scroll;
   }
-  .contenedor__ultimas-unidades {
+  .home__productos {
     gap: 32px;
   }
 }
+.overlayA {
+  background: rgba(105, 178, 204, 0.195);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: -100%;
+  width: 100%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.overlayB {
+  background: rgba(212, 204, 204, 0.195);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.producto:hover .overlayA {
+  top: 0;
+}
+
+.producto:hover .overlayB {
+  top: 0;
+}
+
 .trending {
   width: 86%;
   min-width: 530px;
