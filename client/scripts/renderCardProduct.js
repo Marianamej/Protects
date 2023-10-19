@@ -2,9 +2,7 @@ import { productos } from "./Json/products.js";
 
 //Se crea un fragmento para evitar el reflow al renderizar los productos
 const fragmentoProductos = new DocumentFragment();
-
-//Se genera un nuevo array con solo los primeros 8 elementos del array de productos.
-const productosUltimasUnidades = productos.slice(0, 8);
+let productosRenderizados;
 
 function hayEstrellas(numeroEstrellas) {
     let totalEstrellas = 5;
@@ -32,49 +30,56 @@ function hayDescuento(producto,precioConDescuentoAplicado) {
     return descuentoProducto;
 }
 
-productosUltimasUnidades.forEach(producto => {
+export function separarProductosParaMostrar(numeroProductosInicioMostrar,numeroProductosFinalMostrar) {
+    const productosParaMostrar = productos.slice(numeroProductosInicioMostrar, numeroProductosFinalMostrar)
+    renderizadoProductos(productosParaMostrar)
+    return productosParaMostrar;
+}
 
-    //Se verifican el numero de estrellas del producto para renderizarlas
-    const estrellas = hayEstrellas(producto.numeroEstrellas)
+export function renderizadoProductos(arregloProductos) {
+    arregloProductos.forEach(producto => {
 
-    //Se verifica si el producto tiene descuento para renderizarlo
-    const descuentoProducto = hayDescuento(producto,producto.precioDescuento);
-
-    //Se verifica si el producto tiene descuento, si es asi el precio del producto sera el precio con descuento, si no, sera el precio normal
-    if (descuentoProducto !== ''){
-        producto.precio = producto.precioDescuento;
-    }
+        //Se verifican el numero de estrellas del producto para renderizarlas
+        const estrellas = hayEstrellas(producto.numeroEstrellas)
     
-    //Se crea el HTML de cada producto
-    const productoCardElement = document.createElement('div');
-    productoCardElement.classList.add('producto');
-    productoCardElement.innerHTML = 
-        `
-        <div class="producto__main-content left">
-            <img class="producto__imagen" src=${producto.imagen} alt="Esta en una imagen">
-            <div class="overlay overlayA"></div>
-            <div class="overlay overlayB"></div>
-            <div class="producto__actions">
-                <div class="center producto__iconos-interactivos"><img class="iconos-interactivos__iconos" src="../assets/icons/icon-corazon.svg" alt=""></div>
-                <div class="center producto__iconos-interactivos"><img class="iconos-interactivos__iconos"  src="../assets/icons/icon-stats.svg" alt=""></div>
-            </div>
-            
-            <div class="producto__calificacion center">
-                <div class="stars">
-                    ${estrellas}
+        //Se verifica si el producto tiene descuento para renderizarlo
+        const descuentoProducto = hayDescuento(producto,producto.precioDescuento);
+    
+        //Se verifica si el producto tiene descuento, si es asi el precio del producto sera el precio con descuento, si no, sera el precio normal
+        if (descuentoProducto !== ''){
+            producto.precio = producto.precioDescuento;
+        }
+        
+        //Se crea el HTML de cada producto
+        const productoCardElement = document.createElement('div');
+        productoCardElement.classList.add('producto');
+        productoCardElement.innerHTML = 
+            `
+            <div class="producto__main-content left">
+                <img class="producto__imagen" src=${producto.imagen} alt="Esta en una imagen">
+                <div class="overlay overlayA"></div>
+                <div class="overlay overlayB"></div>
+                <div class="producto__actions">
+                    <div class="center producto__iconos-interactivos"><img class="iconos-interactivos__iconos" src="../assets/icons/icon-corazon.svg" alt=""></div>
+                    <div class="center producto__iconos-interactivos"><img class="iconos-interactivos__iconos"  src="../assets/icons/icon-stats.svg" alt=""></div>
                 </div>
-                <p class="reviews">reviews (${producto.numeroReviews})</p>
+                
+                <div class="producto__calificacion center">
+                    <div class="stars">
+                        ${estrellas}
+                    </div>
+                    <p class="reviews">reviews (${producto.numeroReviews})</p>
+                </div>
+                <h3 class="fs-xs">${producto.nombre}</h3>
             </div>
-            <h3 class="fs-xs">${producto.nombre}</h3>
-        </div>
-        <div class="producto__info-compra">
-            ${descuentoProducto}
-            <p class="ft-bold producto__precio">$${producto.precio}</p>
-            <button class="boton__añadir-carrito button--white">Add al carrito</button>
-        </div>
-        `;
-
-    fragmentoProductos.appendChild(productoCardElement);
-});
-
-export const productosRenderizados = fragmentoProductos;
+            <div class="producto__info-compra">
+                ${descuentoProducto}
+                <p class="ft-bold producto__precio">$${producto.precio}</p>
+                <button class="boton__añadir-carrito button--white">Add al carrito</button>
+            </div>
+            `;
+    
+        fragmentoProductos.appendChild(productoCardElement);
+    });
+    return productosRenderizados = fragmentoProductos;
+}

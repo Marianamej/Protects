@@ -1,6 +1,8 @@
 import { renderBanner } from './renderBanner.js';
 import { getBanners,fondos } from './apiBanner.js';
-import { productosRenderizados } from './renderCardProduct.js';
+import {separarProductosParaMostrar} from './renderCardProduct.js';
+import {renderizadoProductos} from './renderCardProduct.js';
+
 
 // Selecciono los contenedores de los productos del HTML
 const contenedorUltimasUnidades = document.querySelector('#productosHomeUltimasUnidades');
@@ -9,7 +11,8 @@ const contenedorUltimasUnidades = document.querySelector('#productosHomeUltimasU
 renderBanner(getBanners)
 
 // Se renderizan los productos en el HTML
-contenedorUltimasUnidades.append(productosRenderizados);
+const listaProductos = separarProductosParaMostrar(0,8);
+contenedorUltimasUnidades.append(renderizadoProductos(listaProductos));
 
 
 //Funcionalidad del slider de banners
