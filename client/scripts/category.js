@@ -37,41 +37,38 @@ function renderPage() {
   retroceder.disabled = currentPage === 1;
 }
 
-//renderizado 
-document.addEventListener("DOMContentLoaded", function () {
-//funcion para avanzar 
-  retroceder.addEventListener("click", () => {
-    if (currentPage > 1) {
-      currentPage--;
-      renderPage();
-      window.scrollTo(0, 0);
-    }
-  });
-//funcion para retroceder 
-  avanzar.addEventListener("click", () => {
-    const indexOfLastItem = currentPage * itemsPerPage;
-    if (indexOfLastItem < productos.length) {
-      currentPage++;
-      renderPage();
-      window.scrollTo(0, 0);
-    }
-  });
-
-  renderPage(); 
-
-  //logica del menu 
-
-
-  const botonmenu = document.querySelector(".ejemplo");
-  const menu = document.getElementById("menu");
-  
-  botonmenu.addEventListener("click", () => {
-    if (menu.style.display === "block") {
-      menu.style.display = "none";
-    } else {
-      menu.style.display = "block";
-    }
-  });
-  menu.style.display = "none";
-
+//funcion para avanzar y retroceder
+retroceder.addEventListener("click", () => {
+  if (currentPage > 1) {
+    currentPage--;
+    limpiarHtml();
+    window.scrollTo(0, 0);
+  }
 });
+
+avanzar.addEventListener("click", () => {
+  const indexOfLastItem = currentPage * itemsPerPage;
+  if (indexOfLastItem < productos.length) {
+    currentPage++;
+    limpiarHtml();
+    window.scrollTo(0, 0);
+  }
+});
+
+function limpiarHtml() {
+  cards.innerHTML = "";
+  renderPage();
+}
+
+renderPage(); 
+// const botonmenu = document.querySelector(".ejemplo");
+//   const menu = document.getElementById("menu");
+  
+//   botonmenu.addEventListener("click", () => {
+//     if (menu.style.display === "block") {
+//       menu.style.display = "none";
+//     } else {
+//       menu.style.display = "block";
+//     }
+//   });
+//   menu.style.display = "none";

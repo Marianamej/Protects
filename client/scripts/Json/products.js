@@ -120,7 +120,7 @@ export let productos = [
     "id": 10
   },
   {
-    "imagen": "producto52.jpg",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_981977-MCO46914196855_072021-F.webp",
     "nombre": "Auriculares con Cancelación de Ruido",
     "descripcion": "Auriculares con tecnología de cancelación de ruido para una experiencia de juego sin distracciones.",
     "precio": 149.99,
@@ -132,7 +132,7 @@ export let productos = [
     "id": 11
   },
   {
-    "imagen": "producto53.jpg",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_684963-MCO48221345438_112021-O.webp",
     "nombre": "Teclado Mecánico Compacto",
     "descripcion": "Un teclado mecánico compacto y portátil ideal para juegos en movimiento.",
     "precio": 79.99,
@@ -156,7 +156,7 @@ export let productos = [
     "id": 13
   },
   {
-    "imagen": "producto55.jpg",
+    "imagen": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRHqvpysqTwLI2931smSaPYKedEeCvIARCSX8GyZoIH0rwBi571IbKdMeUraNVdU0hKuOvxD3LzcUZWq3SG3Ba3oLvzcLkQAzSmw3VCkyw&usqp=CAE",
     "nombre": "Silla Gaming Estilo Racing",
     "descripcion": "Una silla estilo racing con diseño deportivo y soporte lumbar ajustable.",
     "precio": 169.99,
@@ -168,7 +168,7 @@ export let productos = [
     "id": 14
   },
   {
-    "imagen": "producto56.jpg",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_838681-MLM43846583075_102020-F.webp",
     "nombre": "Placa Base para Gaming",
     "descripcion": "Una placa base diseñada para jugadores con múltiples puertos y capacidades de overclocking.",
     "precio": 129.99,
@@ -180,7 +180,7 @@ export let productos = [
     "id": 15
   },
   {
-    "imagen": "producto57.jpg",
+    "imagen": "https://i.linio.com/p/b2d8e7045b93178e3dc6904dbbd47f8a-product.webp",
     "nombre": "Mousepad Gaming Extra Grande",
     "descripcion": "Un mousepad extra grande para jugadores que necesitan mucho espacio para el ratón.",
     "precio": 19.99,
@@ -192,7 +192,7 @@ export let productos = [
     "id": 16
   },
   {
-    "imagen": "producto58.jpg",
+    "imagen": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSlPIYN4GN5I_oABu4Kn9dtAwJH-4QT3ZIDetUmEG8O6-KgvUlR6GRnZAV7ibV0BRR_cXnEoYMCm8P2aXTYEtzM3vpkYV9H8tPYWsHdP6justFxHzilQ4yl&usqp=CAE",
     "nombre": "Memoria RAM DDR4 16GB",
     "descripcion": "Memoria RAM de alto rendimiento para mejorar la velocidad de tu PC.",
     "precio": 79.99,
@@ -204,7 +204,7 @@ export let productos = [
     "id": 17
   },
   {
-    "imagen": "producto59.jpg",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_639104-MCO72187520906_102023-F.webp",
     "nombre": "Sistema de Refrigeración Líquida",
     "descripcion": "Un sistema de refrigeración líquida eficiente para mantener tu PC fresco durante largas sesiones de juego.",
     "precio": 89.99,
@@ -216,7 +216,7 @@ export let productos = [
     "id": 18
   },
   {
-    "imagen": "producto60.jpg",
+    "imagen": "https://i.ebayimg.com/images/g/iZ4AAOSwdUhjAYXd/s-l500.png",
     "nombre": "Mochila para Portátil Gamer",
     "descripcion": "Una mochila resistente y espaciosa diseñada para transportar tu laptop gaming y accesorios.",
     "precio": 49.99,
@@ -349,7 +349,7 @@ export let productos = [
     "id": 29
   },
   {
-    "imagen": "producto71.jpg",
+    "imagen": "https://s.alicdn.com/@sc04/kf/H8b0d1b18f6c5407fa68f6bab052d6148F.jpg_300x300.jpg",
     "nombre": "Monitor Curvo 34 pulgadas Ultra Ancho",
     "descripcion": "Un monitor curvo ultrapanorámico para una experiencia visual inmersiva como ninguna otra.",
     "precio": 799.99,
@@ -361,7 +361,7 @@ export let productos = [
     "id": 30
   },
   {
-    "imagen": "producto72.jpg",
+    "imagen": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRlX6Q7r9ed2gzYWipqJZ1-xAg3CSIo16TCm_NX0q4zjDi99WCalDE2Tg-mliyZhsmpvmGnWxKYrrwqrTLzVc_8Lh2TGuUN&usqp=CAE",
     "nombre": "Monitor 4K HDR 27 pulgadas",
     "descripcion": "Un monitor 4K de alta resolución con soporte HDR para colores vibrantes y claridad impresionante.",
     "precio": 499.99,
@@ -373,7 +373,7 @@ export let productos = [
     "id": 31
   },
   {
-    "imagen": "producto73.jpg",
+    "imagen": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRUAefVkPj3ZIZg1s52eVnZo2mwsbquIIqEjytWha6rqwaOAxNeO3_7qoaxSGiZnmOIwEgTiJ4Ohkfyitv5P1SeyXY6Evi-VXeLIz9g8AaXr3CbTNFuPYockQ&usqp=CAE",
     "nombre": "Monitor para Diseñadores Gráficos",
     "descripcion": "Un monitor de alta precisión diseñado para profesionales de diseño gráfico y edición de fotos.",
     "precio": 749.99,
@@ -385,7 +385,7 @@ export let productos = [
     "id": 32
   },
   {
-    "imagen": "producto74.jpg",
+    "imagen": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOvmmJF-QE4Uoaf4kcR1EmU6TNTUVBZjVN9F3PR9Zk60atD0PsADYy1tbpBVr6PRyoJzqDrjh3gR-4uVSL9-bgLCfrIH7Hzbm6oPk8yHE&usqp=CAE",
     "nombre": "Monitor 144Hz para Gaming",
     "descripcion": "Un monitor de alta frecuencia de actualización para jugadores competitivos que buscan la máxima suavidad.",
     "precio": 349.99,
@@ -397,8 +397,8 @@ export let productos = [
     "id": 33
   },
   {
-    "imagen": "producto75.jpg",
-    "nombre": "Monitor Táctil de 22 pulgadas",
+    "imagen": "https://www.lenovo.com/medias/06-Thinkvision-M14t-Hero-Front-Facing-Left.jpg?context=bWFzdGVyfHJvb3R8MTM1MDEzfGltYWdlL2pwZWd8aDM3L2g3NS8xMTgxMDQwODM5ODg3OC5qcGd8OTkwYzJiOGNjYTM3YjhhNjFlZDQ4ZjYxMjkxOTVkYTVlZWM2YmQ0NjA2M2E3M2QwOGZlMTA2M2ViMmY5MzBjZg",
+    "nombre": "Monitor Tactil Multi Touch 14 pulgadas",
     "descripcion": "Un monitor táctil para interacciones intuitivas y aplicaciones educativas y creativas.",
     "precio": 199.99,
     "descuento": false,
@@ -409,7 +409,7 @@ export let productos = [
     "id": 34
   },
   {
-    "imagen": "producto76.jpg",
+    "imagen": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQU_qfT4LUk0A4scl-himUYSes5z_qtWOaLJqYKfzCgiw4Cnc4qkvKDPv-ONsU_B8lsbyO6zDw1EMu6xtzF8hNCLYNpobEF-XGMJd9p5JMIRjlOHUlBUo4raA&usqp=CAE",
     "nombre": "Monitor 32 pulgadas 4K Curvo",
     "descripcion": "Un monitor curvo de gran tamaño con resolución 4K para una experiencia visual asombrosa.",
     "precio": 699.99,
@@ -421,7 +421,7 @@ export let productos = [
     "id": 35
   },
   {
-    "imagen": "producto77.jpg",
+    "imagen": "https://img01.huaweifile.com/sg/ms/co/pms/uomcdn/CO_HW_B2C/pms/202207/gbom/6941487224043/800_800_A666EB8A6B013D1D23BDA08812DFFA27mp.png",
     "nombre": "Monitor Gaming 24 pulgadas",
     "descripcion": "Un monitor gaming de 24 pulgadas con tiempo de respuesta ultrarrápido para jugadores competitivos.",
     "precio": 249.99,
@@ -433,7 +433,7 @@ export let productos = [
     "id": 36
   },
   {
-    "imagen": "producto78.jpg",
+    "imagen": "https://www.bhphotovideo.com/cdn-cgi/image/format=auto,fit=scale-down,width=500,quality=95/https://www.bhphotovideo.com/images/images500x500/acer_um_je0aa_x02_32_curved_full_hd_1667817621_1734163.jpg",
     "nombre": "Monitor Curvo 27 pulgadas QHD",
     "descripcion": "Un monitor curvo de resolución QHD para una experiencia visual envolvente y nítida.",
     "precio": 399.99,
@@ -445,7 +445,7 @@ export let productos = [
     "id": 37
   },
   {
-    "imagen": "producto79.jpg",
+    "imagen": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTqR7TbEqhPqDpCOJJQf4wVDRQCY-oIVirhLlT6sF920Oyj6vgJNVn6ebmJnWCJ_mjHYMdr6s4CSwtPre1m1_qxPEyIX9cC1i3Nf_fKZxDv&usqp=CAE",
     "nombre": "Monitor 23 pulgadas Full HD",
     "descripcion": "Un monitor Full HD de 23 pulgadas ideal para tareas de oficina y entretenimiento en casa.",
     "precio": 179.99,
@@ -457,7 +457,7 @@ export let productos = [
     "id": 38
   },
   {
-    "imagen": "producto80.jpg",
+    "imagen": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSjZpBBsP3VV-Qt1epE1fOnAFu6T7Eqj0iroB3KrTZUhyOgJHISaYegVC6jE4c94RnkSwaGMs6R544KkMoEOzYmCzlX3VKWCH-MNRY2JOBnc8RD3bESCT2neg&usqp=CAE",
     "nombre": "Monitor 27 pulgadas 4K IPS",
     "descripcion": "Un monitor de 27 pulgadas con panel IPS y resolución 4K para una calidad de imagen excepcional.",
     "precio": 599.99,
@@ -469,7 +469,7 @@ export let productos = [
     "id": 39
   },
   {
-    "imagen": "producto81.jpg",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_656768-MCO71861008603_092023-F.webp",
     "nombre": "PC Gaming de Alta Gama",
     "descripcion": "Una PC gaming de alta gama con procesador de última generación y tarjeta gráfica de alto rendimiento.",
     "precio": 1999.99,
@@ -481,7 +481,7 @@ export let productos = [
     "id": 40
   },
   {
-    "imagen": "producto82.jpg",
+    "imagen": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRZ4DuY0S_vvKqdZIV47rfpPl6DmqkkhEIRkMF3ow_8eibk-NlkFvtbblEoOfp9j8hD5PDeSDrUjLHK4Fp7920HpSqonCcj5oj-XmP4RgmVVA5g906dP2V7mQ&usqp=CAE",
     "nombre": "Mini PC Compacto",
     "descripcion": "Un mini PC compacto y potente ideal para el entretenimiento en el hogar y tareas de oficina.",
     "precio": 599.99,
@@ -493,7 +493,7 @@ export let productos = [
     "id": 41
   },
   {
-    "imagen": "producto83.jpg",
+    "imagen": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRp7C-JMj6_9A-BUoFBLdJghHEJEWnXZGA01BDvBr8shUsX8vVON5pLMQtsaLTv_WnT6juYcZ0YE83ffSM0gOrH632wJKBHZ3ITxjjsbKBBpkmQ-RDJtnvZ&usqp=CAE",
     "nombre": "PC de Oficina Profesional",
     "descripcion": "Una PC de oficina de alto rendimiento para tareas profesionales y multitarea eficiente.",
     "precio": 799.99,
@@ -505,7 +505,7 @@ export let productos = [
     "id": 42
   },
   {
-    "imagen": "producto84.jpg",
+    "imagen": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcT6FpRwvCGUp0y52W3NG92lRjCkrgK-0Ez8NOpBaB541jblb7p7j2Zyu5e3ufyxYT1vdprAkhjhbROZf7HTndQ8eKF_D8bM&usqp=CAE",
     "nombre": "PC Todo en Uno",
     "descripcion": "Un PC todo en uno con pantalla táctil y diseño elegante para espacios de trabajo modernos.",
     "precio": 1299.99,
@@ -517,7 +517,7 @@ export let productos = [
     "id": 43
   },
   {
-    "imagen": "producto85.jpg",
+    "imagen": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcT8rdcj3E2-tHl6MVv9HccsgacgoKIniC6iyHGGRtcNWPictnfBNqsR3wjE1t3ZHWsK4Vn51vV9GhQ_UMkwMA6bJtx4c_7htXIdLeFpIws&usqp=CAE",
     "nombre": "PC de Juegos Compacto",
     "descripcion": "Un PC compacto diseñado para juegos de alto rendimiento en espacios reducidos.",
     "precio": 899.99,
@@ -529,7 +529,7 @@ export let productos = [
     "id": 44
   },
   {
-    "imagen": "producto86.jpg",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_696542-MCO71102032643_082023-F.webp",
     "nombre": "PC de Diseño Gráfico",
     "descripcion": "Una PC de alto rendimiento diseñada para diseñadores gráficos y artistas digitales.",
     "precio": 1499.99,
@@ -541,7 +541,7 @@ export let productos = [
     "id": 45
   },
   {
-    "imagen": "producto87.jpg",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_833723-MCO50655936612_072022-F.webp",
     "nombre": "PC de Oficina Económica",
     "descripcion": "Una PC económica diseñada para tareas de oficina y navegación en Internet.",
     "precio": 499.99,
@@ -553,7 +553,7 @@ export let productos = [
     "id": 46
   },
   {
-    "imagen": "producto88.jpg",
+    "imagen": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRqmchheKyQEwmaVgYrHqtBYZGR21-Ooa726_6V6ozBCwKnU7ihc-dTu9WOSq0aP3zVNua6PWoKbt4Bp8egnx4YyiZLACB_pVoCwhsRxAh5sE39ZgYh75D4&usqp=CAE",
     "nombre": "PC de Juegos de Gama Media",
     "descripcion": "Un PC de juegos de gama media con un equilibrio entre rendimiento y presupuesto.",
     "precio": 1199.99,
@@ -565,7 +565,7 @@ export let productos = [
     "id": 47
   },
   {
-    "imagen": "producto89.jpg",
+    "imagen": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcS-sOvFxVfMSxnbe0KKCkavvEhdo2sk5GYFlCtGTjNDBsfPcDqi3Apu-B45TVa38VTpyUAmVgAK82boFLFZZi3AlvTqrsvuaOG2xBCLurTYNt3vaBgtmXs1eQ&usqp=CAE",
     "nombre": "PC de Trabajo en Casa",
     "descripcion": "Una PC diseñada para el trabajo en casa y la teleconferencia con alta calidad de video y audio.",
     "precio": 699.99,
@@ -577,7 +577,7 @@ export let productos = [
     "id": 48
   },
   {
-    "imagen": "producto90.jpg",
+    "imagen": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQCiNPdjBUw8zsEZxdQz1Ewqvx4ofhTnkK_Bze6ll6YWPduxueNVz_lGccLLJBfoZrzOm3r7XEl35ebuVYSX3joujB34KWDk5C8zz0IaG0SDVCZ5_qlXSjikQ&usqp=CAE",
     "nombre": "PC de Juegos de Gama Baja",
     "descripcion": "Un PC de juegos de gama baja para juegos básicos y tareas de navegación.",
     "precio": 499.99,
@@ -589,7 +589,7 @@ export let productos = [
     "id": 49
   },
   {
-    "imagen": "producto91.jpg",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_905793-MCO71439627734_092023-F.webp",
     "nombre": "Tarjeta Gráfica RTX 3090",
     "descripcion": "Una tarjeta gráfica de alta gama con rendimiento excepcional para juegos y aplicaciones intensivas.",
     "precio": 1299.99,
@@ -601,7 +601,7 @@ export let productos = [
     "id": 50
   },
   {
-    "imagen": "producto92.jpg",
+    "imagen": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTyrzxmSmTuL1bB6TZJ9lFyNy7nEAqtQBspuW0P6RyPFYAuAygEALfZG_ZYGb18MogZhpg82kbUHQVD-3nuo88GAuQxHaNI3Xm1GZDmLG35&usqp=CAE",
     "nombre": "SSD NVMe de 1TB",
     "descripcion": "Un SSD NVMe de 1TB para acelerar la velocidad de lectura/escritura y la carga del sistema.",
     "precio": 149.99,
@@ -613,7 +613,7 @@ export let productos = [
     "id": 51
   },
   {
-    "imagen": "producto93.jpg",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_894487-MLA53145808015_012023-F.webp",
     "nombre": "Procesador Ryzen 9 5900X",
     "descripcion": "Un procesador de alto rendimiento con múltiples núcleos y subprocesos para juegos y tareas intensivas.",
     "precio": 499.99,
@@ -625,7 +625,7 @@ export let productos = [
     "id": 52
   },
   {
-    "imagen": "producto94.jpg",
+    "imagen": "https://www.empowerlaptop.com/wp-content/uploads/2019/04/Z170A-GAMING-7-1024x820.png",
     "nombre": "Placa Base ATX Z590",
     "descripcion": "Una placa base ATX de alto rendimiento con capacidades de overclocking y múltiples puertos.",
     "precio": 199.99,
@@ -637,7 +637,7 @@ export let productos = [
     "id": 53
   },
   {
-    "imagen": "producto95.jpg",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_917966-MLA46521140191_062021-F.webp",
     "nombre": "Fuente de Alimentación 750W",
     "descripcion": "Una fuente de alimentación de 750W para garantizar un suministro de energía estable y confiable.",
     "precio": 89.99,
@@ -649,7 +649,7 @@ export let productos = [
     "id": 54
   },
   {
-    "imagen": "producto96.jpg",
+    "imagen": "https://down-co.img.susercontent.com/file/ph-11134201-23030-fi6brai9spov46",
     "nombre": "Memoria RAM DDR4 32GB",
     "descripcion": "Memoria RAM DDR4 de 32GB para un rendimiento óptimo en juegos y aplicaciones pesadas.",
     "precio": 249.99,
@@ -661,7 +661,7 @@ export let productos = [
     "id": 55
   },
   {
-    "imagen": "producto97.jpg",
+    "imagen": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTgkfGJhu6FMviEkm-rG_lq5-1mYZo8v4E4R-ESS6LUiHCe98uVxjIti9B3bpHNraN7aZ2pkJBidtISF4RiaYQYbsUnxvWYiDoarD1b9Yu4as0b20A69J-m&usqp=CAE",
     "nombre": "Disco Duro HDD de 2TB",
     "descripcion": "Un disco duro HDD de gran capacidad para almacenar una gran cantidad de datos y juegos.",
     "precio": 79.99,
@@ -673,7 +673,7 @@ export let productos = [
     "id": 56
   },
   {
-    "imagen": "producto98.jpg",
+    "imagen": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRQTOD6gNDp2CBXcEioh0o_OQylptCtpE9zFX7wjswXxbwhTDU-aN9qYOaeguTbvDxxvfh3qwwrGq61iG1blz7OjANqXGQo2X9UUi9DwipwpRavtPLS6Y4ZxU4&usqp=CAE",
     "nombre": "Caja de PC con Iluminación RGB",
     "descripcion": "Una caja de PC con iluminación RGB personalizable y espacio para una configuración de alto rendimiento.",
     "precio": 129.99,
@@ -685,7 +685,7 @@ export let productos = [
     "id": 57
   },
   {
-    "imagen": "producto99.jpg",
+    "imagen": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRKwKRWTJpYUyo_OUAj7nCNEoW_dcygbvchGvvmcp_6utU0IVwL3f0OW20op8u_I8JyzMjwa-DWHvmD1GXQ6WOPj_wqEI4OGRH7YKXwHpAapfVx7pAB-q1c&usqp=CAE",
     "nombre": "Ventiladores RGB para PC",
     "descripcion": "Ventiladores RGB con control de velocidad para mantener una temperatura óptima en tu PC.",
     "precio": 34.99,
@@ -697,7 +697,7 @@ export let productos = [
     "id": 58
   },
   {
-    "imagen": "producto101.jpg",
+    "imagen": "https://i.ebayimg.com/images/g/yPoAAOSwI85j2uf3/s-l1600.jpg",
     "nombre": "Teclado Mecánico RGB",
     "descripcion": "Un teclado mecánico con retroiluminación RGB personalizable y teclas de respuesta rápida.",
     "precio": 89.99,
@@ -709,7 +709,7 @@ export let productos = [
     "id": 59
   },
   {
-    "imagen": "producto102.jpg",
+    "imagen": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSZ_MScxgf17pLK6XGg5jC-RCaspj7tE7L92QTIiL9B9MgaYYKp_GGyi0yHEfwU4S5JpMpuQHJ4dGsGbAaF3rNkTMLFLKNhJsc6HfcWZHCsi_V6vd03ttD6-Q&usqp=CAE",
     "nombre": "Auriculares Inalámbricos Gaming",
     "descripcion": "Auriculares inalámbricos diseñados para jugadores con sonido envolvente y micrófono con cancelación de ruido.",
     "precio": 69.99,
@@ -721,7 +721,7 @@ export let productos = [
     "id": 60
   },
   {
-    "imagen": "producto103.jpg",
+    "imagen": "https://i.ebayimg.com/images/g/YukAAOSwc~Fjt94c/s-l500.jpg",
     "nombre": "Mouse Gaming con Macros",
     "descripcion": "Un mouse gaming con botones programables para macros y sensor de alta precisión.",
     "precio": 54.99,
@@ -733,7 +733,7 @@ export let productos = [
     "id": 61
   },
   {
-    "imagen": "producto104.jpg",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_850987-MCO69644082410_052023-F.webp",
     "nombre": "Alfombrilla de Ratón Grande",
     "descripcion": "Una alfombrilla de ratón extra grande con superficie suave para movimientos precisos.",
     "precio": 19.99,
@@ -745,7 +745,7 @@ export let productos = [
     "id": 62
   },
   {
-    "imagen": "producto105.jpg",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_961440-MCO72113058189_102023-F.webp",
     "nombre": "Controlador de Juegos Inalámbrico",
     "descripcion": "Un controlador de juegos inalámbrico para jugar en PC y consolas con comodidad y precisión.",
     "precio": 39.99,
@@ -757,7 +757,7 @@ export let productos = [
     "id": 63
   },
   {
-    "imagen": "producto106.jpg",
+    "imagen": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRjvL72KnKKCjFqrBhB1BOIhLeARCdpPhFWVcnfCvMuTJH7qEFJhdjXaePizQPMqEqHhyfeZqRezSmWdlWNX7RlUzZKqorpgWxb94kpl_y42igyp5O21D1BTA&usqp=CAE",
     "nombre": "Micrófono USB de Condensador",
     "descripcion": "Un micrófono de condensador USB de alta calidad para streaming y grabación de audio.",
     "precio": 69.99,
@@ -769,7 +769,7 @@ export let productos = [
     "id": 64
   },
   {
-    "imagen": "producto107.jpg",
+    "imagen": "https://i.ebayimg.com/images/g/k3sAAOSwcXllGx1o/s-l500.png",
     "nombre": "Hub USB de 7 Puertos",
     "descripcion": "Un hub USB de 7 puertos para expandir las conexiones de tu PC o laptop con facilidad.",
     "precio": 24.99,
@@ -781,7 +781,7 @@ export let productos = [
     "id": 65
   },
   {
-    "imagen": "producto108.jpg",
+    "imagen": "https://i.ebayimg.com/images/g/Px0AAOSwcS9jsf7J/s-l500.jpg",
     "nombre": "Webcam Full HD 1080p",
     "descripcion": "Una webcam de alta definición con enfoque automático y cancelación de ruido para videoconferencias.",
     "precio": 59.99,
@@ -793,7 +793,7 @@ export let productos = [
     "id": 66
   },
   {
-    "imagen": "producto109.jpg",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_669957-CBT53238956083_012023-F.webp",
     "nombre": "Mando a Distancia Universal",
     "descripcion": "Un mando a distancia universal para controlar todos tus dispositivos de entretenimiento.",
     "precio": 29.99,
@@ -805,7 +805,7 @@ export let productos = [
     "id": 67
   },
   {
-    "imagen": "producto110.jpg",
+    "imagen": "https://i.ebayimg.com/images/g/VykAAOSwOZxjEUwI/s-l500.png",
     "nombre": "Mesa para Gaming Ajustable",
     "descripcion": "Una mesa para gaming ajustable en altura y con soporte para monitor y accesorios.",
     "precio": 139.99,
