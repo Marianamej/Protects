@@ -7,9 +7,15 @@ const fragmentoProductos = new DocumentFragment();
 const productosUltimasUnidades = productos.slice(0, 8);
 
 function hayEstrellas(numeroEstrellas) {
+    let totalEstrellas = 5;
     let estrellas = '';
     for (let i = 0; i < numeroEstrellas; i++) {
         estrellas += '<ion-icon class="fs-xs star-active" name="star"></ion-icon>';
+        totalEstrellas--;
+    }
+
+    for (let i = 0; i < totalEstrellas; i++) {
+        estrellas += '<ion-icon class="fs-xs star" name="star"></ion-icon>';
     }
     return estrellas;
 }
@@ -41,24 +47,30 @@ productosUltimasUnidades.forEach(producto => {
     
     //Se crea el HTML de cada producto
     const productoCardElement = document.createElement('div');
-    productoCardElement.classList.add('producto', 'left');
+    productoCardElement.classList.add('producto');
     productoCardElement.innerHTML = 
-        `<img src=${producto.imagen} alt="Esta en una imagen">
-        <div class="producto__actions">
-            <div class="center"><img  src="../assets/icons/icon-corazon.svg" alt=""></div>
-            <div class="center"><img  src="../assets/icons/icon-stats.svg" alt=""></div>
-        </div>
-        
-        <div class="producto__calificacion center">
-            <div class="stars">
-                ${estrellas}
+        `
+        <div class="producto__main-content left">
+            <img src=${producto.imagen} alt="Esta en una imagen">
+            <div class="producto__actions">
+                <div class="center"><img  src="../assets/icons/icon-corazon.svg" alt=""></div>
+                <div class="center"><img  src="../assets/icons/icon-stats.svg" alt=""></div>
             </div>
-            <p class="reviews">reviews (${producto.numeroReviews})</p>
+            
+            <div class="producto__calificacion center">
+                <div class="stars">
+                    ${estrellas}
+                </div>
+                <p class="reviews">reviews (${producto.numeroReviews})</p>
+            </div>
+            <h3 class="fs-xs">${producto.nombre}</h3>
         </div>
-        <h3 class="fs-xs">${producto.nombre}</h3>
-        ${descuentoProducto}
-        <p class="ft-bold producto__precio">$${producto.precio}</p>
-        <button class="boton__añadir-carrito button--white">Add al carrito</button>`;
+        <div class="producto__info-compra">
+            ${descuentoProducto}
+            <p class="ft-bold producto__precio">$${producto.precio}</p>
+            <button class="boton__añadir-carrito button--white">Add al carrito</button>
+        </div>
+        `;
 
     fragmentoProductos.appendChild(productoCardElement);
 });
