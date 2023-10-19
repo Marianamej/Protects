@@ -30,6 +30,7 @@ span {
 }
 
 .profile__info {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -39,6 +40,7 @@ span {
 .profile__text {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .user__info {
@@ -48,21 +50,21 @@ span {
 
 }
 
-.userInfo__text{
+.userInfo__text {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.user__info a{
+.user__info a {
     display: block;
 }
 
-.info__a{
+.info__a {
     color: aqua;
 }
 
-.profile__sectionNav{
+.profile__sectionNav {
     display: flex;
     flex-direction: row;
     background-color: var(--watermelon);
@@ -71,7 +73,130 @@ span {
     gap: 48px;
 }
 
-.profile__sectionNav button{
+.profile__sectionNav button {
+    color: #ffffff;
+    background-color: var(--watermelon);
     padding: 8px 38px;
     border-radius: 50px;
+}
+
+button.active {
+    background-color: #ffffff;
+    color: var(--watermelon);
+}
+
+
+.profile__wishlist {
+    display: flex;
+    flex-direction: row;
+    gap: 90px;
+}
+
+.profile__orders {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.orders__title {
+    display: flex;
+    flex-direction: row;
+}
+
+.orders__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
+
+.orders__info p {
+    text-decoration: line-through;
+}
+
+.profile__history {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.history__items {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.history__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 38px;
+}
+
+@media (max-width: 800px) {
+    .profile__wishlist {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    .profile__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 700px){
+    .profile__wishlist{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 500px){
+
+    .profile__sectionNav button {
+        padding: 8px 10px;
+        border-radius: 50px;
+    }
+
+    .profile__info h2{
+        display: none;
+    }
+
+    .profile__main{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .profile__image{
+        text-align: center;
+    }
+
+    .profile__text{
+        .user__info{
+            display: none;
+        }
+    }
+
+    .profile__main{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .shopping__info{
+        text-align: center;
+    }
+}
+
+@media (max-width: 400px){
+    .orders__title img{
+        display: none;
+    }
+    .orders__content{
+        display: flex;
+        flex-direction: column;
+    }
 }
