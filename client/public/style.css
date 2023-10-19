@@ -500,6 +500,10 @@ header {
   gap: 4px;
 }
 
+.header__user--register {
+  gap: 35px;
+}
+
 .user__options {
   display: flex;
   gap: 4px;
@@ -519,6 +523,22 @@ header {
 .header__menu-mobile a img {
   width: 30px;
   height: 30px;
+}
+
+.user__icon-register {
+  height: auto;
+}
+
+.user_avatar {
+  width: 36px;
+  border-radius: 50%;
+}
+.user_avatar a img {
+  border-radius: 100%;
+}
+
+.shopping-car {
+  width: 25px;
 }
 
 @media (width < 1240px) {
@@ -682,7 +702,10 @@ header {
 @media screen and (width < 600px) {
   .trending {
     width: 100%;
-    min-width: none;
+    min-width: unset;
+    flex-direction: column;
+    align-items: center;
+    max-height: none;
   }
 }
 @media screen and (600px < width < 904px) {
@@ -703,12 +726,25 @@ header {
   max-width: 300px;
   border-radius: 6px;
 }
+@media screen and (width < 600px) {
+  .super-promocion {
+    max-width: none;
+    width: 85%;
+    align-self: center;
+    height: 176px;
+  }
+}
 
 .super-promocion__info {
   gap: 10px;
   font-family: var(--secondary-font);
   font-weight: bold;
   color: var(--white-cloud);
+}
+@media screen and (width < 600px) {
+  .super-promocion__info {
+    align-items: center;
+  }
 }
 
 .super-promocion__destacado {
@@ -740,6 +776,60 @@ header {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), rgba(33, 33, 33, 0.5) url("/client/assets/img-super-promocion-4.jpeg");
   background-size: cover;
   background-position: center;
+}
+
+.home-blogs {
+  display: flex;
+  width: 100%;
+  gap: 24px;
+  justify-content: space-between;
+}
+@media screen and (width < 600px) {
+  .home-blogs {
+    flex-direction: column;
+  }
+}
+
+.blog {
+  aspect-ratio: 3/4;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+@media screen and (width < 600px) {
+  .blog {
+    aspect-ratio: unset;
+    max-width: 490px;
+    margin: 0 auto;
+  }
+}
+
+.blog__info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.blog__titulo {
+  font-size: 2.4rem;
+  color: var(--night-sky);
+}
+
+.blog__descripcion {
+  color: var(--grey-mouse);
+  font-size: 1.6rem;
+}
+
+.blog__tags {
+  display: flex;
+  gap: 8px;
+  font-size: 1.4rem;
+}
+.blog__tags p {
+  padding: 4px;
+  color: var(--watermelon);
+  background-color: #FDF2FA;
+  border-radius: 40px;
 }
 
 .about__container-title {
@@ -1099,15 +1189,23 @@ header {
 .login__contenido {
   display: flex;
   justify-content: space-between;
+  height: 80vh;
 }
 
 .login__imagen {
   width: 95%;
 }
+.login__imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
 .login-formulario {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 24px;
   padding-top: 24px;
   padding-left: 20px;
@@ -1223,10 +1321,6 @@ header {
     align-items: center;
   }
 }
-* {
-  font-size: 13px;
-}
-
 .register__container {
   display: flex;
   flex-direction: column;
@@ -1797,6 +1891,15 @@ button.active {
   margin-top: 10px;
 }
 
+.products__options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.options {
+  display: flex;
+}
+
 .lista__productos {
   width: 100%;
   display: flex;
@@ -1809,6 +1912,9 @@ button.active {
 }
 
 @media (599px < width < 1240px) {
+  .lista__productos {
+    justify-content: center;
+  }
   .producto {
     position: relative;
     gap: 10px;
@@ -1847,6 +1953,12 @@ button.active {
 
 .page-number:hover {
   background-color: #e6e6e6;
+}
+
+@media screen and (min-width: 300px) and (max-width: 500px) {
+  .lista__productos {
+    justify-content: center;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

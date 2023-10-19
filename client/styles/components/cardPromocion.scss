@@ -9,7 +9,10 @@
 
     @media screen and (width < 600px){
         width: 100%;
-        min-width: none;
+        min-width: unset;
+        flex-direction: column;
+        align-items: center;
+        max-height: none;
     }
 
     @media screen and (600px < width < 904px){
@@ -21,12 +24,20 @@
     }
 }
 
+
 .super-promocion{
     padding: 48px 24px;
     aspect-ratio: 3/4;
     width: 100%;
     max-width: 300px;
     border-radius: 6px;
+
+    @media screen and (width < 600px){
+        max-width: none;
+        width: 85%;
+        align-self: center;
+        height: 176px;
+    }
 }
 
 .super-promocion__info{
@@ -34,6 +45,10 @@
     font-family: var(--secondary-font);
     font-weight: bold;
     color: var(--white-cloud);
+
+    @media screen and (width < 600px){
+        align-items: center;
+    }
 }
 
 .super-promocion__destacado{

@@ -8,10 +8,7 @@
     <link rel="stylesheet" href="../public/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-    <title>Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <main class="main__container">
@@ -31,28 +28,36 @@
                             <a href="register.html" class="switch__hoverRegister">Register</a>
                         </div>
                     </div>
+                    <div class="success-message" id="successMessage"></div>
                     <div class="form__inputs">
                         <div class="form__input">
                             <p>Email Address</p>
-                            <input type="text" placeholder="Enter your Email Address">
+                            <input type="text" placeholder="Enter your Email Address" id="email">
+                            <span class="error" id="emailError"></span>
                         </div>
                         <div class="form__input">
                             <p>Username</p>
-                            <input type="text" placeholder="Enter your Username">
+                            <input type="text" placeholder="Enter your Username" id="username">
+                            <span class="error" id="usernameError"></span>
                         </div>
                         <div class="form__input">
                             <p>Password</p>
-                            <input type="text" placeholder="Enter your Password">
+                            <input type="password" placeholder="Enter your Password" id="password">
+                            <span class="error" id="passwordError"></span>
                         </div>
                         <div class="form__input">
                             <p>Confirm Password</p>
-                            <input type="text" placeholder="Enter your Password">
+                            <input type="password" placeholder="Enter your Password" id="confirmPassword">
+                            <span class="error" id="confirmPasswordError"></span>
                         </div>
                     </div>
-                    <button class="enter__button">Register</button>
+                    <button class="enter__button" id="registerButton">Register</button>
                 </div>
             </div>
         </div>
     </main>
+    <script src="../scripts/registro.js"></script>
+    <script type="module" src="../scripts/login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

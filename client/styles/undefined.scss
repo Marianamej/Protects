@@ -35,6 +35,16 @@
     cursor: pointer;
     margin-top: 10px;
 }
+
+.products__options{
+    display: flex;
+    justify-content: space-between;
+}
+
+.options{
+    display: flex;
+}
+
 .lista__productos{
     width: 100%;
     display: flex;
@@ -47,6 +57,9 @@
 
 }
 @media (599px < width < 1240px) {
+    .lista__productos{
+        justify-content: center;
+    }
     .producto{
         position: relative;
         gap: 10px;
@@ -86,3 +99,9 @@
       .page-number:hover {
         background-color: #e6e6e6 ; 
       }
+      @media screen and (min-width: 300px) and (max-width: 500px) {
+        .lista__productos{
+            justify-content: center;
+        }
+      }
+      
