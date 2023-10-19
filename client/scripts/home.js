@@ -1,12 +1,21 @@
 import { renderBanner } from './renderBanner.js';
 import { getBanners,fondos } from './apiBanner.js';
+import { productosRenderizados } from './renderCardProduct.js';
 
+// Selecciono los contenedores de los productos del HTML
+const contenedorUltimasUnidades = document.querySelector('#productosHomeUltimasUnidades');
+
+// Se renderizan los banners en el HTML
 renderBanner(getBanners)
 
+// Se renderizan los productos en el HTML
+contenedorUltimasUnidades.append(productosRenderizados);
+
+
+//Funcionalidad del slider de banners
 // Get all the articles
 const banners = document.querySelectorAll('.hero-banner');
 banners[0].style = `background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), url('../assets/fondo-banner-1.jpg') no-repeat center/cover, lightgray 50%;`;
-
 
 // Set the current article index to 0
 let currentArticleIndex = 0;
