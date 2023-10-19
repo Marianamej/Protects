@@ -32,7 +32,6 @@ function hayDescuento(producto,precioConDescuentoAplicado) {
 
 export function separarProductosParaMostrar(numeroProductosInicioMostrar,numeroProductosFinalMostrar) {
     const productosParaMostrar = productos.slice(numeroProductosInicioMostrar, numeroProductosFinalMostrar)
-    renderizadoProductos(productosParaMostrar)
     return productosParaMostrar;
 }
 

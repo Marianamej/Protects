@@ -11,8 +11,8 @@ const contenedorUltimasUnidades = document.querySelector('#productosHomeUltimasU
 renderBanner(getBanners)
 
 // Se renderizan los productos en el HTML
-const listaProductos = separarProductosParaMostrar(0,8);
-contenedorUltimasUnidades.append(renderizadoProductos(listaProductos));
+console.log(separarProductosParaMostrar(0,8))
+contenedorUltimasUnidades.append(renderizadoProductos(separarProductosParaMostrar(0,8)));
 
 
 //Funcionalidad del slider de banners
