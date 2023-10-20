@@ -215,6 +215,24 @@ header {
     gap: 40px;
   }
 }
+/*Botones de filtrado*/
+.productos__filtrados {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.productos__filtrados--titulo {
+  font-size: 2.4rem;
+}
+
+.filtro__buttons {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
 .icon a {
   display: block;
   width: auto;
@@ -926,8 +944,16 @@ header {
 .filtro__flechas {
   position: absolute;
   width: 100px;
-  left: 50%;
-  bottom: 50%;
+}
+
+.filtro__flechas--adelante {
+  top: 45%;
+  right: 0;
+}
+
+.filtro__flechas--atras {
+  top: 45%;
+  left: -20px;
 }
 
 .about__container-title {

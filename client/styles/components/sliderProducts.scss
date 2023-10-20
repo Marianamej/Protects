@@ -24,6 +24,14 @@
   .filtro__flechas{
     position: absolute;
     width: 100px;
-    left: 50%;
-    bottom: 50%;
+  }
+
+  .filtro__flechas--adelante{
+    top: 45%;
+    right: 0;
+  }
+
+  .filtro__flechas--atras{
+    top: 45%;
+    left: -20px;
   }
