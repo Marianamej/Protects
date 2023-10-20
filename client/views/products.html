@@ -178,33 +178,6 @@
       </div>
     </section>
   </header>
-  <template id="template__producto">
-    <div class="producto">
-      <div class="producto__main-content left">
-        <img class="producto__imagen" src="" alt="">
-        <div class="overlay overlayA"></div>
-        <div class="overlay overlayB"></div>
-        <div class="producto__actions">
-            <div class="center producto__iconos-interactivos"><img class="iconos-interactivos__iconos" src="../assets/icons/icon-corazon.svg" alt="Icono de corazon para generar una interaccion de deseo a ese producto"></div>
-            <div class="center producto__iconos-interactivos"><img class="iconos-interactivos__iconos"  src="../assets/icons/icon-stats.svg" alt="Icono de estadistica para mostrar descripcion mas avanzada del producto"></div>
-        </div>
-      
-        <div class="producto__calificacion center">
-            <div class="stars">
-      
-            </div>
-            <p class="reviews"></p>
-        </div>
-        <h3 class="fs-xs producto__nombre"></h3>
-      
-        <div class="producto__info-compra">
-          <p class="tx-through fs-xs producto__descuento"></p>
-          <p class="ft-bold producto__precio"></p>
-          <button class="boton__añadir-carrito button--white">Add al carrito</button>
-        </div>
-      </div>
-    </div>
-  </template>
   <main class="main__container">
     <div class="about__container-title">
       <p>Home > products</p>
@@ -228,12 +201,35 @@
           <li><a href="#">lo mas vendido</a></li>
         </ul>
       </div>
-    
     </div>
-
     
     <article class="lista__productos">
-      
+      <!-- !Productos Generados desde renderCardProduct a partir del siguiente templeate-->
+      <template id="template__producto">
+        <div class="producto">
+          <div class="producto__main-content left">
+            <img class="producto__imagen" src="" alt="">
+            <div class="overlay overlayA"></div>
+            <div class="overlay overlayB"></div>
+            <div class="producto__actions">
+                <div class="center producto__iconos-interactivos"><img class="iconos-interactivos__iconos" src="../assets/icons/icon-corazon.svg" alt="Icono de corazon para generar una interaccion de deseo a ese producto"></div>
+                <div class="center producto__iconos-interactivos"><img class="iconos-interactivos__iconos"  src="../assets/icons/icon-stats.svg" alt="Icono de estadistica para mostrar descripcion mas avanzada del producto"></div>
+            </div>
+          
+            <div class="producto__calificacion center">
+                <div class="stars"></div>
+                <p class="reviews"></p>
+            </div>
+            <h3 class="fs-xs producto__nombre"></h3>
+          </div>
+          <div class="producto__info-compra">
+            <p class="tx-through fs-xs producto__descuento"></p>
+            <p class="ft-bold producto__precio"></p>
+            <button class="boton__añadir-carrito button--white">Add al carrito</button>
+          </div>
+        </div>
+      </template>
+      <!-- !Productos Generados desde renderCardProduct -->
     </article>
 
     <div class="pagination">
