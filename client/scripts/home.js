@@ -66,3 +66,31 @@ function filtrarPorBoton(categoria){
   let rederizadoProductosFiltrados = renderizadoProductos(productosFiltrados);
   contenedorFiltroRapido.append(rederizadoProductosFiltrados);
 } 
+
+// ! Slider de productos Filtrados
+
+const slider = document.querySelector(".productos__slider");
+const botonAtras = document.querySelector(".filtro__flechas--atras");
+const botonAdelante = document.querySelector(".filtro__flechas--adelante");
+let posicionSlide = 0;
+const anchoProducto = document.querySelector(".producto").offsetWidth;
+const anchoDePantalla = window.innerWidth;
+
+botonAtras.addEventListener("click", () => {
+  posicionSlide = Math.max(posicionSlide - (anchoDePantalla > 1407 ? 4 : 3), 0);
+  updateSlider();
+});
+
+botonAdelante.addEventListener("click", () => {
+  const maxSlides = slider.children.length - (anchoDePantalla > 1407 ? 4 : 3);
+  posicionSlide = Math.min(posicionSlide + (anchoDePantalla > 1407 ? 4 : 3), maxSlides);
+  updateSlider();
+});
+
+function updateSlider() {
+  const translateX = posicionSlide * -(anchoProducto + 24); // 25% de ancho por tarjeta
+  slider.style.transform = `translateX(${translateX}px)`;
+}
+
+// Inicializa el slider
+updateSlider();

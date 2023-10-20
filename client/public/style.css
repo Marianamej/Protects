@@ -899,6 +899,37 @@ header {
   border-radius: 40px;
 }
 
+.slider-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 1008px;
+  margin: 0 auto;
+}
+@media (width < 1407px) {
+  .slider-container {
+    max-width: 750px;
+  }
+}
+
+.productos__slider {
+  display: flex;
+  width: 100%; /* Ajusta el ancho según tus necesidades */
+  transition: transform 0.3s ease;
+  gap: 24px;
+}
+
+.productos__slider > * {
+  min-width: 234px;
+}
+
+.filtro__flechas {
+  position: absolute;
+  width: 100px;
+  left: 50%;
+  bottom: 50%;
+}
+
 .about__container-title {
   display: flex;
   flex-direction: column;
