@@ -2,6 +2,7 @@ import { productos } from "./Json/products.js";
 
 //Se crea un fragmento para evitar el reflow al renderizar los productos
 const fragmentoProductos = new DocumentFragment();
+const templateProducto = document.querySelector('#template__producto').content;
 let productosRenderizados = '';
 
 function hayEstrellas(numeroEstrellas) {
@@ -23,7 +24,7 @@ function hayDescuento(producto,precioConDescuentoAplicado) {
 
     //Verificamos si el producto tiene descuento, si es asi el contenido que se mostrara subrayado sera el precio del producto, porque tiene descuento
     if (precioConDescuentoAplicado) {
-        descuentoProducto = `<p class="tx-through fs-xs producto__descuento">$${producto.precio}</p>`;
+        descuentoProducto = producto.precio;
     }
 
     //Si no tiene descuento, se pasara una cadena vacia, porque no tiene descuento
@@ -37,6 +38,7 @@ export function separarProductosParaMostrar(numeroProductosInicioMostrar,numeroP
 
 export function renderizadoProductos(arregloProductos) {
     arregloProductos.forEach(producto => {
+        const clone = document.importNode(templateProducto, true);
 
         //Se verifican el numero de estrellas del producto para renderizarlas
         const estrellas = hayEstrellas(producto.numeroEstrellas)
@@ -49,36 +51,18 @@ export function renderizadoProductos(arregloProductos) {
             producto.precio = producto.precioDescuento;
         }
         
+        //Se renderiza el producto
+        clone.querySelector('.producto__imagen').src = producto.imagen;
+        clone.querySelector('.producto__imagen').alt = producto.nombre;
+        clone.querySelector('.producto__imagen').setAttribute("title",producto.nombre)
+        clone.querySelector('.stars').innerHTML = estrellas;
+        clone.querySelector('.reviews').textContent = `reviews (${producto.numeroReviews})`;
+        clone.querySelector('.producto__nombre').textContent = producto.nombre;
+        clone.querySelector('.producto__descuento').textContent = descuentoProducto;
+        clone.querySelector('.producto__precio').textContent = `$${producto.precio}`;
+
         //Se crea el HTML de cada producto
-        const productoCardElement = document.createElement('div');
-        productoCardElement.classList.add('producto');
-        productoCardElement.innerHTML = 
-            `
-            <div class="producto__main-content left">
-                <img class="producto__imagen" src=${producto.imagen} alt="${producto.nombre}">
-                <div class="overlay overlayA"></div>
-                <div class="overlay overlayB"></div>
-                <div class="producto__actions">
-                    <div class="center producto__iconos-interactivos"><img class="iconos-interactivos__iconos" src="../assets/icons/icon-corazon.svg" alt="Icono de corazon para generar una interaccion de deseo a ese producto"></div>
-                    <div class="center producto__iconos-interactivos"><img class="iconos-interactivos__iconos"  src="../assets/icons/icon-stats.svg" alt="Icono de estadistica para mostrar descripcion mas avanzada del producto"></div>
-                </div>
-                
-                <div class="producto__calificacion center">
-                    <div class="stars">
-                        ${estrellas}
-                    </div>
-                    <p class="reviews">reviews (${producto.numeroReviews})</p>
-                </div>
-                <h3 class="fs-xs">${producto.nombre}</h3>
-            </div>
-            <div class="producto__info-compra">
-                ${descuentoProducto}
-                <p class="ft-bold producto__precio">$${producto.precio}</p>
-                <button class="boton__añadir-carrito button--white">Add al carrito</button>
-            </div>
-            `;
-    
-        fragmentoProductos.appendChild(productoCardElement);
+        fragmentoProductos.appendChild(clone);
     });
     return productosRenderizados = fragmentoProductos;
 }
