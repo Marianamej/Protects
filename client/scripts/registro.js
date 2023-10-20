@@ -63,12 +63,23 @@ document.addEventListener("DOMContentLoaded", function () {
                     Users.push({ name: username, email: email, password: password });
                     localStorage.setItem('users', JSON.stringify(Users));
 
-                    successMessage.innerHTML = "Registro satisfactorio. ¡Bienvenido!";
+                    // successMessage.innerHTML = "Registro satisfactorio. ¡Bienvenido!";
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: `Usuario registrado satisfactoriamente. ¡Bienvenido!`,
+                        showConfirmButton: false,
+                        timer: 2000
+                      })
 
                     emailInput.value = "";
                     usernameInput.value = "";
                     passwordInput.value = "";
                     confirmPasswordInput.value = "";
+
+                    setTimeout(() => {
+                        window.location.href = 'login.html'
+                    }, 2000);
                 }
             }
         }

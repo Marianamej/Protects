@@ -57,3 +57,19 @@
     }
 }
     
+/*Botones de filtrado*/
+.productos__filtrados{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.productos__filtrados--titulo{
+    font-size: 2.4rem;
+}
+.filtro__buttons{
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}

@@ -1,6 +1,20 @@
-.contenedor__ultimas-unidades{
+.home__productos{
     flex-direction: column;
-    gap: 54px;
+    gap: 40px;
+}
+
+.titulo__seccion{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    h3{
+       font-size: 3.2rem; 
+    }
+    p{
+        color: var(--red-fire);
+    }
 }
 
 .ultimas-unidades{
@@ -10,48 +24,80 @@
     justify-content: space-between;
     row-gap: 50px;
     column-gap: 24px;
+    @media (width < 820px){
+        max-width: 550px;
+    }
 }
 
 .producto{
     position: relative;
-    gap: 10px;
+    display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 100%;
     max-width: 234px;
-    max-height: 330px;
-    padding: 0 24px 8px;
+    height: 330px;
+    padding: 16px 24px;
     border: 1px solid #c7c7c7;
-    & img{
-        max-height: 150px;
-        width: 100%;
-        object-fit: contain;
-        background-color: var(--gray);
-    }
+    overflow: hidden;
+}
+
+.producto__imagen{
+    height: 150px;
+    width: 100%;
+    object-fit: contain;
+}
+
+.producto__main-content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .producto__actions{
     position: absolute;
-    top: 16px;
-    left: 16px;
-    display: none;
+    display: flex;
+    top: 40px;
+    left: 20px;
+    // -webkit-transform: translate(-50%, -50%);
+    // -moz-transform: translate(-50%, -50%);
+    // -ms-transform: translate(-50%, -50%);
+    // -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     flex-direction: column;
     align-items: center;
-    gap: 4px;
-    & div{
-        width: 30px;
-        height: 30px;
-        border-radius: 100%;
-        border: solid 1px var(--red-fire);
+    gap: 12px;
+}
 
-        & img{
-            width: 50%;
-            height: 50%;
-        }
-    }
-    & div:hover{
-        background-color: var(--red-fire);
+.producto__iconos-interactivos{
+    background: rgb(256, 256, 256);
+    // -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    // -moz-border-radius: 50%;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    // -moz-transition: all 0.2s 0.3s;
+    // -o-transition: all 0.2s 0.3s;
+    transition: all 0.15s 0.15s;
+    border: solid 1px var(--red-fire);
+
+    & img{
+        width: 50%;
+        height: 50%;
     }
 }
+
+//!Efecto Hover para los iconos interactivos
+// .producto__iconos-interactivos:hover{
+//     background-color: var(--red-fire);
+
+//     .iconos-interactivos__iconos{
+//         transition: all 0.1s;
+//         filter: brightness(0) invert(1);
+//     }
+// }
 
 .producto__calificacion{
     gap: 8px;
@@ -85,7 +131,8 @@
 }
 
 .boton__añadir-carrito{
-    display: none;
+    opacity: 0;
+    position: absolute;
     width: 100%;
     border-radius: 50px;
 }
@@ -95,13 +142,14 @@
     .producto__descuento,.producto__precio{
         display: none;
     }
-
     .boton__añadir-carrito{
         display: flex;
+        position: relative;
+        opacity: 1;
+        transition: all 0.2s 0.2s;
     }
-
-    .producto__actions{
-        display: flex;
+    .producto__iconos-interactivos{
+        opacity: 1;
     }
 }
 
@@ -139,9 +187,40 @@
         overflow-x: scroll;
     }
 
-    .contenedor__ultimas-unidades{
+    .home__productos{
         gap: 32px;
     }
+}
 
+// ! Animacion de hover con los productos efecto cristal
+.overlayA {
+    background: rgba(105, 178, 204, 0.195);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: -100%;
+    width: 100%;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.overlayB {
+    background: rgba(212, 204, 204, 0.195);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
 
+.producto:hover .overlayA {
+    top: 0;
+}
+.producto:hover .overlayB {
+    top: 0;
 }

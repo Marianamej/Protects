@@ -1,8 +1,3 @@
-
-import { enviarFormulario } from "../scripts/envioFormulario.js"
-
-
-
 const hamburguerMenu = document.getElementById('hamburguer-menu');
 const menuMobile = document.getElementById('menu-mobile');
 const closeMobileMenu = document.getElementById('mobile-menu-close');
@@ -16,4 +11,4 @@ closeMobileMenu.addEventListener('click', () => {
 });
 
 
-document.addEventListener("DOMContentLoaded", enviarFormulario);
+// document.addEventListener("DOMContentLoaded", enviarFormulario);

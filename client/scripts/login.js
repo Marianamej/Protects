@@ -15,7 +15,16 @@ loginButton.addEventListener('click', (e)=>{
         return alert('Usuario y/o contraseña incorrectos!')
     }
 
-    alert(`Bienvenido ${validUser.name}`)
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: `Bienvenido ${validUser.name}`,
+        showConfirmButton: false,
+        timer: 2000
+      })
+    // alert(`Bienvenido ${validUser.name}`)
     localStorage.setItem('login_success', JSON.stringify(validUser))
-    window.location.href = 'home-auth.html'   
+    setTimeout(() => {
+        window.location.href = 'home-auth.html'
+    }, 2000);
 })

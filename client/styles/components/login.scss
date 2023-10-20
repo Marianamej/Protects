@@ -11,15 +11,24 @@
 .login__contenido{
     display: flex;
     justify-content: space-between;
+    height: 80vh;
 }
 
 .login__imagen{
     width: 95%;
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
 }
 
 .login-formulario{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 24px;
     padding-top: 24px;
     padding-left: 20px;
