@@ -1,4 +1,4 @@
-package com.gamertx.shop;
+package com.gamertx;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
