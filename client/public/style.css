@@ -944,16 +944,19 @@ header {
 .filtro__flechas {
   position: absolute;
   width: 100px;
+  cursor: pointer;
+  height: 30px;
 }
 
 .filtro__flechas--adelante {
   top: 45%;
-  right: 0;
+  right: -30px;
 }
 
 .filtro__flechas--atras {
   top: 45%;
-  left: -20px;
+  left: -30px;
+  rotate: 180deg;
 }
 
 .about__container-title {
@@ -1968,6 +1971,23 @@ button.active {
 }
 .button--white:hover {
   background-color: var(--red-fire);
+  color: var(--white-cloud);
+}
+
+.button--blue {
+  background-color: var(--white-cloud);
+  color: var(--night-sky);
+  border: solid 2px var(--night-sky);
+  transition: all 0.3s ease-in-out;
+}
+.button--blue:hover {
+  background-color: var(--night-sky);
+  color: var(--white-cloud);
+}
+
+.button--blue-active {
+  transition: all 0.3s ease-in-out;
+  background-color: var(--night-sky);
   color: var(--white-cloud);
 }
 
