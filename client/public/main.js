@@ -10,6 +10,5 @@ closeMobileMenu.addEventListener('click', () => {
     menuMobile.classList.toggle('hide');
 });
 
-// if(window.innerWidth > 768) {
-//     menuMobile.classList.add('hide');
-// }
+
+// document.addEventListener("DOMContentLoaded", enviarFormulario);

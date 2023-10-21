@@ -1,10 +1,17 @@
 @use './tools.scss' as mixins;
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
 // Cosas muy muy generales y estructurales del sitio. En la capa de objetos, puede definir estilos para elementos como cuadrículas, objetos multimedia y ayudas de diseño. Estos estilos deberían ser más específicos que los estilos de la capa de elementos, pero aún así ser reutilizables en varias páginas y componentes.
 // Center an element horizontally and vertically
 .center {
     display: flex;
     justify-content: center;
     align-items: center;
+    align-content: center;
 }
 
 .left {
@@ -39,4 +46,30 @@
     margin: 0 16px;
     @include mixins.tablet (32px, 32px, 24px);
     @include mixins.desktop (32px, 200px, 24px);
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+}
+
+@media screen and (max-width: 600px){
+    .main__container{
+        gap: 40px;
+    }
+}
+    
+/*Botones de filtrado*/
+.productos__filtrados{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.productos__filtrados--titulo{
+    font-size: 2.4rem;
+}
+.filtro__buttons{
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
 }

@@ -22,6 +22,7 @@
 //container grande de card
 .about__container-card{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 12px;

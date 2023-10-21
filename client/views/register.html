@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/icon-logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="../public/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="main__container">
+        <div class="register__container">
+            <div class="register__logo">
+                <img src="../assets/icons/icon-logo.svg" alt="">
+            </div>
+            <div class="register__content">
+                <div class="register__image">
+                    <img src="../assets/img-register.png" alt="">
+                </div>
+                <div class="register__form">
+                    <div class="form__welcome">
+                        <p>Welcome to <span>GamerTx</span></p>
+                        <div class="switch">
+                            <a href="login.html" class="switch__hoverLogin">Login</a>
+                            <a href="register.html" class="switch__hoverRegister">Register</a>
+                        </div>
+                    </div>
+                    <div class="success-message" id="successMessage"></div>
+                    <div class="form__inputs">
+                        <div class="form__input">
+                            <p>Email Address</p>
+                            <input type="text" placeholder="Enter your Email Address" id="email">
+                            <span class="error" id="emailError"></span>
+                        </div>
+                        <div class="form__input">
+                            <p>Username</p>
+                            <input type="text" placeholder="Enter your Username" id="username">
+                            <span class="error" id="usernameError"></span>
+                        </div>
+                        <div class="form__input">
+                            <p>Password</p>
+                            <input type="password" placeholder="Enter your Password" id="password">
+                            <span class="error" id="passwordError"></span>
+                        </div>
+                        <div class="form__input">
+                            <p>Confirm Password</p>
+                            <input type="password" placeholder="Enter your Password" id="confirmPassword">
+                            <span class="error" id="confirmPasswordError"></span>
+                        </div>
+                    </div>
+                    <button class="enter__button" id="registerButton">Register</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../scripts/registro.js"></script>
+    <script type="module" src="../scripts/login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

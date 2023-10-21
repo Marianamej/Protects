@@ -22,19 +22,26 @@ button{
     border: 1px solid transparent;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 16px 32px;
     border-radius: 5px;
     font-size: 1.4rem;
     font-family: var(--secondary-font);
 }
 
-input{
+input,textarea,select{
     padding: 16px;
     border: 1px solid var(--grey-mouse);
     border-radius: 4px;
     outline: none;
     font-size: 1.4rem;
     font-family: var(--main-font);
+    cursor: text;
+}
+
+select{
+    width: 100%;
+    cursor: pointer;
 }
 
 ion-icon{
@@ -44,11 +51,13 @@ ion-icon{
 /* Header */
 
 header {
+    position: relative;
     width: 100%;
     border-bottom: 1px solid var(--shark-skin);
     position: sticky;
     top: 0;
     background-color: var(--white-cloud);
+    z-index: 1;
 }
 
 /* Main */

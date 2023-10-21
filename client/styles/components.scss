@@ -1,16 +1,22 @@
 //info Atoms
 @use 'components/icon';
-@use 'components/logo';
 
 // info Molecules
-
-// info Organisms
 @use 'components/dropdown';
+@use 'components/hero-banner';
 @use 'components/mobile-menu';
 @use 'components/header';
+@use 'components/product';
+@use 'components/cardPromocion';
+@use 'components/blog';
+@use 'components/sliderProducts';
 
+// info Organisms
 @use 'components/carsdAbout';
 @use 'components/contendProduct';
 @use 'components/footer';
-
-
+@use 'components/formContact';
+@use 'components/login';
+@use 'components/register';
+@use 'components/shoppingCart.scss';
+@use 'components/profile.scss';
