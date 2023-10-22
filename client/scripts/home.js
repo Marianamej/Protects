@@ -9,6 +9,7 @@ import {filtrarProductos} from './filtradoProducts.js';
 const contenedorUltimasUnidades = document.querySelector('#productosHomeUltimasUnidades');
 const contenedorFiltroRapido = document.querySelector('#filtroProductosHome');
 const filtroProductosHome = document.querySelector('#filtradoHome');
+const contenidoPagina = document.querySelector('.main__container');
 
 
 // Se renderizan los banners en el HTML
@@ -106,3 +107,13 @@ function updateSlider() {
 // Inicializa el slider
 updateSlider();
 
+//! Funcionalidad ver el producto en detalle
+contenidoPagina.addEventListener('click', (e) => {
+  if(e.target.classList.contains('overlay')){
+    const producto = e.target.parentElement.parentElement;
+    const idProducto = producto.dataset.id;
+
+    localStorage.setItem('idProducto', idProducto);
+    window.location.href = 'single-product.html';
+  }
+});

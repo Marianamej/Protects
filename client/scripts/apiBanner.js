@@ -1,5 +1,5 @@
 export const fondos = ["../assets/fondo-banner-1.jpg","../assets/fondo-banner-3.avif","../assets/fondo-banner-4.jpg"];
-const imgProducto = ["../assets/img-banner-2.jpg","../assets/img-banner-3.png"];
+const imgProducto = ["../assets/img-banner-2.jpg","../assets/img-banner-3.webp"];
 export const getBanners = []
 
 
