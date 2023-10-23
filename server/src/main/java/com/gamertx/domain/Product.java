@@ -1,5 +1,6 @@
 package com.gamertx.domain;
 
+import com.gamertx.persistance.entity.Marca;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +12,7 @@ import java.time.LocalDate;
 public class Product {
     private int productId;
     private int categoryId;
-    private int brandId;
+    private Marca brandId;
     private int modelId;
     private int offerId;
     private String name;

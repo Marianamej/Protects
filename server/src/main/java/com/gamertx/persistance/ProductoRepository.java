@@ -62,7 +62,7 @@ public class ProductoRepository implements ProductRepository {
         return productoCrudRepository.findById(id).map(
                 producto -> {
                     producto.setIdCategoria(newProducto.getIdCategoria());
-                    producto.setIdMarca(newProducto.getIdMarca());
+                    producto.setMarca(newProducto.getMarca());
                     producto.setIdModelo(newProducto.getIdModelo());
                     producto.setIdOferta(newProducto.getIdOferta());
                     producto.setNombre(newProducto.getNombre());

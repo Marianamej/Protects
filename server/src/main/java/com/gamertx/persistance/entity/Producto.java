@@ -20,8 +20,8 @@ public class Producto {
     @Column(name = "id_categoria")
     private Integer idCategoria;
 
-    @Column(name = "id_marca")
-    private Integer idMarca;
+//    @Column(name = "id_marca")
+//    private Integer idMarca;
 
     @Column(name = "id_modelo")
     private Integer idModelo;
