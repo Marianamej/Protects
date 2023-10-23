@@ -5,6 +5,7 @@ import com.gamertx.domain.repository.ProductRepository;
 import com.gamertx.persistance.crud.ProductoCrudRepository;
 import com.gamertx.persistance.entity.Producto;
 import com.gamertx.persistance.mapper.ProductMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,7 +13,9 @@ import java.util.Optional;
 //Con esta etiqueta le estamos indicando a Spring que la clase esta interactuando con la Base de datos realizando operaciones
 @Repository
 public class ProductoRepository implements ProductRepository {
+    @Autowired
     private ProductoCrudRepository productoCrudRepository;
+    @Autowired
     private ProductMapper mapper;
 
     //Se crea un metodo que retorna una lista de productos, el metodo onsiste, en utilizar
@@ -73,4 +76,5 @@ public class ProductoRepository implements ProductRepository {
                 }
         ).get();
     }
+
 }
