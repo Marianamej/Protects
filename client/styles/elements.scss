@@ -39,6 +39,10 @@ input,textarea,select{
     cursor: text;
 }
 
+textarea{
+    resize: none;
+}
+
 select{
     width: 100%;
     cursor: pointer;

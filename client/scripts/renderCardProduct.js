@@ -52,6 +52,7 @@ export function renderizadoProductos(arregloProductos) {
         }
         
         //Se renderiza el producto
+        clone.querySelector('.producto').setAttribute("data-id",producto.id);
         clone.querySelector('.producto__imagen').src = producto.imagen;
         clone.querySelector('.producto__imagen').alt = producto.nombre;
         clone.querySelector('.producto__imagen').setAttribute("title",producto.nombre)
