@@ -1,45 +1,61 @@
 package com.gamertx.persistance;
 
+import com.gamertx.domain.Product;
+import com.gamertx.domain.repository.ProductRepository;
 import com.gamertx.persistance.crud.ProductoCrudRepository;
 import com.gamertx.persistance.entity.Producto;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.gamertx.persistance.mapper.ProductMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 //Con esta etiqueta le estamos indicando a Spring que la clase esta interactuando con la Base de datos realizando operaciones
 @Repository
-public class ProductoRepository {
+public class ProductoRepository implements ProductRepository {
     private ProductoCrudRepository productoCrudRepository;
+    private ProductMapper mapper;
 
     //Se crea un metodo que retorna una lista de productos, el metodo onsiste, en utilizar
     //el metodo findAll() de la interfaz ProductoCrudRepository, que me devuelve un iterable con todos los registros de la
     //la tabla
-    public List<Producto> getAll(){
-        return (List<Producto>) productoCrudRepository.findAll();
+    @Override
+    public List<Product> getAll(){
+        List<Producto> productos = (List<Producto>) productoCrudRepository.findAll();
+        return mapper.toProducts(productos);
     }
 
-    public List<Producto> getByCategory(int idCategoria) {
-        return productoCrudRepository.findByIdCategoriaOrderByNombreAsc(idCategoria);
+    @Override
+    public Optional<List<Product>> getByCategory(int categoryId) {
+        List<Producto> productos = productoCrudRepository.findByIdCategoriaOrderByNombreAsc(categoryId);
+        return Optional.of(mapper.toProducts(productos));
     }
 
-    public Optional<List<Producto>> getLastUnits(int unidadesMaximas){
-        return productoCrudRepository.findByStockLessThan(unidadesMaximas);
+    @Override
+    public Optional<List<Product>> getScarseProducts(int quantity) {
+        Optional <List<Producto>> productos = productoCrudRepository.findByStockLessThan(quantity);
+        return productos.map(prods -> mapper.toProducts(prods));
     }
 
-    public Optional<Producto> getProduct(int idProducto){
-        return productoCrudRepository.findById(idProducto);
+    @Override
+    public Optional<Product> getProduct(int productId) {
+        return productoCrudRepository.findById(productId).map(producto -> mapper.toProduct(producto));
+    }
+
+
+    @Override
+    public Product saveProduct(Product product) {
+        Producto producto = mapper.toProducto(product);
+        return mapper.toProduct(productoCrudRepository.save(producto));
+    }
+
+    @Override
+    public void deleteProduct(int productId) {
+        productoCrudRepository.deleteById(productId);
     };
 
-    public Producto saveProduct(Producto producto){
-        return productoCrudRepository.save(producto);
-    }
-
-    public void deleteProduct(int idProducto){
-        productoCrudRepository.deleteById(idProducto);
-    }
-
-    public Producto updateProduct(Producto newProducto, int id){
+    @Override
+    public Product updateProduct(Product newProduct, int id) {
+        Producto newProducto = mapper.toProducto(newProduct);
         return productoCrudRepository.findById(id).map(
                 producto -> {
                     producto.setIdCategoria(newProducto.getIdCategoria());
@@ -53,7 +69,7 @@ public class ProductoRepository {
                     producto.setFechaCreacion(newProducto.getFechaCreacion());
                     producto.setValoracion(newProducto.getValoracion());
                     producto.setEstado(newProducto.getEstado());
-                    return productoCrudRepository.save(producto);
+                    return mapper.toProduct(productoCrudRepository.save(producto));
                 }
         ).get();
     }
