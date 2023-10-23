@@ -22,7 +22,7 @@ contenedorUltimasUnidades.append(renderizadoProductos(separarProductosParaMostra
 //!Funcionalidad del slider de banners
 // Get all the articles
 const banners = document.querySelectorAll('.hero-banner');
-banners[0].style = `background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), url('../assets/fondo-banner-1.jpg') no-repeat center/cover, lightgray 50%;`;
+banners[0].style = `background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), url('../assets/fondo-banner-1.webp') no-repeat center/cover, lightgray 50%;`;
 
 // Set the current article index to 0
 let currentArticleIndex = 0;
