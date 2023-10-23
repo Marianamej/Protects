@@ -109,6 +109,7 @@ updateSlider();
 
 //! Funcionalidad ver el producto en detalle
 contenidoPagina.addEventListener('click', (e) => {
+  
   if(e.target.classList.contains('overlay')){
     const producto = e.target.parentElement.parentElement;
     const idProducto = producto.dataset.id;
