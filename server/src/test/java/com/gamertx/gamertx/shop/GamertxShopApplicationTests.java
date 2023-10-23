@@ -1,4 +1,4 @@
-package com.gamertx.shop;
+package com.gamertx.gamertx.shop;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

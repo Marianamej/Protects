@@ -9,6 +9,7 @@ import {filtrarProductos} from './filtradoProducts.js';
 const contenedorUltimasUnidades = document.querySelector('#productosHomeUltimasUnidades');
 const contenedorFiltroRapido = document.querySelector('#filtroProductosHome');
 const filtroProductosHome = document.querySelector('#filtradoHome');
+const contenidoPagina = document.querySelector('.main__container');
 
 
 // Se renderizan los banners en el HTML
@@ -32,7 +33,6 @@ const interval = ONE_SECOND_IN_MS * 5;
 
 // Create a function to change the current article
 function changeArticle() {
-  console.log("Hola");
   // Hide the current article
   banners[currentArticleIndex].classList.remove('active');
 
@@ -55,16 +55,28 @@ setInterval(changeArticle, interval);
 //!Funcionalidad del filtrado de productos
 filtrarPorBoton('Laptop');
 
-
 filtroProductosHome.addEventListener('click', (e) => {
-    filtrarPorBoton(e.target.textContent)
+  const esBoton = e.target.tagName === 'BUTTON';
+  const estaSeleccionado = e.target.classList.contains('button--blue-active');
+
+    if(esBoton && ! estaSeleccionado){
+      contenedorFiltroRapido.innerHTML = "";
+      filtrarPorBoton(e.target.textContent)
+      cambiarEstadoBotones(e.target);
+    }
 })
+
+function cambiarEstadoBotones(elemento) {
+  const botones = document.querySelectorAll('.button--blue-active');
+  botones.forEach(boton => boton.classList.remove('button--blue-active'));
+  elemento.classList.add('button--blue-active');
+}
 
 function filtrarPorBoton(categoria){
   let productosFiltrados = filtrarProductos(categoria);
-  console.log(productosFiltrados);
   let rederizadoProductosFiltrados = renderizadoProductos(productosFiltrados);
   contenedorFiltroRapido.append(rederizadoProductosFiltrados);
+  productosFiltrados.length = 0
 } 
 
 // ! Slider de productos Filtrados
@@ -94,3 +106,14 @@ function updateSlider() {
 
 // Inicializa el slider
 updateSlider();
+
+//! Funcionalidad ver el producto en detalle
+contenidoPagina.addEventListener('click', (e) => {
+  if(e.target.classList.contains('overlay')){
+    const producto = e.target.parentElement.parentElement;
+    const idProducto = producto.dataset.id;
+
+    localStorage.setItem('idProducto', idProducto);
+    window.location.href = 'single-product.html';
+  }
+});

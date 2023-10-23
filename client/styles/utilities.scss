@@ -33,7 +33,7 @@
   }
   
   .fs-lg {
-    font-size: 1.125rem;
+    font-size: 3.2rem;
   }
   
   .fs-xl {
@@ -70,6 +70,24 @@
   }
 }
 
+.button--blue {
+  background-color: var(--white-cloud);
+  color: var(--night-sky);
+  border: solid 2px var(--night-sky);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+      background-color: var(--night-sky);
+      color: var(--white-cloud);
+  }
+}
+
+.button--blue-active{
+  transition:all 0.3s ease-in-out;
+  background-color: var(--night-sky);
+  color: var(--white-cloud);
+}
+
 //Hide elements
 
 .hide {
@@ -81,3 +99,5 @@
 .tx-through{
     text-decoration: line-through;
 }
+
+//Estado
