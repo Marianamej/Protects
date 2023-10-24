@@ -1,6 +1,6 @@
 package com.gamertx.domain;
 
-import com.gamertx.persistance.entity.EnumContent;
+import com.gamertx.persistence.entity.EnumContent;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import lombok.Getter;

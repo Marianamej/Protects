@@ -1,4 +1,4 @@
-package com.gamertx.persistance.entity;
+package com.gamertx.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -16,6 +16,6 @@ public class Label {
     private Integer idLabel;
     private String nombre;
 
-    @OneToMany(mappedBy = "label")
+    @OneToMany(mappedBy = "label",fetch=FetchType.EAGER)
     private List<Tematica> tematicas;
 }

@@ -1,10 +1,10 @@
-package com.gamertx.persistance;
+package com.gamertx.persistence;
 
 import com.gamertx.domain.Product;
 import com.gamertx.domain.repository.ProductRepository;
-import com.gamertx.persistance.crud.ProductoCrudRepository;
-import com.gamertx.persistance.entity.Producto;
-import com.gamertx.persistance.mapper.ProductMapper;
+import com.gamertx.persistence.crud.ProductoCrudRepository;
+import com.gamertx.persistence.entity.Producto;
+import com.gamertx.persistence.mapper.ProductMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

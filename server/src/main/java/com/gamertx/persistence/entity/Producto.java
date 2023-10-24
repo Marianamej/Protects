@@ -1,4 +1,4 @@
-package com.gamertx.persistance.entity;
+package com.gamertx.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -7,9 +7,9 @@ import lombok.Setter;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-@Entity
 @Getter
 @Setter
+@Entity
 @Table(name = "Productos")
 public class Producto {
     @Id
@@ -20,8 +20,8 @@ public class Producto {
     @Column(name = "id_categoria")
     private Integer idCategoria;
 
-//    @Column(name = "id_marca")
-//    private Integer idMarca;
+    @Column(name = "id_marca")
+    private Integer idMarca;
 
     @Column(name = "id_modelo")
     private Integer idModelo;
@@ -48,6 +48,6 @@ public class Producto {
 
     //Relacion Marca con productos
     @ManyToOne
-    @JoinColumn(name = "id_marca")
+    @JoinColumn(name = "id_marca", insertable = false, updatable = false)
     private Marca marca;
 }

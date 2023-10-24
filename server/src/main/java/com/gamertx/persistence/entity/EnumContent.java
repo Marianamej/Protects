@@ -1,4 +1,4 @@
-package com.gamertx.persistance.entity;
+package com.gamertx.persistence.entity;
 
 public class EnumContent {
     public enum  OpcionesPago{
@@ -10,8 +10,8 @@ public class EnumContent {
     public enum nombresCategoria{
         Laptop,
         Monitor,
-        Desktop_PC,
-        Partes_PC,
-        Complementos
+        Desktop_PC, // Valor con espacio entre comillas dobles
+        Complementos,
+        Partes_PC
     }
 }
