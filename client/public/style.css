@@ -2087,7 +2087,8 @@ button.active {
 
 .img {
   width: 500px;
-  height: 315px;
+  height: 260px;
+  margin-bottom: 20px;
 }
 
 .img_container {

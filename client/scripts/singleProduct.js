@@ -82,6 +82,16 @@ const title=document.createElement("h3")
 title.innerText=product.nombre
 title.className="title"
 
+
+const stars=document.createElement("div")
+for (let i = 0; i < product.numeroEstrellas; i++) {
+    const ionIcon = document.createElement("ion-icon");
+    ionIcon.className = "fs-xs star-active";
+    ionIcon.name = "star";
+    stars.appendChild(ionIcon);
+}
+
+
 const starts=document.createElement('div')
 const precio=document.createElement('p')
 precio.innerText=`$ ${product.precio}`
@@ -103,7 +113,7 @@ color.className="color"
 
 
 tex_container.appendChild(title)
-tex_container.appendChild(starts)
+tex_container.appendChild(stars)
 tex_container.appendChild(precio)
 tex_container.appendChild(stock)
 tex_container.appendChild(descripcion)
