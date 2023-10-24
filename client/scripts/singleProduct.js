@@ -2,6 +2,7 @@ import {separarProductosParaMostrar} from './renderCardProduct.js';
 import {renderizadoProductos} from './renderCardProduct.js';
 import {traerComentarios} from './renderDetailProducts.js';
 import {renderizadoComentarios} from './renderDetailProducts.js';
+import { productos } from './Json/products.js';
 
 // !Constantes para el renderizado de productos y comentarios
 const numeroComentarios = document.querySelector('#numeroComentarios');
@@ -38,3 +39,74 @@ barraNavegacion.addEventListener('click', (e) => {
         }
     }
 });
+
+//carta del productos 
+let idProducto = localStorage.getItem('idProducto');
+idProducto = parseInt(idProducto);
+
+const product = productos.find(function(producto) {
+    return producto.id=== idProducto;
+});
+
+const singleProduct = document.querySelector('.singleProduct');
+const img_container = document.querySelector(".img_container");
+const img = document.createElement("img");
+img.className = "img";
+img.src = product.imagen;
+
+const butosn = document.createElement('div'); 
+butosn.classList = "butosn";
+
+const buton_add = document.createElement('button');
+buton_add.innerText = "Buy";
+buton_add.className="buton_add"
+
+const buton_fav = document.createElement('img');
+buton_fav.src = "../assets/icons/icon-favorite.svg";
+buton_fav.className="butons_actions"
+
+const buton_car = document.createElement('img');
+buton_car.src = "../assets/icons/icon-carrito.svg";
+buton_car.className="butons_actions"
+
+singleProduct.appendChild(img_container);
+img_container.appendChild(img);
+img_container.appendChild(butosn);
+butosn.appendChild(buton_add);
+butosn.appendChild(buton_fav);
+butosn.appendChild(buton_car);
+
+
+const tex_container=document.querySelector(".tex_container")
+const title=document.createElement("h3")
+title.innerText=product.nombre
+title.className="title"
+
+const starts=document.createElement('div')
+const precio=document.createElement('p')
+precio.innerText=`$ ${product.precio}`
+precio.className="precio"
+
+const stock=document.createElement("p")
+stock.innerText="Availability  : in stock"
+stock.className="stock"
+
+const descripcion=document.createElement("p")
+descripcion.className="descripcion_single_product"
+descripcion.innerText=product.descripcion
+
+const linea_horizontal=document.createElement("div")
+linea_horizontal.className="linea-horizontal"
+
+const color=document.createElement("div")
+color.className="color"
+
+
+tex_container.appendChild(title)
+tex_container.appendChild(starts)
+tex_container.appendChild(precio)
+tex_container.appendChild(stock)
+tex_container.appendChild(descripcion)
+tex_container.appendChild(linea_horizontal)
+tex_container.appendChild(color)
+
