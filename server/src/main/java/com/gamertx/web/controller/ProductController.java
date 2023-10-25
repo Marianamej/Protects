@@ -3,8 +3,11 @@ package com.gamertx.web.controller;
 import com.gamertx.domain.Product;
 import com.gamertx.domain.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +20,7 @@ public class ProductController {
 
     @Autowired
     private ProductService productService;
-    @GetMapping("/all")
+    @GetMapping()
     public List<Product> getAll(){
         return productService.getAll();
     }
@@ -27,16 +30,18 @@ public class ProductController {
         return productService.getProduct(productId);
     }
 
-    @GetMapping("/category/{categoryId}")
-    public Optional <List<Product>> getByCategory(@PathVariable("categoryId") int categoryId){
+    @GetMapping("/category/{id}")
+    public Optional <List<Product>> getByCategory(@PathVariable("id") int categoryId){
         return productService.getByCategory(categoryId);
     }
 
-    public Product save(Product product){
+    @PostMapping("/save")
+    public Product save(@RequestBody Product product){
         return productService.save(product);
     }
 
-    public Boolean delete(int productId){
+    @DeleteMapping("delete/{id}")
+    public Boolean delete(@PathVariable("id") int productId){
         return productService.delete(productId);
     }
 }
