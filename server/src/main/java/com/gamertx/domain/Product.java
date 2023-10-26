@@ -12,7 +12,6 @@ public class Product {
     private int productId;
     private int categoryId;
     private int brandId;
-    private int modelId;
     private int offerId;
     private String name;
     private Short stockQuantity;

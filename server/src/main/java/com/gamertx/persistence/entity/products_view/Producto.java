@@ -23,9 +23,6 @@ public class Producto {
     @Column(name = "id_marca")
     private Integer idMarca;
 
-    @Column(name = "id_modelo")
-    private Integer idModelo;
-
     @Column(name = "id_oferta")
     private Integer idOferta;
 
@@ -39,7 +36,7 @@ public class Producto {
     private LocalDate fechaCreacion;
 
     private Short valoracion;
-    private String estado;
+    private String color;
 
     //Relacion Categoria con productos
     @ManyToOne

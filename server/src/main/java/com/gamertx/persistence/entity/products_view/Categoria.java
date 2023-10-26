@@ -21,7 +21,6 @@ public class Categoria {
     private EnumContent.nombresCategoria nombre;
 
     private String descripcion;
-    private Byte orden;
 
     @Column(name = "numero_productos")
     private Short numeroProductos;

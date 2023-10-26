@@ -63,7 +63,6 @@ public class ProductoRepository implements ProductRepository {
                 producto -> {
                     producto.setIdCategoria(newProducto.getIdCategoria());
                     producto.setMarca(newProducto.getMarca());
-                    producto.setIdModelo(newProducto.getIdModelo());
                     producto.setIdOferta(newProducto.getIdOferta());
                     producto.setNombre(newProducto.getNombre());
                     producto.setStock(newProducto.getStock());
@@ -71,7 +70,6 @@ public class ProductoRepository implements ProductRepository {
                     producto.setPrecio(newProducto.getPrecio());
                     producto.setFechaCreacion(newProducto.getFechaCreacion());
                     producto.setValoracion(newProducto.getValoracion());
-                    producto.setEstado(newProducto.getEstado());
                     return mapper.toProduct(productoCrudRepository.save(producto));
                 }
         ).get();

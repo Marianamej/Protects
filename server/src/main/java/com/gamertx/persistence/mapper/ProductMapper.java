@@ -15,7 +15,6 @@ public interface ProductMapper {
             @Mapping(source = "idProducto", target = "productId"),
             @Mapping(source = "idCategoria", target = "categoryId"),
             @Mapping(source = "idMarca", target = "brandId"),
-            @Mapping(source = "idModelo", target = "modelId"),
             @Mapping(source = "idOferta", target = "offerId"),
             @Mapping(source = "nombre", target = "name"),
             @Mapping(source = "stock", target = "stockQuantity"),
@@ -29,7 +28,7 @@ public interface ProductMapper {
     List<Product> toProducts(List<Producto> productos);
 
     @InheritInverseConfiguration
-    @Mapping(target = "estado", ignore = true)
+    @Mapping(target = "color", ignore = true)
     @Mapping(target = "marca", ignore = true)
     Producto toProducto(Product product);
 }
