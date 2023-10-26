@@ -1,7 +1,7 @@
 package com.gamertx.persistence;
 
 import com.gamertx.persistence.crud.UsuarioCrudRepository;
-import com.gamertx.persistence.entity.Usuario;
+import com.gamertx.persistence.entity.users_view.Usuario;
 
 import java.util.List;
 

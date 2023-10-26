@@ -1,4 +1,6 @@
-package com.gamertx.persistence.entity;
+package com.gamertx.persistence.entity.users_view;
+import com.gamertx.persistence.entity.payment_view.PagoUsuario;
+import com.gamertx.persistence.entity.content_view.Post;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

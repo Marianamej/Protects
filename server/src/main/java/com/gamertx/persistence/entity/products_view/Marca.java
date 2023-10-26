@@ -1,6 +1,7 @@
-package com.gamertx.persistence.entity;
+package com.gamertx.persistence.entity.products_view;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.gamertx.persistence.entity.products_view.Producto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

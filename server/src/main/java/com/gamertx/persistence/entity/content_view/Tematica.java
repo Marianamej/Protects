@@ -1,4 +1,4 @@
-package com.gamertx.persistence.entity;
+package com.gamertx.persistence.entity.content_view;
 
 import jakarta.persistence.*;
 import lombok.Getter;

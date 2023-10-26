@@ -1,6 +1,6 @@
 package com.gamertx.persistence.crud;
 
-import com.gamertx.persistence.entity.Usuario;
+import com.gamertx.persistence.entity.users_view.Usuario;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

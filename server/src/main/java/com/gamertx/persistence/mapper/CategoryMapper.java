@@ -1,7 +1,7 @@
 package com.gamertx.persistence.mapper;
 
 import com.gamertx.domain.Category;
-import com.gamertx.persistence.entity.Categoria;
+import com.gamertx.persistence.entity.products_view.Categoria;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

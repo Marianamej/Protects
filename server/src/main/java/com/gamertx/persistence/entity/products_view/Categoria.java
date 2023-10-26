@@ -1,5 +1,6 @@
-package com.gamertx.persistence.entity;
+package com.gamertx.persistence.entity.products_view;
 
+import com.gamertx.persistence.entity.EnumContent;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
