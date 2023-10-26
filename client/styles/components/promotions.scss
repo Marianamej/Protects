@@ -1,0 +1,71 @@
+.topPromotions__container{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.topPromotions__right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.topPromotions__container {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.topPromotions__left,
+.right__top,
+.right__bottom {
+    position: relative;
+}
+
+.promotions__discountCard {
+    width: 75%;
+    height: 40%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(45, 139, 192, 0.75);
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    text-align: center;
+    padding-left: 60px;
+}
+
+
+.promotions__discountCard button{
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 20px;
+    border: 1px solid #ffffff;
+}
+
+.productos h2{
+    margin-bottom: 32px;
+    font-size: 32px;
+}
+
+
+@media (max-width: 840px){
+    .topPromotions__container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 375px){
+    .promotions__discountCard{
+        width: 100%;
+        height: 50%;
+        padding-left: 10px;
+    }
+}
