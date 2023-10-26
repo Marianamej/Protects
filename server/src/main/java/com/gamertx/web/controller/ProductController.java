@@ -35,12 +35,12 @@ public class ProductController {
         return productService.getByCategory(categoryId);
     }
 
-    @PostMapping("/save")
+    @PostMapping()
     public Product save(@RequestBody Product product){
         return productService.save(product);
     }
 
-    @DeleteMapping("delete/{id}")
+    @DeleteMapping("/{id}")
     public Boolean delete(@PathVariable("id") int productId){
         return productService.delete(productId);
     }

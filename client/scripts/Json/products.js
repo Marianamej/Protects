@@ -3,6 +3,7 @@ export let productos = [
       "imagen": "https://www.ktronix.com/medias/750Wx750H-master-hotfolder-transfer-incoming-deposit-hybris-interfaces-IN-media-product-197529985793-001.jpg?context=bWFzdGVyfGltYWdlc3wyMDc0NzR8aW1hZ2UvanBlZ3xhR1F6TDJneFppOHhNemt5TXpneU5EZzVNems0TWk4M05UQlhlRGMxTUVoZmJXRnpkR1Z5TDJodmRHWnZiR1JsY2k5MGNtRnVjMlpsY2k5cGJtTnZiV2x1Wnk5a1pYQnZjMmwwTDJoNVluSnBjeTFwYm5SbGNtWmhZMlZ6TDBsT0wyMWxaR2xoTDNCeWIyUjFZM1F2TVRrM05USTVPVGcxTnprelh6QXdNUzVxY0djfGE1ZWQ1YWY0NjNjYmE1ZDUyZTIyY2I5OWJhNjZkODlmMTk3MDM3YWM2M2IwYjUzNjQ1YzU1NjA1ZjJiN2QyMzM",
       "nombre": "Laptop Gaming Modelo A",
       "descripcion": "Una potente laptop gaming con procesador de alta velocidad y gráficos impresionantes.",
+      "stock": 22,
       "precio": 1099.99,
       "descuento": false,
       "numeroEstrellas": 4,
