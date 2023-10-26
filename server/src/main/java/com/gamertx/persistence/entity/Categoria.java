@@ -1,4 +1,4 @@
-package com.gamertx.persistance.entity;
+package com.gamertx.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -28,6 +28,6 @@ public class Categoria {
     private String url;
 
     //Relacion Categoria con productos
-    @OneToMany(mappedBy = "categoria")
+    @OneToMany(mappedBy = "categoria",fetch=FetchType.EAGER)
     private List<Producto> productos;
 }

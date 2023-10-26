@@ -1,7 +1,7 @@
-package com.gamertx.persistance.mapper;
+package com.gamertx.persistence.mapper;
 
 import com.gamertx.domain.Product;
-import com.gamertx.persistance.entity.Producto;
+import com.gamertx.persistence.entity.Producto;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -14,9 +14,9 @@ public interface ProductMapper {
     @Mappings({
             @Mapping(source = "idProducto", target = "productId"),
             @Mapping(source = "idCategoria", target = "categoryId"),
-            @Mapping(source = "id_marca", target = "brandId"),
-            @Mapping(source = "id_modelo", target = "modelId"),
-            @Mapping(source = "id_oferta", target = "offerId"),
+            @Mapping(source = "idMarca", target = "brandId"),
+            @Mapping(source = "idModelo", target = "modelId"),
+            @Mapping(source = "idOferta", target = "offerId"),
             @Mapping(source = "nombre", target = "name"),
             @Mapping(source = "stock", target = "stockQuantity"),
             @Mapping(source = "descripcion", target = "description"),

@@ -1,6 +1,6 @@
-package com.gamertx.persistance.entity;
+package com.gamertx.persistence.entity;
 
-import jakarta.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,6 +11,7 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
+@Table(name = "marcas")
 public class Marca {
     @Id
     @Column(name = "id_marca")
@@ -19,10 +20,11 @@ public class Marca {
 
     private String nombre;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     private Set<String> tipo;
 
     //Relacion Marca con productos
-    @OneToMany(mappedBy = "marca")
+    @OneToMany(mappedBy = "marca",fetch=FetchType.EAGER)
+    @JsonIgnore
     private List<Producto> productos;
 }

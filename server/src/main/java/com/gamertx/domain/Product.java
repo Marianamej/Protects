@@ -1,5 +1,6 @@
 package com.gamertx.domain;
 
+import com.gamertx.persistence.entity.Marca;
 import lombok.Getter;
 import lombok.Setter;
 
