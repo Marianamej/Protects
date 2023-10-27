@@ -30,5 +30,6 @@ public interface ProductMapper {
     @InheritInverseConfiguration
     @Mapping(target = "color", ignore = true)
     @Mapping(target = "marca", ignore = true)
+    @Mapping(target = "imagenes", ignore = true)
     Producto toProducto(Product product);
 }

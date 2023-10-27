@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -47,4 +48,8 @@ public class Producto {
     @ManyToOne
     @JoinColumn(name = "id_marca", insertable = false, updatable = false)
     private Marca marca;
+
+    //Relacion Imagenes con producto
+    @OneToMany(mappedBy = "producto")
+    private List<Imagen> imagenes;
 }

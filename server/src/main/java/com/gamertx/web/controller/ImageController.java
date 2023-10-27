@@ -48,6 +48,7 @@ public class ImageController {
         Map result = cloudinaryService.upload(multipartFile);
         Imagen imagen =
                 new Imagen(
+                        1,
                         (String) result.get("original_filename"),
                         (String) result.get("url"),
                         (String) result.get("public_id"));
