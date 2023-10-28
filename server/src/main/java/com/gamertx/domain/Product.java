@@ -22,5 +22,5 @@ public class Product {
     private LocalDate creationDate;
     private Short rating;
     private Category category;
-    private List<Imagen> imagenes;
+    private List<String> urlsImages;
 }
