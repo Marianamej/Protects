@@ -1,4 +1,4 @@
-import {productos} from './products.js';
+import {productos} from './Json/products.js';
 const formulario = document.querySelector('#formulario');
 
 const procesarDatos = (e) => {

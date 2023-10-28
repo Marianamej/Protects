@@ -5,7 +5,6 @@ export function enviarFormulario(){
     contactForm.addEventListener("submit", function(event) {
         event.preventDefault();
 
-        console.log("Aqui Toy");
 
         const nombre = document.getElementById("inputContactNombre").value;
         const email = document.getElementById("inputContactEmail").value;

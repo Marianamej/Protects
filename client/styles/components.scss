@@ -9,6 +9,8 @@
 @use 'components/product';
 @use 'components/cardPromocion';
 @use 'components/blog';
+@use 'components/sliderProducts';
+@use 'components/singleProduct';
 
 // info Organisms
 @use 'components/carsdAbout';
@@ -20,4 +22,5 @@
 @use 'components/shoppingCart.scss';
 @use 'components/profile.scss';
 @use 'components/promotions.scss';
+@use 'components/single-product.scss';
 

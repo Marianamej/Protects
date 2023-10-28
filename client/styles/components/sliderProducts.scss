@@ -1,0 +1,40 @@
+.slider-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: calc(234px * 4 + 24px * 3);
+    margin: 0 auto;
+
+    @media (width < 1407px) {
+      max-width: calc(234px * 3 + 24px * 2);
+    }
+  }
+
+  .productos__slider {
+    display: flex;
+    width: 100%; /* Ajusta el ancho según tus necesidades */
+    transition: transform 0.3s ease;
+    gap: 24px;
+  }
+
+  .productos__slider > * {
+    min-width: 234px;
+  }
+
+  .filtro__flechas{
+    position: absolute;
+    width: 100px;
+    cursor: pointer;
+    height: 30px;
+  }
+
+  .filtro__flechas--adelante{
+    top: 45%;
+    right: -30px;
+  }
+
+  .filtro__flechas--atras{
+    top: 45%;
+    left: -30px;
+    rotate: 180deg;
+  }
