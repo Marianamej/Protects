@@ -68,7 +68,6 @@ public class ProductoRepository implements ProductRepository {
     public void deleteProduct(int productId) {
         productoCrudRepository.deleteById(productId);
     };
-
     @Override
     public Product updateProduct(Product newProduct, int id) {
         Producto newProducto = mapper.toProducto(newProduct);
@@ -87,5 +86,4 @@ public class ProductoRepository implements ProductRepository {
                 }
         ).get();
     }
-
 }
