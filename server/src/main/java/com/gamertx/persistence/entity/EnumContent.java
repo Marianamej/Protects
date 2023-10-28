@@ -14,4 +14,10 @@ public class EnumContent {
         Complementos,
         Partes_PC
     }
+
+    public enum estadoActual{
+        Entregado,
+        Enviado,
+        Preparacion
+    }
 }
