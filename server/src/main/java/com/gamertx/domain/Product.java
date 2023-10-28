@@ -1,10 +1,12 @@
 package com.gamertx.domain;
 
+import com.gamertx.persistence.entity.products_view.Imagen;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -20,4 +22,5 @@ public class Product {
     private LocalDate creationDate;
     private Short rating;
     private Category category;
+    private List<String> urlsImages;
 }
