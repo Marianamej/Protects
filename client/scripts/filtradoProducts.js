@@ -1,5 +1,4 @@
 import { productos } from "./Json/products.js";
-import { renderizadoProductos } from "./renderCardProduct.js";
 const productosFiltrados = [];
 
 export function filtrarProductos(parametroFiltrado) {

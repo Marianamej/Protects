@@ -25,10 +25,10 @@ const fragmentoProductos = new DocumentFragment();
 const templateProducto = document.querySelector('#template__producto').content;
 let productosRenderizados = '';
 
-function hayEstrellas(numeroEstrellas) {
+function hayEstrellas(rating) {
     let totalEstrellas = 5;
     let estrellas = '';
-    for (let i = 0; i < numeroEstrellas; i++) {
+    for (let i = 0; i < rating; i++) {
         estrellas += '<ion-icon class="fs-xs star-active" name="star"></ion-icon>';
         totalEstrellas--;
     }
@@ -63,7 +63,7 @@ export function renderizadoProductos(arregloProductos) {
         const clone = document.importNode(templateProducto, true);
 
         //Se verifican el numero de estrellas del producto para renderizarlas
-        const estrellas = hayEstrellas(producto.numeroEstrellas)
+        const estrellas = hayEstrellas(producto.rating)
     
         //Se verifica si el producto tiene descuento para renderizarlo
         const descuentoProducto = hayDescuento(producto,producto.precioDescuento);
@@ -74,15 +74,15 @@ export function renderizadoProductos(arregloProductos) {
         }
         
         //Se renderiza el producto
-        clone.querySelector('.producto').setAttribute("data-id",producto.id);
-        clone.querySelector('.producto__imagen').src = producto.imagen;
-        clone.querySelector('.producto__imagen').alt = producto.nombre;
-        clone.querySelector('.producto__imagen').setAttribute("title",producto.nombre)
+        clone.querySelector('.producto').setAttribute("data-id",producto.productId);
+        clone.querySelector('.producto__imagen').src = producto.urlsImages[0];
+        clone.querySelector('.producto__imagen').alt = producto.name;
+        clone.querySelector('.producto__imagen').setAttribute("title",producto.name)
         clone.querySelector('.stars').innerHTML = estrellas;
         clone.querySelector('.reviews').textContent = `reviews (${producto.numeroReviews})`;
-        clone.querySelector('.producto__nombre').textContent = producto.nombre;
+        clone.querySelector('.producto__nombre').textContent = producto.name;
         clone.querySelector('.producto__descuento').textContent = descuentoProducto;
-        clone.querySelector('.producto__precio').textContent = `$${producto.precio}`;
+        clone.querySelector('.producto__precio').textContent = `$${producto.price}`;
 
         //Se crea el HTML de cada producto
         fragmentoProductos.appendChild(clone);
