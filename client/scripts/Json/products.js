@@ -3,13 +3,36 @@ export let productos = [
       "imagen": "https://www.ktronix.com/medias/750Wx750H-master-hotfolder-transfer-incoming-deposit-hybris-interfaces-IN-media-product-197529985793-001.jpg?context=bWFzdGVyfGltYWdlc3wyMDc0NzR8aW1hZ2UvanBlZ3xhR1F6TDJneFppOHhNemt5TXpneU5EZzVNems0TWk4M05UQlhlRGMxTUVoZmJXRnpkR1Z5TDJodmRHWnZiR1JsY2k5MGNtRnVjMlpsY2k5cGJtTnZiV2x1Wnk5a1pYQnZjMmwwTDJoNVluSnBjeTFwYm5SbGNtWmhZMlZ6TDBsT0wyMWxaR2xoTDNCeWIyUjFZM1F2TVRrM05USTVPVGcxTnprelh6QXdNUzVxY0djfGE1ZWQ1YWY0NjNjYmE1ZDUyZTIyY2I5OWJhNjZkODlmMTk3MDM3YWM2M2IwYjUzNjQ1YzU1NjA1ZjJiN2QyMzM",
       "nombre": "Laptop Gaming Modelo A",
       "descripcion": "Una potente laptop gaming con procesador de alta velocidad y gráficos impresionantes.",
+      "stock": 22,
       "precio": 1099.99,
       "descuento": false,
       "numeroEstrellas": 4,
       "precioDescuento": 0,
       "categoria": "Laptop",
       "numeroReviews": 25,
-      "id": 1
+      "id": 1,
+      "comentarios": [
+          {
+              "nombre": "Juan",
+              "comentario": "Excelente laptop, muy buena relación calidad-precio.",
+              "estrellas": 5
+          },
+          {
+              "nombre": "Pedro",
+              "comentario": "La laptop es buena pero el servicio al cliente es pésimo.",
+              "estrellas": 3
+          },
+          {
+              "nombre": "María",
+              "comentario": "La laptop es muy buena, la recomiendo.",
+              "estrellas": 4
+          },
+          {
+              "nombre": "Luis",
+              "comentario": "La laptop me permite tener un gran rendimiento en mis juegos favoritos.",
+              "estrellas": 4
+          }
+      ]
   },
   {
       "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_852127-MCO52213486516_102022-F.webp",
@@ -21,7 +44,29 @@ export let productos = [
       "precioDescuento": 69.99,
       "categoria": "Complementos",
       "numeroReviews": 18,
-      "id": 2
+      "id": 2,
+      "comentarios": [
+        {
+            "nombre": "Sofia Segura",
+            "comentario": "El teclado es muy bueno, me encanta la iluminación RGB.",
+            "estrellas": 5
+        },
+        {
+            "nombre": "Manuel Figueroa",
+            "comentario": "El teclado es bueno pero el servicio al cliente es pés",
+            "estrellas": 3
+        },
+        {
+            "nombre": "Ramirez Gonzales",
+            "comentario": "El teclado es la mejor compra que he hecho en mucho tiempo.",
+            "estrellas": 4
+        },
+        {
+            "nombre": "Luis",
+            "comentario": "El teclado me permite tener un gran rendimiento en mis juegos favoritos.",
+            "estrellas": 4
+        }
+    ]
   },
   {
       "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_995599-MCO69058238316_042023-F.webp",
@@ -33,7 +78,8 @@ export let productos = [
       "precioDescuento": 299.99,
       "categoria": "Monitor",
       "numeroReviews": 30,
-      "id": 3
+      "id": 3,
+      "comentarios": []
   },
   {
       "imagen": "https://i.linio.com/p/3c05933fd86a5915dfba97b35c11afad-product.webp",
@@ -45,7 +91,9 @@ export let productos = [
       "precioDescuento": 0,
       "categoria": "Partes PC",
       "numeroReviews": 40,
-      "id": 4
+      "id": 4,
+      "comentarios": [],
+      "comentarios": []
   },
   {
       "imagen": "https://i.linio.com/p/f09aec3f09ae91525a13f6fcc738c915-product.webp",
@@ -57,7 +105,8 @@ export let productos = [
       "precioDescuento": 0,
       "categoria": "Complementos",
       "numeroReviews": 22,
-      "id": 5
+      "id": 5,
+      "comentarios": []
   },
   {
       "imagen": "https://i.ebayimg.com/images/g/SsMAAOSwhDBfGF4w/s-l500.jpg",
@@ -69,7 +118,8 @@ export let productos = [
       "precioDescuento": 169.99,
       "categoria": "Complementos",
       "numeroReviews": 28,
-      "id": 6
+      "id": 6,
+      "comentarios": []
   },
   {
     "imagen": "https://i.ebayimg.com/images/g/VdcAAOSwFq5kzjWF/s-l500.png",
@@ -81,7 +131,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "PC",
     "numeroReviews": 15,
-    "id": 7
+    "id": 7,
+    "comentarios": []
   },
   {
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_760989-MCO71275609389_082023-F.webp",
@@ -93,7 +144,8 @@ export let productos = [
     "precioDescuento": 39.99,
     "categoria": "Complementos",
     "numeroReviews": 12,
-    "id": 8
+    "id": 8,
+    "comentarios": []
   },
   {
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_897288-MLA45260403198_032021-F.webp",
@@ -105,7 +157,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "Partes PC",
     "numeroReviews": 23,
-    "id": 9
+    "id": 9,
+    "comentarios": []
   },
   {
     "imagen": "https://www.lenovo.com/medias/25198557406-G34w-30-20220726014906.png?context=bWFzdGVyfHJvb3R8MTE5NTUzfGltYWdlL3BuZ3xoMDYvaGU5LzE1Mjc3NjUyMzc3NjMwLnBuZ3w5NjU4ODhiNDAzYmYzMjdjNmYyNTAwMzQ3MzQzOTI3ZDU0YWFkNzI2ZWQ5NjE2MzM2Y2EzMmI3MDE5YTdmMjQ3",
@@ -117,7 +170,8 @@ export let productos = [
     "precioDescuento": 399.99,
     "categoria": "Monitor",
     "numeroReviews": 35,
-    "id": 10
+    "id": 10,
+    "comentarios": []
   },
   {
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_981977-MCO46914196855_072021-F.webp",
@@ -129,7 +183,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "Audio",
     "numeroReviews": 20,
-    "id": 11
+    "id": 11,
+    "comentarios": []
   },
   {
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_684963-MCO48221345438_112021-O.webp",
@@ -141,7 +196,8 @@ export let productos = [
     "precioDescuento": 69.99,
     "categoria": "Complementos",
     "numeroReviews": 14,
-    "id": 12
+    "id": 12,
+    "comentarios": []
   },
   {
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_722629-MLU71495580321_092023-F.webp",
@@ -153,7 +209,8 @@ export let productos = [
     "precioDescuento": 799.99,
     "categoria": "Laptop",
     "numeroReviews": 26,
-    "id": 13
+    "id": 13,
+    "comentarios": []
   },
   {
     "imagen": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRHqvpysqTwLI2931smSaPYKedEeCvIARCSX8GyZoIH0rwBi571IbKdMeUraNVdU0hKuOvxD3LzcUZWq3SG3Ba3oLvzcLkQAzSmw3VCkyw&usqp=CAE",
@@ -165,7 +222,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "Complementos",
     "numeroReviews": 19,
-    "id": 14
+    "id": 14,
+    "comentarios": []
   },
   {
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_838681-MLM43846583075_102020-F.webp",
@@ -177,7 +235,8 @@ export let productos = [
     "precioDescuento": 109.99,
     "categoria": "Partes PC",
     "numeroReviews": 27,
-    "id": 15
+    "id": 15,
+    "comentarios": []
   },
   {
     "imagen": "https://i.linio.com/p/b2d8e7045b93178e3dc6904dbbd47f8a-product.webp",
@@ -189,7 +248,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "Complementos",
     "numeroReviews": 16,
-    "id": 16
+    "id": 16,
+    "comentarios": []
   },
   {
     "imagen": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSlPIYN4GN5I_oABu4Kn9dtAwJH-4QT3ZIDetUmEG8O6-KgvUlR6GRnZAV7ibV0BRR_cXnEoYMCm8P2aXTYEtzM3vpkYV9H8tPYWsHdP6justFxHzilQ4yl&usqp=CAE",
@@ -201,7 +261,8 @@ export let productos = [
     "precioDescuento": 69.99,
     "categoria": "Partes PC",
     "numeroReviews": 22,
-    "id": 17
+    "id": 17,
+    "comentarios": []
   },
   {
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_639104-MCO72187520906_102023-F.webp",
@@ -213,7 +274,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "Partes PC",
     "numeroReviews": 25,
-    "id": 18
+    "id": 18,
+    "comentarios": []
   },
   {
     "imagen": "https://i.ebayimg.com/images/g/iZ4AAOSwdUhjAYXd/s-l500.png",
@@ -225,7 +287,8 @@ export let productos = [
     "precioDescuento": 39.99,
     "categoria": "Complementos",
     "numeroReviews": 13,
-    "id": 19
+    "id": 19,
+    "comentarios": []
   },
 
   {
@@ -238,7 +301,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "Laptop",
     "numeroReviews": 32,
-    "id": 20
+    "id": 20,
+    "comentarios": []
   },
   {
     "imagen": "https://i.linio.com/p/15abd3b04a64890369c931caa0697165-product.webp",
@@ -250,7 +314,8 @@ export let productos = [
     "precioDescuento": 899.99,
     "categoria": "Laptop",
     "numeroReviews": 22,
-    "id": 21
+    "id": 21,
+    "comentarios": []
   },
   {
     "imagen": "https://www.alkosto.com/medias/750Wx750H-master-hotfolder-transfer-incoming-deposit-hybris-interfaces-IN-media-product-4711121614538-001.jpg?context=bWFzdGVyfGltYWdlc3wyMTc1NDB8aW1hZ2UvanBlZ3xhR05oTDJoak15OHhNemczTmpBNU1UYzBPRE00TWk4M05UQlhlRGMxTUVoZmJXRnpkR1Z5TDJodmRHWnZiR1JsY2k5MGNtRnVjMlpsY2k5cGJtTnZiV2x1Wnk5a1pYQnZjMmwwTDJoNVluSnBjeTFwYm5SbGNtWmhZMlZ6TDBsT0wyMWxaR2xoTDNCeWIyUjFZM1F2TkRjeE1URXlNVFl4TkRVek9GOHdNREV1YW5CbnwwZTcwMGE5Yjg2NmY2MzBlZGI3ZDYxYzI0Zjg0N2E2NzJkNDc4NzFiZDY5MWU3ZDU0NzcxMThiNzAzMjA4MTZh",
@@ -262,7 +327,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "Laptop",
     "numeroReviews": 18,
-    "id": 22
+    "id": 22,
+    "comentarios": []
   },
   {
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_651093-MLU71266572179_082023-F.webp",
@@ -274,7 +340,8 @@ export let productos = [
     "precioDescuento": 1099.99,
     "categoria": "Laptop",
     "numeroReviews": 19,
-    "id": 23
+    "id": 23,
+    "comentarios": []
   },
   {
     "imagen": "https://www.alkosto.com/medias/750Wx750H-master-hotfolder-transfer-incoming-deposit-hybris-interfaces-IN-media-product-196800901132-001.jpg?context=bWFzdGVyfGltYWdlc3wyNTI1OTR8aW1hZ2UvanBlZ3xhREEzTDJnMk9DOHhNelUwTkRJNU1UY3lPVFF6T0M4M05UQlhlRGMxTUVoZmJXRnpkR1Z5TDJodmRHWnZiR1JsY2k5MGNtRnVjMlpsY2k5cGJtTnZiV2x1Wnk5a1pYQnZjMmwwTDJoNVluSnBjeTFwYm5SbGNtWmhZMlZ6TDBsT0wyMWxaR2xoTDNCeWIyUjFZM1F2TVRrMk9EQXdPVEF4TVRNeVh6QXdNUzVxY0djfDZmMmNhOTY1YWJlNTI1NjgwMjVlN2M1ZTQ4MjY1NjEyNzFkNzg5ZjdmNDY5YzUyYzUwNTUwMjVlMmYwMTkxYWI",
@@ -286,7 +353,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "Laptop",
     "numeroReviews": 28,
-    "id": 24
+    "id": 24,
+    "comentarios": []
   },
   {
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_962719-MLA53042953925_122022-F.webp",
@@ -298,7 +366,8 @@ export let productos = [
     "precioDescuento": 1999.99,
     "categoria": "Laptop",
     "numeroReviews": 35,
-    "id": 25
+    "id": 25,
+    "comentarios": []
   },
   {
     "imagen": "https://i.linio.com/p/b926eebd64bc5897c92db5ccbf5270a6-product.webp",
@@ -310,7 +379,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "Laptop",
     "numeroReviews": 29,
-    "id": 26
+    "id": 26,
+    "comentarios": []
   },
   {
     "imagen": "https://puntoscolombia.vtexassets.com/arquivos/ids/23516250-800-auto?v=638227265535030000&width=800&height=auto&aspect=true",
@@ -322,7 +392,8 @@ export let productos = [
     "precioDescuento": 549.99,
     "categoria": "Laptop",
     "numeroReviews": 15,
-    "id": 27
+    "id": 27,
+    "comentarios": []
   },
   {
     "imagen": "https://i.linio.com/p/28a79e27ac8d318946ada27b9bae438c-product.webp",
@@ -334,7 +405,8 @@ export let productos = [
     "precioDescuento": 1199.99,
     "categoria": "Laptop",
     "numeroReviews": 27,
-    "id": 28
+    "id": 28,
+    "comentarios": []
   },
   {
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_987978-MCO53373547477_012023-F.webp",
@@ -346,7 +418,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "Laptop",
     "numeroReviews": 25,
-    "id": 29
+    "id": 29,
+    "comentarios": []
   },
   {
     "imagen": "https://s.alicdn.com/@sc04/kf/H8b0d1b18f6c5407fa68f6bab052d6148F.jpg_300x300.jpg",
@@ -358,7 +431,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "Monitor",
     "numeroReviews": 38,
-    "id": 30
+    "id": 30,
+    "comentarios": []
   },
   {
     "imagen": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRlX6Q7r9ed2gzYWipqJZ1-xAg3CSIo16TCm_NX0q4zjDi99WCalDE2Tg-mliyZhsmpvmGnWxKYrrwqrTLzVc_8Lh2TGuUN&usqp=CAE",
@@ -370,7 +444,8 @@ export let productos = [
     "precioDescuento": 449.99,
     "categoria": "Monitor",
     "numeroReviews": 29,
-    "id": 31
+    "id": 31,
+    "comentarios": []
   },
   {
     "imagen": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRUAefVkPj3ZIZg1s52eVnZo2mwsbquIIqEjytWha6rqwaOAxNeO3_7qoaxSGiZnmOIwEgTiJ4Ohkfyitv5P1SeyXY6Evi-VXeLIz9g8AaXr3CbTNFuPYockQ&usqp=CAE",
@@ -382,7 +457,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "Monitor",
     "numeroReviews": 32,
-    "id": 32
+    "id": 32,
+    "comentarios": []
   },
   {
     "imagen": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOvmmJF-QE4Uoaf4kcR1EmU6TNTUVBZjVN9F3PR9Zk60atD0PsADYy1tbpBVr6PRyoJzqDrjh3gR-4uVSL9-bgLCfrIH7Hzbm6oPk8yHE&usqp=CAE",
@@ -394,7 +470,8 @@ export let productos = [
     "precioDescuento": 299.99,
     "categoria": "Monitor",
     "numeroReviews": 25,
-    "id": 33
+    "id": 33,
+    "comentarios": []
   },
   {
     "imagen": "https://www.lenovo.com/medias/06-Thinkvision-M14t-Hero-Front-Facing-Left.jpg?context=bWFzdGVyfHJvb3R8MTM1MDEzfGltYWdlL2pwZWd8aDM3L2g3NS8xMTgxMDQwODM5ODg3OC5qcGd8OTkwYzJiOGNjYTM3YjhhNjFlZDQ4ZjYxMjkxOTVkYTVlZWM2YmQ0NjA2M2E3M2QwOGZlMTA2M2ViMmY5MzBjZg",
@@ -406,7 +483,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "Monitor",
     "numeroReviews": 18,
-    "id": 34
+    "id": 34,
+    "comentarios": []
   },
   {
     "imagen": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQU_qfT4LUk0A4scl-himUYSes5z_qtWOaLJqYKfzCgiw4Cnc4qkvKDPv-ONsU_B8lsbyO6zDw1EMu6xtzF8hNCLYNpobEF-XGMJd9p5JMIRjlOHUlBUo4raA&usqp=CAE",
@@ -418,7 +496,8 @@ export let productos = [
     "precioDescuento": 599.99,
     "categoria": "Monitor",
     "numeroReviews": 28,
-    "id": 35
+    "id": 35,
+    "comentarios": []
   },
   {
     "imagen": "https://img01.huaweifile.com/sg/ms/co/pms/uomcdn/CO_HW_B2C/pms/202207/gbom/6941487224043/800_800_A666EB8A6B013D1D23BDA08812DFFA27mp.png",
@@ -430,7 +509,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "Monitor",
     "numeroReviews": 23,
-    "id": 36
+    "id": 36,
+    "comentarios": []
   },
   {
     "imagen": "https://www.bhphotovideo.com/cdn-cgi/image/format=auto,fit=scale-down,width=500,quality=95/https://www.bhphotovideo.com/images/images500x500/acer_um_je0aa_x02_32_curved_full_hd_1667817621_1734163.jpg",
@@ -442,7 +522,8 @@ export let productos = [
     "precioDescuento": 349.99,
     "categoria": "Monitor",
     "numeroReviews": 21,
-    "id": 37
+    "id": 37,
+    "comentarios": []
   },
   {
     "imagen": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTqR7TbEqhPqDpCOJJQf4wVDRQCY-oIVirhLlT6sF920Oyj6vgJNVn6ebmJnWCJ_mjHYMdr6s4CSwtPre1m1_qxPEyIX9cC1i3Nf_fKZxDv&usqp=CAE",
@@ -454,7 +535,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "Monitor",
     "numeroReviews": 15,
-    "id": 38
+    "id": 38,
+    "comentarios": []
   },
   {
     "imagen": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSjZpBBsP3VV-Qt1epE1fOnAFu6T7Eqj0iroB3KrTZUhyOgJHISaYegVC6jE4c94RnkSwaGMs6R544KkMoEOzYmCzlX3VKWCH-MNRY2JOBnc8RD3bESCT2neg&usqp=CAE",
@@ -466,7 +548,8 @@ export let productos = [
     "precioDescuento": 549.99,
     "categoria": "Monitor",
     "numeroReviews": 20,
-    "id": 39
+    "id": 39,
+    "comentarios": []
   },
   {
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_656768-MCO71861008603_092023-F.webp",
@@ -478,7 +561,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "PC",
     "numeroReviews": 36,
-    "id": 40
+    "id": 40,
+    "comentarios": []
   },
   {
     "imagen": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRZ4DuY0S_vvKqdZIV47rfpPl6DmqkkhEIRkMF3ow_8eibk-NlkFvtbblEoOfp9j8hD5PDeSDrUjLHK4Fp7920HpSqonCcj5oj-XmP4RgmVVA5g906dP2V7mQ&usqp=CAE",
@@ -490,7 +574,8 @@ export let productos = [
     "precioDescuento": 549.99,
     "categoria": "PC",
     "numeroReviews": 19,
-    "id": 41
+    "id": 41,
+    "comentarios": []
   },
   {
     "imagen": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRp7C-JMj6_9A-BUoFBLdJghHEJEWnXZGA01BDvBr8shUsX8vVON5pLMQtsaLTv_WnT6juYcZ0YE83ffSM0gOrH632wJKBHZ3ITxjjsbKBBpkmQ-RDJtnvZ&usqp=CAE",
@@ -502,7 +587,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "PC",
     "numeroReviews": 27,
-    "id": 42
+    "id": 42,
+    "comentarios": []
   },
   {
     "imagen": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcT6FpRwvCGUp0y52W3NG92lRjCkrgK-0Ez8NOpBaB541jblb7p7j2Zyu5e3ufyxYT1vdprAkhjhbROZf7HTndQ8eKF_D8bM&usqp=CAE",
@@ -514,7 +600,8 @@ export let productos = [
     "precioDescuento": 1199.99,
     "categoria": "PC",
     "numeroReviews": 32,
-    "id": 43
+    "id": 43,
+    "comentarios": []
   },
   {
     "imagen": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcT8rdcj3E2-tHl6MVv9HccsgacgoKIniC6iyHGGRtcNWPictnfBNqsR3wjE1t3ZHWsK4Vn51vV9GhQ_UMkwMA6bJtx4c_7htXIdLeFpIws&usqp=CAE",
@@ -526,7 +613,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "PC",
     "numeroReviews": 24,
-    "id": 44
+    "id": 44,
+    "comentarios": []
   },
   {
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_696542-MCO71102032643_082023-F.webp",
@@ -538,7 +626,8 @@ export let productos = [
     "precioDescuento": 1399.99,
     "categoria": "PC",
     "numeroReviews": 30,
-    "id": 45
+    "id": 45,
+    "comentarios": []
   },
   {
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_833723-MCO50655936612_072022-F.webp",
@@ -550,7 +639,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "PC",
     "numeroReviews": 17,
-    "id": 46
+    "id": 46,
+    "comentarios": []
   },
   {
     "imagen": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRqmchheKyQEwmaVgYrHqtBYZGR21-Ooa726_6V6ozBCwKnU7ihc-dTu9WOSq0aP3zVNua6PWoKbt4Bp8egnx4YyiZLACB_pVoCwhsRxAh5sE39ZgYh75D4&usqp=CAE",
@@ -562,7 +652,8 @@ export let productos = [
     "precioDescuento": 1099.99,
     "categoria": "PC",
     "numeroReviews": 28,
-    "id": 47
+    "id": 47,
+    "comentarios": []
   },
   {
     "imagen": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcS-sOvFxVfMSxnbe0KKCkavvEhdo2sk5GYFlCtGTjNDBsfPcDqi3Apu-B45TVa38VTpyUAmVgAK82boFLFZZi3AlvTqrsvuaOG2xBCLurTYNt3vaBgtmXs1eQ&usqp=CAE",
@@ -574,7 +665,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "PC",
     "numeroReviews": 26,
-    "id": 48
+    "id": 48,
+    "comentarios": []
   },
   {
     "imagen": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQCiNPdjBUw8zsEZxdQz1Ewqvx4ofhTnkK_Bze6ll6YWPduxueNVz_lGccLLJBfoZrzOm3r7XEl35ebuVYSX3joujB34KWDk5C8zz0IaG0SDVCZ5_qlXSjikQ&usqp=CAE",
@@ -586,7 +678,8 @@ export let productos = [
     "precioDescuento": 449.99,
     "categoria": "PC",
     "numeroReviews": 20,
-    "id": 49
+    "id": 49,
+    "comentarios": []
   },
   {
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_905793-MCO71439627734_092023-F.webp",
@@ -598,7 +691,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "Partes PC",
     "numeroReviews": 42,
-    "id": 50
+    "id": 50,
+    "comentarios": []
   },
   {
     "imagen": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTyrzxmSmTuL1bB6TZJ9lFyNy7nEAqtQBspuW0P6RyPFYAuAygEALfZG_ZYGb18MogZhpg82kbUHQVD-3nuo88GAuQxHaNI3Xm1GZDmLG35&usqp=CAE",
@@ -610,7 +704,8 @@ export let productos = [
     "precioDescuento": 129.99,
     "categoria": "Partes PC",
     "numeroReviews": 35,
-    "id": 51
+    "id": 51,
+    "comentarios": []
   },
   {
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_894487-MLA53145808015_012023-F.webp",
@@ -622,7 +717,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "Partes PC",
     "numeroReviews": 38,
-    "id": 52
+    "id": 52,
+    "comentarios": []
   },
   {
     "imagen": "https://www.empowerlaptop.com/wp-content/uploads/2019/04/Z170A-GAMING-7-1024x820.png",
@@ -634,7 +730,8 @@ export let productos = [
     "precioDescuento": 179.99,
     "categoria": "Partes PC",
     "numeroReviews": 32,
-    "id": 53
+    "id": 53,
+    "comentarios": []
   },
   {
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_917966-MLA46521140191_062021-F.webp",
@@ -646,7 +743,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "Partes PC",
     "numeroReviews": 26,
-    "id": 54
+    "id": 54,
+    "comentarios": []
   },
   {
     "imagen": "https://down-co.img.susercontent.com/file/ph-11134201-23030-fi6brai9spov46",
@@ -658,7 +756,8 @@ export let productos = [
     "precioDescuento": 219.99,
     "categoria": "Partes PC",
     "numeroReviews": 29,
-    "id": 55
+    "id": 55,
+    "comentarios": []
   },
   {
     "imagen": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTgkfGJhu6FMviEkm-rG_lq5-1mYZo8v4E4R-ESS6LUiHCe98uVxjIti9B3bpHNraN7aZ2pkJBidtISF4RiaYQYbsUnxvWYiDoarD1b9Yu4as0b20A69J-m&usqp=CAE",
@@ -670,7 +769,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "Partes PC",
     "numeroReviews": 23,
-    "id": 56
+    "id": 56,
+    "comentarios": []
   },
   {
     "imagen": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRQTOD6gNDp2CBXcEioh0o_OQylptCtpE9zFX7wjswXxbwhTDU-aN9qYOaeguTbvDxxvfh3qwwrGq61iG1blz7OjANqXGQo2X9UUi9DwipwpRavtPLS6Y4ZxU4&usqp=CAE",
@@ -682,7 +782,8 @@ export let productos = [
     "precioDescuento": 119.99,
     "categoria": "Partes PC",
     "numeroReviews": 31,
-    "id": 57
+    "id": 57,
+    "comentarios": []
   },
   {
     "imagen": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRKwKRWTJpYUyo_OUAj7nCNEoW_dcygbvchGvvmcp_6utU0IVwL3f0OW20op8u_I8JyzMjwa-DWHvmD1GXQ6WOPj_wqEI4OGRH7YKXwHpAapfVx7pAB-q1c&usqp=CAE",
@@ -694,7 +795,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "Partes PC",
     "numeroReviews": 20,
-    "id": 58
+    "id": 58,
+    "comentarios": []
   },
   {
     "imagen": "https://i.ebayimg.com/images/g/yPoAAOSwI85j2uf3/s-l1600.jpg",
@@ -706,7 +808,8 @@ export let productos = [
     "precioDescuento": 79.99,
     "categoria": "Complementos",
     "numeroReviews": 24,
-    "id": 59
+    "id": 59,
+    "comentarios": []
   },
   {
     "imagen": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSZ_MScxgf17pLK6XGg5jC-RCaspj7tE7L92QTIiL9B9MgaYYKp_GGyi0yHEfwU4S5JpMpuQHJ4dGsGbAaF3rNkTMLFLKNhJsc6HfcWZHCsi_V6vd03ttD6-Q&usqp=CAE",
@@ -718,7 +821,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "Complementos",
     "numeroReviews": 19,
-    "id": 60
+    "id": 60,
+    "comentarios": []
   },
   {
     "imagen": "https://i.ebayimg.com/images/g/YukAAOSwc~Fjt94c/s-l500.jpg",
@@ -730,7 +834,8 @@ export let productos = [
     "precioDescuento": 49.99,
     "categoria": "Complementos",
     "numeroReviews": 16,
-    "id": 61
+    "id": 61,
+    "comentarios": []
   },
   {
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_850987-MCO69644082410_052023-F.webp",
@@ -742,7 +847,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "Complementos",
     "numeroReviews": 15,
-    "id": 62
+    "id": 62,
+    "comentarios": []
   },
   {
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_961440-MCO72113058189_102023-F.webp",
@@ -754,7 +860,8 @@ export let productos = [
     "precioDescuento": 34.99,
     "categoria": "Complementos",
     "numeroReviews": 18,
-    "id": 63
+    "id": 63,
+    "comentarios": []
   },
   {
     "imagen": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRjvL72KnKKCjFqrBhB1BOIhLeARCdpPhFWVcnfCvMuTJH7qEFJhdjXaePizQPMqEqHhyfeZqRezSmWdlWNX7RlUzZKqorpgWxb94kpl_y42igyp5O21D1BTA&usqp=CAE",
@@ -766,7 +873,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "Complementos",
     "numeroReviews": 22,
-    "id": 64
+    "id": 64,
+    "comentarios": []
   },
   {
     "imagen": "https://i.ebayimg.com/images/g/k3sAAOSwcXllGx1o/s-l500.png",
@@ -778,7 +886,8 @@ export let productos = [
     "precioDescuento": 19.99,
     "categoria": "Complementos",
     "numeroReviews": 20,
-    "id": 65
+    "id": 65,
+    "comentarios": []
   },
   {
     "imagen": "https://i.ebayimg.com/images/g/Px0AAOSwcS9jsf7J/s-l500.jpg",
@@ -790,7 +899,8 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "Complementos",
     "numeroReviews": 27,
-    "id": 66
+    "id": 66,
+    "comentarios": []
   },
   {
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_669957-CBT53238956083_012023-F.webp",
@@ -802,7 +912,8 @@ export let productos = [
     "precioDescuento": 24.99,
     "categoria": "Complementos",
     "numeroReviews": 21,
-    "id": 67
+    "id": 67,
+    "comentarios": []
   },
   {
     "imagen": "https://i.ebayimg.com/images/g/VykAAOSwOZxjEUwI/s-l500.png",
@@ -814,6 +925,7 @@ export let productos = [
     "precioDescuento": 0,
     "categoria": "Complementos",
     "numeroReviews": 31,
-    "id": 68
+    "id": 68,
+    "comentarios": []
   },
 ]

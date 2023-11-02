@@ -9,6 +9,7 @@ import {filtrarProductos} from './filtradoProducts.js';
 const contenedorUltimasUnidades = document.querySelector('#productosHomeUltimasUnidades');
 const contenedorFiltroRapido = document.querySelector('#filtroProductosHome');
 const filtroProductosHome = document.querySelector('#filtradoHome');
+const contenidoPagina = document.querySelector('.main__container');
 
 
 // Se renderizan los banners en el HTML
@@ -21,7 +22,7 @@ contenedorUltimasUnidades.append(renderizadoProductos(separarProductosParaMostra
 //!Funcionalidad del slider de banners
 // Get all the articles
 const banners = document.querySelectorAll('.hero-banner');
-banners[0].style = `background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), url('../assets/fondo-banner-1.jpg') no-repeat center/cover, lightgray 50%;`;
+banners[0].style = `background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), url('../assets/fondo-banner-1.webp') no-repeat center/cover, lightgray 50%;`;
 
 // Set the current article index to 0
 let currentArticleIndex = 0;
@@ -106,3 +107,14 @@ function updateSlider() {
 // Inicializa el slider
 updateSlider();
 
+//! Funcionalidad ver el producto en detalle
+contenidoPagina.addEventListener('click', (e) => {
+  
+  if(e.target.classList.contains('overlay')){
+    const producto = e.target.parentElement.parentElement;
+    const idProducto = producto.dataset.id;
+
+    localStorage.setItem('idProducto', idProducto);
+    window.location.href = 'single-product.html';
+  }
+});
