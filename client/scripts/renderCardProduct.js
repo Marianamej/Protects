@@ -15,7 +15,7 @@ async function fetchData() {
     console.error(err);
   }
 }
-
+console.log(productos)
 fetchData();
 
 
