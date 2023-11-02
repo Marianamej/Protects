@@ -21,6 +21,6 @@ public class Product {
     private BigDecimal price;
     private LocalDate creationDate;
     private Short rating;
-    private Category category;
+    private String color;
     private List<String> urlsImages;
 }

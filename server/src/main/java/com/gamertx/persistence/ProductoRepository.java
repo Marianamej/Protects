@@ -41,6 +41,11 @@ public class ProductoRepository implements ProductRepository {
     }
 
     @Override
+    public Optional<Product> getProduct(int productId) {
+        return productoCrudRepository.findById(productId).map(producto -> mapper.toProduct(producto));
+    }
+
+    @Override
     public Optional<List<Product>> getByCategory(int categoryId) {
         List<Producto> productos = productoCrudRepository.findByIdCategoriaOrderByNombreAsc(categoryId);
         return Optional.of(mapper.toProducts(productos));
@@ -53,37 +58,32 @@ public class ProductoRepository implements ProductRepository {
     }
 
     @Override
-    public Optional<Product> getProduct(int productId) {
-        return productoCrudRepository.findById(productId).map(producto -> mapper.toProduct(producto));
-    }
-
-
-    @Override
     public Product saveProduct(Product product) {
         Producto producto = mapper.toProducto(product);
         return mapper.toProduct(productoCrudRepository.save(producto));
     }
 
     @Override
-    public void deleteProduct(int productId) {
-        productoCrudRepository.deleteById(productId);
-    };
-    @Override
     public Product updateProduct(Product newProduct, int id) {
         Producto newProducto = mapper.toProducto(newProduct);
         return productoCrudRepository.findById(id).map(
                 producto -> {
                     producto.setIdCategoria(newProducto.getIdCategoria());
-                    producto.setMarca(newProducto.getMarca());
+                    producto.setIdMarca(newProducto.getIdMarca());
                     producto.setIdOferta(newProducto.getIdOferta());
                     producto.setNombre(newProducto.getNombre());
                     producto.setStock(newProducto.getStock());
                     producto.setDescripcion(newProducto.getDescripcion());
                     producto.setPrecio(newProducto.getPrecio());
-                    producto.setFechaCreacion(newProducto.getFechaCreacion());
                     producto.setValoracion(newProducto.getValoracion());
+                    producto.setColor(newProducto.getColor());
                     return mapper.toProduct(productoCrudRepository.save(producto));
                 }
         ).get();
     }
+
+    @Override
+    public void deleteProduct(int productId) {
+        productoCrudRepository.deleteById(productId);
+    };
 }
