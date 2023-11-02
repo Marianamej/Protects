@@ -2071,7 +2071,6 @@ button.active {
     flex-direction: column;
   }
 }
-
 .topPromotions__container {
   display: flex;
   flex-direction: row;
@@ -2140,7 +2139,6 @@ button.active {
     padding-left: 10px;
   }
 }
-
 .singleProduct {
   display: flex;
   flex-direction: row-reverse;

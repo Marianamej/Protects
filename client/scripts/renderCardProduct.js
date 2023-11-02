@@ -1,4 +1,24 @@
-import { productos } from "./Json/products.js";
+//import { productos } from "./Json/products.js";
+
+const options = {method: 'GET'};
+let productos = [];
+
+async function fetchData() {
+  try {
+    const response = await fetch('http://localhost:8090/gamertx/products', options);
+    if (response.ok) {
+      console.log(`La solicitud bien` );
+    }
+    const data = await response.json();
+    productos = data;
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+fetchData();
+
+
 
 //Se crea un fragmento para evitar el reflow al renderizar los productos
 const fragmentoProductos = new DocumentFragment();
@@ -33,7 +53,9 @@ function hayDescuento(producto,precioConDescuentoAplicado) {
 
 export function separarProductosParaMostrar(numeroProductosInicioMostrar,numeroProductosFinalMostrar) {
     const productosParaMostrar = productos.slice(numeroProductosInicioMostrar, numeroProductosFinalMostrar)
+    
     return productosParaMostrar;
+   
 }
 
 export function renderizadoProductos(arregloProductos) {
