@@ -1,6 +1,5 @@
 import { renderBanner } from './renderBanner.js';
 import { getBanners,fondos } from './apiBanner.js';
-import {separarProductosParaMostrar} from './renderCardProduct.js';
 import {renderizadoProductos} from './renderCardProduct.js';
 import {filtrarProductos} from './filtradoProducts.js';
 
@@ -11,12 +10,39 @@ const contenedorFiltroRapido = document.querySelector('#filtroProductosHome');
 const filtroProductosHome = document.querySelector('#filtradoHome');
 const contenidoPagina = document.querySelector('.main__container');
 
+const options = { method: 'GET' };
+let productos = [];
+
+async function fetchData() {
+  try {
+    const response = await fetch('http://localhost:8090/gamertx/products', options);
+    const data = await response.json();
+    // Agregar los nuevos productos al arreglo existente
+    productos.push(...data);
+     // Luego de agregar los productos, ejecutar la función para separar los productos
+    const productosSeleccionados = await separarProductosParaMostrar(0, 8);
+    console.log(productosSeleccionados);
+    contenedorUltimasUnidades.append(renderizadoProductos(productosSeleccionados));
+
+    if (response.ok) {
+        console.log(productos);
+      }
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+async function separarProductosParaMostrar(numeroProductosInicioMostrar,numeroProductosFinalMostrar) {
+  const productosParaMostrar = productos.slice(numeroProductosInicioMostrar, numeroProductosFinalMostrar)
+  return productosParaMostrar;
+}
+
+fetchData()
 
 // Se renderizan los banners en el HTML
 renderBanner(getBanners)
 
 // Se renderizan los productos en el HTML
-contenedorUltimasUnidades.append(renderizadoProductos(separarProductosParaMostrar(0,8)));
 
 
 //!Funcionalidad del slider de banners
@@ -73,11 +99,13 @@ function cambiarEstadoBotones(elemento) {
 }
 
 function filtrarPorBoton(categoria){
+  console.log("Hola");
   let productosFiltrados = filtrarProductos(categoria);
   let rederizadoProductosFiltrados = renderizadoProductos(productosFiltrados);
   contenedorFiltroRapido.append(rederizadoProductosFiltrados);
   productosFiltrados.length = 0
 } 
+
 
 // ! Slider de productos Filtrados
 
