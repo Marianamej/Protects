@@ -1,5 +1,6 @@
 package com.gamertx.domain;
 
+import com.gamertx.persistence.entity.products_view.Especificacion;
 import com.gamertx.persistence.entity.products_view.Imagen;
 import lombok.Getter;
 import lombok.Setter;

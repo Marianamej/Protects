@@ -26,12 +26,7 @@ public class ProductoRepository implements ProductRepository {
         List<Product> products = new ArrayList<>(productos.size());
 
         for (Producto producto : productos) {
-            List<Imagen> imagenes = producto.getImagenes();
-            List<String> urls = new ArrayList<>(imagenes.size());
-
-            for (Imagen imagen : imagenes) {
-                urls.add(imagen.getUrl());
-            }
+            List<String> urls = getImagenUrls(producto);
 
             Product product = mapper.toProduct(producto);
             product.setUrlsImages(urls);
@@ -40,9 +35,26 @@ public class ProductoRepository implements ProductRepository {
         return products;
     }
 
+
+    // Función para obtener las URLs de las imágenes de un producto
+    private List<String> getImagenUrls(Producto producto) {
+        List<Imagen> imagenes = producto.getImagenes();
+        List<String> urls = new ArrayList<>(imagenes.size());
+
+        for (Imagen imagen : imagenes) {
+            urls.add(imagen.getUrl());
+        }
+        return urls;
+    }
+
     @Override
     public Optional<Product> getProduct(int productId) {
-        return productoCrudRepository.findById(productId).map(producto -> mapper.toProduct(producto));
+        return productoCrudRepository.findById(productId).map(producto -> {
+            List<String> urls = getImagenUrls(producto); // Utiliza la función
+            Product product = mapper.toProduct(producto);
+            product.setUrlsImages(urls);
+            return product;
+        });
     }
 
     @Override

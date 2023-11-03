@@ -1,7 +1,6 @@
 package com.gamertx.web.controller;
 
 import com.gamertx.domain.service.SpecificationService;
-import com.gamertx.persistence.entity.products_view.Especificacion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,14 +13,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/details")
-public class SpecificationController {
+public class EspecificacionController {
     @Autowired
     private SpecificationService service;
 
     @GetMapping("/{id}")
-    public ResponseEntity<List<Especificacion>> getAll(@PathVariable int id){
-        return service.getAll(id)
-                .map(especificacions -> new ResponseEntity<>(especificacions,HttpStatus.OK))
-                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    public ResponseEntity<List<String>> getAll(@PathVariable int id){
+        return new ResponseEntity<>(service.getAll(id),HttpStatus.OK);
     }
 }

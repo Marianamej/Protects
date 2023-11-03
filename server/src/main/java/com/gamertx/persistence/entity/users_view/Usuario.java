@@ -42,4 +42,7 @@ public class Usuario {
     //Relacion Pago usuario con usuarios
     @OneToMany(mappedBy = "usuario")
     private List<PagoUsuario> pagosUsuario;
+
+    @OneToMany(mappedBy = "usuario")
+    private List<Comentario> comentarios;
 }

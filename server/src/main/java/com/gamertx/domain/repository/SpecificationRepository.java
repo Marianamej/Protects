@@ -1,9 +1,10 @@
 package com.gamertx.domain.repository;
 
-import com.gamertx.domain.dto.Specification;
+import com.gamertx.persistence.entity.products_view.Especificacion;
 
-import java.util.Optional;
+import java.util.List;
 
 public interface SpecificationRepository {
-    Optional<Specification> getAll(int id);
+
+    List<Especificacion> getAll(int id);
 }

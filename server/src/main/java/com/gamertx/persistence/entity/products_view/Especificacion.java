@@ -14,12 +14,13 @@ import lombok.Setter;
 @Setter
 @Table(name = "especificaciones")
 public class Especificacion {
+    @JsonIgnore
     @EmbeddedId
     private EspecificacionFK id;
 
-    @JsonIgnore
+
     @ManyToOne
-    @JoinColumn(name = "id_pedido", insertable = false, updatable = false)
+    @JoinColumn(name = "id_caracteristica", insertable = false, updatable = false)
     private Caracteristica caracteristica;
 
     @JsonIgnore
