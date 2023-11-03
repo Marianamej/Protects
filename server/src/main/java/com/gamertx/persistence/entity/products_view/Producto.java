@@ -53,4 +53,6 @@ public class Producto {
     //Relacion Imagenes con producto
     @OneToMany(mappedBy = "producto",fetch=FetchType.EAGER)
     private List<Imagen> imagenes;
+
+
 }

@@ -20,4 +20,11 @@ public class EnumContent {
         Enviado,
         Preparacion
     }
+
+    public enum caracteristicas{
+        Hardware,
+        Software,
+        Rendimiento,
+        Almacenamiento
+    }
 }
