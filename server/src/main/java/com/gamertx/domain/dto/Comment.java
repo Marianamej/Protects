@@ -9,12 +9,11 @@ import java.time.LocalDate;
 @Getter
 @Setter
 public class Comment {
-
+    private String email;
+    private Integer productId;
     private String text;
     private LocalDate date;
     private Short rating;
-    private String email;
-    private Integer productId;
     private Short likes;
     private Usuario user;
 }

@@ -24,7 +24,6 @@ public interface CommentMapper {
 
     @InheritInverseConfiguration
     @Mapping(target = "id", ignore = true)
-    @Mapping(target = "titulo", ignore = true)
     @Mapping(target = "producto", ignore = true)
     Comentario toComentario(Comment comment);
     List<Comentario> toComentarios (List<Comment> comments);

@@ -10,5 +10,5 @@ public interface CommentRepository {
     Optional<List<Comment>> getByProduct(int id);
     List<Comment> getByRating();
     List<Comment> getByDate();
-    Comment postComment(Comment comment);
+    Comment write(Comment comment);
 }

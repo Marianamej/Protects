@@ -3,6 +3,7 @@ package com.gamertx.persistence;
 import com.gamertx.domain.dto.Comment;
 import com.gamertx.domain.repository.CommentRepository;
 import com.gamertx.persistence.crud.ComentarioCrudRepository;
+import com.gamertx.persistence.entity.products_view.Producto;
 import com.gamertx.persistence.entity.users_view.Comentario;
 import com.gamertx.persistence.mapper.CommentMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +46,8 @@ public class ComentarioRepository implements CommentRepository {
     }
 
     @Override
-    public Comment postComment(Comment comment) {
-        return null;
+    public Comment write(Comment comment) {
+        Comentario comentario = mapper.toComentario(comment);
+        return mapper.toComment(crud.save(comentario));
     }
 }

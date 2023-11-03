@@ -24,7 +24,11 @@ public class Comentario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String titulo;
+    @Column(name = "usuarios_email",nullable = false)
+    private String emailUsuario;
+
+    @Column(name = "id_producto",nullable = false)
+    private Integer idProducto;
 
     @Column(nullable = false)
     private String texto;
@@ -33,12 +37,6 @@ public class Comentario {
     private LocalDate fecha;
 
     private Short calificacion;
-
-    @Column(name = "usuarios_email",nullable = false)
-    private String emailUsuario;
-
-    @Column(name = "id_producto",nullable = false)
-    private Integer idProducto;
 
     private Short likes;
 
