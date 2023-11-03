@@ -7,6 +7,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
+import java.util.List;
+
 @Mapper(componentModel = "spring")
 public interface CommentMapper {
     @Mappings({
@@ -18,10 +20,12 @@ public interface CommentMapper {
             @Mapping(source = "usuario",target = "user")
     })
     Comment toComment (Comentario comentario);
+    List<Comment> toComments (List<Comentario> comentarios);
 
     @InheritInverseConfiguration
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "titulo", ignore = true)
     @Mapping(target = "producto", ignore = true)
     Comentario toComentario(Comment comment);
+    List<Comentario> toComentarios (List<Comment> comments);
 }
