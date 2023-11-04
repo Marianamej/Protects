@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface ProductRepository{
     Response getAll(int pageNumber, int size, String sortBy, String sortField);
-    Optional<Product> getProduct(int productId);
+    Product getProduct(int productId);
     Optional<List<Product>> getByCategory(int categoryId);
     Product saveProduct(Product product);
     void deleteProduct(int productId);

@@ -4,6 +4,7 @@ import com.gamertx.domain.Product;
 import com.gamertx.domain.dto.Response;
 import com.gamertx.domain.service.ProductService;
 import com.gamertx.utilities.AppConst;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -36,9 +37,7 @@ public class ProductController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Product> getProduct(@PathVariable("id") int productId){
-        return productService.getProduct(productId)
-                .map(product -> new ResponseEntity<>(product,HttpStatus.OK))
-                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        return new ResponseEntity<>(productService.getProduct(productId),HttpStatus.FOUND);
     }
 
     @GetMapping("/category/{id}")
@@ -51,13 +50,15 @@ public class ProductController {
                 : new ResponseEntity<List<Product>>(HttpStatus.NOT_FOUND);
     }
 
+
     @PostMapping()
-    public ResponseEntity<Product> save(@RequestBody Product product){
+    public ResponseEntity<Product> save(@Valid @RequestBody Product product){
         return new ResponseEntity<>(productService.save(product),HttpStatus.CREATED);
     }
 
+
     @PutMapping("/{id}")
-    public ResponseEntity<String> updateProduct(@RequestBody Product product, @PathVariable("id") int productId){
+    public ResponseEntity<String> updateProduct(@Valid @RequestBody Product product, @PathVariable("id") int productId){
         productService.updateProduct(product,productId);
         return  new ResponseEntity<>("El producto ha sido actualizado",HttpStatus.OK);
     }

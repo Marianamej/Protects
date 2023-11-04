@@ -3,6 +3,7 @@ package com.gamertx.persistence;
 import com.gamertx.domain.Product;
 import com.gamertx.domain.dto.Response;
 import com.gamertx.domain.repository.ProductRepository;
+import com.gamertx.exceptions.ResourceNotFoundException;
 import com.gamertx.persistence.crud.ProductoCrudRepository;
 import com.gamertx.persistence.entity.products_view.Imagen;
 import com.gamertx.persistence.entity.products_view.Producto;
@@ -66,13 +67,13 @@ public class ProductoRepository implements ProductRepository {
     }
 
     @Override
-    public Optional<Product> getProduct(int productId) {
+    public Product getProduct(int productId) {
         return productoCrudRepository.findById(productId).map(producto -> {
             List<String> urls = getImagenUrls(producto); // Utiliza la función
             Product product = mapper.toProduct(producto);
             product.setUrlsImages(urls);
             return product;
-        });
+        }).orElseThrow(() -> new ResourceNotFoundException("Publicacion","id",productId));
     }
 
     @Override

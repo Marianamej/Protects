@@ -4,6 +4,7 @@ import com.gamertx.domain.dto.Comment;
 import com.gamertx.domain.dto.Details;
 import com.gamertx.domain.service.CommentService;
 import com.gamertx.domain.service.DetailService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +28,7 @@ public class CommentRepository {
     }
 
     @PostMapping("/new")
-    public ResponseEntity<Comment> write(@RequestBody Comment comment){
+    public ResponseEntity<Comment> write(@Valid @RequestBody Comment comment){
         return new ResponseEntity<>(service.write(comment), HttpStatus.OK);
     }
 }

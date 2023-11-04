@@ -1,6 +1,7 @@
 package com.gamertx.persistence.entity.users_view;
 import com.gamertx.persistence.entity.payment_view.PagoUsuario;
 import com.gamertx.persistence.entity.content_view.Post;
+import com.gamertx.utilities.Role;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,15 +14,19 @@ import java.util.List;
 @Entity
 @Table(name = "Usuarios")
 public class Usuario {
+
     @Id
+    @Column(nullable = false)
     private String email;
 
     private String nombre;
 
+    @Column(nullable = false)
     private String contraseña;
 
     private String apellido;
 
+    @Column(nullable = false)
     private String username;
 
     private Byte edad;
@@ -32,8 +37,9 @@ public class Usuario {
     @Column(name = "imagen_perfil")
     private String imgPerfil;
 
-    @Column(name = "is_admin")
-    private Boolean isAdmin;
+    @Column(name = "is_admin",nullable = false)
+    @Enumerated(EnumType.ORDINAL)
+    private Role role;
 
     //Relacion entre Usuario y post
     @OneToMany(mappedBy = "usuario")
