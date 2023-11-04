@@ -1,6 +1,7 @@
 package com.gamertx.domain.service;
 
 import com.gamertx.persistence.entity.users_view.Usuario;
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Header;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -51,5 +52,14 @@ public class JwtService {
         byte [] secretsAsBytes = Decoders.BASE64.decode(SECRET_KEY);
         System.out.println("Mi clave es : "+ new String(secretsAsBytes));
         return Keys.hmacShaKeyFor(secretsAsBytes);
+    }
+
+    public String extractEmail(String jwt) {
+        return extractAllClaims(jwt).getSubject();
+    }
+
+    private Claims extractAllClaims(String jwt) {
+        return Jwts.parser().setSigningKey(generateKey()).build()
+                .parseSignedClaims(jwt).getPayload();
     }
 }
