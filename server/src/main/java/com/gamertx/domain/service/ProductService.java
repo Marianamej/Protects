@@ -14,8 +14,8 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-    public Response getAll(int pageNumber, int size){
-        return productRepository.getAll(pageNumber,size);
+    public Response getAll(int pageNumber, int size, String sortBy,String sortField){
+        return productRepository.getAll(pageNumber,size,sortBy, sortField);
     }
 
     public Optional<Product> getProduct(int productId){

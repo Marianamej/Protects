@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -24,8 +25,10 @@ public class ProductoRepository implements ProductRepository {
     private ProductMapper mapper;
 
     @Override
-    public Response getAll(int pageNumber, int size){
-        Pageable pageable = PageRequest.of(pageNumber,size);
+    public Response getAll(int pageNumber, int size,String sortBy,String sortField){
+        Sort sort = sortField.equalsIgnoreCase(Sort.Direction.ASC.name())?Sort.by(sortBy).ascending():Sort.by(sortBy).descending();
+
+        Pageable pageable = PageRequest.of(pageNumber,size,sort);
         Page<Producto> productosPaginados = productoCrudRepository.findAll(pageable);
 
         List<Producto> productos = productosPaginados.getContent();

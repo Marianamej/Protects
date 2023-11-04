@@ -3,6 +3,7 @@ package com.gamertx.web.controller;
 import com.gamertx.domain.Product;
 import com.gamertx.domain.dto.Response;
 import com.gamertx.domain.service.ProductService;
+import com.gamertx.utilities.AppConst;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,10 +26,12 @@ public class ProductController {
     private ProductService productService;
     @GetMapping()
     public ResponseEntity<Response> getAll(
-            @RequestParam(value = "pageNo",defaultValue = "0",required = false) int pageNumber,
-            @RequestParam(value = "size",defaultValue = "12", required = false) int size)
+            @RequestParam(value = "pageNo",defaultValue = AppConst.DEFAULT_NUMBER_PAGE,required = false) int pageNumber,
+            @RequestParam(value = "size",defaultValue = AppConst.SIZE_NUMBER_PAGE, required = false) int size,
+            @RequestParam(value = "sortBy",defaultValue = AppConst.DEFAULT_SORT,required = false) String sortBy,
+            @RequestParam(value = "sortField",defaultValue = AppConst.DEFAULT_SORT_DIRECTION,required = false) String sortField)
     {
-        return new ResponseEntity<>(productService.getAll(pageNumber,size), HttpStatus.OK);
+        return new ResponseEntity<>(productService.getAll(pageNumber,size,sortBy,sortField), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
