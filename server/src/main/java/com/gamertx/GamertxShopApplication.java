@@ -20,8 +20,8 @@ public class GamertxShopApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(GamertxShopApplication.class, args);
 	}
-//	@Autowired
-//	private PasswordEncoder passwordEncoder;
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 
 	//localhost:8090/gamertx/doc/swagger-ui/index.html
 	@Bean
@@ -39,7 +39,9 @@ public class GamertxShopApplication {
 //	@Bean
 //	public CommandLineRunner createPasswordCommand(){
 //		return args -> {
+	//      $2a$10$Sh6jpK2FLFAY4F.YTKy9guMTwECUoOl6MhK4fNBVEL/MN7OZrsrE.
 //			System.out.println(passwordEncoder.encode("user"));
+	//      $2a$10$Tj//dIfg2lHxAXPSCP2zSu9gnBEffguPeewRUjNPbJVQq0JMKN0zO
 //			System.out.println(passwordEncoder.encode("admin"));
 //		};
 //	}
