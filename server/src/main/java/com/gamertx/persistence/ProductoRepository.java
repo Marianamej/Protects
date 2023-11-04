@@ -1,18 +1,21 @@
 package com.gamertx.persistence;
 
 import com.gamertx.domain.Product;
+import com.gamertx.domain.dto.Response;
 import com.gamertx.domain.repository.ProductRepository;
 import com.gamertx.persistence.crud.ProductoCrudRepository;
 import com.gamertx.persistence.entity.products_view.Imagen;
 import com.gamertx.persistence.entity.products_view.Producto;
 import com.gamertx.persistence.mapper.ProductMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-//Con esta etiqueta le estamos indicando a Spring que la clase esta interactuando con la Base de datos realizando operaciones
 @Repository
 public class ProductoRepository implements ProductRepository {
     @Autowired
@@ -21,8 +24,11 @@ public class ProductoRepository implements ProductRepository {
     private ProductMapper mapper;
 
     @Override
-    public List<Product> getAll(){
-        List<Producto> productos = (List<Producto>) productoCrudRepository.findAll();
+    public Response getAll(int pageNumber, int size){
+        Pageable pageable = PageRequest.of(pageNumber,size);
+        Page<Producto> productosPaginados = productoCrudRepository.findAll(pageable);
+
+        List<Producto> productos = productosPaginados.getContent();
         List<Product> products = new ArrayList<>(productos.size());
 
         for (Producto producto : productos) {
@@ -32,7 +38,16 @@ public class ProductoRepository implements ProductRepository {
             product.setUrlsImages(urls);
             products.add(product);
         }
-        return products;
+
+        Response response = new Response();
+        response.setContent(products);
+        response.setPageNumber(productosPaginados.getNumber());
+        response.setSizeContent(productosPaginados.getSize());
+        response.setProductsTotal(productosPaginados.getTotalElements());
+        response.setPagesTotal(productosPaginados.getTotalPages());
+        response.setLast(productosPaginados.isLast());
+
+        return response;
     }
 
 

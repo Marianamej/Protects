@@ -2,6 +2,7 @@ package com.gamertx.domain.service;
 
 
 import com.gamertx.domain.Product;
+import com.gamertx.domain.dto.Response;
 import com.gamertx.domain.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,8 +14,8 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-    public List<Product> getAll(){
-        return productRepository.getAll();
+    public Response getAll(int pageNumber, int size){
+        return productRepository.getAll(pageNumber,size);
     }
 
     public Optional<Product> getProduct(int productId){

@@ -1,6 +1,7 @@
 package com.gamertx.web.controller;
 
 import com.gamertx.domain.Product;
+import com.gamertx.domain.dto.Response;
 import com.gamertx.domain.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,12 +13,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-
 @RestController
 @RequestMapping("/products")
 public class ProductController {
@@ -25,8 +24,11 @@ public class ProductController {
     @Autowired
     private ProductService productService;
     @GetMapping()
-    public ResponseEntity<List<Product>> getAll(){
-        return new ResponseEntity<>(productService.getAll(), HttpStatus.OK);
+    public ResponseEntity<Response> getAll(
+            @RequestParam(value = "pageNo",defaultValue = "0",required = false) int pageNumber,
+            @RequestParam(value = "size",defaultValue = "12", required = false) int size)
+    {
+        return new ResponseEntity<>(productService.getAll(pageNumber,size), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
