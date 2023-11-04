@@ -11,6 +11,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.authentication.AuthenticationProvider;
 
 @Configuration
 @EnableMethodSecurity
@@ -20,12 +21,15 @@ public class HttpSecurityConfig {
     private UserDetailsService userDetailsService;
     @Autowired
     private PasswordEncoder passwordEncoder;
+    @Autowired
+    private AuthenticationProvider authenticationProvider;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(httpSecurityCsrfConfigurer -> httpSecurityCsrfConfigurer.disable())
                 .sessionManagement(sessionMangConfig -> sessionMangConfig.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authenticationProvider(authenticationProvider)
                 .authorizeHttpRequests(authConfig -> {
                     authConfig.requestMatchers(HttpMethod.POST, "/auth/login").permitAll();
                     authConfig.requestMatchers(HttpMethod.GET, "/products").permitAll();

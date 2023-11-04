@@ -26,18 +26,7 @@ public class UsuarioRepository {
         return (List<Usuario>)  usuarioCrudRepository.findAll();
     }
 
-    /**
-     * Este metodo es utilizado para encontrar a un usuario pasandole el correo de ese usuario
-     * @param email
-     * @return EL resultado hallado en las consultas de UsuarioCrudRepository
-     */
-    public Usuario getByEmail(String email){
-        return null;
-    }
-
-
-
-    public Optional<Usuario> findByUsername (String email){
-      return usuarioCrudRepository.findByEmail(email);
+    public Optional<Usuario> findByUsername (String username){
+      return usuarioCrudRepository.findByEmail(username);
     };
 }

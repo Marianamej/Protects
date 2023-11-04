@@ -4,6 +4,7 @@ import com.gamertx.persistence.entity.users_view.Usuario;
 import io.jsonwebtoken.Header;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -47,7 +48,8 @@ public class JwtService {
     }
 
     private Key generateKey(){
-        System.out.println(SECRET_KEY);
-        return Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
+        byte [] secretsAsBytes = Decoders.BASE64.decode(SECRET_KEY);
+        System.out.println("Mi clave es : "+ new String(secretsAsBytes));
+        return Keys.hmacShaKeyFor(secretsAsBytes);
     }
 }
