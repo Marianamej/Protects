@@ -3,9 +3,12 @@ package com.gamertx;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.context.annotation.PropertySource;
@@ -17,6 +20,8 @@ public class GamertxShopApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(GamertxShopApplication.class, args);
 	}
+//	@Autowired
+//	private PasswordEncoder passwordEncoder;
 
 	//localhost:8090/gamertx/doc/swagger-ui/index.html
 	@Bean
@@ -30,12 +35,23 @@ public class GamertxShopApplication {
 						.license(new License().name("Apache 2.0").url("http://springdoc.org"))
 				);
 	}
+
+//	@Bean
+//	public CommandLineRunner createPasswordCommand(){
+//		return args -> {
+//			System.out.println(passwordEncoder.encode("user"));
+//			System.out.println(passwordEncoder.encode("admin"));
+//		};
+//	}
+
 	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/greeting-javaconfig").allowedOrigins("http://localhost:8090");
+				registry.addMapping("/greeting-javaconfig").allowedOrigins("http://localhost:8090/gamertx");
 			}
 		};
 	}
+
+
 }

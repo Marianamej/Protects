@@ -5,15 +5,20 @@ import com.gamertx.utilities.Role;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.time.LocalDate;
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "Usuarios")
-public class Usuario {
+public class Usuario implements UserDetails {
 
     @Id
     @Column(nullable = false)
@@ -37,8 +42,8 @@ public class Usuario {
     @Column(name = "imagen_perfil")
     private String imgPerfil;
 
-    @Column(name = "is_admin",nullable = false)
-    @Enumerated(EnumType.ORDINAL)
+    @Column(name = "rol",nullable = false)
+    @Enumerated(EnumType.STRING)
     private Role role;
 
     //Relacion entre Usuario y post
@@ -51,4 +56,38 @@ public class Usuario {
 
     @OneToMany(mappedBy = "usuario")
     private List<Comentario> comentarios;
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        List<GrantedAuthority> authorities = role.getPermissions().stream()
+                .map(permissionEnum -> new SimpleGrantedAuthority(permissionEnum.name()))
+                .collect(Collectors.toList());
+        authorities.add(new SimpleGrantedAuthority("ROLE_" + role.name()));
+        return authorities;
+    }
+
+    @Override
+    public String getPassword() {
+        return contraseña;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
 }

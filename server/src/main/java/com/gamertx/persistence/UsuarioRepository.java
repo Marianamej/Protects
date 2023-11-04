@@ -32,19 +32,12 @@ public class UsuarioRepository {
      * @return EL resultado hallado en las consultas de UsuarioCrudRepository
      */
     public Usuario getByEmail(String email){
-        return usuarioCrudRepository.findByEmail(email);
+        return null;
     }
 
-    /**
-     * Este metodo es para traer una lista de usuarios que determina cuales son administradores y cuales no
-     * @param isAdmin
-     * @return EL resultado hallado en las consultas de UsuarioCrudRepository bajo la consulta findByIsAdmin
-     */
-    public List<Usuario> findAdmins(Boolean isAdmin){
-        return usuarioCrudRepository.findByIsAdmin(isAdmin);
-    }
 
-    public Optional<User> findByUsername (String email){
-      return Optional.ofNullable(mapper.toUser(usuarioCrudRepository.findByEmail(email)));
+
+    public Optional<Usuario> findByUsername (String email){
+      return usuarioCrudRepository.findByEmail(email);
     };
 }
