@@ -8,6 +8,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +26,7 @@ public class ProductController {
 
     @Autowired
     private ProductService productService;
+    @PreAuthorize("permitAll()")
     @GetMapping()
     public ResponseEntity<Response> getAll(
             @RequestParam(value = "pageNo",defaultValue = AppConst.DEFAULT_NUMBER_PAGE,required = false) int pageNumber,
@@ -35,11 +37,13 @@ public class ProductController {
         return new ResponseEntity<>(productService.getAll(pageNumber,size,sortBy,sortField), HttpStatus.OK);
     }
 
+    @PreAuthorize("permitAll()")
     @GetMapping("/{id}")
     public ResponseEntity<Product> getProduct(@PathVariable("id") int productId){
         return new ResponseEntity<>(productService.getProduct(productId),HttpStatus.FOUND);
     }
 
+    @PreAuthorize("permitAll()")
     @GetMapping("/category/{id}")
     public ResponseEntity<List<Product>> getByCategory(@PathVariable("id") int categoryId){
 
@@ -50,19 +54,20 @@ public class ProductController {
                 : new ResponseEntity<List<Product>>(HttpStatus.NOT_FOUND);
     }
 
-
+    @PreAuthorize("hasAuthority('SAVE_ONE_PRODUCT')")
     @PostMapping()
     public ResponseEntity<Product> save(@Valid @RequestBody Product product){
         return new ResponseEntity<>(productService.save(product),HttpStatus.CREATED);
     }
 
-
+    @PreAuthorize("hasAuthority('SAVE_ONE_PRODUCT')")
     @PutMapping("/{id}")
     public ResponseEntity<String> updateProduct(@Valid @RequestBody Product product, @PathVariable("id") int productId){
         productService.updateProduct(product,productId);
         return  new ResponseEntity<>("El producto ha sido actualizado",HttpStatus.OK);
     }
 
+    @PreAuthorize("hasAuthority('SAVE_ONE_PRODUCT')")
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable("id") int productId) {
         return productService.delete(productId) ?

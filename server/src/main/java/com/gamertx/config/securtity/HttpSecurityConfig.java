@@ -7,8 +7,10 @@ import org.springframework.boot.autoconfigure.security.oauth2.resource.OAuth2Res
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -36,16 +38,21 @@ public class HttpSecurityConfig {
                 .sessionManagement(sessionMangConfig -> sessionMangConfig.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider)
                 .addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class)
-                .authorizeHttpRequests(authConfig -> {
-                    authConfig.requestMatchers(HttpMethod.POST, "/auth/login").permitAll();
-                    authConfig.requestMatchers(HttpMethod.GET, "/products").permitAll();
-                    authConfig.requestMatchers("/error").permitAll();
-                    authConfig.requestMatchers(HttpMethod.PUT, "/**").hasAuthority(Permission.SAVE_ONE_PRODUCT.name());
-                    authConfig.requestMatchers(HttpMethod.POST, "/products").hasAuthority(Permission.SAVE_ONE_PRODUCT.name());
-                    authConfig.anyRequest().permitAll();
-                });
+        //        .authorizeHttpRequests(bulderRequestMatchers())
+        ;
 
         return http.build();
+    }
+
+    private static Customizer<AuthorizeHttpRequestsConfigurer<HttpSecurity>.AuthorizationManagerRequestMatcherRegistry> bulderRequestMatchers() {
+        return authConfig -> {
+            authConfig.requestMatchers(HttpMethod.POST, "/auth/login").permitAll();
+            authConfig.requestMatchers(HttpMethod.GET, "/products").permitAll();
+            authConfig.requestMatchers("/error").permitAll();
+            authConfig.requestMatchers(HttpMethod.PUT, "/**").hasAuthority(Permission.SAVE_ONE_PRODUCT.name());
+            authConfig.requestMatchers(HttpMethod.POST, "/products").hasAuthority(Permission.SAVE_ONE_PRODUCT.name());
+            authConfig.anyRequest().permitAll();
+        };
     }
 }
 

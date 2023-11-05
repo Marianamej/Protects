@@ -13,9 +13,11 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import java.nio.file.AccessDeniedException;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.HashMap;
+import java.util.IllegalFormatCodePointException;
 import java.util.Map;
 
 @ControllerAdvice
@@ -29,6 +31,11 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorDetails> globalExceptionHandler(Exception exception, WebRequest webRequest){
         ErrorDetails errorDetails = new ErrorDetails(LocalDate.now(ZoneId.systemDefault()), exception.getMessage(),webRequest.getDescription(false));
+
+        if (exception instanceof AccessDeniedException){
+            return new ResponseEntity<>(errorDetails, HttpStatus.FORBIDDEN);
+        }
+
         return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
