@@ -71,5 +71,29 @@ input,button{
 li {
     list-style: none;
 }
+
+tool-tip {
+    position: absolute;
+    width:max-content;
+    background-color: var(--white-cloud);
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+    box-shadow: 0 0 10px #000;
+    padding: .5rem 1rem;
+    border-radius: 8px;
+    top: 100%;
+    right: 12.5%;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+:has(> tool-tip){
+    position: relative;
+}
+
+:has(> tool-tip):hover tool-tip{
+    opacity: 1;
+}
   
   

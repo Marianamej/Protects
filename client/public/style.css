@@ -97,6 +97,30 @@ li {
   list-style: none;
 }
 
+tool-tip {
+  position: absolute;
+  width: max-content;
+  background-color: var(--white-cloud);
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  box-shadow: 0 0 10px #000;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  top: 100%;
+  right: 12.5%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+:has(> tool-tip) {
+  position: relative;
+}
+
+:has(> tool-tip):hover tool-tip {
+  opacity: 1;
+}
+
 html {
   font-size: 62.5%;
   font-family: var(--main-font);
@@ -1608,7 +1632,6 @@ header {
 .register__container {
   display: flex;
   flex-direction: column;
-  width: 100%;
 }
 
 .register__logo {
@@ -1630,6 +1653,8 @@ header {
   flex-direction: column;
   gap: 48px;
   width: 450px;
+  padding: 0 30px;
+  font-size: 1.6rem;
 }
 
 .form__welcome {
@@ -1668,13 +1693,17 @@ header {
 .form__inputs {
   display: flex;
   flex-direction: column;
-  align-items: right;
-  padding-left: 30px;
+  gap: 24px;
+}
+.form__inputs .form__input {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .form__input input {
-  height: 65%;
-  width: 95%;
+  height: 56px;
+  width: 100%;
   border-radius: 50px;
 }
 
@@ -1685,6 +1714,26 @@ header {
   border-radius: 50px;
   color: #ffffff;
   margin: auto;
+}
+
+.register-error {
+  border: 2px solid red;
+  color: red;
+}
+
+.register-error::placeholder {
+  color: red;
+}
+
+.tool-tip__container {
+  display: flex;
+  align-items: center;
+}
+
+.input__diseño-contraseña {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 @media (max-width: 900px) {

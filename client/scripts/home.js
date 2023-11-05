@@ -17,8 +17,9 @@ async function fetchData() {
   try {
     const response = await fetch('http://localhost:8090/gamertx/products', options);
     const data = await response.json();
+    const content = data.content
     // Agregar los nuevos productos al arreglo existente
-    productos.push(...data);
+    productos.push(...content);
      // Luego de agregar los productos, ejecutar la función para separar los productos
     const productosSeleccionados = await separarProductosParaMostrar(0, 8);
     console.log(productosSeleccionados);

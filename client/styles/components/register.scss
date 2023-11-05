@@ -1,7 +1,6 @@
 .register__container{
     display: flex;
     flex-direction: column;
-    width: 100%;
 }
 
 .register__logo{
@@ -23,6 +22,8 @@
     flex-direction: column;
     gap: 48px;
     width: 450px;
+    padding: 0 30px;
+    font-size: 1.6rem;
 }
 
 .form__welcome{
@@ -61,13 +62,18 @@
 .form__inputs{
     display: flex;
     flex-direction: column;
-    align-items: right;
-    padding-left: 30px;
+    gap: 24px;
+
+    .form__input{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
 }
 
 .form__input input{
-    height: 65%;
-    width: 95%;
+    height: 56px;
+    width: 100%;
     border-radius: 50px;
 }
 
@@ -78,6 +84,26 @@
     border-radius: 50px;
     color: #ffffff;
     margin: auto;
+}
+
+.register-error{
+    border: 2px solid red;
+    color: red;
+}
+
+.register-error::placeholder{
+    color: red;
+}
+
+.tool-tip__container{
+    display: flex;
+    align-items: center;
+}
+
+.input__diseño-contraseña{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 @media (max-width: 900px){
