@@ -22,12 +22,7 @@ async function fetchData() {
     productos.push(...content);
      // Luego de agregar los productos, ejecutar la función para separar los productos
     const productosSeleccionados = await separarProductosParaMostrar(0, 8);
-    console.log(productosSeleccionados);
     contenedorUltimasUnidades.append(renderizadoProductos(productosSeleccionados));
-
-    if (response.ok) {
-        console.log(productos);
-      }
   } catch (err) {
     console.error(err);
   }
@@ -100,7 +95,6 @@ function cambiarEstadoBotones(elemento) {
 }
 
 function filtrarPorBoton(categoria){
-  console.log("Hola");
   let productosFiltrados = filtrarProductos(categoria);
   let rederizadoProductosFiltrados = renderizadoProductos(productosFiltrados);
   contenedorFiltroRapido.append(rederizadoProductosFiltrados);
