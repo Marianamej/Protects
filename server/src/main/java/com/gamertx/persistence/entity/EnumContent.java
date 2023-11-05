@@ -1,5 +1,8 @@
 package com.gamertx.persistence.entity;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class EnumContent {
     public enum  OpcionesPago{
         BANCARIA,
@@ -27,4 +30,5 @@ public class EnumContent {
         Rendimiento,
         Almacenamiento
     }
+
 }

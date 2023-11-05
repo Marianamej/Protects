@@ -28,28 +28,36 @@
                             <a href="register.html" class="switch__hoverRegister">Register</a>
                         </div>
                     </div>
-                    <div class="success-message" id="successMessage"></div>
                     <div class="form__inputs">
                         <div class="form__input">
-                            <p>Email Address</p>
-                            <input type="text" placeholder="Enter your Email Address" id="email">
-                            <span class="error" id="emailError"></span>
+                            <label for="email">Correo Electronico</label>
+                            <input type="email" placeholder="Escribe tu correo electronico" id="email">
                         </div>
                         <div class="form__input">
-                            <p>Username</p>
-                            <input type="text" placeholder="Enter your Username" id="username">
-                            <span class="error" id="usernameError"></span>
+                            <label for="username">Nombre de Usuario</label>
+                            <input type="text" placeholder="Escribe tu nombre de usuario" id="username">
                         </div>
                         <div class="form__input">
-                            <p>Password</p>
-                            <input type="password" placeholder="Enter your Password" id="password">
-                            <span class="error" id="passwordError"></span>
+                            <div class="input__diseño-contraseña">
+                                <label for="password">Contraseña</label>
+                                <picture class="tool-tip__container">
+                                    <img src="../assets/icons/icon-help.svg" alt="Icono para obtener">
+                                    <tool-tip role="tooltip">La contraseña debe tener al menos 10 caracteres y 3 numeros</tool-tip>
+                                </picture>
+                            </div>
+                            <input type="password" placeholder="Escribe tu contraseña" class="registro___password" id="password">
+                            <div class="eye-container__animation">
+                                <div class="eye slash" onclick="togglePW()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/></svg>
+                                </div>
+                            </div>
                         </div>
                         <div class="form__input">
-                            <p>Confirm Password</p>
-                            <input type="password" placeholder="Enter your Password" id="confirmPassword">
-                            <span class="error" id="confirmPasswordError"></span>
+                            <label for="confirmPassword">Confirma Contraseña</label>
+                            <input type="password" placeholder="Escribe tu contraseña" class="registro___password" id="confirmPassword">
+                            
                         </div>
+                        <span class="error" id="mensajeError"></span>
                     </div>
                     <button class="enter__button" id="registerButton">Register</button>
                 </div>
@@ -57,7 +65,6 @@
         </div>
     </main>
     <script src="../scripts/registro.js"></script>
-    <script type="module" src="../scripts/login.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

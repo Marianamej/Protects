@@ -22,14 +22,13 @@ public interface ProductMapper {
             @Mapping(source = "precio", target = "price"),
             @Mapping(source = "fechaCreacion", target = "creationDate"),
             @Mapping(source = "valoracion", target = "rating"),
-          //@Mapping(source = "categoria", target = "category"),
     })
     Product toProduct(Producto producto);
     List<Product> toProducts(List<Producto> productos);
 
     @InheritInverseConfiguration
     @Mapping(target = "categoria", ignore = true)
-    @Mapping(target = "color", ignore = true)
     @Mapping(target = "marca", ignore = true)
+    @Mapping(target = "comentarios", ignore = true)
     Producto toProducto(Product product);
 }

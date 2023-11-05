@@ -17,16 +17,12 @@ async function fetchData() {
   try {
     const response = await fetch('http://localhost:8090/gamertx/products', options);
     const data = await response.json();
+    const content = data.content
     // Agregar los nuevos productos al arreglo existente
-    productos.push(...data);
+    productos.push(...content);
      // Luego de agregar los productos, ejecutar la función para separar los productos
     const productosSeleccionados = await separarProductosParaMostrar(0, 8);
-    console.log(productosSeleccionados);
     contenedorUltimasUnidades.append(renderizadoProductos(productosSeleccionados));
-
-    if (response.ok) {
-        console.log(productos);
-      }
   } catch (err) {
     console.error(err);
   }
@@ -99,7 +95,6 @@ function cambiarEstadoBotones(elemento) {
 }
 
 function filtrarPorBoton(categoria){
-  console.log("Hola");
   let productosFiltrados = filtrarProductos(categoria);
   let rederizadoProductosFiltrados = renderizadoProductos(productosFiltrados);
   contenedorFiltroRapido.append(rederizadoProductosFiltrados);
