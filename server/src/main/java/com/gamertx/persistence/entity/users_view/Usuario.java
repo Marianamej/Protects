@@ -31,7 +31,7 @@ public class Usuario implements UserDetails {
 
     private String apellido;
 
-    @Column(nullable = false)
+    @Column(nullable = false,unique = true)
     private String username;
 
     private Byte edad;
