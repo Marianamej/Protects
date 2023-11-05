@@ -1,30 +1,44 @@
-
 const loginButton = document.querySelector('#login__button')
+const password = document.querySelector("#password");
+const email = document.querySelector("#email");
+const URL = 'http://localhost:8090/gamertx/auth/login';
 
-loginButton.addEventListener('click', (e)=>{
-    e.preventDefault()
-    
-    const email = document.querySelector('#email').value
-    const password = document.querySelector('#password').value
+loginButton.addEventListener('click', peticionAlServidor)
 
-    const users = JSON.parse(localStorage.getItem('users')) || []
+function peticionAlServidor() {
+    const credenciales = {
+        email: email.value,
+        password: password.value,
+    };
+    fetch(URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(credenciales)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('La solicitud no se completó correctamente.');
+        }
+        return response.json();
+    })
+    .then(data => {
+        let token = data.jwt
 
-    const validUser = users.find(user => user.email === email && user.password === password)
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: `Bienvenido`,
+            showConfirmButton: false,
+            timer: 2000
+        })
 
-    if(!validUser){
-        return alert('Usuario y/o contraseña incorrectos!')
-    }
+        localStorage.setItem('token', JSON.stringify(token))
+        setTimeout(() => {
+            window.location.href = 'home.html'
+        }, 2000);
 
-    Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: `Bienvenido ${validUser.name}`,
-        showConfirmButton: false,
-        timer: 2000
-      })
-    // alert(`Bienvenido ${validUser.name}`)
-    localStorage.setItem('login_success', JSON.stringify(validUser))
-    setTimeout(() => {
-        window.location.href = 'home-auth.html'
-    }, 2000);
-})
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
