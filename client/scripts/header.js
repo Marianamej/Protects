@@ -31,6 +31,8 @@ const userUnregisterHTML = `
     </ul>
 `;
 
+console.log();
+
 // Función para actualizar las opciones de la barra de navegación
 function updateNavigationOptions(html) {
     options.innerHTML = html;

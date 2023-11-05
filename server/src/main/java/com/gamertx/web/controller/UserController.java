@@ -23,7 +23,11 @@ public class UserController {
     @PreAuthorize("hasAuthority('READ_ALL_PRODUCTS')")
     @GetMapping()
     public ResponseEntity<Boolean> check(){
-        return new ResponseEntity<>(true, HttpStatus.OK);
+        try {
+            return new ResponseEntity<>(true, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(false, HttpStatus.NOT_FOUND);
+        }
     }
 
     @PreAuthorize("permitAll()")
