@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 public class Usuario implements UserDetails {
 
     @Id
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String email;
 
     private String nombre;

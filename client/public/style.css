@@ -276,6 +276,38 @@ header {
   width: 16px;
 }
 
+/** code for eye **/
+.eye {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eye:after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: calc(33.333% - 0.15em);
+  transform: rotate(45deg) scaleX(0);
+  transform-origin: left center;
+  width: 90%;
+  height: 0.1em;
+  background: var(--red-fire);
+  z-index: 2;
+  transition: transform 0.25s;
+}
+
+.eye.slash:after {
+  transform: rotate(45deg) scaleX(1);
+}
+
+svg {
+  fill: var(--red-fire);
+}
+
 /* Dropdown Menu */
 .dropdown {
   position: relative;
@@ -1642,6 +1674,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 .register__image {
@@ -1651,7 +1684,7 @@ header {
 .register__form {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 40px;
   width: 450px;
   padding: 0 30px;
   font-size: 1.6rem;
@@ -1699,6 +1732,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  position: relative;
 }
 
 .form__input input {
@@ -1734,6 +1768,12 @@ header {
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+
+.eye-container__animation {
+  position: absolute;
+  right: 22px;
+  top: 54px;
 }
 
 @media (max-width: 900px) {

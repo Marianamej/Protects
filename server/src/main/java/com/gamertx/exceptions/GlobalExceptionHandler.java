@@ -27,6 +27,12 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(ResourceAlreadyExist.class)
+    public ResponseEntity<ErrorDetails> resolveAlreadyExist(ResourceAlreadyExist exception, WebRequest webRequest){
+        ErrorDetails errorDetails = new ErrorDetails(LocalDate.now(ZoneId.systemDefault()), exception.getMessage(),webRequest.getDescription(false));
+        return new ResponseEntity<>(errorDetails, HttpStatus.CONFLICT);
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorDetails> globalExceptionHandler(Exception exception, WebRequest webRequest){
         ErrorDetails errorDetails = new ErrorDetails(LocalDate.now(ZoneId.systemDefault()), exception.getMessage(),webRequest.getDescription(false));

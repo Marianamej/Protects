@@ -22,6 +22,14 @@ function limpiarError(e) {
     }
 }
 
+function asignarRol(email) {
+    emailAdmin = "@gamertx.com"
+    if(email.includes(emailAdmin)){
+        return "ADMIN"
+    }
+    return "CUSTOMER"
+}
+
 function creacionUsuario() {
     const resultadoValidacion = validaciones();
     if (resultadoValidacion === true) {
@@ -29,7 +37,7 @@ function creacionUsuario() {
             email: email.value,
             password: password.value,
             username: username.value,
-            role: 'CUSTOMER'
+            role: asignarRol(email.value)
         };
         peticionAlServidor(usuario);
     } else {
@@ -47,11 +55,11 @@ function creacionUsuario() {
     }
 }
 
-function errorTipado(...campos) {
+function errorTipado(err,...campos) {
     camposImplicados = [...campos]
     console.log(camposImplicados);
     return {
-        error: "No es un correo valido",
+        error: err,
         camposImplicados
     };
 }
@@ -90,10 +98,15 @@ function validaciones() {
         };
     }
     else if (!esCorreoElectronico(emailValue)){
-        return errorTipado(email)
+        return errorTipado("El correo no es valido",email)
     }
     else if (passwordValue !== passwordConfirmationValue) {
-        return errorTipado(password,passwordConfirmation)
+        return errorTipado("Las contraseñas deben ser iguales",password,passwordConfirmation)
+    }else if(passwordValue.length < 12){
+        return errorTipado("La contraseña debe tener al menos 12 caracteres inclutendo 3 numeros",password)
+    }
+    else if (usernameValue.length < 6){
+        return errorTipado("El nombre de usuario debe tener al menos 6 caracteres",username)
     }
     return true;
 }
@@ -106,10 +119,34 @@ function peticionAlServidor(usuario) {
     })
         .then(response => {
             if (response.status === 201) {
-                console.log("Usuario Creado con éxito");
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: `Cuenta creada con exito`,
+                    showConfirmButton: false,
+                    timer: 2000
+                  })
+                setTimeout(() => {
+                    window.location.href = 'login.html'
+                }, 2000);
             } else if (response.status === 400) {
                 return response.text();
-            } else {
+            }else if (response.status === 409) {
+                Swal.fire({
+                    title: 'El correo ya esta registrado',
+                    text: "¿Deseas iniciar sesion?",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Iniciar Sesion'
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = 'login.html'
+                    }
+                  })
+            }
+            else {
                 console.log("Error inesperado: " + response.status);
             }
         })
@@ -121,4 +158,15 @@ function peticionAlServidor(usuario) {
         .catch(error => {
             console.error("Error en la solicitud:", error);
         });
+}
+
+function togglePW(){
+    document.querySelector('.eye').classList.toggle('slash');
+    let password = document.querySelector('#password');
+    
+    if(password.getAttribute('type') === 'password'){
+      password.setAttribute('type', 'text');
+    } else {
+      password.setAttribute('type', 'password');
+    }
 }
