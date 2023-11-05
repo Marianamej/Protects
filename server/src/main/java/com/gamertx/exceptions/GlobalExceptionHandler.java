@@ -17,7 +17,6 @@ import java.nio.file.AccessDeniedException;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.HashMap;
-import java.util.IllegalFormatCodePointException;
 import java.util.Map;
 
 @ControllerAdvice
