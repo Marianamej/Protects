@@ -41,7 +41,6 @@ export function separarProductosParaMostrar(numeroProductosInicioMostrar,numeroP
 
 export function renderizadoProductos(arregloProductos) {
     arregloProductos.forEach(producto => {
-        console.log(producto);
 
         const clone = document.importNode(templateProducto, true);
         let imagen;

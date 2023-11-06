@@ -4,6 +4,7 @@
     width: 100%;
     max-width: calc(234px * 4 + 24px * 3);
     margin: 0 auto;
+    min-height: 330px;
 
     @media (width < 1407px) {
       max-width: calc(234px * 3 + 24px * 2);
