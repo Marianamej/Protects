@@ -79,7 +79,17 @@ public class ProductoRepository implements ProductRepository {
     @Override
     public Optional<List<Product>> getByCategory(int categoryId) {
         List<Producto> productos = productoCrudRepository.findByIdCategoriaOrderByNombreAsc(categoryId);
-        return Optional.of(mapper.toProducts(productos));
+        List<Product> products = new ArrayList<>(productos.size());
+
+        for (Producto producto : productos) {
+            List<String> urls = getImagenUrls(producto);
+
+            Product product = mapper.toProduct(producto);
+            product.setUrlsImages(urls);
+            products.add(product);
+        }
+
+        return Optional.of(products);
     }
 
     @Override
