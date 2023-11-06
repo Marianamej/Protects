@@ -40,4 +40,5 @@ function renderAndDisplayCategoryProducts() {
   const productosHtml = renderizadoProductos(productosCategoria);
   contenedorFiltroRapido.innerHTML = '';
   contenedorFiltroRapido.append(productosHtml);
+  productosCategoria = []
 }

@@ -10,6 +10,8 @@ const botonAdelante = document.querySelector('.filtro__flechas--adelante');
 let posicionSlide = 0;
 let contexto = 1;
 const anchoDePantalla = window.innerWidth;
+const contenedorFiltroRapido = document.querySelector('#filtroProductosHome');
+
 
 // Renderizado de Last Units
 fetchProducts(contenedorUltimasUnidades);
