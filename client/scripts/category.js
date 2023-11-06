@@ -1,4 +1,3 @@
-import { productos } from './Json/products.js';
 import {renderizadoProductos} from './renderCardProduct.js';
 
 const cards = document.querySelector(".lista__productos");
