@@ -2,7 +2,6 @@ import { fetchProducts, fetchProductsByCategory } from './requestProducts.js';
 
 // Selecciono los contenedores de los productos del HTML
 const filtroProductosHome = document.querySelector('#filtradoHome');
-const contenidoPagina = document.querySelector('.main__container');
 const contenedorUltimasUnidades = document.querySelector('#productosHomeUltimasUnidades');
 const slider = document.querySelector('.productos__slider');
 const botonAtras = document.querySelector('.filtro__flechas--atras');
@@ -14,10 +13,10 @@ const contenedorFiltroRapido = document.querySelector('#filtroProductosHome');
 
 
 // Renderizado de Last Units
-fetchProducts(contenedorUltimasUnidades);
+fetchProducts(contenedorUltimasUnidades,0,8);
 
 // Llama a la función para obtener los productos de la categoría
-fetchProductsByCategory(contexto).then(() => sliderProductosFiltrados());
+fetchProductsByCategory(contexto,contenedorFiltroRapido,0,12).then(() => sliderProductosFiltrados());
 
 // Funcionalidad del filtrado con botones
 filtroProductosHome.addEventListener('click', (e) => {
@@ -35,7 +34,7 @@ filtroProductosHome.addEventListener('click', (e) => {
       contexto = 3;
     }
 
-    fetchProductsByCategory(contexto);
+    fetchProductsByCategory(contexto,contenedorFiltroRapido);
     cambiarEstadoBotones(e.target);
   }
 });
@@ -69,14 +68,3 @@ function sliderProductosFiltrados() {
   // Inicializa el slider
   updateSlider();
 }
-
-// Funcionalidad ver el producto en detalle
-contenidoPagina.addEventListener('click', (e) => {
-  if (e.target.classList.contains('overlay')) {
-    const producto = e.target.parentElement.parentElement;
-    const idProducto = producto.dataset.id;
-
-    localStorage.setItem('idProducto', idProducto);
-    window.location.href = 'single-product.html';
-  }
-});
