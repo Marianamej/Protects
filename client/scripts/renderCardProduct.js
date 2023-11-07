@@ -1,25 +1,4 @@
 //import { productos } from "./Json/products.js";
-
-const options = {method: 'GET'};
-let productos = [];
-
-async function fetchData() {
-  try {
-    const response = await fetch('http://localhost:8090/gamertx/products', options);
-    if (response.ok) {
-      console.log(`La solicitud bien` );
-    }
-    const data = await response.json();
-    productos = data;
-  } catch (err) {
-    console.error(err);
-  }
-}
-console.log(productos)
-fetchData();
-
-
-
 //Se crea un fragmento para evitar el reflow al renderizar los productos
 const fragmentoProductos = new DocumentFragment();
 const templateProducto = document.querySelector('#template__producto').content;
