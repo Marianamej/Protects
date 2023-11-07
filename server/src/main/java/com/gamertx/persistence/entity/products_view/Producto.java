@@ -1,5 +1,6 @@
 package com.gamertx.persistence.entity.products_view;
 
+import com.gamertx.persistence.entity.users_view.Comentario;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -53,4 +54,10 @@ public class Producto {
     //Relacion Imagenes con producto
     @OneToMany(mappedBy = "producto",fetch=FetchType.EAGER)
     private List<Imagen> imagenes;
+
+    @OneToMany(mappedBy = "producto",fetch=FetchType.EAGER)
+    private List<Especificacion> especificacions;
+
+    @OneToMany(mappedBy = "producto")
+    private List<Comentario> comentarios;
 }

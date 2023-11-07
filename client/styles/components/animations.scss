@@ -1,0 +1,31 @@
+/** code for eye **/
+.eye{
+    width:20px;
+    height:20px;
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .eye:after{
+    content:'';
+    position:absolute;
+    top:2px;
+    left:calc(33.333% - 0.15em);
+    transform:rotate(45deg) scaleX(0);
+    transform-origin:left center;
+    width:90%;
+    height:0.1em;
+    background:var(--red-fire);
+    z-index:2;
+    transition:transform 0.25s;
+  }
+
+  .eye.slash:after{
+    transform:rotate(45deg) scaleX(1);
+  }
+
+  svg{
+    fill: var(--red-fire);
+  }

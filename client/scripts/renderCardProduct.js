@@ -39,7 +39,9 @@ export function separarProductosParaMostrar(numeroProductosInicioMostrar,numeroP
 
 export function renderizadoProductos(arregloProductos) {
     arregloProductos.forEach(producto => {
+
         const clone = document.importNode(templateProducto, true);
+        let imagen;
 
         //Se verifican el numero de estrellas del producto para renderizarlas
         const estrellas = hayEstrellas(producto.rating)
@@ -51,10 +53,16 @@ export function renderizadoProductos(arregloProductos) {
         if (descuentoProducto !== ''){
             producto.precio = producto.precioDescuento;
         }
+
+        if( producto.urlsImages === null){
+            imagen = "undefined"
+        }else{
+            imagen = producto.urlsImages[0];
+        }
         
         //Se renderiza el producto
         clone.querySelector('.producto').setAttribute("data-id",producto.productId);
-        clone.querySelector('.producto__imagen').src = producto.urlsImages[0];
+        clone.querySelector('.producto__imagen').src = imagen;
         clone.querySelector('.producto__imagen').alt = producto.name;
         clone.querySelector('.producto__imagen').setAttribute("title",producto.name)
         clone.querySelector('.stars').innerHTML = estrellas;

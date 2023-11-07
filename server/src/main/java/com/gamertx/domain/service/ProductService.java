@@ -2,6 +2,7 @@ package com.gamertx.domain.service;
 
 
 import com.gamertx.domain.Product;
+import com.gamertx.domain.dto.Response;
 import com.gamertx.domain.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,11 +14,11 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-    public List<Product> getAll(){
-        return productRepository.getAll();
+    public Response getAll(int pageNumber, int size, String sortBy,String sortField){
+        return productRepository.getAll(pageNumber,size,sortBy, sortField);
     }
 
-    public Optional<Product> getProduct(int productId){
+    public Product getProduct(int productId){
         return productRepository.getProduct(productId);
     }
 
@@ -34,9 +35,15 @@ public class ProductService {
     }
 
     public boolean delete(int productId) {
-        return getProduct(productId).map(product -> {
+        if (getProduct(productId) != null){
             productRepository.deleteProduct(productId);
             return true;
-        }).orElse(false);
+        }else {
+            return false;
+        }
+//        return getProduct(productId).map(product -> {
+//            productRepository.deleteProduct(productId);
+//            return true;
+//        }).orElse(false);
     }
 }
