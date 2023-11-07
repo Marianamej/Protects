@@ -1,73 +1,100 @@
-import {renderizadoProductos} from './renderCardProduct.js';
+import {fetchProductsByCategory} from './requestProducts.js';
 
 const cards = document.querySelector(".lista__productos");
-const texto=document.getElementById("text-buttons_category")
-const page_number= document.querySelector("#number")
+const texto= document.getElementById("text-buttons_category")
+const contenedorBotonesPaginado = document.querySelector("#number")
+const tituloPage = document.querySelector("h1")
+const nombreCategoria = localStorage.getItem("Categoria")
+const opcionesFiltrado = document.querySelector(".categoria__filtro")
+const menuConFiltros = document.querySelector(".lista__opciones-filtrado")
+let botonesNumeroPaginas;
 
+const contexto = {
+  "Laptops" : 1,
+  "Monitors" : 2,
+  "Desktop PC" : 3,
+}
 
-texto.innerText=`total products found ${productos.length}`
+let numeroPaginas;
+const itemsPerPage = 16;
+let currentPage = 0;
+
+tituloPage.textContent = nombreCategoria
 
 const avanzar = document.getElementById("avanzar");
 const retroceder = document.getElementById("retroceder");
-const itemsPerPage = 16;
-let currentPage = 1;
 
-//logica de paginado 
-function renderPage() {
-  const indexOfLastItem = productos.length - (currentPage - 1) * itemsPerPage;
-  const indexOfFirstItem = productos.length - currentPage * itemsPerPage;
-  const currentItems = productos.slice(indexOfFirstItem, indexOfLastItem);
+avanzar.addEventListener("click", () => cambiarPagina("avanzar"));
+retroceder.addEventListener("click", () => cambiarPagina("retroceder"));
 
-  page_number.innerHTML=currentPage;
- 
-  if(currentItems.length == 0 ){
-    Swal.fire({
-      icon: 'error',
-      title: 'Oops...',
-      text: 'No hay mas productos por mostrar',
-      footer: '<a href="">Regresar</a>'
-    })
+async function llamadaServidor (currentPage) {
+  try {
+    const response = await fetchProductsByCategory(contexto[nombreCategoria], cards,currentPage,itemsPerPage);
+    actualizarInformacionPagina(response);
+  } catch (error) {
+    console.error(error);
   }
-  else{
-    cards.append(renderizadoProductos(currentItems));
-  }
-  
-  avanzar.disabled = indexOfLastItem >= productos.length;
-  retroceder.disabled = currentPage === 1;
 }
 
-//funcion para avanzar y retroceder
-retroceder.addEventListener("click", () => {
-  if (currentPage > 1) {
-    currentPage--;
-    limpiarHtml();
-    window.scrollTo(0, 0);
-  }
-});
-
-avanzar.addEventListener("click", () => {
-  const indexOfLastItem = currentPage * itemsPerPage;
-  if (indexOfLastItem < productos.length) {
-    currentPage++;
-    limpiarHtml();
-    window.scrollTo(0, 0);
-  }
-});
-
-function limpiarHtml() {
-  cards.innerHTML = "";
-  renderPage();
+function actualizarInformacionPagina(response) {
+  numeroPaginas = response.pagesTotal;
+  texto.innerText = `Se encontraron ${response.sizeContent} productos de  ${response.productsTotal}`
+  crearBotonesPaginado(numeroPaginas)
 }
 
-renderPage(); 
-// const botonmenu = document.querySelector(".ejemplo");
-//   const menu = document.getElementById("menu");
-  
-//   botonmenu.addEventListener("click", () => {
-//     if (menu.style.display === "block") {
-//       menu.style.display = "none";
-//     } else {
-//       menu.style.display = "block";
-//     }
-//   });
-//   menu.style.display = "none";
+function crearBotonesPaginado(numeroPaginas) {
+  let botonesPaginado = ''
+  for (let index = 0; index < numeroPaginas; index++) {
+    botonesPaginado += `<span class="page-number " id="number" >${index+1}</span>`;
+  }
+  contenedorBotonesPaginado.innerHTML = botonesPaginado
+  estilarBotones(currentPage)
+}
+
+function estilarBotones(posicion) {
+  botonesNumeroPaginas = document.querySelectorAll('.page-number');
+  botonesNumeroPaginas[posicion].style.color  = "var(--watermelon)";
+  botonesNumeroPaginas[posicion].style.border = "1px solid var(--watermelon)";
+}
+
+function cambiarPagina(accion) {
+  if(validaciones(accion)){
+    if(accion === "avanzar"){
+      currentPage+=1
+     }else{
+      currentPage-=1
+     } 
+    window.scrollTo(0, 0);
+    llamadaServidor(currentPage)
+  }
+}
+
+function validaciones (accion){
+  if(accion === "retroceder" && currentPage == 0){
+    return false
+  }else if(accion === "avanzar" && currentPage === numeroPaginas-1){
+    return false
+  }
+  return true
+}
+
+function desactivarBoton(boton) {
+  if (currentPage == 0 || currentPage === numeroPaginas-1) {
+    boton.style.color  = "black";
+    boton.style.backgroundColor  = "grey";
+    boton.style.border = "transparent";
+  }else{
+    boton.style.color  = "var(--watermelon)";
+    boton.style.backgroundColor  = "transparent";
+    boton.style.border = "1px solid var(--watermelon)";
+  }
+}
+
+opcionesFiltrado.addEventListener("click", filtros)
+
+function filtros() {
+  console.log("Hola");
+  menuConFiltros.classList.toggle("active")
+}
+
+llamadaServidor(currentPage)

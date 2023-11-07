@@ -3,6 +3,7 @@ const menuMobile = document.getElementById('menu-mobile');
 const closeMobileMenu = document.getElementById('mobile-menu-close');
 const state = document.querySelector("#authorizationOptions");
 const steteMobile = document.querySelector("#stateMobile")
+const contenidoPagina = document.querySelector('body');
 
 const fragment = document.createDocumentFragment();
 const optionsMobile = document.createElement('div')
@@ -85,9 +86,9 @@ function validateToken(token) {
             updateNavigationOptions(userRegisterHTML,userRegisterMenuHTML);
         } else if (response.status === 500) {
             updateNavigationOptions(userUnregisterHTML,userUnregisterMenuHTML);
-            localStorage.removeItem("token");
+           
         } else {
-            localStorage.removeItem("token");
+            
             updateNavigationOptions(userUnregisterHTML,userUnregisterMenuHTML);
             throw new Error('Sesión expirada');
         }
@@ -108,3 +109,19 @@ hamburguerMenu.addEventListener('click', () => {
 closeMobileMenu.addEventListener('click', () => {
     menuMobile.classList.toggle('hide');
 });
+
+// Funcionalidad ver el producto en detalle
+contenidoPagina.addEventListener('click', (e) => {
+    if (e.target.classList.contains('overlay')) {
+      const producto = e.target.parentElement.parentElement;
+      const idProducto = producto.dataset.id;
+  
+      localStorage.setItem('idProducto', idProducto);
+      window.location.href = 'single-product.html';
+
+    }else if(e.target.classList.contains('category-id')){
+        console.log("Click");
+        const categoria = e.target.outerText;
+        localStorage.setItem('Categoria', categoria);
+    }
+  });
