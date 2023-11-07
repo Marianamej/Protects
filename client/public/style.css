@@ -56,6 +56,7 @@ select {
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -1111,7 +1112,8 @@ svg {
 .pagination {
   display: flex;
   margin: 0 auto;
-  gap: 32px;
+  gap: 24px;
+  text-align: center;
 }
 
 .categoria__filtro {
@@ -1169,6 +1171,33 @@ svg {
     width: 150px;
   }
 }
+.page-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: black;
+  cursor: pointer;
+  border: transparent;
+  border-radius: 50%;
+}
+
+#number {
+  display: flex;
+  gap: 12px;
+}
+
+.botones__cambiar {
+  width: 40px;
+  height: 40px;
+  color: var(--watermelon);
+  cursor: pointer;
+  border: 1px solid var(--watermelon);
+  border-radius: 50%;
+  padding: 0;
+}
+
 .about__container-title {
   display: flex;
   flex-direction: column;
@@ -2542,56 +2571,6 @@ button.active {
   column-gap: 24px;
   max-width: 1048px;
   margin: 0 auto;
-}
-
-@media (599px < width < 1240px) {
-  .lista__productos {
-    justify-content: center;
-  }
-  .producto {
-    position: relative;
-    gap: 10px;
-    flex-direction: column;
-    width: 100%;
-    max-width: 234px;
-    max-height: 330px;
-    padding: 0 24px 8px;
-    border: 1px solid #c7c7c7;
-  }
-  .producto img {
-    max-height: 150px;
-    width: 100%;
-    object-fit: contain;
-    background-color: var(--gray);
-  }
-}
-.pagination {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.page-number {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  background-color: transparent;
-  color: #ff0000;
-  font-size: 20px;
-  line-height: 40px;
-  margin-right: 10px;
-  cursor: pointer;
-  border: 1px solid #ff0000;
-  border-radius: 50%;
-}
-
-.page-number:hover {
-  background-color: #e6e6e6;
-}
-
-@media screen and (min-width: 300px) and (max-width: 500px) {
-  .lista__productos {
-    justify-content: center;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */

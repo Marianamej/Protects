@@ -29,7 +29,8 @@
 .pagination{
   display: flex;
   margin: 0 auto;
-  gap: 32px;
+  gap: 24px;
+  text-align: center;
 }
 
 .categoria__filtro{
@@ -92,4 +93,32 @@
     width: 150px;
 
   }
+}
+
+
+.page-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: black; 
+  cursor: pointer;
+  border: transparent;
+  border-radius: 50%;
+}
+
+#number{
+  display: flex;
+  gap:12px
+}
+
+.botones__cambiar{
+  width: 40px;
+  height: 40px;
+  color: var(--watermelon); 
+  cursor: pointer;
+  border: 1px solid var(--watermelon);
+  border-radius: 50%;
+  padding: 0;
 }
