@@ -7,7 +7,9 @@ import com.gamertx.domain.repository.UserRepository;
 import com.gamertx.exceptions.ResourceAlreadyExist;
 import com.gamertx.exceptions.ResourceNotFoundException;
 import com.gamertx.persistence.crud.UsuarioCrudRepository;
+import com.gamertx.persistence.entity.products_view.Producto;
 import com.gamertx.persistence.entity.users_view.Usuario;
+import com.gamertx.persistence.mapper.PersonalInfoMapper;
 import com.gamertx.persistence.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -21,6 +23,8 @@ public class UsuarioRepository implements UserRepository {
     private UsuarioCrudRepository usuarioCrudRepository;
     @Autowired
     private UserMapper mapper;
+    @Autowired
+    private PersonalInfoMapper personalInfoMapper;
 
     public Optional<Usuario> findByUsername (String email){
       return usuarioCrudRepository.findByEmail(email);
@@ -41,12 +45,26 @@ public class UsuarioRepository implements UserRepository {
 
     @Override
     public PersonalInfo getPersonalInfo(String email) {
-        return null;
+        return usuarioCrudRepository.findByEmail(email)
+                .map(usuario1 -> personalInfoMapper.toPersonalInfo(usuario1))
+                .orElseThrow();
     }
 
     @Override
     public PersonalInfo updateInfo(String email, PersonalInfo personalInfo) {
-        return null;
+
+        Usuario actualizacion = personalInfoMapper.toUsuario(personalInfo);
+        return usuarioCrudRepository.findById(email).map(
+                usuario -> {
+                    usuario.setNombre(actualizacion.getNombre());
+                    usuario.setApellido(actualizacion.getApellido());
+                    usuario.setUsername(actualizacion.getUsername());
+                    usuario.setEdad(actualizacion.getEdad());
+                    usuario.setFechaNacimiento(actualizacion.getFechaNacimiento());
+                    usuario.setImgPerfil(actualizacion.getImgPerfil());
+                    return personalInfoMapper.toPersonalInfo(usuarioCrudRepository.save(usuario));
+                }
+        ).get();
     }
 
 

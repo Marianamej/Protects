@@ -86,9 +86,7 @@ function validateToken(token) {
             updateNavigationOptions(userRegisterHTML,userRegisterMenuHTML);
         } else if (response.status === 500) {
             updateNavigationOptions(userUnregisterHTML,userUnregisterMenuHTML);
-           
         } else {
-            
             updateNavigationOptions(userUnregisterHTML,userUnregisterMenuHTML);
             throw new Error('Sesión expirada');
         }
