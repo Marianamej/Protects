@@ -22,8 +22,8 @@ public class ProductService {
         return productRepository.getProduct(productId);
     }
 
-    public Optional<List<Product>> getByCategory(int categoryId){
-        return productRepository.getByCategory(categoryId);
+    public Response getByCategory(int categoryId,int pageNumber, int size, String sortBy,String sortField){
+        return productRepository.getByCategory(categoryId,pageNumber,size,sortBy, sortField);
     }
 
     public Product save(Product product){
