@@ -25,13 +25,7 @@ public class ProductoRepository implements ProductRepository {
     @Autowired
     private ProductMapper mapper;
 
-    @Override
-    public Response getAll(int pageNumber, int size,String sortBy,String sortField){
-        Sort sort = sortField.equalsIgnoreCase(Sort.Direction.ASC.name())?Sort.by(sortBy).ascending():Sort.by(sortBy).descending();
-
-        Pageable pageable = PageRequest.of(pageNumber,size,sort);
-        Page<Producto> productosPaginados = productoCrudRepository.findAll(pageable);
-
+    private Response getPaginatedResponse(Page<Producto> productosPaginados) {
         List<Producto> productos = productosPaginados.getContent();
         List<Product> products = new ArrayList<>(productos.size());
 
@@ -52,6 +46,16 @@ public class ProductoRepository implements ProductRepository {
         response.setLast(productosPaginados.isLast());
 
         return response;
+    }
+
+    @Override
+    public Response getAll(int pageNumber, int size,String sortBy,String sortField){
+        Sort sort = sortField.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
+        Pageable pageable = PageRequest.of(pageNumber, size, sort);
+
+        Page<Producto> productosPaginados = productoCrudRepository.findAll(pageable);
+
+        return getPaginatedResponse(productosPaginados);
     }
 
 
@@ -76,20 +80,14 @@ public class ProductoRepository implements ProductRepository {
         }).orElseThrow(() -> new ResourceNotFoundException("Publicacion","id",productId));
     }
 
-    @Override
-    public Optional<List<Product>> getByCategory(int categoryId) {
-        List<Producto> productos = productoCrudRepository.findByIdCategoriaOrderByNombreAsc(categoryId);
-        List<Product> products = new ArrayList<>(productos.size());
+    public Response getByCategory(int categoryId, int pageNumber, int size, String sortBy, String sortField) {
+        Sort sort = sortField.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
+        Pageable pageable = PageRequest.of(pageNumber, size, sort);
 
-        for (Producto producto : productos) {
-            List<String> urls = getImagenUrls(producto);
+        // Modifica la consulta para obtener productos por categoría y ordenarlos según la paginación
+        Page<Producto> productosPaginados = productoCrudRepository.findByIdCategoria(categoryId, pageable);
 
-            Product product = mapper.toProduct(producto);
-            product.setUrlsImages(urls);
-            products.add(product);
-        }
-
-        return Optional.of(products);
+        return getPaginatedResponse(productosPaginados);
     }
 
     @Override

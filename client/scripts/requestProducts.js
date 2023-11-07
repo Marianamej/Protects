@@ -1,44 +1,41 @@
 import { renderizadoProductos } from './renderCardProduct.js';
 const contenedorUltimasUnidades = document.querySelector('#productosHomeUltimasUnidades');
-const contenedorFiltroRapido = document.querySelector('#filtroProductosHome');
 
 const options = { method: 'GET' };
 let productos = [];
 let productosCategoria = [];
 
-async function fetchData(url, container, start, end) {
+async function fetchData(url, container) {
   try {
     const response = await fetch(url, options);
     const data = await response.json();
 
     if (container === contenedorUltimasUnidades) {
       productos.push(...data.content);
+      container.innerHTML = '';
+      container.append(renderizadoProductos(productos));
     } else {
-      productosCategoria.push(...data);
-      renderAndDisplayCategoryProducts();
+      productosCategoria.push(...data.content);
+      renderAndDisplayCategoryProducts(container);
     }
 
-    if (container) {
-      const productosParaMostrar = productos.slice(start, end);
-      container.innerHTML = '';
-      container.append(renderizadoProductos(productosParaMostrar));
-    }
+    return data
   } catch (err) {
     console.error(err);
   }
 }
 
-export function fetchProducts(contenedor) {
-  return fetchData('http://localhost:8090/gamertx/products', contenedor, 0, 8);
+export function fetchProducts(contenedor,pageNo=0,size=12) {
+  return fetchData(`http://localhost:8090/gamertx/products?pageNo=${pageNo}&size=${size}`, contenedor, 0, 8);
 }
 
-export async function fetchProductsByCategory(contexto) {
-  await fetchData(`http://localhost:8090/gamertx/products/category/${contexto}`, null, 0, 0);
+export async function fetchProductsByCategory(contexto,contenedor,pageNo=0,size=12) {
+  return await fetchData(`http://localhost:8090/gamertx/products/category/${contexto}?pageNo=${pageNo}&size=${size}`, contenedor, 0, 0);
 }
 
-function renderAndDisplayCategoryProducts() {
+function renderAndDisplayCategoryProducts(container) {
   const productosHtml = renderizadoProductos(productosCategoria);
-  contenedorFiltroRapido.innerHTML = '';
-  contenedorFiltroRapido.append(productosHtml);
+  container.innerHTML = '';
+  container.append(productosHtml);
   productosCategoria = []
 }

@@ -17,7 +17,7 @@ import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
 @PropertySource("classpath:application-secrets.properties")
-@CrossOrigin
+@CrossOrigin(origins = "http://127.0.0.1:5500")
 public class GamertxShopApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(GamertxShopApplication.class, args);
@@ -52,7 +52,7 @@ public class GamertxShopApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/greeting-javaconfig").allowedOrigins("http://localhost:8090");
+				registry.addMapping("/greeting-javaconfig").allowedOrigins("http://127.0.0.1:5500");
 			}
 		};
 	}

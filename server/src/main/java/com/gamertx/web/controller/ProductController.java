@@ -45,13 +45,19 @@ public class ProductController {
 
     @PreAuthorize("permitAll()")
     @GetMapping("/category/{id}")
-    public ResponseEntity<List<Product>> getByCategory(@PathVariable("id") int categoryId){
+    public ResponseEntity<Response> getByCategory(
+            @PathVariable("id") int categoryId,
+            @RequestParam(value = "pageNo",defaultValue = AppConst.DEFAULT_NUMBER_PAGE,required = false) int pageNumber,
+            @RequestParam(value = "size",defaultValue = AppConst.SIZE_NUMBER_PAGE, required = false) int size,
+            @RequestParam(value = "sortBy",defaultValue = AppConst.DEFAULT_SORT,required = false) String sortBy,
+            @RequestParam(value = "sortField",defaultValue = AppConst.DEFAULT_SORT_DIRECTION,required = false) String sortField)
+    {
 
-        List<Product> products = productService.getByCategory(categoryId).orElse(null);
+        Response products = productService.getByCategory(categoryId,pageNumber,size,sortBy,sortField);
 
-        return products != null && !products.isEmpty() ?
+        return products != null ?
                 new ResponseEntity<>(products, HttpStatus.OK)
-                : new ResponseEntity<List<Product>>(HttpStatus.NOT_FOUND);
+                : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     @PreAuthorize("hasAuthority('SAVE_ONE_PRODUCT')")
