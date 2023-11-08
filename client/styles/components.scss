@@ -1,9 +1,9 @@
 //info Atoms
 @use 'components/icon';
+@use 'components/animations';
 
 // info Molecules
 @use 'components/dropdown';
-@use 'components/hero-banner';
 @use 'components/mobile-menu';
 @use 'components/header';
 @use 'components/product';
@@ -11,6 +11,7 @@
 @use 'components/blog';
 @use 'components/sliderProducts';
 @use 'components/singleProduct';
+@use 'components/category.scss';
 
 // info Organisms
 @use 'components/carsdAbout';
@@ -23,4 +24,5 @@
 @use 'components/profile.scss';
 @use 'components/promotions.scss';
 @use 'components/single-product.scss';
+@use 'components/hero-banner';
 

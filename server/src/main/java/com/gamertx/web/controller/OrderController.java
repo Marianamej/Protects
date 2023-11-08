@@ -5,6 +5,8 @@ import com.gamertx.domain.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,10 +18,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/orders")
+@CrossOrigin(origins = "http://127.0.0.1:5500")
 public class OrderController {
 
     @Autowired
     private OrderService service;
+    @PreAuthorize("hasAuthority('SAVE_ONE_PRODUCT')")
     @GetMapping()
     public ResponseEntity<List<Order>> getAll() {
         try {
@@ -28,14 +32,14 @@ public class OrderController {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
     }
-
+    @PreAuthorize("hasAuthority('READ_ALL_PRODUCTS')")
     @GetMapping(value = "/{email}")
     public ResponseEntity<List<Order>> getByClient(@PathVariable String email){
         return service.getByClient(email)
                 .map(orders -> new ResponseEntity<>(orders, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
-
+    @PreAuthorize("hasAuthority('READ_ALL_PRODUCTS')")
     @PostMapping(value = "/save")
     public ResponseEntity<Order> save(@RequestBody Order order){
         return new ResponseEntity<>(service.save(order), HttpStatus.OK);
