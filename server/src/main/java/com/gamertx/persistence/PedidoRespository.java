@@ -4,6 +4,7 @@ import com.gamertx.domain.Item;
 import com.gamertx.domain.Order;
 import com.gamertx.domain.Product;
 import com.gamertx.domain.repository.OrderRepository;
+import com.gamertx.exceptions.ResourceAlreadyExist;
 import com.gamertx.persistence.crud.PedidoCrudRepository;
 import com.gamertx.persistence.crud.ProductoCrudRepository;
 import com.gamertx.persistence.entity.products_view.DetallePedido;
@@ -18,6 +19,7 @@ import org.springframework.stereotype.Repository;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 @Repository
 public class PedidoRespository implements OrderRepository {
@@ -65,29 +67,37 @@ public class PedidoRespository implements OrderRepository {
         return products;
     }
 
-    @Override
-    public Order addItem(Item item,Integer orderId) {
+    public Order addItem(Item item, Integer orderId) {
         DetallePedido detallePedido = itemMapper.toDetallePedido(item);
 
-    return  pedidoCrudRepository.findById(orderId).map(
-            pedido -> {
-                    pedido.setIdPedido(pedido.getIdPedido());
-                    pedido.setEmailUsuario(pedido.getEmailUsuario());
-                    pedido.setFechaCompra(pedido.getFechaCompra());
-                    pedido.setTotal(pedido.getTotal());
-                    pedido.setEstado(pedido.getEstado());
-                    List<DetallePedido> itemsDePedido = pedido.getProductos();
-                    itemsDePedido.add(detallePedido);
-                    pedido.setProductos(itemsDePedido);
+        return pedidoCrudRepository.findById(orderId).map(pedido -> {
+            List<DetallePedido> lista = pedido.getProductos();
+            for (DetallePedido detallePedido1 : lista) {
+                int id = detallePedido1.getId().getIdProducto();
+                if (detallePedido.getId().getIdProducto() == id) {
+                    throw new ResourceAlreadyExist("Producto","Existe");
+                }
+            }
 
-                    pedido.getProductos().forEach(detallePedido1 -> {
-                        Producto producto = productoCrudRepository.findById(detallePedido1.getId().getIdProducto()).orElse(null);
-                        detallePedido1.setTotal(new BigDecimal(detallePedido1.getCantidad()).multiply(producto.getPrecio()));
-                        System.out.println(detallePedido1.getTotal());
-                        detallePedido1.setPedido(pedido);
-                    });
-                    return mapper.toOrder(pedidoCrudRepository.save(pedido));
-            }).get();
+            pedido.getProductos().add(detallePedido);
+
+            detallePedido.setPedido(pedido);
+            Producto producto = productoCrudRepository.findById(detallePedido.getId().getIdProducto()).orElse(null);
+
+            if (producto != null) {
+                detallePedido.setTotal(new BigDecimal(detallePedido.getCantidad()).multiply(producto.getPrecio()));
+            }
+            pedido.setTotal(calcularTotal(pedido.getProductos()));
+            return mapper.toOrder(pedidoCrudRepository.save(pedido));
+        }).orElseThrow(NoSuchElementException::new);
+    }
+
+    private BigDecimal calcularTotal(List<DetallePedido> items) {
+        BigDecimal total = BigDecimal.ZERO;
+        for (DetallePedido detalle : items) {
+            total = total.add(detalle.getTotal());
+        }
+        return total;
     }
 
     @Override

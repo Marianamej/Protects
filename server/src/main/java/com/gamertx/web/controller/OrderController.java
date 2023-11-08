@@ -50,7 +50,11 @@ public class OrderController {
 
     @GetMapping(value = "/items/{email}")
     public ResponseEntity<List<Product>> getItemsByClient(@PathVariable String email){
-        return new ResponseEntity<>(service.getItemsByClient(email),HttpStatus.OK);
+        List<Product> response = service.getItemsByClient(email);
+        System.out.println(response);
+        return response != null ?
+                new ResponseEntity<>(response, HttpStatus.OK)
+                : new ResponseEntity<>(response,HttpStatus.NOT_FOUND);
     }
 
     @PreAuthorize("hasAuthority('READ_ALL_PRODUCTS')")
