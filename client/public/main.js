@@ -20,7 +20,7 @@ options.classList.add("header__user");
 const URL = "http://localhost:8090/gamertx/register";
 const userRegisterHTML = `
         <div class="icon user__icon user__icon-register shopping-car">
-            <a href="./login.html">
+            <a href="./carrito-compras.html">
             <img src="../assets/icons/icon-shopping-cart.svg" alt="">
             </a>
         </div>

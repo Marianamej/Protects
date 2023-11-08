@@ -105,31 +105,31 @@
 
       <div class="mobile-menu__categories">
         <div class="mobile-menu__link-categories space-between">
-          <a class="fs-xs" href="./products.html">Laptops</a>
+          <a class="category-id fs-xs" href="./products.html">Laptops</a>
           <a href="">
             <img src="../assets/icons/icon-arrow.svg" alt="">
           </a>
         </div>
         <div class="mobile-menu__link-categories space-between">
-          <a class="fs-xs" href="./products.html">Desktop PC</a>
+          <a class="category-id fs-xs" href="./products.html">Desktop PC</a>
           <a href="">
             <img src="../assets/icons/icon-arrow.svg" alt="">
           </a>
         </div>
         <div class="mobile-menu__link-categories space-between">
-          <a class="fs-xs" href="./products.html">Monitors</a>
+          <a class="category-id fs-xs" href="./products.html">Monitors</a>
           <a href="">
             <img src="../assets/icons/icon-arrow.svg" alt="">
           </a>
         </div>
         <div class="mobile-menu__link-categories space-between">
-          <a class="fs-xs" href="./products.html">Complements</a>
+          <a class="category-id fs-xs" href="./products.html">Complements</a>
           <a href="">
             <img src="../assets/icons/icon-arrow.svg" alt="">
           </a>
         </div>
         <div class="mobile-menu__link-categories space-between">
-          <a class="fs-xs" href="./products.html">Parts of Pc</a>
+          <a class="category-id fs-xs" href="./products.html">Parts of Pc</a>
           <a href="">
             <img src="../assets/icons/icon-arrow.svg" alt="">
           </a>
@@ -158,9 +158,8 @@
             <a class="fs-xs" href="./contact-us.html">Contact Us</a>
           </div>
 
-        <div class="mobile-menu__buttons space-between">
-          <button class="button--white">Ayuda</button>
-          <button class="button--red">Iniciar sesion</button>
+        <div class="mobile-menu__buttons space-between" id="stateMobile">
+
         </div>
       </div>
     </div>
@@ -168,169 +167,20 @@
   </header>
   <main class="main__container">
     <h1>Shopping Cart</h1>
+    <div class="contenedor__carrito-compras">
+      <template id="template__producto--carrito">
+        <div class="producto__carrito-compras">
+          <div class="producto__carrito-detalle">
+            <img class="producto__carrito-detalle--imagen" src="" alt="">
+          </div>
+          <div class="producto__carrito-detalle producto__carrito-detalle--descripcion"></div>
 
-    <div class="shoppingCard__pc">
-      <div class="table__container">
-        <table class="tabla">
-          <thead>
-            <tr>
-              <th>Item</th>
-              <th></th>
-              <th>Price</th>
-              <th>Qty</th>
-              <th>Subtotal</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><img src="../assets/img-shoppingcart.webp" alt="Imagen de un producto añadido al carrito"></td>
-              <td>MSI MEG Trident X 10SD-1012AU Intel i7 10700K, 2070 SUPER, 32GB RAM, 1TB SSD, Windows 10 Home, Gaming
-                Keyboard and Mouse 3 Years Warranty</td>
-              <td><strong>$4,349.00</strong></td>
-              <td>
-                <div class="qty">
-                  <p>1</p>
-                  <div>
-                    <button class="qty__button">+</button> <!--Aca un icono-->
-                    <button class="qty__button">-</button> <!--Aca un icono-->
-                  </div>
-                </div>
-              </td>
-              <td><strong>$13,047.00</strong></td>
-              <td>
-                <button class="edit__button"><img src="../assets/x-icon.png" alt=""></button>
-                <button class="edit__button"><img src="../assets/edit-icon.png" alt=""></button>
-              </td>
-            </tr>
-            <tr>
-              <td><img src="../assets/img-shoppingcart.png" alt=""></td>
-              <td>MSI MEG Trident X 10SD-1012AU Intel i7 10700K, 2070 SUPER, 32GB RAM, 1TB SSD, Windows 10 Home, Gaming
-                Keyboard and Mouse 3 Years Warranty</td>
-              <td><strong>$4,349.00</strong></td>
-              <td>
-                <div class="qty">
-                  <p>1</p>
-                  <div>
-                    <button class="qty__button">+</button> <!--Aca un Icono-->
-                    <button class="qty__button">-</button> <!--Aca un icono-->
-                  </div>
-                </div>
-              </td>
-              <td><strong>$13,047.00</strong></td>
-              <td>
-                <button class="edit__button"><img src="../assets/x-icon.png" alt=""></button> <!--Aca un icono-->
-                <button class="edit__button"><img src="../assets/edit-icon.png" alt=""></button> <!--Aca un icono-->
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
+          <div class="producto__carrito-detalle producto__carrito-detalle--precioUnitario">$4,349.00</div>
+          <div class="producto__carrito-detalle"><input class="producto__carrito-detalle--cantidad"type="number"></div>
+          <div class="producto__carrito-detalle producto__carrito-detalle--total">$13,047.00</div>
+        </div>
+      </template>
     </div>
-
-    <div class="shoppingCard__mobile">
-      <div class="item">
-        <div class="item__description">
-          <img src="../assets/img-shoppingcart.png" alt="">
-          <p>MSI MEG Trident X 10SD-1012AU Intel i7 10700K, 2070 SUPER, 32GB RAM, 1TB SSD, Windows 10 Home, Gaming
-            Keyboard and Mouse 3 Years Warranty</p>
-        </div>
-        <div class="item__details">
-          <table>
-            <thead>
-              <tr>
-                <th>Price</th>
-                <th>Qty</th>
-                <th>SubTotal</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>$4,349.00</strong></td>
-                <td>
-                  <div class="qty">
-                    <p>1</p>
-                    <div>
-                      <button class="qty__button">+</button> <!--Aca un Icono-->
-                      <button class="qty__button">-</button> <!--Aca un icono-->
-                    </div>
-                  </div>
-                </td>
-                <td><strong>$13,047.00</strong></td>
-                <td>
-                  <button class="edit__button"><img src="../assets/x-icon.png" alt=""></button>
-                  <button class="edit__button"><img src="../assets/edit-icon.png" alt=""></button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div class="item">
-        <div class="item__description">
-          <img src="../assets/img-shoppingcart.png" alt="">
-          <p>MSI MEG Trident X 10SD-1012AU Intel i7 10700K, 2070 SUPER, 32GB RAM, 1TB SSD, Windows 10 Home, Gaming
-            Keyboard and Mouse 3 Years Warranty</p>
-        </div>
-        <div class="item__details">
-          <table>
-            <thead>
-              <tr>
-                <th>Price</th>
-                <th>Qty</th>
-                <th>SubTotal</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>$4,349.00</strong></td>
-                <td>
-                  <div class="qty">
-                    <p>1</p>
-                    <div>
-                      <button class="qty__button">+</button>
-                      <button class="qty__button">-</button>
-                    </div>
-                  </div>
-                </td>
-                <td><strong>$13,047.00</strong></td>
-                <td>
-                  <button class="edit__button"><img src="../assets/x-icon.png" alt=""></button>
-                  <button class="edit__button"><img src="../assets/edit-icon.png" alt=""></button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <div class="option__buttons">
-      <button class="continue__button"><a href="../views/home.html">Continue Shopping</a></button>
-      <button class="clear__button">Clear Shopping Cart</button>
-    </div>
-
-    <div class="advice__container">
-      <div class="advice">
-        <img src="../assets/arrow-icon.png" alt="">
-        <strong>Product Support</strong>
-        <p>Up to 3 years on-site warranty available for your peace of mind.</p>
-      </div>
-      <div class="advice">
-        <img src="../assets/profile-icon.png
-            " alt="">
-        <strong>Personal Account</strong>
-        <p>With big discounts, free delivery and a dedicated support specialist.</p>
-      </div>
-      <div class="advice">
-        <img src="../assets/tag-icon.png" alt="">
-        <strong>Amazing Savings</strong>
-        <p>Up to 70% off new Products, you can be sure of the best price.</p>
-      </div>
-
   </main>
   
   <footer>
@@ -383,6 +233,7 @@
   </footer>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script type="module" src="../public/main.js"></script>
+  <script type="module" async src="../scripts/shoppingCart.js"></script>
 </body>
 
 </html>
