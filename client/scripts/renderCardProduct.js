@@ -1,9 +1,4 @@
 
-//Se crea un fragmento para evitar el reflow al renderizar los productos
-
-
-
-
 const fragmentoProductos = new DocumentFragment();
 const templateProducto = document.querySelector('#template__producto').content;
 let productosRenderizados = '';

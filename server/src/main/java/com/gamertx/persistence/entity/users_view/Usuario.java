@@ -1,12 +1,14 @@
 package com.gamertx.persistence.entity.users_view;
 import com.gamertx.persistence.entity.payment_view.PagoUsuario;
 import com.gamertx.persistence.entity.content_view.Post;
+import com.gamertx.persistence.entity.products_view.Pedido;
 import com.gamertx.utilities.Role;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.parameters.P;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.time.LocalDate;

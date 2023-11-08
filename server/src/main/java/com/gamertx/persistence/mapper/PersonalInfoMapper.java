@@ -12,7 +12,7 @@ import org.mapstruct.Mappings;
 public interface PersonalInfoMapper {
     @Mappings({
             @Mapping(source = "nombre", target = "name"),
-            @Mapping(source = "contraseña", target = "password"),
+//            @Mapping(source = "contraseña", target = "password"),
             @Mapping(source = "apellido", target = "lastName"),
             @Mapping(source = "edad", target = "age"),
             @Mapping(source = "fechaNacimiento", target = "birthdate"),
@@ -24,5 +24,6 @@ public interface PersonalInfoMapper {
     @Mapping(target = "posts",ignore = true)
     @Mapping(target = "pagosUsuario",ignore = true)
     @Mapping(target = "comentarios",ignore = true)
+    @Mapping(source = "password",target = "contraseña")
     Usuario toUsuario(PersonalInfo personalInfo);
 }

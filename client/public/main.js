@@ -20,12 +20,12 @@ options.classList.add("header__user");
 const URL = "http://localhost:8090/gamertx/register";
 const userRegisterHTML = `
         <div class="icon user__icon user__icon-register shopping-car">
-            <a href="./login.html">
+            <a href="./carrito-compras.html">
             <img src="../assets/icons/icon-shopping-cart.svg" alt="">
             </a>
         </div>
         <div class="icon user__icon user__icon-register user_avatar">
-            <a href="./login.html">
+            <a href="./profile.html">
             <img src="https://unavatar.io/dribbble/omidnikrah" alt="">
             </a>
         </div>
@@ -86,9 +86,7 @@ function validateToken(token) {
             updateNavigationOptions(userRegisterHTML,userRegisterMenuHTML);
         } else if (response.status === 500) {
             updateNavigationOptions(userUnregisterHTML,userUnregisterMenuHTML);
-           
         } else {
-            
             updateNavigationOptions(userUnregisterHTML,userUnregisterMenuHTML);
             throw new Error('Sesión expirada');
         }
