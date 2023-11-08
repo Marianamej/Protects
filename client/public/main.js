@@ -25,7 +25,7 @@ const userRegisterHTML = `
             </a>
         </div>
         <div class="icon user__icon user__icon-register user_avatar">
-            <a href="./login.html">
+            <a href="./profile.html">
             <img src="https://unavatar.io/dribbble/omidnikrah" alt="">
             </a>
         </div>
