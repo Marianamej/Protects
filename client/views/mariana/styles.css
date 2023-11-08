@@ -1,0 +1,112 @@
+/* siiiii */
+
+.news-section {
+    display: flex;
+    font-size: 10px; /* Espacio entre los elementos */
+    align-items: flex-start;
+  }
+  
+  /* Estilos para la noticia grande */
+  .big-news-article {
+    width: 50%; /* Ancho del contenedor grande */
+    margin-right: 20px; /* Espacio entre la noticia grande y las pequeñas */
+    /* Resto de estilos para la noticia más grande */
+  }
+  
+  /* Estilos para las noticias pequeñas */
+  .small-news-articles {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 60%; /* Ancho del contenedor de las noticias pequeñas */
+  }
+  
+  .news-article {
+    width: 100%; /* Ancho completo de las noticias pequeñas */
+    margin-bottom: 10px; /* Margen inferior entre las noticias pequeñas */
+    display: flex;
+    align-items: flex-start; /* Alinear elementos de noticias pequeñas */
+  }
+  
+  /* Ajustar el espacio entre las noticias pequeñas y la noticia grande */
+  .small-news-articles .news-article:first-child {
+    margin-top: 0; /* Eliminar el margen superior para la primera noticia pequeña */
+  }
+  
+  /* Estilos para las imágenes de las noticias pequeñas */
+  .news-article img {
+    width: 300px; /* Ancho mayor de las imágenes de las noticias pequeñas */
+    height: 200px; /* Altura ajustada automáticamente */
+    margin-right: 10px;
+  }
+  
+  /* Estilos para el contenido de las noticias pequeñas */
+  .article-content {
+    flex: 1; /* Que el contenido tome el espacio completo disponible */
+    max-width: calc(100% - 210px); /* Ajustar el ancho del texto */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .article-content h2, .article-content h3 {
+    margin: 0; /* Eliminar el margen predeterminado */
+    font-size: 1.1em; /* Tamaño de fuente relativo */
+  }
+  
+  
+  /* seccion blog 3x3 */
+  .home-blogs1 {
+    display: flex;
+    width: 150%;
+    gap: 24px;
+    margin-left: -200px;
+  }
+  
+  .blog1 {
+    width: 33.33333333%;
+    max-width: 33.33333333%;
+    aspect-ratio: 3/4;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  
+  .blog1 img {
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 200px;
+  }
+  
+  .tittle-section .h2 {
+    margin-left: -100px;
+  }
+  
+  .blog__info1 {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .blog__titulo1 {
+    font-size: 2.4rem;
+    color: var(--night-sky);
+  }
+  
+  .blog__descripcion1 {
+    color: var(--grey-mouse);
+    font-size: 1.6rem;
+  }
+  
+  .blog__tags1 {
+    display: flex;
+    gap: 8px;
+    font-size: 1.4rem;
+  }
+  .blog__tags1 p {
+    padding: 4px;
+    color: var(--watermelon);
+    background-color: #FDF2FA;
+    border-radius: 40px;
+  }
+  
+  
