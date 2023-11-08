@@ -1,5 +1,6 @@
 package com.gamertx.persistence.entity.products_view;
 
+import com.gamertx.persistence.entity.users_view.CarritoCompras;
 import com.gamertx.persistence.entity.users_view.Comentario;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -50,6 +51,10 @@ public class Producto {
     @ManyToOne
     @JoinColumn(name = "id_marca", insertable = false, updatable = false)
     private Marca marca;
+
+    @ManyToOne
+    @JoinColumn(name = "id_carrito",insertable = false,updatable = false)
+    private CarritoCompras carritoCompras;
 
     //Relacion Imagenes con producto
     @OneToMany(mappedBy = "producto",fetch=FetchType.EAGER)

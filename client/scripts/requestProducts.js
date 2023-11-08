@@ -1,7 +1,8 @@
 import { renderizadoProductos } from './renderCardProduct.js';
 const contenedorUltimasUnidades = document.querySelector('#productosHomeUltimasUnidades');
 
-const options = { method: 'GET' };
+let options = { method: 'GET' };
+
 let productos = [];
 let productosCategoria = [];
 
