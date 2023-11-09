@@ -68,3 +68,26 @@ function sliderProductosFiltrados() {
   // Inicializa el slider
   updateSlider();
 }
+
+const token = localStorage.getItem("token");
+const email=localStorage.getItem("email")
+const options = {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${JSON.parse(token)}`
+    }
+  };
+  
+  async function fetchDataAndPopulateHTML() {
+    try {
+      const response = await fetch(`http://localhost:8090/gamertx/register/${email}`, options);
+     
+      const person = await response.json();
+    localStorage.setItem('foto',person.imgProfile)
+
+      
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  fetchDataAndPopulateHTML()

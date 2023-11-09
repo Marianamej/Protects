@@ -174,7 +174,7 @@
     <div class="profile__container">
       <div class="profile__main">
         <div class="profile__image">
-          <img src="../assets/profile-image.webp" alt="Imagen del perfil del usuario" class="imgPorfile">
+          <img  alt="Imagen del perfil del usuario" class="imgPorfile">
         </div>
         <div class="profile__info">
           <h2 class="name_profile"></h2>
@@ -184,7 +184,8 @@
                 <p class="userName"></p>
                 <p class="email_person"></p>
               
-                <a href="#" class="info__a">Edit Profile</a>
+                <a href="#" class="info__a">Editar Profil</a>
+                <button class="info__button" >cerrar secion</button>
               </div>
               
             </div>
@@ -198,9 +199,9 @@
 
 
       <div class="profile__sectionNav">
-        <button onclick="showSection('wishlist')">Wish List</button>
-        <button onclick="showSection('orders')">Orders</button>
-        <button onclick="showSection('history')">History</button>
+        <button onclick="showSection('wishlist')">lista de deseos</button>
+        <button onclick="showSection('orders')">Ordenes</button>
+        <button onclick="showSection('history')">Historial</button>
       </div>
 
 
@@ -230,7 +231,7 @@
               <button class="boton__añadir-carrito button--white">Add al carrito</button>
             </div>
             <div class="producto left">
-              <img src="../assets/products/imagen-producto-1.jpg" alt="">
+              <img class="producimgleft" src="data:image/jpeg;base64,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IiICIiBSLzk20+1uOW4FdE8Ka88vav1+U8viu0OLrGxxeIe/u0yy31y3aYF8rDzmeqO09DK97J9XdMftWhQG9WrU6Y/rdV+AJznN+23bSliqD4bBmqzORdwNxCAb7p3rMQ1rHLMc55TBdk8bXO8mEqXPv1yEH7jvHeNjyGYE9jsn0aOQDi8Ruj/28ON3lkajC5GXBRxsZN29o10enj/dd+zkbKQysos6HdZRbdKjhLcPRZ6r0qdNnDDe3EDMSVsbhRc3znaMH6KMKlVnepUemb7tP2SLnVnBu1vAdbz22y9lUcPTWnQpqiqLC2ZPHNjmxvncmbcbZ47OX9lvRk7hXxl6SZH1SkFz0ZhcKOguf2meoxHot2e3spVT9tZz/wB5ae4iGXNqnoiw3uYjEL0b1bD5ID85iVPROw9jGA9Gon6ip9p1SIHJU9Fddju1MTTCcSqMzf2mwHxnpdkejXAULFkasw41GuP7FspHiDPaxAhw+HVFCoioo0VVAA8AMhJoiAiIgIiICIiAiIgIiICIiAiIgIiIGAdk4fU0KZPVFP1EyqdBV9lVXwAH0ksQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERA//Z" alt="">
               <div class="producto__actions">
                 <div class="center"><img src="../assets/icons/icon-corazon.svg" alt=""></div>
                 <div class="center"><img src="../assets/icons/icon-stats.svg" alt=""></div>
@@ -244,15 +245,15 @@
                   <ion-icon class="fs-xs star-active" name="star"></ion-icon>
                   <ion-icon class="fs-xs star" name="star-outline"></ion-icon>
                 </div>
-                <p class="reviews">reviews (5)</p>
+                <p class="reviews">reviews (4)</p>
               </div>
-              <h3 class="fs-xs">EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...</h3>
+              <h3 class="fs-xs">Logitech G502 X Plus, Mouse Gamer Inalámbrico Rgb / Hero 25k</h3>
               <p class="tx-through fs-xs producto__descuento">$499.00</p>
-              <p class="ft-bold producto__precio">$499.00</p>
+              <p class="ft-bold producto__precio">$200.00</p>
               <button class="boton__añadir-carrito button--white">Add al carrito</button>
             </div>
             <div class="producto left">
-              <img src="../assets/products/imagen-producto-1.jpg" alt="">
+              <img src="https://http2.mlstatic.com/D_NQ_NP_777204-MCO49526032209_032022-O.webp" class="producimgleft" alt="">
               <div class="producto__actions">
                 <div class="center"><img src="../assets/icons/icon-corazon.svg" alt=""></div>
                 <div class="center"><img src="../assets/icons/icon-stats.svg" alt=""></div>
@@ -268,9 +269,9 @@
                 </div>
                 <p class="reviews">reviews (5)</p>
               </div>
-              <h3 class="fs-xs">EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...</h3>
-              <p class="tx-through fs-xs producto__descuento">$499.00</p>
-              <p class="ft-bold producto__precio">$499.00</p>
+              <h3 class="fs-xs">Hyperx Quadcast, Micrófono Usb Multipatrón Gamer / Streaming</h3>
+              <p class="tx-through fs-xs producto__descuento">$850.00</p>
+              <p class="ft-bold producto__precio">$479.00</p>
               <button class="boton__añadir-carrito button--white">Add al carrito</button>
             </div>
           </div>
@@ -282,11 +283,10 @@
               <img src="../assets/tinkerbell_image.png" alt="">
             </div>
             <div class="orders__content">
-              <img src="../assets/img-shoppingcart.png" alt="">
-              <p>MSI MEG Trident X 10SD-1012AU Intel i7 10700K, 2070 SUPER, 32GB RAM, 1TB SSD, Windows 10 Home, Gaming
-                Keyboard and Mouse 3 Years Warranty</p>
+              <img src="" alt="">
+              <p>Hyperx Quadcast, Micrófono Usb Multipatrón Gamer / Streaming</p>
               <div class="orders__info">
-                <p>$13,047.00</p>
+                <p>$479.000</p>
                 <span>Enviado</span>
               </div>
             </div>
@@ -303,8 +303,7 @@
               </div>
               <div class="history__item">
                 <img src="../assets/img-shoppingcart.png" alt="">
-                <p>MSI MEG Trident X 10SD-1012AU Intel i7 10700K, 2070 SUPER, 32GB RAM, 1TB SSD, Windows 10 Home, Gaming
-                  Keyboard and Mouse 3 Years Warranty</p>
+                <p>Hyperx Quadcast, Micrófono Usb Multipatrón Gamer / Streaming</p>
               </div>
             </div>
           </div>

@@ -60,7 +60,7 @@ function visualizacionDescripcion(producto) {
 }
 
 // Se renderizan los productos sugeridos en el HTML
-contenedorUltimasUnidades.append(renderizadoProductos)
+//contenedorUltimasUnidades.append(renderizadoProductos)
 
 function detallesDelProducto() {
     // URL del servidor
