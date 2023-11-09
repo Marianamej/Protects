@@ -1,3 +1,4 @@
+
 const fragmentoProductos = new DocumentFragment();
 const templateProducto = document.querySelector('#template__producto').content;
 let productosRenderizados = '';
@@ -71,6 +72,10 @@ export function renderizadoProductos(arregloProductos) {
 
         //Se crea el HTML de cada producto
         fragmentoProductos.appendChild(clone);
+        
+         
+    
+
     });
     return productosRenderizados = fragmentoProductos;
 }

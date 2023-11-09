@@ -11,7 +11,7 @@ async function fetchData(url, container) {
     const response = await fetch(url, options);
     const data = await response.json();
 
-    if (container === contenedorUltimasUnidades) {
+    if (container === contenedorUltimasUnidades ) {
       productos.push(...data.content);
       container.innerHTML = '';
       container.append(renderizadoProductos(productos));
