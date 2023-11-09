@@ -922,43 +922,6 @@ svg {
   right: -30px;
 }
 
-.bestsellesproduct {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  justify-content: right;
-}
-
-@media (max-width: 899px) {
-  .bestsellesproduct {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: right;
-  }
-  .singleProduct {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-between;
-  }
-}
-@media (max-width: 599px) {
-  .bestsellesproduct {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: right;
-    gap: 25px;
-  }
-  .singleProduct {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-between;
-    gap: 25px;
-  }
-}
-
-
 .filtro__flechas--atras {
   top: 45%;
   left: -30px;
@@ -2272,7 +2235,6 @@ button.active {
     padding-left: 10px;
   }
 }
-
 .hero-banner {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), no-repeat center/cover, lightgray 50%;
   gap: 32px;
