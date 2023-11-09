@@ -15,6 +15,6 @@ function creacionBanner(imgFondo,temporada,descuento,descripcion,imgProducto) {
     getBanners.push(nuevoBanner);
 }
 
-creacionBanner(fondos[0],"Verano","-20%","We know how large objects will act, but things on a small scale",imgProducto[0]);
-creacionBanner(fondos[1],"Verano","-15%","Descuento en todos los productos",imgProducto[1]);
+creacionBanner(fondos[0],"Verano 2023","-20%","Sabemos como las grandes cosas funcionan a pequeña escala",imgProducto[0]);
+creacionBanner(fondos[1],"Verano 2023","-15%","Descuento en todos los productos",imgProducto[1]);
 
