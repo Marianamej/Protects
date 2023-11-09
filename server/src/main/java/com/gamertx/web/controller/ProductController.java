@@ -67,7 +67,7 @@ public class ProductController {
     }
 
     @PreAuthorize("hasAuthority('SAVE_ONE_PRODUCT')")
-    @PutMapping("/{id}")
+    @PutMapping("/{}")
     public ResponseEntity<String> updateProduct(@Valid @RequestBody Product product, @PathVariable("id") int productId){
         productService.updateProduct(product,productId);
         return  new ResponseEntity<>("El producto ha sido actualizado",HttpStatus.OK);

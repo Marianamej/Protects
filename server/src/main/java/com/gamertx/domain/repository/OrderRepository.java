@@ -13,5 +13,5 @@ public interface OrderRepository {
     Optional<List<Order>> getByClient(String email);
     Order save(Order order);
     List<Product> getItemsByClient(String email);
-    Order addItem(Item item, Integer orderId);
+    Order addItem(Item item, String email);
 }

@@ -33,6 +33,7 @@ public class ProductoRepository implements ProductRepository {
             List<String> urls = getImagenUrls(producto);
 
             Product product = mapper.toProduct(producto);
+            product.setNumeroComentarios(producto.getComentarios().size());
             product.setUrlsImages(urls);
             products.add(product);
         }

@@ -7,5 +7,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface PedidoCrudRepository extends CrudRepository<Pedido,Integer> {
-    Optional<List<Pedido>> findByEmailUsuario(String email);
+    Optional<List<Pedido>> findByEmailUsuarioOrderByIdPedido(String email);
+    Optional<Pedido> findByEmailUsuario(String email);
 }

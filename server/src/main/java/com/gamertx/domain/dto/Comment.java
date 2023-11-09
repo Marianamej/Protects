@@ -26,5 +26,5 @@ public class Comment {
     private LocalDate date;
     private Short rating;
     private Short likes;
-    private Usuario user;
+    private String img;
 }

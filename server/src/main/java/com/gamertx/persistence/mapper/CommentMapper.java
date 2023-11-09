@@ -17,7 +17,6 @@ public interface CommentMapper {
             @Mapping(source = "calificacion",target = "rating"),
             @Mapping(source = "emailUsuario",target = "email"),
             @Mapping(source = "idProducto",target = "productId"),
-            @Mapping(source = "usuario",target = "user")
     })
     Comment toComment (Comentario comentario);
     List<Comment> toComments (List<Comentario> comentarios);
@@ -25,6 +24,7 @@ public interface CommentMapper {
     @InheritInverseConfiguration
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "producto", ignore = true)
+    @Mapping(target = "usuario",ignore = true)
     Comentario toComentario(Comment comment);
     List<Comentario> toComentarios (List<Comment> comments);
 }

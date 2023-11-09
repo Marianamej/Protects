@@ -24,6 +24,7 @@ Guia practica para construir el CSS de la aplicacion web.
 
 ## Convenciones
 
+
 Para el manejo del CSS se utilizan las siguientes convenciones:
 
 - Se utiliza la metodología BEM

@@ -1,6 +1,6 @@
 h2 {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 30px;
 }
 
 span {
@@ -26,7 +26,7 @@ span {
     width: 100%;
     display: flex;
     flex-direction: row;
-    gap: 57px;
+    gap: 200px;
 }
 
 .profile__info {
@@ -36,6 +36,7 @@ span {
     gap: 20px;
     padding-top: 10px;
 }
+
 
 .profile__text {
     display: flex;
@@ -61,11 +62,13 @@ span {
 }
 
 .info__a {
-    color:white;
-    background-color: var(--watermelon);
-    width: 80px;
-    height: 20px;
-    border-radius: 5px;
+    color: white;
+  background-color: var(--watermelon);
+  width: 200px;
+  height: 45px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  
 }
 
 .profile__sectionNav {
@@ -74,7 +77,7 @@ span {
     background-color: var(--watermelon);
     padding: 8px 13px;
     border-radius: 50px;
-    gap: 48px;
+    gap: 250px;
 }
 
 .profile__sectionNav button {
@@ -82,6 +85,9 @@ span {
     background-color: var(--watermelon);
     padding: 8px 38px;
     border-radius: 50px;
+}
+.producimgleft{
+    width: 150px;
 }
 
 button.active {
@@ -136,6 +142,10 @@ button.active {
     align-items: center;
     gap: 38px;
 }
+.imgPorfile{
+    border-radius: 30%;
+    width: 200px;
+}
 
 @media (max-width: 800px) {
     .profile__wishlist {
@@ -150,6 +160,10 @@ button.active {
         justify-content: space-between;
         gap: 20px;
     }
+    .profile__sectionNav{
+        gap: 36px;
+    
+        }
 }
 
 @media (max-width: 700px){
@@ -157,6 +171,10 @@ button.active {
         display: flex;
         flex-direction: column;
     }
+    .profile__sectionNav{
+        gap: 20px;
+    
+        }
 }
 
 @media (max-width: 500px){
@@ -164,6 +182,10 @@ button.active {
     .profile__sectionNav button {
         padding: 8px 10px;
         border-radius: 50px;
+    }
+    .profile__sectionNav{
+    gap: 30px;
+
     }
 
     .profile__info h2{
@@ -204,3 +226,4 @@ button.active {
         flex-direction: column;
     }
 }
+

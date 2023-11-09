@@ -1,109 +1,12 @@
-import {separarProductosParaMostrar} from './renderCardProduct.js';
 import {renderizadoProductos} from './renderCardProduct.js';
-import {traerComentarios} from './renderDetailProducts.js';
-import {renderizadoComentarios} from './renderDetailProducts.js';
+import {renderizadoComentarios,hayEstrellas} from './renderDetailProducts.js';
+const templateSingleProduct = document.querySelector('#template-producto-general').content;
+const especificaciones = document.querySelector(".producto-descripcion__lista-caracteristicas");
+const descripcionDetallada = document.querySelector(".producto-descripcion__details-info")
+//Se obtiene el id del producto del cual se van a renderizar sus comentarios
+let id= localStorage.getItem('idProducto');
 
-
-
-
- 
-
-//carta del productos
-async function fetchCardProduct(idProducto) {
-    
-    try {
-      const response = await fetch(`http://localhost:8090/gamertx/products/${idProducto}`);
-      
-      const product = await response.json();
-      
-      const singleProduct = document.querySelector('.singleProduct');
-      //imagen del producto
-      const img_container = document.querySelector(".img_container");
-      const img = document.createElement("img");
-      img.className = "img";
-      img.src = product.urlsImages[0];
-      
-      const butosn = document.createElement('div'); 
-      butosn.classList = "butosn";
-      
-      const buton_add = document.createElement('button');
-      buton_add.innerText = "Buy";
-      buton_add.className="buton_add"
-      
-      const buton_fav = document.createElement('img');
-      buton_fav.src = "../assets/icons/icon-favorite.svg";
-      buton_fav.className="butons_actions"
-      
-      const buton_car = document.createElement('img');
-      buton_car.src = "../assets/icons/icon-carrito.svg";
-      buton_car.className="butons_actions"
-      
-      singleProduct.appendChild(img_container);
-      img_container.appendChild(img);
-      img_container.appendChild(butosn);
-      butosn.appendChild(buton_add);
-      butosn.appendChild(buton_fav);
-      butosn.appendChild(buton_car);
-      
-      //nombre
-      const tex_container=document.querySelector(".tex_container")
-      const title=document.createElement("h3")
-      title.innerText=product.name
-      title.className="title"
-      
-      
-      const stars=document.createElement("div")
-      for (let i = 0; i < product.rating; i++) {
-          const ionIcon = document.createElement("ion-icon");
-          ionIcon.className = "fs-xs star-active";
-          ionIcon.name = "star";
-          stars.appendChild(ionIcon);
-      }
-      
-      
-
-      const precio=document.createElement('p')
-      precio.innerText=`$ ${product.price}`
-      precio.className="precio"
-      
-      const stock=document.createElement("p")
-      stock.innerText="Availability  : in stock"
-      stock.className="stock"
-      
-      const descripcion=document.createElement("p")
-      descripcion.className="descripcion_single_product"
-      descripcion.innerText=product.description
-      
-      const linea_horizontal=document.createElement("div")
-      linea_horizontal.className="linea-horizontal"
-
-
-      
-      
-    
-      
-      
-      tex_container.appendChild(title)
-      tex_container.appendChild(stars)
-      tex_container.appendChild(precio)
-      tex_container.appendChild(stock)
-      tex_container.appendChild(descripcion)
-      tex_container.appendChild(linea_horizontal)
-      
-      
-      
-    } catch (error) {
-      console.error(error);
-    }
-
-    
-
-  }
-  let id= localStorage.getItem('idProducto');
-  fetchCardProduct(id)  
-
-
-  // !Constantes para el renderizado de productos y comentarios
+// !Constantes para el renderizado de productos y comentarios
 const numeroComentarios = document.querySelector('#numeroComentarios');
 const seccionComentarios = document.querySelector('.producto-descripcion__comentarios');
 const contenedorUltimasUnidades = document.querySelector('.ultimas-unidades');
@@ -113,14 +16,75 @@ const barraNavegacion = document.querySelector('.producto-descripcion__options')
 const contenedorSecciones = document.querySelector('.producto-descripcion__container');
 const secciones = contenedorSecciones.querySelectorAll('#producto-descripcion__seccion');
 
-//Se obtiene el id del producto del cual se van a renderizar sus comentarios
-const idDetallesProducto = localStorage.getItem("idProducto")
-const comentarios = traerComentarios(idDetallesProducto);
-numeroComentarios.textContent = comentarios.length;
-seccionComentarios.appendChild(renderizadoComentarios(comentarios))
+//carta del productos
+async function fetchCardProduct(idProducto) {
+    
+    try {
+      const response = await fetch(`http://localhost:8090/gamertx/products/${idProducto}`);
+      
+      const product = await response.json();
+      name(product)
+      visualizacionDescripcion(product)
+    } catch (error) {
+      console.error(error);
+    }
+}
+ 
+function name(product) {
+    const singleProduct = document.querySelector('.singleProduct');
+    const clone = document.importNode(templateSingleProduct, true);
+
+    //Se verifican el numero de estrellas del producto para renderizarlas
+    const estrellas = hayEstrellas(product.rating)
+            
+    //Se renderiza el comentario
+    clone.querySelector('.img').src = product.urlsImages[0];
+    clone.querySelector('.title').textContent = product.name;
+    clone.querySelector('.precio').innerHTML = `$${product.price.toLocaleString()}`;
+    clone.querySelector('.descripcion_single_product').textContent = product.description;
+    clone.querySelector(".rating-product").innerHTML = estrellas;
+
+    //Se crea el HTML de cada producto
+    singleProduct.appendChild(clone);
+}
+
+function visualizacionDescripcion(producto) {
+    let textoOriginal = producto.description;
+    let parrafos = textoOriginal.split('//');
+    let parrafo = `<h3>Informacion detallada </h3>`
+
+    for (let index = 0; index < 3; index++) {
+        parrafo+= `<p class="fs-xs">${parrafos[index]}</p>`
+    }
+    descripcionDetallada.innerHTML = parrafo
+}
 
 // Se renderizan los productos sugeridos en el HTML
-contenedorUltimasUnidades.append(renderizadoProductos)
+//contenedorUltimasUnidades.append(renderizadoProductos)
+
+function detallesDelProducto() {
+    // URL del servidor
+  const url = 'http://localhost:8090/gamertx/details/1';
+
+  // Realizar la solicitud GET
+  fetch(url)
+      .then(response => {
+          if (response.ok) {
+              return response.json(); // Procesar la respuesta como JSON
+          } else {
+              throw new Error('Error al realizar la solicitud GET');
+          }
+      })
+      .then(data => {
+          creacionCaracteristicas(data.especificaciones)
+          numeroComentarios.textContent = data.comentarios.length;
+          seccionComentarios.appendChild(renderizadoComentarios(data.comentarios))
+          console.log(data); // Hacer algo con los datos de respuesta
+      })
+      .catch(error => {
+          console.error(error); // Manejar errores
+      });
+}
 
 // Animacion entre cambio de secciones
 const seccionIds = ['descripcion', 'calificacion', 'comentario'];
@@ -138,3 +102,14 @@ barraNavegacion.addEventListener('click', (e) => {
         }
     }
 });
+
+function creacionCaracteristicas(caracteristicas) {
+    let items = "";
+    for (let index = 0; index < 7; index++) {
+        items += `<li class="fs-xs">${caracteristicas[index]}</li>`
+    }
+    especificaciones.innerHTML = items
+}
+
+fetchCardProduct(id)  
+detallesDelProducto()

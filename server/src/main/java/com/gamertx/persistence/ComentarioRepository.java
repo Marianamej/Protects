@@ -30,7 +30,12 @@ public class ComentarioRepository implements CommentRepository {
         Optional<List<Comentario>> comentariosOptional = crud.findAllByIdProducto(id);
 
         return comentariosOptional.map(comentarios -> comentarios.stream()
-                .map(comentario -> mapper.toComment(comentario))
+                .map(comentario -> {
+                    String img = comentario.getUsuario().getImgPerfil();
+                    Comment comment = mapper.toComment(comentario);
+                    comment.setImg(img);
+                    return comment; // Devuelve el comentario
+                })
                 .collect(Collectors.toList()));
     }
 

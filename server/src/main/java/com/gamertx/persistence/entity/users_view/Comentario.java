@@ -1,5 +1,6 @@
 package com.gamertx.persistence.entity.users_view;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.gamertx.persistence.entity.products_view.Producto;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -41,10 +42,11 @@ public class Comentario {
     private Short likes;
 
     @ManyToOne
-    @JoinColumn(name = "email_usuario", insertable = false, updatable = false)
+    @JoinColumn(name = "usuarios_email", insertable = false, updatable = false)
     private Usuario usuario;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "id_producto", insertable = false, updatable = false)
     private Producto producto;
 }
