@@ -28,7 +28,7 @@ public class OrderService {
     public List<Product> getItemsByClient(String email){
         return orderRepository.getItemsByClient(email);
     }
-    public Order addItem(Item item, Integer orderId){
-        return orderRepository.addItem(item,orderId);
+    public Order addItem(Item item, String email){
+        return orderRepository.addItem(item,email);
     }
 }

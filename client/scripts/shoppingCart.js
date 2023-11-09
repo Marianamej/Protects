@@ -1,5 +1,6 @@
-import { renderizadoProductosCarrito } from './renderShoppingCart.js';
+import { construccionProductos } from './renderShoppingCart.js';
 const contenedor = document.querySelector(".contenedor__carrito-compras")
+let email = localStorage.getItem("email")
 
   let token = localStorage.getItem("token")
   let objetosPrivados =[]
@@ -11,27 +12,25 @@ const contenedor = document.querySelector(".contenedor__carrito-compras")
         method: 'GET',
         headers: headers
     });
+
       const data = await response.json();
-  
       objetosPrivados.push(...data)
-      console.log(objetosPrivados[0].items);
       renderAndDisplayProductsInShoppingCard(container);
       return data
-  
     } catch (err) {
       console.error(err);
     }
   }
 
     async function fetchProductsInShoppingCard(email,contenedor) {
-    return await fetchDataPrivate(`http://localhost:8090/gamertx/orders/${email}`,contenedor);
+      return await fetchDataPrivate(`http://localhost:8090/gamertx/orders/items/${email}`,contenedor);
   }
 
   async function renderAndDisplayProductsInShoppingCard(container) {
-    const productosHtml = renderizadoProductosCarrito(objetosPrivados[0].items);
+    const productosHtml = construccionProductos(objetosPrivados);
     container.innerHTML = '';
     container.append(productosHtml);
     objetosPrivados = []
   }
 
-fetchProductsInShoppingCard("brayanandresveragar@gmail.com",contenedor)
+fetchProductsInShoppingCard(email,contenedor)

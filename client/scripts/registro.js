@@ -119,6 +119,7 @@ function peticionAlServidor(usuario) {
     })
         .then(response => {
             if (response.status === 201) {
+                crearCarrito(usuario.email)
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
@@ -157,6 +158,46 @@ function peticionAlServidor(usuario) {
         })
         .catch(error => {
             console.error("Error en la solicitud:", error);
+        });
+}
+
+function crearCarrito(nombreUsuario) {
+    // Datos a enviar en el cuerpo de la solicitud
+    const data = {
+        userEmail: nombreUsuario,
+        purchaseDate: "2023-10-29T15:30:00",
+        deliveryDate: "2023-10-29T16:00:00",
+        total: 0,
+        status: "Preparacion",
+        items: []
+    };
+
+    // URL del servidor
+    const url = 'http://localhost:8090/gamertx/orders/save';
+
+    // Opciones de la solicitud
+    const options = {
+        method: 'POST',  // Método HTTP POST
+        headers: {
+            'Content-Type': 'application/json'  // Tipo de contenido en el cuerpo
+        },
+        body: JSON.stringify(data)  // Convertir los datos a formato JSON
+    };
+
+    // Realizar la solicitud POST
+    fetch(url, options)
+        .then(response => {
+            if (response.ok) {
+                return response.json();  // Procesar la respuesta como JSON
+            } else {
+                throw new Error('Error al realizar la solicitud POST');
+            }
+        })
+        .then(data => {
+            console.log(data);  // Hacer algo con los datos de respuesta
+        })
+        .catch(error => {
+            console.error(error);  // Manejar errores
         });
 }
 

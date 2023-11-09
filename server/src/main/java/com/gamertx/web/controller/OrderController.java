@@ -57,15 +57,15 @@ public class OrderController {
                 : new ResponseEntity<>(response,HttpStatus.NOT_FOUND);
     }
 
-    @PreAuthorize("hasAuthority('READ_ALL_PRODUCTS')")
+    @PreAuthorize("permitAll()")
     @PostMapping(value = "/save")
     public ResponseEntity<Order> save(@RequestBody Order order){
         return new ResponseEntity<>(service.save(order), HttpStatus.OK);
     }
 
     @PreAuthorize("hasAuthority('READ_ALL_PRODUCTS')")
-    @PutMapping(value = "/add/{id}")
-    public ResponseEntity<Order> save(@RequestBody Item item, @PathVariable int id){
-        return new ResponseEntity<>(service.addItem(item,id), HttpStatus.OK);
+    @PutMapping(value = "/add/{email}")
+    public ResponseEntity<Order> save(@RequestBody Item item, @PathVariable String email){
+        return new ResponseEntity<>(service.addItem(item,email), HttpStatus.OK);
     }
 }
