@@ -1656,6 +1656,7 @@ svg {
   display: flex;
   justify-content: space-between;
   height: 80vh;
+  font-size: 13px;
 }
 
 .login__imagen {
@@ -1853,6 +1854,7 @@ svg {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  font-size: 12px;
 }
 .form__inputs .form__input {
   display: flex;
@@ -1862,7 +1864,7 @@ svg {
 }
 
 .form__input input {
-  height: 56px;
+  height: 40px;
   width: 100%;
   border-radius: 50px;
 }
@@ -1874,6 +1876,7 @@ svg {
   border-radius: 50px;
   color: #ffffff;
   margin: auto;
+  font-size: 20px;
 }
 
 .register-error {
