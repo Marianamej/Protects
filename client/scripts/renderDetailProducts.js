@@ -20,7 +20,7 @@ export function hayEstrellas(rating) {
 //Funcion para renderizar los comentarios del objeto producto
 export function renderizadoComentarios(arregloComentarios) {
 
-    if (arregloComentarios.length == 0) {
+    if (arregloComentarios.length === 0) {
         const div = document.createElement('div');
         div.classList.add('center');
         const p = document.createElement('p');

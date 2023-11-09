@@ -2338,6 +2338,10 @@ button.active {
   font-family: var(--secondary-font);
 }
 
+#login__button {
+  height: 50px;
+}
+
 .ft-regular {
   font-weight: 400;
 }

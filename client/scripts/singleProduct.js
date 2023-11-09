@@ -55,7 +55,7 @@ function visualizacionDescripcion(producto) {
     let parrafos = textoOriginal.split('//');
     let parrafo = `<h3>Informacion detallada </h3>`
 
-    for (let index = 0; index < 3; index++) {
+    for (let index = 0; index < 2; index++) {
         parrafo+= `<p class="fs-xs">${parrafos[index]}</p>`
     }
     descripcionDetallada.innerHTML = parrafo
