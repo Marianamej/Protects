@@ -37,9 +37,9 @@ const userUnregisterHTML = `
         </a>
     </div>
     <ul class="user__options">
-        <li><a class="user__link ft-bold" href="./login.html">Login</a></li>
+        <li><a class="user__link ft-bold" href="./login.html">Iniciar Sesión</a></li>
         <li class="user__link ft-bold">/</li>
-        <li><a class="user__link ft-bold" href="./register.html">Register</a></li>
+        <li><a class="user__link ft-bold" href="./register.html">Registrarse</a></li>
     </ul>
 `;
 
