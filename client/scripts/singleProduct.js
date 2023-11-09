@@ -1,4 +1,5 @@
 import {renderizadoProductos} from './renderCardProduct.js';
+import { fetchProducts } from './requestProducts.js';
 import {renderizadoComentarios,hayEstrellas} from './renderDetailProducts.js';
 const templateSingleProduct = document.querySelector('#template-producto-general').content;
 const especificaciones = document.querySelector(".producto-descripcion__lista-caracteristicas");
@@ -61,7 +62,7 @@ function visualizacionDescripcion(producto) {
 }
 
 // Se renderizan los productos sugeridos en el HTML
-//contenedorUltimasUnidades.append(renderizadoProductos)
+fetchProducts(contenedorUltimasUnidades,1,12);
 
 function detallesDelProducto() {
     // URL del servidor
