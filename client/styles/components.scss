@@ -10,7 +10,7 @@
 @use 'components/cardPromocion';
 @use 'components/blog';
 @use 'components/sliderProducts';
-@use 'components/singleProduct';
+@use 'components/singleProduct.scss';
 @use 'components/category.scss';
 
 // info Organisms
@@ -23,6 +23,5 @@
 @use 'components/shoppingCart.scss';
 @use 'components/profile.scss';
 @use 'components/promotions.scss';
-@use 'components/single-product.scss';
 @use 'components/hero-banner';
 

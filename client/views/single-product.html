@@ -172,11 +172,28 @@
       <p>Home  ›  Laptops ›  Product   </p>
     </div>
     <section class="singleProduct">
-     
-      
-      <div class="img_container"> </div>  
-      <div class="tex_container"></div>
-      
+      <template id="template-producto-general">
+        <div class="tex_container">
+          <h3 class="title">Lenovo ThinkPad X1 Carbon</h3>
+          <div class="rating-product">
+              <ion-icon class="fs-xs star-active md hydrated" role="img" name="star"></ion-icon>
+              <ion-icon class="fs-xs star-active md hydrated" role="img" name="star"></ion-icon>
+              <ion-icon class="fs-xs star-active md hydrated" role="img" name="star"></ion-icon>
+          </div>
+          <p class="precio">$ 3500000</p>
+          <p class="stock">Availability  : in stock</p>
+          <p class="descripcion_single_product">Experimenta un rendimiento excepcional con este impresionante portátil ASUS Vivobook 15 E1504FA-NJ474. Con un procesador de alta potencia y un disco sólido rápido, es la elección perfecta para tus tareas diarias y momentos de entretenimiento. Maximiza tu productividad y disfruta de una experiencia de usuario extraordinaria con ASUS.</p>
+          <div class="linea-horizontal"></div>
+        </div>
+        <div class="img_container">
+          <img class="img" src="https://res.cloudinary.com/dclge3reg/image/upload/v1698436915/qhwdyyhye38bf6d5z51q.webp">
+          <div class="butosn">
+              <button class="buton_add">Buy</button>
+              <img src="../assets/icons/icon-favorite.svg" class="butons_actions">
+              <img src="../assets/icons/icon-carrito.svg" class="butons_actions">
+          </div>
+        </div>
+      </template>
     </section>
     <section class="producto-descripcion">
         <nav class="producto-descripcion__navigation">
@@ -202,20 +219,12 @@
               <div class="producto-descripcion__details-caracteristicas">
                   <h3>Caracteristicas</h3>
                   <ul class="producto-descripcion__lista-caracteristicas">
-                      <li class="fs-xs">the quick fox jumps over the lazy dog</li>
-                      <li class="fs-xs">the quick fox jumps over the lazy dog</li>
-                      <li class="fs-xs">the quick fox jumps over the lazy dog</li>
-                      <li class="fs-xs">the quick fox jumps over the lazy dog</li>
-                      <li class="fs-xs">the quick fox jumps over the lazy dog</li>
-                      <li class="fs-xs">the quick fox jumps over the lazy dog</li>
-                      <li class="fs-xs">the quick fox jumps over the lazy dog</li>
                   </ul>
               </div>
           </div>
 
           <div id="producto-descripcion__seccion" class="producto-descripcion__comentarios detail">
             <h3 class="ft-medium">Reviews</h3>
-
             <template id="template__comentario">
               <div class="producto__reviews">
                 <div class="personal-review">

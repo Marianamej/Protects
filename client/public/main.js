@@ -157,7 +157,7 @@ contenidoPagina.addEventListener('click', (e) => {
 
         const email = localStorage.getItem("email")
         añadirCarrito(email,idProducto)
-    }else if(e.target.classList.contains('boton__añadir-carrito') && !localStorage.getItem("token")){
+    }else if((e.target.classList.contains('boton__añadir-carrito') || e.target.classList.contains('button_add')) && !localStorage.getItem("token")){
         Swal.fire({
             position: 'center',
             icon: 'error',
