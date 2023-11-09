@@ -236,11 +236,7 @@
                         <div class="personal-review__user">
                             <p class="ft-medium personal-review__user-name">Camila Alejandra</p>
                             <div class="stars">
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
+
                             </div>
                         </div>
                         <p class="fs-xs personal-review__comentario">Experiencia impecable con esta tienda de periféricos. Envío rápido, productos de calidad y atención al cliente excepcional. ¡Totalmente recomendado!</p>
@@ -252,9 +248,9 @@
 
           <div id="producto-descripcion__seccion" class="producto-descripcion__escribir-comentario detail">
             <h3 class="ft-medium">Escribe tu opinion</h3>
-            <textarea placeholder="Escribe Aqui" name="" id="" cols="30" rows="7"></textarea>
+            <textarea id="textoComentario" placeholder="Escribe Aqui" name="" id="" cols="30" rows="7"></textarea>
             <div class="options__mi-comentario">
-              <button class="button--red">Publicar</button>
+              <button id="writeComment" class="button--red">Publicar</button>
               <div class="stars">
                 <ion-icon name="star"></ion-icon>
                 <ion-icon name="star"></ion-icon>
@@ -405,6 +401,7 @@
   </footer>
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script type="module" src="../public/main.js"></script>
   <script type="module" src="../scripts/singleProduct.js"></script>
 </body>

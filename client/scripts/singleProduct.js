@@ -5,6 +5,7 @@ const especificaciones = document.querySelector(".producto-descripcion__lista-ca
 const descripcionDetallada = document.querySelector(".producto-descripcion__details-info")
 //Se obtiene el id del producto del cual se van a renderizar sus comentarios
 let id= localStorage.getItem('idProducto');
+const idProducto = Number(localStorage.getItem("idProducto"))
 
 // !Constantes para el renderizado de productos y comentarios
 const numeroComentarios = document.querySelector('#numeroComentarios');
@@ -64,7 +65,7 @@ function visualizacionDescripcion(producto) {
 
 function detallesDelProducto() {
     // URL del servidor
-  const url = 'http://localhost:8090/gamertx/details/1';
+  const url = `http://localhost:8090/gamertx/details/${idProducto}`;
 
   // Realizar la solicitud GET
   fetch(url)
@@ -76,6 +77,7 @@ function detallesDelProducto() {
           }
       })
       .then(data => {
+        console.log(data);
           creacionCaracteristicas(data.especificaciones)
           numeroComentarios.textContent = data.comentarios.length;
           seccionComentarios.appendChild(renderizadoComentarios(data.comentarios))
@@ -110,6 +112,62 @@ function creacionCaracteristicas(caracteristicas) {
     }
     especificaciones.innerHTML = items
 }
+
+const butonComentar = document.querySelector("#writeComment")
+const textoComentario = document.querySelector("#textoComentario")
+
+butonComentar.addEventListener("click",() => {
+    if (localStorage.getItem("email")) {
+        const email = localStorage.getItem("email")
+        newComment(email)
+    }
+})
+
+
+function newComment(email) {
+    const url = 'http://localhost:8090/gamertx/comment/new';
+    const fechaActual = new Date().toISOString().split('T')[0];
+    const data = {
+        email: email,
+        productId:idProducto,
+        text: textoComentario.value,
+        date: fechaActual, //2023-10-03
+        rating: 5,
+        likes: 1
+    };
+
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (!response.ok) {
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: `No se ha podido publicar el comentario`,
+                showConfirmButton: true,
+                timer: 2000
+            })
+            return
+        }
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: `Comentario publicado satisfactoriamente`,
+            showConfirmButton: false,
+            timer: 2000
+        })
+        textoComentario.value = ""
+        detallesDelProducto()
+    })
+    .then(result => console.log(result))
+    .catch(error => console.error('Error:', error));
+}
+
 
 fetchCardProduct(id)  
 detallesDelProducto()
