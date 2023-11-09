@@ -80,16 +80,7 @@ async function fetchCardProduct(idProducto) {
 
       
       
-      const arraycolors=product.color.split(",")
-      
-      for (const colorCode of arraycolors) {
-        const colorDiv = document.createElement("div");
-        colorDiv.className = "colorProduct";
-        colorDiv.style.backgroundColor= colorCode;
-      
-        tex_container.appendChild(colorDiv);
-      }
-     
+    
       
       
       tex_container.appendChild(title)
@@ -129,7 +120,7 @@ numeroComentarios.textContent = comentarios.length;
 seccionComentarios.appendChild(renderizadoComentarios(comentarios))
 
 // Se renderizan los productos sugeridos en el HTML
-contenedorUltimasUnidades.append(renderizadoProductos(separarProductosParaMostrar(0,8)));
+contenedorUltimasUnidades.append(renderizadoProductos)
 
 // Animacion entre cambio de secciones
 const seccionIds = ['descripcion', 'calificacion', 'comentario'];
