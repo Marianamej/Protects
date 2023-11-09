@@ -64,12 +64,6 @@
     width: 900px;
   }
 
-  .noticias article {
-    flex-basis: 100%;
-    margin: 0 10px;
-    border-bottom: 1px solid #ccc;
-  }
-
   .noticias article h2 {
     font-size: 20px;
   }
@@ -92,10 +86,10 @@
   
   
   .blog_noticias {
-    aspect-ratio: 3/4;
     display: flex;
     flex-direction: column;
     gap: 32px;
+    width: 350px;
   }
   @media screen and (width < 600px) {
     .blog_noticias {
