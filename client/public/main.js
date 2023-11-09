@@ -17,6 +17,8 @@ options.classList.add("header__user");
 
 
 // URL del servidor y plantillas HTML
+const img=localStorage.getItem("foto")
+
 const URL = "http://localhost:8090/gamertx/register";
 const userRegisterHTML = `
         <div class="icon user__icon user__icon-register shopping-car">
@@ -24,11 +26,14 @@ const userRegisterHTML = `
             <img src="../assets/icons/icon-shopping-cart.svg" alt="">
             </a>
         </div>
-        <div class="icon user__icon user__icon-register user_avatar">
+        
+            <div class="icon user__icon user__icon-register user_avatar">
             <a href="./profile.html">
-            <img src="https://unavatar.io/dribbble/omidnikrah" alt="">
+            <img src="${img}" alt="">
             </a>
         </div>
+        
+        
 `;
 const userUnregisterHTML = `
     <div class="icon user__icon user__icon--unregister">

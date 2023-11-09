@@ -35,6 +35,8 @@ function peticionAlServidor() {
         localStorage.setItem('token', JSON.stringify(token))
         localStorage.setItem('email', credenciales.email)
         
+        
+        
         setTimeout(() => {
             window.location.href = 'home.html'
         }, 2000);
@@ -44,3 +46,4 @@ function peticionAlServidor() {
         console.error('Error:', error);
     });
 }
+

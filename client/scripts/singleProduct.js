@@ -120,7 +120,7 @@ numeroComentarios.textContent = comentarios.length;
 seccionComentarios.appendChild(renderizadoComentarios(comentarios))
 
 // Se renderizan los productos sugeridos en el HTML
-contenedorUltimasUnidades.append(renderizadoProductos)
+//contenedorUltimasUnidades.append(renderizadoProductos)
 
 // Animacion entre cambio de secciones
 const seccionIds = ['descripcion', 'calificacion', 'comentario'];

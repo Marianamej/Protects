@@ -1859,7 +1859,7 @@ svg {
 
 h2 {
   font-weight: bold;
-  font-size: 24px;
+  font-size: 30px;
 }
 
 span {
@@ -1885,7 +1885,7 @@ span {
   width: 100%;
   display: flex;
   flex-direction: row;
-  gap: 57px;
+  gap: 200px;
 }
 
 .profile__info {
@@ -1921,9 +1921,10 @@ span {
 .info__a {
   color: white;
   background-color: var(--watermelon);
-  width: 80px;
-  height: 20px;
+  width: 200px;
+  height: 45px;
   border-radius: 5px;
+  font-size: 1.5rem;
 }
 
 .profile__sectionNav {
@@ -1932,7 +1933,7 @@ span {
   background-color: var(--watermelon);
   padding: 8px 13px;
   border-radius: 50px;
-  gap: 48px;
+  gap: 250px;
 }
 
 .profile__sectionNav button {
@@ -1940,6 +1941,10 @@ span {
   background-color: var(--watermelon);
   padding: 8px 38px;
   border-radius: 50px;
+}
+
+.producimgleft {
+  width: 150px;
 }
 
 button.active {
@@ -1994,6 +1999,11 @@ button.active {
   gap: 38px;
 }
 
+.imgPorfile {
+  border-radius: 30%;
+  width: 200px;
+}
+
 @media (max-width: 800px) {
   .profile__wishlist {
     display: flex;
@@ -2006,17 +2016,26 @@ button.active {
     justify-content: space-between;
     gap: 20px;
   }
+  .profile__sectionNav {
+    gap: 36px;
+  }
 }
 @media (max-width: 700px) {
   .profile__wishlist {
     display: flex;
     flex-direction: column;
   }
+  .profile__sectionNav {
+    gap: 20px;
+  }
 }
 @media (max-width: 500px) {
   .profile__sectionNav button {
     padding: 8px 10px;
     border-radius: 50px;
+  }
+  .profile__sectionNav {
+    gap: 30px;
   }
   .profile__info h2 {
     display: none;
@@ -2201,6 +2220,41 @@ button.active {
   align-items: center;
 }
 
+.bestsellesproduct {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: right;
+}
+
+@media (max-width: 899px) {
+  .bestsellesproduct {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: right;
+  }
+  .singleProduct {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 599px) {
+  .bestsellesproduct {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: right;
+    gap: 25px;
+  }
+  .singleProduct {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    gap: 25px;
+  }
+}
 .hero-banner {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), no-repeat center/cover, lightgray 50%;
   gap: 32px;
