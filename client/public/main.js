@@ -17,25 +17,7 @@ options.classList.add("header__user");
 const img=localStorage.getItem("foto")
 
 const URL = "http://localhost:8090/gamertx/register";
-<<<<<<< HEAD
 
-=======
-const userRegisterHTML = `
-        <div class="icon user__icon user__icon-register shopping-car">
-            <a href="./carrito-compras.html">
-            <img src="../assets/icons/icon-shopping-cart.svg" alt="">
-            </a>
-        </div>
-        
-            <div class="icon user__icon user__icon-register user_avatar">
-            <a href="./profile.html">
-            <img src="${img}" alt="">
-            </a>
-        </div>
-        
-        
-`;
->>>>>>> heidy
 const userUnregisterHTML = `
     <div class="icon user__icon user__icon--unregister">
         <a href="./login.html">

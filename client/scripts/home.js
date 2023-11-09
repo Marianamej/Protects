@@ -83,7 +83,7 @@ const options = {
       const response = await fetch(`http://localhost:8090/gamertx/register/${email}`, options);
      
       const person = await response.json();
-    localStorage.setItem('foto',person.imgProfile)
+      localStorage.setItem('foto',person.imgProfile)
 
       
     } catch (error) {
