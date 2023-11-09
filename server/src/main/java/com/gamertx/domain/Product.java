@@ -1,6 +1,7 @@
 package com.gamertx.domain;
 
 
+import com.gamertx.persistence.entity.users_view.Comentario;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -41,4 +42,6 @@ public class Product {
     private Short rating;
     private String color;
     private List<String> urlsImages;
+    //private List<Comentario> comentarios;
+    private Integer numeroComentarios;
 }

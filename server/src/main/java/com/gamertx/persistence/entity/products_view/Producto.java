@@ -63,6 +63,6 @@ public class Producto {
     @OneToMany(mappedBy = "producto",fetch=FetchType.EAGER)
     private List<Especificacion> especificacions;
 
-    @OneToMany(mappedBy = "producto")
+    @OneToMany(mappedBy = "producto",fetch=FetchType.EAGER)
     private List<Comentario> comentarios;
 }
